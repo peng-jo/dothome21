@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 연습2</title>
+    <style>
+        @font-face {
+            font-family: 'TmonMonsori';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-color: #e8f5e9;
+            color:#fff;
+            font-size: 60px;
+            text-align: center;
+            font-family: 'TmonMonsori';
+            text-transform: uppercase;
+        }
+
+        #wrap {
+            margin: 0 auto;
+            width: 1200px;
+        }
+
+        #header {
+            background-color: #a5d6a7;
+            height: 100px;
+            width: 1200px;
+            line-height: 100px;
+        }
+
+        #nav {
+            background-color: #81c784 ;
+            height: 100px;
+            width: 1200px;
+            line-height: 100px;
+        }
+
+        #sideleft {
+            background-color: #4caf50;
+            width: 300px;
+            height: 1000px;
+            float: left;
+            line-height: 1000px;
+        }
+
+        #contents {
+            background-color: #43a047;
+            width: 600px;
+            height: 1000px;
+            float: left;
+            line-height: 1000px;
+        }
+
+        #sideright {
+            background-color: #2e7d32;
+            width: 300px;
+            height: 1000px;
+            float: left;
+            line-height: 1000px;
+        }
+
+        #footer {
+            background-color: #1b5e20;
+            width: 1200px;
+            height: 100px;
+            line-height: 100px;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">header</div>
+        <div id="nav">nav</div>
+        <div id="sideleft">left</div>
+        <div id="contents">contents</div>
+        <div id="sideright">right</div>
+        <div id="footer">footer</div>
+    </div>
+</body>
+</html>
