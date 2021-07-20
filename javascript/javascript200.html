@@ -294,19 +294,19 @@
 <pre class="line-numbers"><code class="language-js">{
   let num = 100;
   if(num === 100 ){
-    document.write("*** 03. 중첩 if문 ***<br>");
-    document.write("조건문이 실행되었습니다.(1)<br>")
+    document.write("*** 03. 중첩 if문 ***");
+    document.write("조건문이 실행되었습니다.(1)");
     if(num === 100 ){
-      document.write("*** 03. 중첩 if문 ***<br>");
-      document.write("조건문이 실행되었습니다.(2)<br>")
+      document.write("*** 03. 중첩 if문 ***");
+      document.write("조건문이 실행되었습니다.(2)");
       if( num === 100 ){
-        document.write("*** 03. 중첩 if문 ***<br>");
-        document.write("조건문이 실행되었습니다.(3)<br>")
+        document.write("*** 03. 중첩 if문 ***");
+        document.write("조건문이 실행되었습니다.(3)");
       }
     }
   }else{
-    document.write("*** 03. 중첩 if문 ***<br>");
-    document.write("조건문이 실행되었습니다.(4)<br>")
+    document.write("*** 03. 중첩 if문 ***");
+    document.write("조건문이 실행되었습니다.(4)");
   }
 }
 </code></pre>
@@ -324,19 +324,19 @@
   switch( num ){
     case 100 :
       document.write("*** 04. switch문 ***");
-      document.write("조건문이 실행되었습니다.( num === 100)")
+      document.write("조건문이 실행되었습니다.( num === 100)");
     break;
     case 200 :
       document.write("*** 04. switch문 ***");
-      document.write("조건문이 실행되었습니다.( num === 200)")
+      document.write("조건문이 실행되었습니다.( num === 200)");
     break;
     case 300 :
       document.write("*** 04. switch문 ***");
-      document.write("조건문이 실행되었습니다.( num === 300)")
+      document.write("조건문이 실행되었습니다.( num === 300)");
     break;
     default :
       document.write("*** 04. switch문 ***");
-      document.write("조건문이 실행되었습니다.(num == 값이 없음)")
+      document.write("조건문이 실행되었습니다.(num == 값이 없음)");
     break;
   }
 }
@@ -351,8 +351,9 @@
   <div class="code">
 <pre class="line-numbers"><code class="language-js">{
   let num = 100;
+  
   document.write("*** 05. 조건부연산자 ***");
-  ( num == 100 ) ? document.write("true</br>") : document.write("false</br>")
+  ( num == 100 ) ? document.write("true") : document.write("false");
 }
 </code></pre>
 </div>
@@ -366,11 +367,11 @@
 <pre class="line-numbers"><code class="language-js">{
   let num = 100
   
-  document.write("*** 06. if문 생략 ***<br>");
+  document.write("*** 06. if문 생략 ***");
   if(true)
-    document.write("true<br>");
+    document.write("true");
   else
-    document.write("false<br>");
+    document.write("false");
 }
 </code></pre>
 </div>
@@ -383,15 +384,17 @@
 <script>
 //sample1
 //if문
-const x = 100;
+{
+  const x = 100;
 
-//true, false, 1, "", 0, "1", 0, null, undefined, [], {}
-if(true){
-  document.write("*** 01 if문 ***<br>");
-  document.write("조건문이 실행되었습니다.(true)<br><br>");
-}else{
-  document.write("*** 01 if문 ***<br>");
-  document.write("조건문이 실행되었습니다.(false)<br><br>");
+  //true, false, 1, "", 0, "1", 0, null, undefined, [], {}
+  if(true){
+    document.write("*** 01 if문 ***<br>");
+    document.write("조건문이 실행되었습니다.(true)<br><br>");
+  }else{
+    document.write("*** 01 if문 ***<br>");
+    document.write("조건문이 실행되었습니다.(false)<br><br>");
+  }
 }
 
 //sample2
@@ -455,7 +458,7 @@ if(true){
     break;
     default :
       document.write("*** 04. switch문 ***<br>");
-      document.write("조건문이 실행되었습니다.(num == 값이 없음)<br>")
+      document.write("조건문이 실행되었습니다.(num == 값이 없음)<br><br>")
     break;
   }
 }
@@ -464,6 +467,7 @@ if(true){
 //삼항 연산자(조건부 연산자)
 {
   let num = 100;
+
   document.write("*** 05. 조건부연산자 ***<br>");
   ( num == 100 ) ? document.write("true<br></br>") : document.write("false<br></br>")
 }
