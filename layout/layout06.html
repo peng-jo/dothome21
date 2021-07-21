@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃연습6</title>
+</head>
+<style>
+    @font-face {
+      font-family: 'twaysky';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twaysky.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #wrap {
+      font-family: 'twaysky';
+      width: 100%;
+      background-color: #ede7f6;
+      font-size:60px;
+      text-align: center;
+      color:#fff;
+      text-transform: uppercase;
+      width: 100%;
+    }
+    #header {
+        width: 100%;
+        height: 115px;
+        background-color: #42A5F5;
+        line-height: 115px;
+    }
+    #banner {
+        width: 100%;
+        height: 750px;
+        line-height: 750px;
+        background-color: #2196F3;
+    }
+    #content1 {
+        width: 100%;
+        height: 2277px;
+        line-height: 2270px;
+        background-color: #2196F3;
+    }
+    #content2 {
+        width: 100%;
+        height: 1570px;
+        line-height: 1570px;
+        background-color: #1e88e5;
+    }
+    #content3 {
+        width: 100%;
+        height: 534px;
+        line-height: 534px;
+        background-color: #1565C0;
+    }
+    #footer {
+        width: 100%;
+        height: 270px;
+        line-height: 270px;
+        background-color: #0D47A1;
+    }
+    .header-inner {
+        margin: 0 auto;
+        width: 1200px;
+        height: 115px;
+        background-color: #CE93D8;
+    }
+    .banner-inner {
+        margin: 0 auto;
+        width: 1200px;
+        height: 750px;
+        background-color: #AB47BC;
+    }
+    .content1-inner {
+        width: 1200px;
+        height: 2277px;
+        margin: 0 auto;
+        background-color: #8E24AA;
+    }
+    .content2-inner {
+        width: 1200px;
+        height: 1570px;
+        margin: 0 auto;
+        background-color: #7B1FA2;
+    }
+    .content3-inner {
+        width: 1200px;
+        height: 534px;
+        margin: 0 auto;
+        background-color: #6A1B9A;
+    }
+    .footer-inner {
+        width: 1200px;
+        height: 270px;
+        margin: 0 auto;
+        background-color: #4A148C;
+    }
+</style>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="header-inner">
+                HEADER(1200px * 115px)
+            </div>
+        </div>
+        <div id="banner">
+            <div class="banner-inner">
+                BANNER(1200px * 750px)
+            </div>
+        </div>
+        <div id="content1">
+            <div class="content1-inner">
+                CONTENT1(1200px * 2277px)
+            </div>
+        </div>
+        <div id="content2">
+            <div class="content2-inner">
+                CONTENT2(1200px * 1570px)
+            </div>
+        </div>
+        <div id="content3">
+            <div class="content3-inner">
+                CONTENT3(1200px * 534px)
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footer-inner">
+                FOOTER(1200px * 270px)
+            </div>
+        </div>
+    </div>
+</body>
+</html>
