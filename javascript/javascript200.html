@@ -829,6 +829,24 @@
     table += "</table>";
     document.write(table,"<br>")
   }
+
+  //sample103 : 테이블 만들기3
+  //짝수만 나오게 하기
+  {
+    document.write("*** 102. 테이블 만들기3 ***<br>");
+    
+    let table = "<table>";
+    let num = 2;
+    for( let i=1; i<=10; i++){
+      table += "<tr>";
+      for( let j=1; j<=10; j++){
+        table += "<td>"+ num +"</td>";
+        num += 2;
+      }
+    }
+    table += "</table>";
+    document.write(table,"<br>")
+  }
 </script>
 </body>
 </html>
