@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>레이아웃연습7</title>
+  <style>
+    @font-face {
+      font-family: 'twayfly';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayfly.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #wrap {
+      font-size: 50px;
+      text-align: center;
+      color:#fff;
+      font-family: 'twayfly';
+    }
+    #header {
+      background-color: #e3f2fd ;
+      height: 110px;
+      line-height: 110px;
+      margin: 0 auto;
+    }
+    #banner {
+      background-color: #bbdefb ;
+      height: 750px;
+      line-height: 750px;
+      margin: 0 auto;
+    }
+    #content1 {
+      background-color: #90caf9;
+      height: 2280px;
+      line-height: 2280px;
+    }
+    #content2 {
+      background-color: #64b5f6;
+      height: 1570px;
+      line-height: 1570px;
+    }
+    #content3 {
+      background-color: #42a5f5;
+      height: 530px;
+      line-height: 530px;
+    }
+    #footer {
+      background-color: #2196f3;
+      height: 270px;
+      line-height: 270px;
+    }
+    #title {
+      width: 1200px;
+      height: 200px;
+      line-height: 200px;
+      background-color: #3e2723;
+    }
+    #box1 {
+      float: left;
+      width: 600px;
+      height: 300px;
+      line-height: 300px;
+      background-color: #4e342e ;
+    }
+    #box2 {
+      float: left;
+      width: 600px;
+      height: 300px;
+      line-height: 300px;
+      background-color: #a1887f;
+    }
+    .container {
+      height: inherit;
+      width: 1200px;
+      margin: 0 auto;
+      background-color: rgba(173, 146, 218, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="header">
+      <div class="container">
+        HEADER(1200px * 110px)
+      </div>
+    </div>
+    <div id="banner">
+      <div class="container">
+        BANNER(1200px * 750px)
+      </div>
+    </div>
+    <div id="contents">
+      <div id="content1">
+        <div class="container">
+          <div id="title">
+              title(1200px * 200px)
+          </div>
+          CONTENT1(1200px * 2280 px)
+        </div>
+      </div>
+      <div id="content2">
+        <div class="container">
+          <div id="box1">
+            box1(600 * 300px)
+          </div>
+          <div id="box2">
+            box2(600 * 300px)
+          </div>
+          CONTENT2(1200px * 1570px)
+        </div>
+      </div>
+      <div id="content3">
+        <div class="container">
+          CONTENT3(1200px * 530)
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="container">
+        FOOTER(1200px * 270px)
+      </div>
+    </div>
+  </div>
+</body>
+</html>

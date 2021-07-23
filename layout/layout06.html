@@ -7,71 +7,99 @@
     <title>레이아웃 연습6</title>
 </head>
 <style>
+    @font-face {
+      font-family: 'twayfly';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayfly.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
     * {
         padding:0;
         margin:0;
+        font-size: 50px;
+        text-align: center;
+        color:#fff;
+        font-family: 'twayfly';
     }
     #header {
         height: 115px;
-        background-color: #e3f2fd  ;
+        line-height: 115px;
+        background-color: #e3f2fd;
         margin: 0 auto;
     }
     #banner {
         height: 750px;
+        line-height: 750px;
         background-color: #bbdefb  ;
         margin: 0 auto;
     }
     #content1 {
         background-color: #90caf9 ;
         height: 2277px;
+        line-height: 2277px;
         margin: 0 auto;
     }
     #content2 {
         height: 1570px;
+        line-height: 1570px;
         background-color: #64b5f6  ;
         margin: 0 auto;
     }
     #content3 {
         height: 534px;
+        line-height: 534px;
         background-color: #42a5f5  ;
         margin: 0 auto;
     }
     #footer {
         height: 270px;
+        line-height: 270px;
         background-color: #2196f3 ;
         margin: 0 auto;
     }
     .container {
         width: 1200px;
         height: inherit;
-        background-color: rgba(156,8,65,0.45);
+        background-color: rgba(139, 0, 255, 0.56);
         margin: 0 auto;
     }
 </style>
 <body>
     <div id="wrap">
         <div id="header">
-            <div class="container"></div>
+            <div class="container">
+                HEADER(1200px * 115px)
+            </div>
         </div>
         <!-- //header -->
         <div id="banner">
-            <div class="container"></div>
+            <div class="container">
+                BANNER(1200px * 750px)
+            </div>
         </div>
         <!-- //banner -->
         <div id="contents">
             <div id="content1">
-                <div class="container"></div>
+                <div class="container">
+                    CONTENT1(1200px * 2277px)
+                </div>
             </div>
             <div id="content2">
-                <div class="container"></div>
+                <div class="container">
+                    CONTENT2(1200px * 1570px)
+                </div>
             </div>
                 <div id="content3">
-            <div class="container"></div>
+                <div class="container">
+                    CONTENT3(1200px * 534px)
+                </div>
             </div>
         </div>
         <!-- //contents -->
         <div id="footer">
-            <div class="container"></div>
+            <div class="container">
+                FOOTER(1200px * 270px)
+            </div>
         </div>
         <!-- //footer -->
     </div>
