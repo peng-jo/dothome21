@@ -182,26 +182,41 @@
             border : 1px solid #989898;
             padding: 5px;
         }
+        .ol1::before {
+            content: "데이터 저장하기 : ";
+        }
+        .ol2::before {
+            content: "데이터 불러오기 : ";
+        }
+        .ol3::before {
+            content: "데이터 실행하기 : ";
+        }
+        .ol4::before {
+            content: "데이터 제어하기 : ";
+        }
     </style>
 </head>
 
 <body>
   <h1>Javascript 문법 정리</h1>
-  <ol>
-      <li><a href="javascript100.html">변수</a></li>
-      <li><a href="javascript100.html">상수</a></li>
-      <li><a href="javascript100.html">배열(Array)</a></li>
-      <li><a href="javascript100.html">객체(Object)</a></li>
+  <ol class="ol1">
+    <li><a href="javascript100.html">변수</a></li>
+    <li><a href="javascript100.html">상수</a></li>
+    <li><a href="javascript100.html">배열(Array)</a></li>
+    <li><a href="javascript100.html">객체(Object)</a></li>
   </ol>
   <ol>
-      <li><a href="javascript300.html">함수(Function)</a></li>
+      <li class="ol2"><a href="javascript500.html">데이터</a></li>
   </ol>
   <ol>
+      <li class="ol3"><a href="javascript300.html">함수(Function)</a></li>
+  </ol>
+  <ol class="ol4">
       <li><a href="javascript200.html">조건문</a></li>
       <li><a href="javascript200.html">반복문</a></li>
   </ol>
   <ol>
-    <li><a href="javascript400.html">알고리즘 연습</a></li>
+      <li><a href="javascript400.html">알고리즘 연습</a></li>
   </ol>
     <h2 class="mt20">알고리즘</h2>
     <ul>
@@ -271,9 +286,9 @@
     document.write("*** . 1부터 100까지 짝수는빨간색, 홀수는 파란색 출력 ***");
     for( let i=1; i&lt=100; i++ ){
         if( i%2 === 0 ){
-            document.write(`&ltspan style="color:red"&gt${i}&lt/span&gt`);
+            document.write("&ltspan style='color:red'&gt"+i+"&lt/span&gt");
         }else if(i%2 === 1 ){
-            document.write(`&ltspan style="color:blue"&gt${i}&lt/span&gt`);
+            document.write("&ltspan style='color:red'&gt"+i+"&lt/span&gt");
         }
     }
 }
@@ -286,15 +301,14 @@
         <h2>05. 1부터 100까지 합출력하기<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{    
-    document.write("*** 05 .1부터 100까지 합출력 ***<br>");
+    document.write("*** 05 .1부터 100까지 합출력 ***");
 
     let sum = 0;
     for( let i=1; i&lt=100; i++ ){
-        document.write(sum,"&nbsp")
         sum += i;
     }
     document.write(sum)
-    document.write("<br><br>");
+}
 </code></pre>
     </div>
     </div>
@@ -323,7 +337,7 @@
     for(var i=2; i&lt=9; i++){
         for(var j=1; j&lt=9; j++){
             var sum = i * j;
-            document.write(`${i} * ${j} = ${sum}`);
+            document.write(i + " * " +j+" = "+sum);
         }
     }
 }
@@ -441,9 +455,9 @@
         document.write("*** 04. 1부터 100까지 짝수는빨간색, 홀수는 파란색 출력 ***<br>");
         for( let i=1; i<=100; i++ ){
             if( i%2 === 0 ){
-                document.write(`<span style="color:red">${i}</span>&nbsp`);
+                document.write("<span style='color:red'>"+i+"</span>&nbsp");
             }else if(i%2 === 1 ){
-                document.write(`<span style="color:blue">${i}</span>&nbsp`);
+                document.write("<span style='color:blue'>"+i+"</span>&nbsp");
             }
         }
         document.write("<br><br>");
@@ -456,7 +470,6 @@
         let sum = 0;
         for( let i=1; i<=100; i++ ){
             sum += i;
-            document.write(sum,"&nbsp")
         }
         document.write(sum)
         document.write("<br><br>");
@@ -484,7 +497,7 @@
         for(var i=2; i<=9; i++){
             for(var j=1; j<=9; j++){
                 var sum = i * j;
-                document.write(`${i} * ${j} = ${sum}<br>`);
+                document.write(i + " * " +j+" = "+sum,"<br>");
             }
         }
         document.write("<br>")
@@ -533,10 +546,8 @@
     for( let i=1; i<=10; i++){
       table += "<tr>";
       for( let j=1; j<=10; j++){
-        if( num%2===0){
-          table += "<td>"+ num +"</td>";
-        }
-        num += 1;
+        table += "<td>"+ num +"</td>";
+        num += 2;
       }
     }
     table += "</table>";
