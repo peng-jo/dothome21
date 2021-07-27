@@ -176,19 +176,22 @@
         }
         .ol1::before {
             content: "데이터 저장하기 : ";
-      }
-      .ol2::before {
-          content: "데이터 불러오기 : ";
-      }
-      .ol3::before {
-          content: "데이터 실행하기 : ";
-      }
-      .ol4::before {
-          content: "데이터 제어하기 : ";
-      }
-      .ol5::before {
-          content: "데이터 연습하기 : ";
-      }
+        }
+        .ol2::before {
+            content: "데이터 불러오기 : ";
+        }
+        .ol3::before {
+            content: "데이터 실행하기 : ";
+        }
+        .ol4::before {
+            content: "데이터 제어하기 : ";
+        }
+        .ol5::before {
+            content: "데이터 연습하기 : ";
+        }
+        .ol6::before {
+            content: "데이터 메서드 : ";
+        }
     </style>
 </head>
 
@@ -216,32 +219,39 @@
   <ol class="ol5">
       <li><a href="javascript400.html">알고리즘 연습</a></li>
   </ol>
+  <ol class="ol6">
+    <li><a href="javascript601.html">배열 메서드</a></li>
+    <li><a href="javascript602.html">문자열 메서드</a></li>
+    <li><a href="javascript603.html">브라우저 메서드</a></li>
+    <li><a href="javascript604.html">날짜 메서드</a></li>
+    <li><a href="javascript605.html">이벤트 메서드</a></li>
+</ol>
     <h2 class="mt20">데이터 불러오기</h2>
     <ul>
-        <li><a href=#sample1>01. 변수 : 데이터 불러오기 : 기본</li></a>
-        <li><a href=#sample2>02. 상수 : 데이터 불러오기 : 기본</li></a>
-        <li><a href=#sample3>03. 배열 : 데이터 불러오기 : 기본</li></a>
-        <li><a href=#sample4>04. 배열 : 데이터 불러오기 : 2차 배열</li></a>
-        <li><a href=#sample5>05. 배열 : 데이터 갯수 구하기</li></a>
-        <li><a href=#sample6>06. 배열 : 데이터 불러오기 : for문</li></a>
-        <li><a href=#sample7>07. 배열 : 데이터 불러오기 : forEach()</li></a>
-        <li><a href=#sample8>08. 배열 : 데이터 불러오기 : for of 문</li></a>
-        <li><a href=#sample9>09. 배열 : 데이터 불러오기 : for in 문</li></a>
-        <li><a href=#sample10>10. 배열 : 데이터 불러오기 : map()</li></a>
-        <li><a href=#sample11>11. 배열 : 데이터 불러오기 : 펼침 연산자</li></a>
-        <li><a href=#sample12>12. 객체 : 데이터 불러오기 : 기본 </li></a>
-        <li><a href=#sample13>13. 객체 : 데이터 불러오기 : Object </li></a>
-        <li><a href=#sample14>14. 객체 : 데이터 불러오기 : 변수 </li></a>
-        <li><a href=#sample15>15. 객체 : 데이터 불러오기 : for in문 </li></a>
-        <li><a href=#sample16>16. 객체 : 데이터 불러오기 : map() </li></a>
-        <li><a href=#sample17>17. 객체 : 데이터 불러오기 : hasOwnProperty() </li></a>
-        <li><a href=#sample18>18. 객체 : 데이터 불러오기 : 펼침연산자 - 복사 </li></a>
-        <li><a href=#sample19>19. 객체 : 데이터 불러오기 : 펼침연산자 - 추가 </li></a>
-        <li><a href=#sample20>20. 객체 : 데이터 불러오기 : 펼침연산자 - 결합 </li></a>
-        <li><a href=#sample21>21. 객체 : 데이터 불러오기 : 비구조화 할당 </li></a>
-        <li><a href=#sample22>22. 객체 : 데이터 불러오기 : 비구조화 할당 : 별도 이름 저장 </li></a>
+        <li><a href=#sample1>01. 변수 : 데이터 불러오기 : 기본</a></li>
+        <li><a href=#sample2>02. 상수 : 데이터 불러오기 : 기본</a></li>
+        <li><a href=#sample3>03. 배열 : 데이터 불러오기 : 기본</a></li>
+        <li><a href=#sample4>04. 배열 : 데이터 불러오기 : 2차 배열</a></li>
+        <li><a href=#sample5>05. 배열 : 데이터 갯수 구하기</a></li>
+        <li><a href=#sample6>06. 배열 : 데이터 불러오기 : for문</a></li>
+        <li><a href=#sample7>07. 배열 : 데이터 불러오기 : forEach()</a></li>
+        <li><a href=#sample8>08. 배열 : 데이터 불러오기 : for of 문</a></li>
+        <li><a href=#sample9>09. 배열 : 데이터 불러오기 : for in 문</a></li>
+        <li><a href=#sample10>10. 배열 : 데이터 불러오기 : map()</a></li>
+        <li><a href=#sample11>11. 배열 : 데이터 불러오기 : 펼침 연산자</a></li>
+        <li><a href=#sample12>12. 객체 : 데이터 불러오기 : 기본 </a></li>
+        <li><a href=#sample13>13. 객체 : 데이터 불러오기 : Object </a></li>
+        <li><a href=#sample14>14. 객체 : 데이터 불러오기 : 변수 </a></li>
+        <li><a href=#sample15>15. 객체 : 데이터 불러오기 : for in문 </a></li>
+        <li><a href=#sample16>16. 객체 : 데이터 불러오기 : map() </a></li>
+        <li><a href=#sample17>17. 객체 : 데이터 불러오기 : hasOwnProperty() </a></li>
+        <li><a href=#sample18>18. 객체 : 데이터 불러오기 : 펼침연산자 - 복사 </a></li>
+        <li><a href=#sample19>19. 객체 : 데이터 불러오기 : 펼침연산자 - 추가 </a></li>
+        <li><a href=#sample20>20. 객체 : 데이터 불러오기 : 펼침연산자 - 결합 </a></li>
+        <li><a href=#sample21>21. 객체 : 데이터 불러오기 : 비구조화 할당 </a></li>
+        <li><a href=#sample22>22. 객체 : 데이터 불러오기 : 비구조화 할당 : 별도 이름 저장 </a></li>
 
-        <li><a href=#sample100>100. 배열 데이터 합출력하기</li></a>
+        <li><a href=#sample100>100. 배열 데이터 합출력하기</a></li>
     </ul>
     <!-- sample1 -->
     <div id="sample1" class="sample mt20">

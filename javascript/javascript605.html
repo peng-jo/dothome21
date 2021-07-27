@@ -204,154 +204,69 @@
     <li><a href="javascript100.html">객체(Object)</a></li>
   </ol>
   <ol class="ol2">
-    <li><a href="javascript500.html">변수</a></li>
-    <li><a href="javascript500.html">상수</a></li>
-    <li><a href="javascript500.html">배열(Array)</a></li>
-    <li><a href="javascript500.html">객체(Object)</a></li>
-</ol>
-<ol>
-  <li class="ol3"><a href="javascript300.html">함수(Function)</a></li>
-</ol>
-<ol class="ol4">
-  <li><a href="javascript200.html">조건문</a></li>
-  <li><a href="javascript200.html">반복문</a></li>
-</ol>
-<ol class="ol5">
-  <li><a href="javascript400.html">알고리즘 연습</a></li>
-</ol>
-<ol class="ol6">
+        <li><a href="javascript500.html">변수</a></li>
+        <li><a href="javascript500.html">상수</a></li>
+        <li><a href="javascript500.html">배열(Array)</a></li>
+        <li><a href="javascript500.html">객체(Object)</a></li>
+  </ol>
+  <ol>
+      <li class="ol3"><a href="javascript300.html">함수(Function)</a></li>
+  </ol>
+  <ol class="ol4">
+      <li><a href="javascript200.html">조건문</a></li>
+      <li><a href="javascript200.html">반복문</a></li>
+  </ol>
+  <ol class="ol5">
+      <li><a href="javascript400.html">알고리즘 연습</a></li>
+  </ol>
+  <ol class="ol6">
     <li><a href="javascript601.html">배열 메서드</a></li>
     <li><a href="javascript602.html">문자열 메서드</a></li>
     <li><a href="javascript603.html">브라우저 메서드</a></li>
     <li><a href="javascript604.html">날짜 메서드</a></li>
     <li><a href="javascript605.html">이벤트 메서드</a></li>
 </ol>
-    <h2 class="mt20">데이터 실행 : 함수</h2>
+    <h2 class="mt20"></h2>
     <ul>
-        <li><a href=#sample1>01. 선언적 함수</a></li>
-        <li><a href=#sample2>02. 익명 함수</a></li>
-        <li><a href=#sample3>03. 매개변수 함수</a></li>
-        <li><a href=#sample4>04. 리턴값 함수</a></li>
-        <li><a href=#sample5>05. 재귀 함수</a></li>
-        <li><a href=#sample6>06. 콜백 함수</a></li>
-        <li><a href=#sample7>07. 내부 함수</a></li>
-        <li><a href=#sample8>08. 객체 생성자 함수</a></li>
-        <li><a href=#sample9>09. 프로토타입 함수</a></li>
-        <li><a href=#sample10>10. 화살표 함수</a></li>
-        <li><a href=#sample11>11. 아규먼트 함수</a></li>
-        <li><a href=#sample12>12. 즉시실행 함수</a></li>
-        <li><a href=#sample13>13. 파라미터 함수</a></li>
+        <li><a href=#sample1>01. 문자열 메서드 : 문자열 합치기</a></li>
+        <li><a href=#sample1>01. 문자열 메서드 : 문자열 합치기</a></li>
     </ul>
     <!-- sample1 -->
     <div id="sample1" class="sample mt20">
-        <h2>01. 선언적 함수 <span class="dot"></span></h2>
+        <h2>01. 변수 데이터 불러오기<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    function func(){
-        //실행문
-        document.write("*** 01. 선언적 함수");
-        document.write("함수가 실행되었습니다.");
-    }
-    func();
+    let x = 100, y = 200, z = "javascript";
+
+    document.write(" *** 01. 변수 : 데이터 불러오기 ***");
+    document.write(x);
+    document.write(y);
+    document.write(z);
 }
 </code></pre>
         </div>
     </div>
     <hr>
-<!-- sample2 -->
-<div id="sample2" class="sample mt20">
-    <h2>02. 익명 함수 <span class="dot"></span></h2>
-    <div class="code">
-<pre class="line-numbers"><code class="language-js">{
-    const func = function(){
-        document.write("*** 02. 익명 함수");
-        document.write("함수가 실행되었습니다.");
-    }
-    func()
-}
-</code></pre>
-    </div>
-</div>
-<hr>
- 
-<!-- sample3 -->
-<div id="sample3" class="sample mt20">
-    <h2>03. 익명 함수 <span class="dot"></span></h2>
-    <div class="code">
-<pre class="line-numbers"><code class="language-js">{
-    function func(str){
-        document.write("*** 03. 매개변수 함수");
-        document.write(str);
-    }
-    func("함수가 실행되었습니다.");
-}
-</code></pre>
-    </div>
-</div>
-<hr>
 
-<!-- sample4 -->
-<div id="sample4" class="sample mt20">
-    <h2>04. 리턴값 함수 <span class="dot"></span></h2>
-    <div class="code">
-<pre class="line-numbers"><code class="language-js">{
-    function func(){
-        const str = "함수가 실행되었습니다.";
-        return str;
-    }       
-    document.write("*** 04. 리턴값 함수");
-    document.write(func());
-}
-</code></pre>
-    </div>
-</div>
-<hr>
+
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
 <script>
 //sample1
-//01. 선언적 함수
-    {
-        function func(){
-            //실행문
-            document.write("*** 01. 선언적 함수<br>");
-            document.write("01. 함수가 실행되었습니다.<br><br>");
+//01. 데이터 불러오기 : 변수
+{
+  let x = 100, y = 200, z = "javascript";
 
-        }
-        func();
-    }
+  document.write(" *** 01. 변수 : 데이터 불러오기 ***<br>");
+  document.write(x, "<br>");
+  document.write(y, "<br>");
+  document.write(z, "<br>");
+  document.write("<br><br>");
+}
 
-//sample2
-//02. 익명 함수
-    {
-        const func = function(){
-            document.write("*** 02. 익명 함수<br>");
-            document.write("함수가 실행되었습니다.<br><br>");
-        }
-        func()
-    }
-
-//sample3
-//03. 매개변수 함수
-    {
-        function func(str){
-            document.write("*** 03. 매개변수 함수<br>");
-            document.write(str);
-        }
-        func("함수가 실행되었습니다.<br><br>");
-    }
-
-//sample4
-//04. 리턴값(결과값) 함수
-    {
-        function func(){
-            const str = "함수가 실행되었습니다.<br><br>";
-            return str;
-        }       
-       
-        document.write("*** 04. 리턴값 함수<br>");
-        document.write(func())
-    }
 </script>
 </body>
 </html>
