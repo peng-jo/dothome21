@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>레이아웃 연습9</title>
+  <style>
+    * {
+      padding : 0;
+      margin : 0;
+    }
+    #wrap {
+      width:100%;
+    }
+    header {
+      background-color: #c8e6c9;
+      height: 150px;
+    }
+    aside {
+      background-color: #a5d6a7;
+      height: 700px;
+      width: 15%;
+      float:left;
+    }
+    main {
+      width: 100%;
+      overflow: hidden;
+    }
+    article {
+      background-color: #66bb6a;
+      height: 700px;
+      width: 15%;
+      float: left;
+    }
+    section {
+      background-color: #81c784;
+      height: 700px;
+      width: 70%;
+      float: left;
+    }
+    footer {
+      background-color: #388e3c;
+      height: 150px;
+      clear: both;
+    }
+
+    @media ( max-width:1220px ) {
+      aside {
+        width: 30%;
+      }
+      article {
+        width: 100%;
+      }
+    }
+
+    @media ( max-width:800px) {
+      article {
+        width: 100%;
+      }
+      aside {
+        height: 700px;
+        width: 100%;
+      }
+      article {
+        height: 700px;
+      }
+      section {
+        height: 700px;
+        width: 100%;
+      }
+    }
+
+    @media ( max-width: 500px ) {
+      footer {
+        height: 200px;
+      }
+      section {
+        height: 200px;
+      }
+      article {
+        height: 200px;
+      }
+      aside {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <header></header>
+    <main>
+      <aside></aside>
+      <section></section>
+      <article></article>
+    </main>
+    <footer></footer>
+  </div>
+</body>
+</html>

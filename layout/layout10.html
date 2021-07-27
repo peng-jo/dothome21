@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>레이아웃연습10</title>
+  <style>
+    * {
+      margin: 0; padding:0;
+    }
+    #wrap {
+      margin: 0 auto;
+      width: 1200px;
+    }
+    main {
+      width: 100%;
+    }
+    header {
+      height: 150px;
+      width: 100%;
+      background-color: #e3f2fd;
+    }
+    aside {
+      width: 30%;
+      background-color: #bbdefb;
+      height: 1200px;
+      float: left;
+    }
+    .section-inner1 {
+      background-color: #90caf9;
+      height: 400px;
+      width: 70%;
+      float: left;
+    }
+    .section-inner2 {
+      background-color: #64b5f6 ;
+      height: 400px;
+      width: 70%;
+      float: left;
+    }
+    .section-inner3 {
+      background-color: #42a5f5 ;
+      height: 400px;
+      width: 70%;
+      float: left;
+    }
+    footer {
+      width: 100%;
+      height: 150px;
+      float: left;
+      background-color: #2196f3 ;
+    }
+    @media (max-width:1220px) {
+      #wrap {
+        width: 100%;
+      }
+      .section-inner3 {
+        width: 100%;
+      }
+      .section-inner1 {
+        height: 600px;
+      }
+      .section-inner2 {
+        height: 600px;
+      }
+    }
+    @media (max-width:800px) {
+      aside {
+        width: 100%;
+        height: 300px;
+      }
+      .section-inner1 {
+        height: 300px;
+        width: 50%;
+      }
+      .section-inner2 {
+        height: 300px;
+        width: 50%;
+      }
+    }
+
+    @media (max-width:500px) {
+      header {
+        height: 300px;
+      }
+      aside {
+        height: 400px;
+      }
+      .section-inner1 {
+        height: 300px;
+        width: 100%;
+      }
+      .section-inner2 {
+        height: 300px;
+        width: 100%;
+      }
+      .section-inner3 {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <header></header>
+    <main>
+      <aside></aside>
+        <article class="section-inner1"></article>
+        <article class="section-inner2"></article>
+        <article class="section-inner3"></article>
+      <footer></footer>
+    </main>
+  </div>
+</body>
+</html>
