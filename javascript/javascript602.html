@@ -641,7 +641,50 @@
 </div>
 <hr>
 
+<div id="sample6" class="sample mt20">
+  <h2>06. 문자열 메서드 : charAt() : 지정한 인덱스의 문자를 추출 : 반환(문자) <span class="dot"></span></h2>
+  <div class="view">
+      <table>
+        <colgroup>
+          <col style="width: 4%"/>
+          <col style="width: 32%"/>
+          <col style="width: 32%"/>
+          <col style="width: 32%"/>
+        </colgroup>
+        <thread>
+          <tbody>
+            <tr>
+              <th>번호</th>
+              <th>기본 값</th>
+              <th>메서드</th>
+              <th>결과값</th>
+            </tr>
+          </tbody>
+        </thread>
+        <tbody>
+          <tr>
+            <td class="sample06_N1"></td>
+            <td class="sample06_Q1"></td>
+            <td class="sample06_M1"></td>
+            <td class="sample06_R1 result"></td>
+          </tr>
+          <tr>
+            <td class="sample06_N2"></td>
+            <td class="sample06_Q2"></td>
+            <td class="sample06_M2"></td>
+            <td class="sample06_R2 result"></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+<div class="code">
+<pre class="line-numbers"><code class="language-js">{
 
+}
+</code></pre>
+</div>
+</div>
+<hr>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
@@ -650,7 +693,7 @@
 {
   const str1 = "자바스크립트";
   const str2 = "제이쿼리";
-  
+
   document.querySelector(".sample01_N1").innerHTML = "1";
   document.querySelector(".sample01_Q1").innerHTML = "자바스크립트, 제이쿼리";
   document.querySelector(".sample01_M1").innerHTML = "string 결합";
@@ -658,7 +701,7 @@
 
   const num1 = 100;
   const num2 = 200;
-  
+
   document.querySelector(".sample01_N2").innerHTML = "2";
   document.querySelector(".sample01_Q2").innerHTML = "100, 200";
   document.querySelector(".sample01_M2").innerHTML = "number 결합";
@@ -684,53 +727,53 @@
 }
 //sample2
 {
-    const str1 = "자바스크립트";
-    const currentStr1 = str1.length;
+  const str1 = "자바스크립트";
+  const currentStr1 = str1.length;
 
-    document.querySelector(".sample02_N1").innerHTML = "1";
-    document.querySelector(".sample02_Q1").innerHTML = str1;
-    document.querySelector(".sample02_M1").innerHTML = "length";
-    document.querySelector(".sample02_R1").innerHTML = currentStr1;
+  document.querySelector(".sample02_N1").innerHTML = "1";
+  document.querySelector(".sample02_Q1").innerHTML = str1;
+  document.querySelector(".sample02_M1").innerHTML = "length";
+  document.querySelector(".sample02_R1").innerHTML = currentStr1;
 
-    const str2 = "javascript";
-    const currentStr2 = str2.length;
+  const str2 = "javascript";
+  const currentStr2 = str2.length;
 
-    document.querySelector(".sample02_N2").innerHTML = "2";
-    document.querySelector(".sample02_Q2").innerHTML = str2;
-    document.querySelector(".sample02_M2").innerHTML = "length";
-    document.querySelector(".sample02_R2").innerHTML = currentStr2;
+  document.querySelector(".sample02_N2").innerHTML = "2";
+  document.querySelector(".sample02_Q2").innerHTML = str2;
+  document.querySelector(".sample02_M2").innerHTML = "length";
+  document.querySelector(".sample02_R2").innerHTML = currentStr2;
 }
 
 //sample3
 //03. 문자열 메서드 : toUpperCase() : 문자열 대문자 변경하기 : 반환(문자열)
 {
-    const str1 = "javascript";
-    const currentStr1 = str1.toUpperCase();
+  const str1 = "javascript";
+  const currentStr1 = str1.toUpperCase();
 
-    document.querySelector(".sample03_N1").innerHTML = "1";
-    document.querySelector(".sample03_Q1").innerHTML = str1;
-    document.querySelector(".sample03_M1").innerHTML = "toUpperCase()";
-    document.querySelector(".sample03_R1").innerHTML = currentStr1;
+  document.querySelector(".sample03_N1").innerHTML = "1";
+  document.querySelector(".sample03_Q1").innerHTML = str1;
+  document.querySelector(".sample03_M1").innerHTML = "toUpperCase()";
+  document.querySelector(".sample03_R1").innerHTML = currentStr1;
 
-    const str2 = "JAVASCRIPT";
-    const currentStr2 = str2.toLowerCase();
+  const str2 = "JAVASCRIPT";
+  const currentStr2 = str2.toLowerCase();
 
-    document.querySelector(".sample03_N2").innerHTML = "2";
-    document.querySelector(".sample03_Q2").innerHTML = str2;
-    document.querySelector(".sample03_M2").innerHTML = "toUpperCase()";
-    document.querySelector(".sample03_R2").innerHTML = currentStr2;
+  document.querySelector(".sample03_N2").innerHTML = "2";
+  document.querySelector(".sample03_Q2").innerHTML = str2;
+  document.querySelector(".sample03_M2").innerHTML = "toUpperCase()";
+  document.querySelector(".sample03_R2").innerHTML = currentStr2;
 }
 
 //sample4
 //04. 문자열 메서드 : trim() : 문자열 공백 제거하기 : 반환(문자열)
 {
-    const str1 = "     'javascript'        ";
-    const currentStr1 = str1.trim();
+  const str1 = "     'javascript'        ";
+  const currentStr1 = str1.trim();
 
-    document.querySelector(".sample04_N1").innerHTML = "1";
-    document.querySelector(".sample04_Q1").innerHTML = "'&nbsp;&nbsp;&nbsp;&nbsp; javascript &nbsp;&nbsp;&nbsp;&nbsp;'";
-    document.querySelector(".sample04_M1").innerHTML = "trim()";
-    document.querySelector(".sample04_R1").innerHTML = currentStr1;
+  document.querySelector(".sample04_N1").innerHTML = "1";
+  document.querySelector(".sample04_Q1").innerHTML = "'&nbsp;&nbsp;&nbsp;&nbsp; javascript &nbsp;&nbsp;&nbsp;&nbsp;'";
+  document.querySelector(".sample04_M1").innerHTML = "trim()";
+  document.querySelector(".sample04_R1").innerHTML = currentStr1;
 }
 
 //sample5
@@ -818,6 +861,26 @@
     document.querySelector(".sample05_Q11").innerHTML = str;
     document.querySelector(".sample05_M11").innerHTML = "endsWith('javascript')";
     document.querySelector(".sample05_R11").innerHTML = text11;
+}
+
+//sample6
+//06. 문자열 메서드 : charAt() : 지정한 인덱스의 문자를 추출 : 반환(문자)
+{
+  const str = "자바스크립트(javascript) 공부";
+  const text = str.charAt(4);
+
+  document.querySelector(".sample06_N1").innerHTML = "1";
+  document.querySelector(".sample06_Q1").innerHTML = str;
+  document.querySelector(".sample06_M1").innerHTML = ".charAt(4)";
+  document.querySelector(".sample06_R1").innerHTML = text;
+
+  const str2 = "자바스크립트(javascript) 공부";
+  const text2 = str2.charAt();
+
+  document.querySelector(".sample06_N2").innerHTML = "2";
+  document.querySelector(".sample06_Q2").innerHTML = str2;
+  document.querySelector(".sample06_M2").innerHTML = ".charAt()";
+  document.querySelector(".sample06_R2").innerHTML = text2;
 }
 </script>
 </body>
