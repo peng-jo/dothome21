@@ -1,0 +1,315 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 태그 검색하기</title>
+    <style>
+        @font-face {
+            font-family: 'GyeonggiBatang';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'TmonMonsori';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        body {
+            background-image: url(img/search_bg.jpg);
+            background-size: cover;
+            background-position: center bottom;
+            background-attachment: fixed;
+        }
+
+        .girl {
+            width: 250px;
+            position: fixed;
+            bottom: -60px;
+            right: 5%;
+        }
+
+        .dog {
+            width: 150px;
+            position: fixed;
+            bottom: -40px;
+            left: 5%;
+        }
+
+        .board {
+            margin: 5vw 10vw 10vw 10vw;
+            padding: 3%;
+            width: 80vw;
+            background-color: #F1F3F6;
+            border: 2px solid #000;
+            padding: 3%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .board h1 {
+            font-family: 'TmonMonsori';
+            color: #223547;
+            font-size: 60px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .board span {
+            font-family: 'GyeonggiBatang';
+            color: #223547;
+            font-size: 12px;
+        }
+
+        .board .search label {
+            font-family: 'GyeonggiBatang';
+            background-color: #BFE6FE;
+            font-size: 26px;
+            padding: 10px 30px;
+            border: 1px solid #000;
+            border-radius: 40px;
+            display: none;
+        }
+
+        .board .search input {
+            font-family: 'GyeonggiBatang';
+            font-size: 24px;
+            border: 1px solid #000;
+            padding: 10px 10px 10px 30px;
+            border-radius: 40px;
+            outline: none;
+        }
+
+        .board .list {
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        .board .list ul li {
+            font-family: 'GyeonggiBatang';
+            line-height: 1.6;
+            list-style: none;
+            background-color: #BDD6E6;
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .board .list ul li.hide {
+            display: none;
+        }
+
+        @media (max-width: 800px) {
+            .board {
+                width: 92vw;
+                padding: 6% 3% 3% 3%;
+                margin: 4vw;
+                
+            }
+
+            .board h1 {
+                font-size: 30px;
+                margin-top: 5px;
+            }
+
+            .board span {
+                font-size: 12px;
+            }
+
+            .borad .search input {
+              width: 100%;
+              box-sizing: border-box;
+              font-size: 16px;
+              padding: 10px 10px 10px 20px;
+            }
+
+            .board .list {
+              margin-top: 20px;
+            }
+
+            .girl {
+              width: 200px;
+            }
+            .dog {
+              width: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="board">
+            <span>태그중에 첫 글자만 넣어주세요!!</span>
+            <h1>HTML 태그 검색하기</h1>
+            <div class="search">
+                <input id="search-box" type="text">
+            </div>
+            <div class="list">
+                <ul>
+                  <li data-name="wbr" data-topic="">wbr</li>
+                  <li data-name="video" data-topic="비디오">video</li>
+                  <li data-name="var" data-topic="바">var</li>
+                  <li data-name="ul" data-topic="우">ul</li>
+                  <li data-name="u" data-topic="우">u</li>
+                  <li data-name="tt" data-topic="티">tt</li>
+                  <li data-name="track" data-topic="트랙">track</li>
+                  <li data-name="tr" data-topic="티알">tr</li>
+                  <li data-name="title" data-topic="타이틀">title</li>
+                  <li data-name="time" data-topic="타임">time</li>
+                  <li data-name="thead" data-topic="티헤드">thead</li>
+                  <li data-name="th" data-topic="티">th</li>
+                  <li data-name="tfoot" data-topic="티풋">tfoot</li>
+                  <li data-name="textarea" data-topic="텍스트에어리어">textarea</li>
+                  <li data-name="template" data-topic="템플레이트">template</li>
+                  <li data-name="td" data-topic="티디">td</li>
+                  <li data-name="tbody" data-topic="티">tbody</li>
+                  <li data-name="table" data-topic="티">table</li>
+                  <li data-name="svg" data-topic="스">svg</li>
+                  <li data-name="sup" data-topic="섭">sup</li>
+                  <li data-name="summary" data-topic="서">summary</li>
+                  <li data-name="sub" data-topic="서브">sub</li>
+                  <li data-name="style" data-topic="스타일">style</li>
+                  <li data-name="strong" data-topic="스트롱">strong</li>
+                  <li data-name="strike" data-topic="스트라이크">strike</li>
+                  <li data-name="span" data-topic="스팬">span</li>
+                  <li data-name="source" data-topic="소">source</li>
+                  <li data-name="small" data-topic="스">small</li>
+                  <li data-name="select" data-topic="셀렉트">select</li>
+                  <li data-name="section" data-topic="섹션">section</li>
+                  <li data-name="script" data-topic="스크립트">script</li>
+                  <li data-name="samp" data-topic="삼">samp</li>
+                  <li data-name="sampruby" data-topic="삼">sampruby</li>
+                  <li data-name="rtc" data-topic="알티시">rtc</li>
+                  <li data-name="rt" data-topic="알티">rt</li>
+                  <li data-name="rp" data-topic="알피">rp</li>
+                  <li data-name="q" data-topic="큐">q</li>
+                  <li data-name="progress" data-topic="문서">progress</li>
+                  <li data-name="pre" data-topic="문서">pre</li>
+                  <li data-name="picture" data-topic="문서">picture</li>
+                  <li data-name="param" data-topic="문서">param</li>
+                  <li data-name="output" data-topic="문서">output</li>
+                  <li data-name="option" data-topic="문서">option</li>
+                  <li data-name="optgroup" data-topic="문서">optgroup</li>
+                  <li data-name="ol" data-topic="문서">ol</li>
+                  <li data-name="object" data-topic="문서">object</li>
+                  <li data-name="noscript" data-topic="문서">noscript</li>
+                  <li data-name="noframes" data-topic="문서">noframes</li>
+                  <li data-name="nav" data-topic="문서">nav</li>
+                  <li data-name="meter" data-topic="문서">meter</li>
+                  <li data-name="meta" data-topic="문서">meta</li>
+                  <li data-name="menuitem" data-topic="문서">menuitem</li>
+                  <li data-name="menu" data-topic="문서">menu</li>
+                  <li data-name="marquee" data-topic="문서">marquee</li>
+                  <li data-name="mark" data-topic="문서">mark</li>
+                  <li data-name="map" data-topic="문서">map</li>
+                  <li data-name="main" data-topic="문서">main</li>
+                  <li data-name="link" data-topic="문서">link</li>
+                  <li data-name="li" data-topic="문서">li</li>
+                  <li data-name="legend" data-topic="문서">legend</li>
+                  <li data-name="label" data-topic="문서">label</li>
+                  <li data-name="keygen" data-topic="문서">keygen</li>
+                  <li data-name="kbd" data-topic="문서">kbd</li>
+                  <li data-name="ins" data-topic="문서">ins</li>
+                  <li data-name="input" data-topic="문서">input</li>
+                  <li data-name="img" data-topic="문서">img</li>
+                  <li data-name="iframe" data-topic="문서">iframe</li>
+                  <li data-name="i" data-topic="문서">i</li>
+                  <li data-name="html" data-topic="문서">html</li>
+                  <li data-name="hr" data-topic="에이치알">hr</li>
+                  <li data-name="hgroup" data-topic="헤">hgroup</li>
+                  <li data-name="header" data-topic="헤더">header</li>
+                  <li data-name="head" data-topic="헤드">head</li>
+                  <li data-name="<h1>~<h6>" data-topic="헤"><h1>~<h6></li>
+                  <li data-name="freamset" data-topic="프레임셋">freamset</li>
+                  <li data-name="frame" data-topic="프레임">frame</li>
+                  <li data-name="form" data-topic="폼">form</li>
+                  <li data-name="footer" data-topic="푸터">footer</li>
+                  <li data-name="font" data-topic="폰트">font</li>
+                  <li data-name="figure" data-topic="피규어">figure</li>
+                  <li data-name="figcaption" data-topic="피그캡션">figcaption</li>
+                  <li data-name="fieldset" data-topic="필드셋">fieldset</li>
+                  <li data-name="embed" data-topic="엠브디">embed</li>
+                  <li data-name="em" data-topic="이엠">em</li>
+                  <li data-name="dt" data-topic="디">dt</li>
+                  <li data-name="dl" data-topic="디">dl</li>
+                  <li data-name="div" data-topic="디">div</li>
+                  <li data-name="dir" data-topic="디">dir</li>
+                  <li data-name="dialog" data-topic="다이얼로그">dialog</li>
+                  <li data-name="dfn" data-topic="디">dfn</li>
+                  <li data-name="details" data-topic="디테일">details</li>
+                  <li data-name="del" data-topic="디">del</li>
+                  <li data-name="dd" data-topic="디">dd</li>
+                  <li data-name="datalist" data-topic="데이터리스트">datalist</li>
+                  <li data-name="data" data-topic="데이터">data</li>
+                  <li data-name="colgroup" data-topic="콜그룹">colgroup</li>
+                  <li data-name="col" data-topic="콜">col</li>
+                  <li data-name="code" data-topic="코드,">code</li>
+                  <li data-name="cite" data-topic="시티">cite</li>
+                  <li data-name="center" data-topic="센터">center</li>
+                  <li data-name="caption" data-topic="캡션">caption</li>
+                  <li data-name="canvas" data-topic="캔버스">canvas</li>
+                  <li data-name="button" data-topic="버튼">button</li>
+                  <li data-name="br" data-topic="비알">br</li>
+                  <li data-name="body" data-topic="바디">body</li>
+                  <li data-name="blink" data-topic="블링크">blink</li>
+                  <li data-name="blockquote" data-topic="쌍점">blockquote</li>
+                  <li data-name="big" data-topic="빅">big</li>
+                  <li data-name="bdo" data-topic="비디오">bdo</li>
+                  <li data-name="bdi" data-topic="비디아이">bdi</li>
+                  <li data-name="basefont" data-topic=" ">basefont</li>
+                  <li data-name="base" data-topic="비">base</li>
+                  <li data-name="b" data-topic="비">b</li>
+                  <li data-name="audio" data-topic=" ">audio</li>
+                  <li data-name="aside" data-topic="에이">aside</li>
+                  <li data-name="article" data-topic="에이">article</li>
+                  <li data-name="area" data-topic="에이">area</li>
+                  <li data-name="applet" data-topic="에이">applet</li>
+                  <li data-name="address" data-topic="에이">address</li>
+                  <li data-name="acronym" data-topic="에이">acronym</li>
+                  <li data-name="abbr" data-topic="에이">abbr</li>
+                  <li data-name="a" data-topic="에이">a</li>
+                </ul>
+            </div>
+        </div>
+        <div class="girl">
+            <img src="img/search_girl.png" alt="">
+        </div>
+        <div class="dog">
+            <img src="img/search_dog.png" alt="">
+        </div>
+    </div>
+    <script>
+        const searchBox = document.querySelector("#search-box");
+        const htmlList = document.querySelectorAll(".list > ul > li");
+        searchBox.addEventListener('keyup', () => {
+            const searchWord = searchBox.value; //사용자가 입력한 정보
+            htmlList.forEach((el, index) => {
+                const htmlName = el.dataset.name;
+                const htmlTopic = el.dataset.topic;
+                if( searchWord.charAt(0) === htmlName.charAt(0) || searchWord.charAt(0) === htmlTopic.charAt(0) ){
+                    el.classList.remove("hide")
+                }else{
+                    el.classList.add("hide");
+                }
+                
+            });
+        });
+    </script>
+</body>
+
+</html>
