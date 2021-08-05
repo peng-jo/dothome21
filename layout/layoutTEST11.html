@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>레이아웃테스트11</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      height: 150px;
+      background-color: #EFEBE8;
+    }
+    nav {
+      height: 150px;
+      background-color: #BDAAA4;
+    }
+    main {
+
+    }
+    section {
+      background-color: #8C6E63;
+      height: 1500px;
+    }
+    .container {
+      height: inherit;
+      width: 1200px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    .section-inner1 {
+      width: 30%;
+      height: 1200px;
+      float: left;
+      background-color: #795547;
+    }
+    .section-inner2 {
+      width: 70%;
+      height: 1200px;
+      float: left;
+      background-color: #6D4D42;
+    }
+    .section-inner3 {
+      width: 100%;
+      height: 300px;
+      background-color: #5D4038;
+      float:left;
+    }
+    footer {
+      height: 150px;
+      float:left;
+      width: 100%;
+      background-color: #3E2622;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <div class="container">
+      </div>
+    </header>
+    <nav>
+      <div class="container">
+      </div>
+    </nav>
+    <main>
+      <section>
+        <div class="container">
+          <article class="section-inner1"></article>
+          <article class="section-inner2"></article>
+          <article class="section-inner3"></article>
+        </div>
+      </section>
+      <footer>
+        <div class="container"></div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
