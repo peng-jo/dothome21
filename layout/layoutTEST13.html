@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding : 0;
+            margin : 0;
+        }
+        #wrap {
+            background-color: #E8F5E9;
+        }
+        main {
+            margin: 0 auto;
+            width: 1200px;
+        }
+        header {
+            height: 150px;
+            background-color: #C8E6C9;
+        }
+        nav {
+            background-color: #A5D6A7;
+            height: 150px;
+        }
+        article {
+            overflow: hidden;
+        }
+        .inner-section1 {
+            background-color: #81C784;
+            height: 1200px;
+            width: 20%;
+            float: left;
+        }
+        .inner-section2 {
+            background-color: #66BB6A;
+            height: 1200px;
+            width: 60%;
+            float: left;
+        }
+        .inner-section3 {
+            background-color: #4CAF50;
+            height: 1200px;
+            width: 20%;
+            float: left;
+        }
+        footer {
+            background-color: #43A047;
+            height: 150px;
+        }
+        
+        @media ( max-width:1220px ) {
+            main {
+                width: 100%;
+            }
+            .inner-section1 {
+                width: 20%;
+                height: 900px;
+            }
+            .inner-section2 {
+                width: 80%;
+                height: 900px;
+            }
+            .inner-section3 {
+                width: 100%;
+                height: 300px;
+            }
+        }
+        @media ( max-width:800px ) {
+            .inner-section1 {
+                width: 100%;
+                height: 150px;
+            }
+            .inner-section2 {
+                width: 100%;
+                height: 350px;
+            }
+            .inner-section3 {
+                height: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <main>
+        <header></header>
+        <nav></nav>
+        <article>
+            <section class="inner-section1">
+            </section>
+            <section class="inner-section2">
+            </section>
+            <section class="inner-section3">
+            </section>  
+        </article>
+    <footer></footer>
+    </main>
+</div>
+</body>
+</html>
