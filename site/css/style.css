@@ -1,0 +1,40 @@
+/* Navigation */
+/* 네이게이션 유형 1 
+   가운데 영역
+*/
+
+#header {
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #eee;
+}
+
+/*
+    네비게이션 유형1
+    1. 가운데 영역
+    2. 레이아웃 float (구익스 호환성)
+    3. 
+*/
+
+
+.header {
+    overflow: hidden;
+}
+
+.header h1 {
+    float: left;
+    padding : 30px 0;
+}
+
+.header .menu {
+    float: right;
+}
+
+.header .menu li {
+    display: inline;
+}
+
+.header .menu li a {
+    padding: 40px 16px;
+    display: inline-block;
+}
