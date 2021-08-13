@@ -8,268 +8,268 @@
     <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font.css">
     <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism-okaidia.min.css">
-    <style>
-      @font-face {
-          font-family: 'NEXON Lv1 Gothic OTF';
-          src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
-          font-weight: normal;
-          font-style: normal;
-      }
-      @font-face {
-          font-family: 'TmonMonsori';
-          src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
-          font-weight: normal;
-          font-style: normal;
-      }
-      * {
-          margin: 0;
-          padding: 0;
-          font-family: 'NEXON Lv1 Gothic OTF';
-          line-height: 1.6;
-      }
-      body {
-          padding: 5%;
-          margin-bottom: 400px;
-      }
-      h1 {
-          padding-top: 40px;
-          padding: 20px;
-      }
-      h1 a {
-          font-family: 'TmonMonsori';
-      }
-      hr {
-          margin: 5% 0;
-          border-style: dashed;
-          border-color: #E6E6E6;
-          border-width: 0px;
-          border-bottom-width: 1px;
-      }
-      img {
-          vertical-align: top;
-          border-radius: 5px;
-          margin: 5px;
-      }
-      ul {
-          list-style: none;
-      }
-      a {
-          text-decoration: none;
-          color: #333;
-      }
-      .sample {
-          border: 1px solid #E6E6E6;
-          border-radius: 5px;
-      }
-      .sample h2 {
-          position: relative;
-          font-size: 16px;
-          background-color: #F2F2F2;
-          padding: 15px;
-          border-bottom: 1px solid #E6E6E6;
-          border-radius: 5px 5px 0 0;
-      }
-      .sample h2 .dot {
-          width: 10px;
-          height: 10px;
-          background: #989898;
-          display: block;
-          border-radius: 50%;
-          position: absolute;
-          right: 30px;
-          top: 20px;
-      }
-      .sample h2 .dot::before {
-          content: '';
-          width: 10px;
-          height: 10px;
-          background: #989898;
-          border-radius: 50%;
-          position: absolute;
-          left: -15px;
-          top: 0;
-      }
-      .sample h2 .dot::after {
-          content: '';
-          width: 10px;
-          height: 10px;
-          background: #989898;
-          position: absolute;
-          border-radius: 50%;
-          right: -15px;
-          top: 0;
-      }
-      .sample .ex {
-          padding: 20px;
-      }
-      .sample .ex .text {
-          margin: 10px 0;
-      }
-      .sample .re {
-          padding: 20px;
-          border-top: 1px solid #E6E6E6;
-      }
-      .sample .re a {
-          color: #333;
-          text-decoration: none;
-          border: 1px solid #333;
-          border-radius: 30px;
-          padding: 10px 30px;
-          margin: 5px;
-          display: inline-block;
-      }
-      .sample .re a:hover {
-          background-color: #000;
-          color: #fff;
-      }
-      .sample .problem {
-          padding: 25px;
-          border-bottom: 1px solid #E6E6E6;
-          line-height: 1.6;
-      }
-      .sample pre {
-          margin: 0 !important;
-          border-radius: 0;
-          ;
-      }
-      .sample .desc {
-          padding: 25px;
-          border-bottom: 1px solid #E6E6E6;
-      }
-      .sample .desc dt {
-          padding: 3px 0;
-          margin-bottom: 6px;
-      }
-      .sample .desc dd {
-          padding: 3px 0 16px 0;
-          line-height: 1.6;
-      }
-      .sample .sam {
-          padding: 25px;
-          border-bottom: 1px solid #E6E6E6;
-      }
-      .sample .sam dt {
-          padding: 3px 0;
-          margin-bottom: 6px;
-      }
-      .sample .sam dd {
-          padding: 3px 0 16px 0;
-      }
-      .mt20 {
-          margin-top: 20px;
-      }
-      .page {
-          position: absolute;
-          right: 20px;
-          top: 15px;
-      }
-      .page li {
-          display: inline;
-          list-style: none;
-      }
-      .page li a {
-          text-decoration: none;
-          color: #222;
-      }
-      .page li a:hover {
-          color: #199B5C;
-      }
-      .menu li{
-          display: inline;
-      }
-      .menu li a{
-          font-family: 'NEXON Lv1 Gothic OTF';
-          color: #000;
-          border: 1px dashed #000;
-          padding: 10px 30px;
-          display: inline-block;
-          border-radius: 50px;
-          font-size: 16px;
-          margin: 4px 1px;
-          transition: all 0.4s;
-      }
-      .menu li a:hover {
-          box-shadow: inset 0 -100px 0 #000;
-          color: #fff;
-          border-style: solid;
-      }
-      .view {
-          padding: 20px;
-      }
-      .view table {
-          /* border-width: 1px;
-          border-style: solid;
-          border-color: #E6E6E6; */
-          border: 1px solid #E6E6E6; /* 속기형 작성법 */
-          width: 100%;
-          text-align: center;
-          vertical-align: middle;
-          border-collapse: collapse;
-      }
-      .view table th {
-          /* 
-          padding-top: 13px;
-          padding-right: 5px;
-          padding-bottom: 11px;
-          padding-left: 5px;
-          padding: 13px 5px 11px ; 위:13px / 왼,오:5px / 아:11px
-          padding: 13px 5px; 위,아:13px / 왼,오:5px
-          padding: 13px; 위,왼,오,아:13px 
-          */
-          padding: 13px 5px 11px 5px; /* 속기형 작성법 */
-      }
-      .view table td {
-          border: 1px solid #E6E6E6;
-          padding: 13px 5px 11px 5px;
-      }
-      .view table td.result {
-          color: #fff;
-          transition: all 0.3s;
-          cursor: zoom-in;
-      }
-      .view table td.result:hover {
-          color: #000;
-          background-color: #F5F5F5;
-      }
-      .sam {
-          background-color: #000;
-          color: #fff;
-          border-radius: 30px;
-          padding: 0.1em 1.5em;
-          font-size : 0.8em;
-      }
-      @media (max-width: 800px) {
-          body {
-              font-size: 13px;
-          }
-          h1 {
-              text-align: center;
-          }
-          .menu li a {
-              font-size: 12px;
-              padding: 5px 20px;
-          }
-          .sample h2 {
-              font-size: 14px;
-              font-weight: normal;
-              padding: 7px 5px 5px;
-          }
-          .sample h2 .dot {
-              display: none;
-          }
-          .view {
-              padding: 5px;
-              max-width: 800px;
-              overflow: auto;
-          }
-          .view th {
-              font-weight: normal;
-          }
-          .view table td.result {
-              color: #000;
-          }
-      }
-  </style>
+<style>
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'TmonMonsori';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NEXON Lv1 Gothic OTF';
+            line-height: 1.6;
+        }
+        body {
+            padding: 5%;
+            margin-bottom: 400px;
+        }
+        h1 {
+            padding-top: 40px;
+            padding: 20px;
+        }
+        h1 a {
+            font-family: 'TmonMonsori';
+        }
+        hr {
+            margin: 5% 0;
+            border-style: dashed;
+            border-color: #E6E6E6;
+            border-width: 0px;
+            border-bottom-width: 1px;
+        }
+        img {
+            vertical-align: top;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        .sample {
+            border: 1px solid #E6E6E6;
+            border-radius: 5px;
+        }
+        .sample h2 {
+            position: relative;
+            font-size: 16px;
+            background-color: #F2F2F2;
+            padding: 15px;
+            border-bottom: 1px solid #E6E6E6;
+            border-radius: 5px 5px 0 0;
+        }
+        .sample h2 .dot {
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+        .sample h2 .dot::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            border-radius: 50%;
+            position: absolute;
+            left: -15px;
+            top: 0;
+        }
+        .sample h2 .dot::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            position: absolute;
+            border-radius: 50%;
+            right: -15px;
+            top: 0;
+        }
+        .sample .ex {
+            padding: 20px;
+        }
+        .sample .ex .text {
+            margin: 10px 0;
+        }
+        .sample .re {
+            padding: 20px;
+            border-top: 1px solid #E6E6E6;
+        }
+        .sample .re a {
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 10px 30px;
+            margin: 5px;
+            display: inline-block;
+        }
+        .sample .re a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+        .sample .problem {
+            padding: 25px;
+            border-bottom: 1px solid #E6E6E6;
+            line-height: 1.6;
+        }
+        .sample pre {
+            margin: 0 !important;
+            border-radius: 0;
+            ;
+        }
+        .sample .desc {
+            padding: 25px;
+            border-bottom: 1px solid #E6E6E6;
+        }
+        .sample .desc dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+        .sample .desc dd {
+            padding: 3px 0 16px 0;
+            line-height: 1.6;
+        }
+        .sample .sam {
+            padding: 25px;
+            border-bottom: 1px solid #E6E6E6;
+        }
+        .sample .sam dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+        .sample .sam dd {
+            padding: 3px 0 16px 0;
+        }
+        .mt20 {
+            margin-top: 20px;
+        }
+        .page {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
+        .page li {
+            display: inline;
+            list-style: none;
+        }
+        .page li a {
+            text-decoration: none;
+            color: #222;
+        }
+        .page li a:hover {
+            color: #199B5C;
+        }
+        .menu li{
+            display: inline;
+        }
+        .menu li a{
+            font-family: 'NEXON Lv1 Gothic OTF';
+            color: #000;
+            border: 1px dashed #000;
+            padding: 10px 30px;
+            display: inline-block;
+            border-radius: 50px;
+            font-size: 16px;
+            margin: 4px 1px;
+            transition: all 0.4s;
+        }
+        .menu li a:hover {
+            box-shadow: inset 0 -100px 0 #000;
+            color: #fff;
+            border-style: solid;
+        }
+        .view {
+            padding: 20px;
+        }
+        .view table {
+            /* border-width: 1px;
+            border-style: solid;
+            border-color: #E6E6E6; */
+            border: 1px solid #E6E6E6; /* 속기형 작성법 */
+            width: 100%;
+            text-align: center;
+            vertical-align: middle;
+            border-collapse: collapse;
+        }
+        .view table th {
+            /* 
+            padding-top: 13px;
+            padding-right: 5px;
+            padding-bottom: 11px;
+            padding-left: 5px;
+            padding: 13px 5px 11px ; 위:13px / 왼,오:5px / 아:11px
+            padding: 13px 5px; 위,아:13px / 왼,오:5px
+            padding: 13px; 위,왼,오,아:13px 
+            */
+            padding: 13px 5px 11px 5px; /* 속기형 작성법 */
+        }
+        .view table td {
+            border: 1px solid #E6E6E6;
+            padding: 13px 5px 11px 5px;
+        }
+        .view table td.result {
+            color: #fff;
+            transition: all 0.3s;
+            cursor: zoom-in;
+        }
+        .view table td.result:hover {
+            color: #000;
+            background-color: #F5F5F5;
+        }
+        .sam {
+            background-color: #000;
+            color: #fff;
+            border-radius: 30px;
+            padding: 0.1em 1.5em;
+            font-size : 0.8em;
+        }
+        @media (max-width: 800px) {
+            body {
+                font-size: 13px;
+            }
+            h1 {
+                text-align: center;
+            }
+            .menu li a {
+                font-size: 12px;
+                padding: 5px 20px;
+            }
+            .sample h2 {
+                font-size: 14px;
+                font-weight: normal;
+                padding: 7px 5px 5px;
+            }
+            .sample h2 .dot {
+                display: none;
+            }
+            .view {
+                padding: 5px;
+                max-width: 800px;
+                overflow: auto;
+            }
+            .view th {
+                font-weight: normal;
+            }
+            .view table td.result {
+                color: #000;
+            }
+        }
+    </style>
 </head>
 
 <body>
