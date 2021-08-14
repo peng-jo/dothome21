@@ -302,6 +302,11 @@ pre {
     border-left: 0px;
     border-right: 0px;
   }
+  .view table th,
+  .view table td {
+    white-space: nowrap;
+  }
+
   .view table td.result {
     color: #bdbdbd;
     background: #fff;
