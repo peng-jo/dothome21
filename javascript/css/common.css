@@ -226,6 +226,45 @@ pre {
     border-style: solid;
 }
 
+.menu li a.active{
+  background: #0e43f1;
+  color: #fff;
+}
+
+.table {
+  
+  
+}
+.table table tr:nth-child(even){
+  background-color: #f2f6fd;
+}
+.table table{
+  width: 100%;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+}
+.table table caption{
+  text-align: left;
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+.table table th {
+  border-bottom: 2px solid #ddd;
+  border-right: 2px solid #ddd;
+  padding: 10px;
+}
+.table table .center{
+  text-align: center;
+}
+.table table td {
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+
 .view {
   padding: 20px;
   overflow:auto;
