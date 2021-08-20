@@ -62,7 +62,6 @@ a {
 h2{
   word-break: break-all;
 }
-
 .list li .sam {
   color: #fff;
   background-color: #000;
@@ -240,7 +239,6 @@ h2{
 .table table{
   width: 100%;
   border: 1px solid #ddd;
-  border-collapse: collapse;
   border-spacing: 0;
   text-align: left;
 }
@@ -274,7 +272,6 @@ h2{
   border: 1px solid #E6E6E6; /* 속기형 작성법 */
   vertical-align: middle;
   text-align: center;
-  border-collapse: collapse;
   overflow-x: auto;
 }
 
@@ -284,7 +281,7 @@ h2{
 }
 .view table td {
   white-space: nowrap;
-  border: 1px solid #E6E6E6;
+  border: 1px solid #e6e6e6;
   padding: 13px 5px 11px 5px;
 }
 .view table td.result {
