@@ -199,6 +199,7 @@ body {
 
 
 .cardType03 .topic {
+  font-weight: 800;
   position: absolute;
   right:0;
   top:190px;
@@ -229,16 +230,17 @@ body {
   height: 185px;
 }
 .cardType03 .card-wrap .card article{
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   float: left;
   width: 895px;
-  height: 100%;
   margin-left: 20px;
 }
 
 .cardType03 .card-wrap .card article .card-title{
+
   font-size: 26px;
   font-weight: 800;
 }
@@ -254,9 +256,9 @@ body {
 
 
 .cardType03 .card-wrap .card article .card-desc{
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 400;
-
+  line-height: 1.53;
   height: 75px;
   text-align: left;
   color: #555;
