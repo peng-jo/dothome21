@@ -224,7 +224,6 @@ body {
 .cardType03 .card-wrap .card .card-img{ 
   box-sizing: border-box;
   width: 10%;
-  display: inline;
   float:left;
   width: 285px;
   height: 185px;
