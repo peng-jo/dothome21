@@ -278,6 +278,7 @@ h2{
 .view table th {
   white-space: nowrap;
   padding: 13px 5px 11px 5px;
+  border-bottom: 1px solid #E6E6E6;
 }
 .view table td {
   white-space: nowrap;
