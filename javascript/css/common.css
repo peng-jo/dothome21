@@ -293,7 +293,16 @@ pre {
   transition: all 0.3s;
   cursor:zoom-in;
 }
+.view table td.result pre{
+  color:#fff;
+  transition: all 0.3s;
+  cursor:zoom-in;
+}
 .view table td.result:hover {
+  color:#000;
+  background-color: #f5f5f5;
+}
+.view table td.result pre:hover{
   color:#000;
   background-color: #f5f5f5;
 }

@@ -169,7 +169,7 @@
           <div class="code">
 <pre class="line-numbers"><code class="language-js">{
       $('.reset1').click(function(){
-        $('.view1 li').removeClass("red");
+        $('.view1 *').removeClass("red");
       });
       $(".btn1-1").click(function(){
         $('.view1 .class').addClass("red");
@@ -184,7 +184,7 @@
         $('.view1 .class, .view1 #id').addClass("red");
       });
       $(".btn1-5").click(function(){
-        $('.view1 *').addClass("red");
+        $('.view1 li *').addClass("red");
       });
 }
 </code></pre>
@@ -194,7 +194,7 @@
     
     <script>
       $('.reset1').click(function(){
-        $('.view1 li').removeClass("blue");
+        $('.view1 *').removeClass("blue");
       });
       $(".btn1-1").click(function(){
         $('.view1 .class').addClass("blue");
@@ -252,9 +252,9 @@
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
   const resetList = document.querySelectorAll(".jview1 *");
-  for(let i = 0 ; i &lt resetList.length ; i ++){
-    resetList[i].classList.add("red");
-  }
+    for(let i = 0 ; i &lt resetList.length ; i ++){
+      resetList[i].classList.remove("red");
+    }
   });
 
   //버튼을 클릭했을 때 실행해라
@@ -267,11 +267,12 @@
   });
 
   document.querySelector(".jbtn1-3").addEventListener("click",function(){
+    const liList = document.querySelectorAll(".jview1 li");
     // for문
     for(let i = 0 ; i &lt liList.length ; i ++){
       liList[i].classList.add("red");
     }
-  }
+  });
 }
 </code></pre>
       </div>
@@ -283,7 +284,7 @@
   document.querySelector(".jreset1").addEventListener("click",function(){
     const resetList = document.querySelectorAll(".jview1 *");
     for(let i = 0 ; i < resetList.length ; i ++){
-      resetList[i].classList.add("red");
+      resetList[i].classList.remove("red");
     }
     // document.querySelectorAll(".jview1 *").forEach(function(element){
     //   element.classList.remove("red");
@@ -304,7 +305,7 @@
     // document.querySelectorAll(".jview1 li").forEach(function(element){
     //   element.classList.add("red");
     // });
-
+    const liList = document.querySelectorAll(".jview1 li");
     // for문
     for(let i = 0 ; i < liList.length ; i ++){
       liList[i].classList.add("red");
