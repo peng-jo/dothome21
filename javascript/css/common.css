@@ -73,7 +73,9 @@ pre {
   border-radius:30px;
   padding : 0 20px;
 }
-
+.list li a{
+  font-size: 14px;
+}
 .sample {
     border: 1px solid #e6e6e6;
     border-radius: 5px;
