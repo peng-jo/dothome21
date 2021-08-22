@@ -3,6 +3,10 @@
 body {
   background-color: #f3f3f3;
 }
+.container {
+  width: 1200px;
+  padding: 96px 0 100px 0;
+}
 .cardType {
   margin: 100px 0;
   background-color: #fff;
@@ -149,23 +153,20 @@ body {
 .green {
   background-color: #11c865;
 }
-.container {
-  width: 1200px;
-  padding: 96px 0 100px 0;
-}
+
 .cardType03{
   font-family: 'NanumSquare', sans-serif !important;
   font-weight: 400;
 }
 .cardType03 .title{
-  padding: 0px 0 30px;
+  padding: 0px 0 47px;
 }
 .cardType03 h2{
   font-weight:800;
   font-size: 50px;
   margin-bottom: 22px;
 }
-.cardType03 .title > p{
+.cardType03 .title p{
   font-size: 18px;
 }
 .cardType03 .topic {
@@ -183,31 +184,26 @@ body {
   color: #ff2626;
 }
 .cardType03 .card-wrap .card{
-  overflow: hidden;
-  margin-top: 27px;
-  height: 185px;
+  margin-bottom: 28px;
 }
 .cardType03 .card-wrap .card .card-img{ 
-  box-sizing: border-box;
-  width: 10%;
-  float:left;
+  position: absolute;
   width: 285px;
   height: 185px;
 }
 .cardType03 .card-wrap .card article{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  float: left;
-  width: 895px;
-  margin-left: 20px;
+  padding-left: 305px;
+
 }
 .cardType03 .card-wrap .card article .card-title{
+  display: block;
   font-size: 26px;
   font-weight: 800;
+  
 }
 .cardType03 .card-wrap .card article .card-link{
+  display: inline-block;
+  margin-bottom: 10px;
   max-width: fit-content;
   padding: 3px 15px 3px 15px;
   border-radius: 20px;
@@ -222,6 +218,8 @@ body {
   height: 75px;
   text-align: left;
   color: #555;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 .cardType03 .card-wrap .card article .card-date{
   font-weight: 700;
@@ -231,3 +229,5 @@ body {
   color: #555;
   text-decoration: underline;
 }
+
+
