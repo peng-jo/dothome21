@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font.css">
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism-okaidia.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.css" rel="stylesheet" type="text/css" />
+</head>
+<style>
+  .ex1 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ex1 > div {
+    width:18%;
+    border: 4px dashed transparent;
+  }
+
+  .ex1 > div img {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .ex1 > div.active {
+    border: 4px dashed #a51a3d;
+    background-color: #a51a3d;
+    border-radius: 5px;
+  }
+  .ex1 > div.active img{
+    opacity: 0.4;
+    
+  }
+
+  .ex1 > div img {
+    vertical-align: top;
+  }
+
+  /* ex2 */
+  .ex2 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ex2 > div {
+    width:18%;
+    border: 4px dashed transparent;
+  }
+
+  .ex2 > div img {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .ex2 > div.active {
+    border: 4px dashed #a51a3d;
+    background-color: #a51a3d;
+    border-radius: 5px;
+  }
+  .ex2 > div.active img{
+    opacity: 0.4;
+    
+  }
+
+  .ex2 > div img {
+    vertical-align: top;
+  }
+
+   /* ex3 */
+   .ex3 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ex3 > div {
+    width:18%;
+    border: 4px dashed transparent;
+  }
+
+  .ex3 > div img {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .ex3 > div.active {
+    border: 4px dashed #a51a3d;
+    background-color: #a51a3d;
+    border-radius: 5px;
+  }
+  .ex3 > div.active img{
+    opacity: 0.4;
+    
+  }
+
+  .ex3 > div img {
+    vertical-align: top;
+  }
+</style>
+<body>
+    <div class="page">
+        <ul>
+          <li><a href="../refer-html/index.html">HTML</a></li>
+          <li><a href="../refer-css/index.html">CSS</a></li>
+          <li><a href="../refer-javascript/javascriptRefer01.html">JAVASCRIPT</a></li>
+        </ul>
+    </div>
+    <div class="title">
+        <h1><a href="./index2.html">속성 메서드</a></h1>
+    </div>
+    <nav class="menu">
+        <ul>
+          <li><a href="jqueryRefer01.html">선택자</a></li>
+          <li><a href="jqueryRefer02.html">선택 메서드</a></li>
+      </ul>
+      <ul>
+          <li><a href="jqueryRefer03.html">속성 메서드</a></li>
+          <li><a href="jqueryRefer04.html">조작 메서드</a></li>
+          <li><a href="jqueryRefer05.html">데이터 메서드</a></li>
+          <li><a href="jqueryRefer06.html">애니메이션 메서드</a></li>
+          <li><a href="jqueryRefer07.html">이벤트 메서드</a></li>
+      </ul>
+      <ul>
+          <li><a href="jqueryRefer08.html">샘플</a></li>
+      </ul>
+    </nav>
+ 
+    <hr>
+
+    <div class="table">
+      <table>
+        <thead>
+          <colgroup>
+            <col style="width:4%"/>
+            <col style="width:20%"/>
+            <col style="width:20%"/>
+            <col style="width:20%"/>
+            <col style="width:36%"/>
+          </colgroup>
+          <tr>
+            <th class="center">종류</th>
+            <th>Attribute</th>
+            <th>jQeury</th>
+            <th>javascript</th>
+            <th>설명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="center" rowspan="5" >Attributes<a href="#sample01"></a></td>
+            <td>.attr()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.removeAttr()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.prop()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.removeProp()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.val()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td rowspan="5" class="center" >CSS<a href="#sample02"></a></td>
+            <td>.css()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.addClass()</td>
+            <td>-</td>
+            <td>-</td>
+            <td>클래스를 추가</td>
+          </tr>
+          <tr>
+            <td>.removeClass()</td>
+            <td>-</td>
+            <td>-</td>
+            <td>클래스를 삭제</td>
+          </tr>
+          <tr>
+            <td>.toggleClass()</td>
+            <td>-</td>
+            <td>-</td>
+            <td>클래스를 추가/삭제</td>
+          </tr>
+          <tr>
+            <td>.hasClass()</td>
+            <td>-</td>
+            <td>-</td>
+            <td>클래스 이름이 있는지 확인</td>
+          </tr>
+          <tr>
+            <td rowspan="6" class="center" >Dimensions<a href="#sample03"></a></td>
+            <td>.width()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.innerWidth()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.outerWidth()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.height()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.innerHeight()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.outerHeight()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td rowspan="5" class="center" >offset<a href="#sample04"></a></td>
+            <td>.offset()</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>.offsetParent()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.position()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.scrollLeft()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.scrollTop()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td rowspan="2" class="center" >Data<a href="#sample04"></a></td>
+            <td>.date()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.removeData()</td>
+            <td>-</td>
+            <td>-</td>
+            <td></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <hr>
+
+    <div id="sample1" class="sample mt20">
+        <h2>01. 속성 선택자 : addClass() / removeClass() <span class="dot"></span></h2>
+          <div class="view ex1">
+              <div><img src="./img/image01.jpg" alt="이미지1"></div>
+              <div><img src="./img/image02.jpg" alt="이미지2"></div>
+              <div><img src="./img/image03.jpg" alt="이미지3"></div>
+              <div><img src="./img/image04.jpg" alt="이미지4"></div>
+              <div><img src="./img/image05.jpg" alt="이미지5"></div>       
+          </div>
+          <div class="btn">
+            <a href="#ex" class="btn1-1">클릭하면 모든 이미지에 클래스(active)를 추가합니다.</a>
+            <a href="#ex" class="btn1-2">클릭하면 모든 이미지에 클래스(active)를 삭제합니다.</a>
+          </div>
+          <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+  $(".btn1-1").click(function(){
+    $(".ex1 div").addClass("active");
+  });
+  $(".btn1-2").click(function(){
+    $(".ex1 div").removeClass("active");
+  });
+}
+</code></pre>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      $(".btn1-1").click(function(){
+        $(".ex1 div").addClass("active");
+      });
+      $(".btn1-2").click(function(){
+        $(".ex1 div").removeClass("active");
+      });
+    </script>
+<hr>
+<div id="sample2" class="sample mt20">
+  <h2>02. 속성 메서드 : toggleClass()<span class="dot"></span></h2>
+    <div class="view ex2">
+        <div><img src="./img/image06.jpg" alt="이미지1"></div>
+        <div><img src="./img/image07.jpg" alt="이미지2"></div>
+        <div><img src="./img/image08.jpg" alt="이미지3"></div>
+        <div><img src="./img/image09.jpg" alt="이미지4"></div>
+        <div><img src="./img/image10.jpg" alt="이미지5"></div>       
+    </div>
+    <div class="btn">
+      <a href="#ex" class="btn2-1">이미지를 클릭하면 클래스(active)를 추가/삭제 합니다.</a>
+    </div>
+    <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+  //모든 이미지 선택
+  // $(".ex2 div").click(function(){
+  //   $(".ex2 div").toggleClass("active");
+  // });
+  //내가 클릭한 이미지 선택
+  $(".ex2 div").click(function(){
+    $(this).toggleClass("active");
+  });
+}
+</code></pre>
+  </div>
+</div>
+</div>
+
+<script>
+  //모든 이미지 선택
+  // $(".ex2 div").click(function(){
+  //   $(".ex2 div").toggleClass("active");
+  // });
+  //내가 클릭한 이미지 선택
+  $(".ex2 div").click(function(){
+    $(this).toggleClass("active");
+  });
+</script>
+<hr>
+
+
+<div id="sample3" class="sample mt20">
+  <h2>03. 속성 메서드 : hasClass()<span class="dot"></span></h2>
+    <div class="view ex3">
+        <div class="active"><img src="./img/image11.jpg" alt="이미지1"></div>
+        <div><img src="./img/image12.jpg" alt="이미지2"></div>
+        <div><img src="./img/image13.jpg" alt="이미지3"></div>
+        <div class="active"><img src="./img/image14.jpg" alt="이미지4"></div>
+        <div><img src="./img/image15.jpg" alt="이미지5"></div>       
+    </div>
+    <div class="btn">
+      <a href="#ex" class="btn3-0">리셋</a>
+
+      <a href="#ex" class="btn3-1">클릭하면 .active 클래스를 찾은 후에 클래스를 제거합니다.</a>
+    </div>
+    <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+  //리셋 버튼을 클릭하면 첫번째 네번째에 클래스 추가
+  $(".btn3-0").click(function(){
+    $(".ex3 > div:nth-child(1)").addClass("active");
+    $(".ex3 > div:nth-child(4)").addClass("active");
+  });
+
+  $(".btn3-1").click(function(){
+    if( $(".ex3 > div").hasClass("active") ){
+        $(".ex3 > div.active").removeClass("active");
+        console.log('active');
+    }
+  });
+}
+</code></pre>
+  </div>
+</div>
+</div>
+
+<script>
+  //리셋 버튼을 클릭하면 첫번째 네번째에 클래스 추가
+  $(".btn3-0").click(function(){
+    $(".ex3 > div:nth-child(1)").addClass("active");
+    $(".ex3 > div:nth-child(4)").addClass("active");
+  });
+
+  $(".btn3-1").click(function(){
+    if( $(".ex3 > div").hasClass("active") ){
+        $(".ex3 > div.active").removeClass("active");
+        console.log('active');
+    }
+  });
+</script>
+<hr>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+</body>
+
+
+</html>

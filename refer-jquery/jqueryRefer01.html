@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font.css">
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism-okaidia.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.css" rel="stylesheet" type="text/css" />
+</head>
+<style>
+
+</style>
+<body>
+    <div class="page">
+        <ul>
+          <li><a href="../refer-html/index.html">HTML</a></li>
+          <li><a href="../refer-css/index.html">CSS</a></li>
+          <li><a href="../refer-javascript/javascriptRefer01.html">JAVASCRIPT</a></li>
+        </ul>
+    </div>
+    <div class="title">
+        <h1><a href="./index2.html">선택자</a></h1>
+    </div>
+    <nav class="menu">
+        <ul>
+          <li><a class="active" href="jqueryRefer01.html">선택자</a></li>
+          <li><a href="jqueryRefer02.html">선택 메서드</a></li>
+      </ul>
+      <ul>
+          <li><a href="jqueryRefer03.html">속성 메서드</a></li>
+          <li><a href="jqueryRefer04.html">조작 메서드</a></li>
+          <li><a href="jqueryRefer05.html">데이터 메서드</a></li>
+          <li><a href="jqueryRefer06.html">애니메이션 메서드</a></li>
+          <li><a href="jqueryRefer07.html">이벤트 메서드</a></li>
+      </ul>
+      <ul>
+          <li><a href="jqueryRefer08.html">샘플</a></li>
+      </ul>
+    </nav>
+ 
+    <hr>
+
+    <div class="table">
+      <table>
+        <caption> 기본선택자 </caption>
+        <thead>
+          <colgroup>
+            <col style="width:6%"/>
+            <col style="width:20%"/>
+            <col style="width:20%"/>
+            <col style="width:20%"/>
+            <col style="width:36%"/>
+          </colgroup>
+          <tr>
+            <th class="center">번호</th>
+            <th>종류</th>
+            <th>jQeury</th>
+            <th>javascript</th>
+            <th>설명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="5" class="center"><a href="#sample01">1</a></td>
+            <td>태그 선택자</td>
+            <td>$("li")</td>
+            <td>querySelector("li")</td>
+            <td>기본 태그를 선택합니다.</td>
+          </tr>
+          <tr>
+            <td>클래스 선택자</td>
+            <td>$(".class")</td>
+            <td>querySelector(".class")</td>
+            <td>클래스를 선택합니다.</td>
+          </tr>
+          <tr>
+            <td>아이디 선택자</td>
+            <td>$("#id")</td>
+            <td>getElementById("#id")</td>
+            <td>아이디를 선택합니다.</td>
+          </tr>
+          <tr>
+            <td>그룹 선택자</td>
+            <td>$("#id, .class")</td>
+            <td>-</td>
+            <td>여러개를 선택합니다.</td>
+          </tr>
+            <td>전체 선택자</td>
+            <td>$("*")</td>
+            <td>-</td>
+            <td>전체 선택합니다.</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr>
+    <div class="table">
+      <table>
+        <caption> 계층 선택자 </caption>
+        <thead>
+          <colgroup>
+            <col style="width:6%"/>
+            <col style="width:20%"/>
+            <col style="width:20%"/>
+            <col style="width:20%"/>
+            <col style="width:36%"/>
+          </colgroup>
+          <tr>
+            <th class="center">번호</th>
+            <th>종류</th>
+            <th>jQeury</th>
+            <th>javascript</th>
+            <th>설명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="5" class="center"><a href="#sample01">1</a></td>
+            <td>하위 선택자</td>
+            <td>$("div p")</td>
+            <td>querySelectorAll("div p")</td>
+            <td>div 태그의 모든 자식 중 p 태그를 모두 선택합니다.</td>
+          </tr>
+          <tr>
+            <td>자식 선택자</td>
+            <td>$("div > p")</td>
+            <td>-</td>
+            <td>div 태그 모든 자식 중 첫 번째 자식 p 태그만 선택합니다.</td>
+          </tr>
+          <tr>
+            <td>형제 선택자</td>
+            <td>$("div + p")</td>
+            <td>-</td>
+            <td>div 태그의 인접한 형태 p 태그 중 첫 번째 태그만 선택합니다.</td>
+          </tr>
+            <td>형제들 선택자</td>
+            <td>$("div ~ p")</td>
+            <td>-</td>
+            <td>div 태그의 인접한 형제 p 태그 중 모든 형제 태그를 선택합니다.</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="sample1" class="sample mt20">
+        <h2>01. 기본 선택자 <span class="dot"></span></h2>
+          <div class="view view1">
+            <ul>
+              <li>$("li")</li>
+              <li class="class">$(".class")</li>
+              <li id="id">$("#id")</li>
+              <li>$(".class, #id")</li>
+              <li>$("*")</li>
+            </ul>           
+          </div>
+          <div class="btn btn1">
+            <a href="#ex" class="reset1">리셋</a>
+            <a href="#ex" class="btn1-1">클릭하면 클래스(class)를 선택합니다.</a>
+            <a href="#ex" class="btn1-2">클릭하면 아이디(#id)를 선택합니다.</a>
+            <a href="#ex" class="btn1-3">클릭하면 기본(li) 태그를 선택합니다.</a>
+            <a href="#ex" class="btn1-4">클릭하면 여러가지(#id, .class) 태그를 선택합니다.</a>
+            <a href="#ex" class="btn1-5">클릭하면 전체(*) 태그를 선택합니다.</a>
+          </div>
+          <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+      $('.reset1').click(function(){
+        $('.view1 *').removeClass("red");
+      });
+      $(".btn1-1").click(function(){
+        $('.view1 .class').addClass("red");
+      });
+      $(".btn1-2").click(function(){
+        $('.view1 #id').addClass("red");
+      });
+      $(".btn1-3").click(function(){
+        $('.view1 li').addClass("red");
+      });
+      $(".btn1-4").click(function(){
+        $('.view1 .class, .view1 #id').addClass("red");
+      });
+      $(".btn1-5").click(function(){
+        $('.view1 li *').addClass("red");
+      });
+}
+</code></pre>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      $('.reset1').click(function(){
+        $('.view1 *').removeClass("blue");
+      });
+      $(".btn1-1").click(function(){
+        $('.view1 .class').addClass("blue");
+      });
+      $(".btn1-2").click(function(){
+        $('.view1 #id').addClass("blue");
+      });
+      $(".btn1-3").click(function(){
+        $('.view1 li').addClass("blue");
+      });
+      $(".btn1-4").click(function(){
+        $('.view1 .class, .view1 #id').addClass("blue");
+      });
+      $(".btn1-5").click(function(){
+        $('.view1 *').addClass("blue");
+      });
+    
+      // const $view1 = $(".view1");
+      // const $li = $(".li");
+      // const $btn = $(".btn");
+    
+      // function addFunction(selector,classname){
+      //   selector.addClass(classname);
+      // }
+      // //$btn.click(( )=> addFunction($li, "red"));
+      // $btn.click((el)=>{
+      //   console.log(el.target.className)
+      //   if(el.target == 'btn1-1'){
+      //     addFunction($view1);
+      //   }
+      // });
+    
+    
+    
+    </script>
+    <hr>
+
+    <div id="sample1j" class="sample mt20">
+      <h2>01. 기본 선택자- javascript <span class="dot"></span></h2>
+        <div class="view jview1">
+          <ul>
+            <li>$("li")</li>
+            <li class="j1_class">$(".class")</li>
+            <li id="j1_id">$("#id")</li>
+            <li>$(".class, #id")</li>
+            <li>$("*")</li>
+          </ul>           
+        </div>
+        <div class="btn jbtn">
+          <a href="#ex" class="jreset1">리셋</a>
+          <a href="#ex" class="jbtn1-1">클릭하면 클래스(class)를 선택합니다.</a>
+          <a href="#ex" class="jbtn1-2">클릭하면 아이디(#id)를 선택합니다.</a>
+          <a href="#ex" class="jbtn1-3">클릭하면 기본(li) 태그를 선택합니다.</a>
+        </div>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+  const resetList = document.querySelectorAll(".jview1 *");
+    for(let i = 0 ; i &lt resetList.length ; i ++){
+      resetList[i].classList.remove("red");
+    }
+  });
+
+  //버튼을 클릭했을 때 실행해라
+  document.querySelector(".jbtn1-1").addEventListener("click",function(){
+    document.querySelector(".jview1 .j1_class").classList.add("red");
+  });
+
+  document.querySelector(".jbtn1-2").addEventListener("click",function(){
+    document.querySelector("#j1_id").classList.add("red");
+  });
+
+  document.querySelector(".jbtn1-3").addEventListener("click",function(){
+    const liList = document.querySelectorAll(".jview1 li");
+    // for문
+    for(let i = 0 ; i &lt liList.length ; i ++){
+      liList[i].classList.add("red");
+    }
+  });
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  <script>
+
+
+  document.querySelector(".jreset1").addEventListener("click",function(){
+    const resetList = document.querySelectorAll(".jview1 *");
+    for(let i = 0 ; i < resetList.length ; i ++){
+      resetList[i].classList.remove("red");
+    }
+    // document.querySelectorAll(".jview1 *").forEach(function(element){
+    //   element.classList.remove("red");
+    // });
+  });
+
+  //버튼을 클릭했을 때 실행해라
+  document.querySelector(".jbtn1-1").addEventListener("click",function(){
+    document.querySelector(".jview1 .j1_class").classList.add("red");
+  });
+
+  document.querySelector(".jbtn1-2").addEventListener("click",function(){
+    document.querySelector("#j1_id").classList.add("red");
+  });
+
+  
+  document.querySelector(".jbtn1-3").addEventListener("click",function(){
+    // document.querySelectorAll(".jview1 li").forEach(function(element){
+    //   element.classList.add("red");
+    // });
+    const liList = document.querySelectorAll(".jview1 li");
+    // for문
+    for(let i = 0 ; i < liList.length ; i ++){
+      liList[i].classList.add("red");
+    }
+
+    // for in문
+    //const liList = document.querySelectorAll(".jview1 li");
+    // for(let i of liList){
+    //   i.classList.add("red");
+    // }
+    
+    // for of문
+    //const liList = document.querySelectorAll(".jview1 li");
+    // for(let i in liList){
+    //   liList[i].classList.add("red");
+    // }
+
+  });
+  </script>
+  <hr>
+
+  <div id="sample2" class="sample mt20">
+    <h2>02. 계층 선택자 <span class="dot"></span></h2>
+      <div class="view view2">
+        <div class="s2">
+          <em>div</em>
+          <span>p <span>p</span></span>
+          <span class="select">p <span>p</span></span>
+          <span>p <span>p</span></span>
+          <span>p <span>p</span></span>
+        </div>
+     
+       
+      </div>
+      <div class="btn btn2">
+        <a href="#ex" class="reset2">리셋</a>
+        <a href="#ex" class="btn2-1">클릭하면 $("div p") 선택합니다.</a>
+        <a href="#ex" class="btn2-2">클릭하면 $("div > p") 선택합니다.</a>
+        <a href="#ex" class="btn2-3">클릭하면 $("div + p") 선택합니다.</a>
+        <a href="#ex" class="btn2-4">클릭하면 $("div ~ p") 선택합니다.</a>
+      </div>
+      <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+  $('.reset2').click(function(){
+    $('.s2 span').removeClass('blue');
+  });
+  $('.btn2-1').click(function(){
+    $('.s2 span').addClass('blue');
+  });
+  $('.btn2-2').click(function(){
+    $('.s2 > span').addClass('blue');
+  });
+  $('.btn2-3').click(function(){
+    $('.s2 .select  + span').addClass('blue');
+  });
+  $('.btn2-4').click(function(){
+    $('.s2 .select ~ span').addClass('blue');
+  });
+}
+</code></pre>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('.reset2').click(function(){
+    $('.s2 span').removeClass('blue');
+  });
+  $('.btn2-1').click(function(){
+    $('.s2 span').addClass('blue');
+  });
+  $('.btn2-2').click(function(){
+    $('.s2 > span').addClass('blue');
+  });
+  $('.btn2-3').click(function(){
+    $('.s2 .select  + span').addClass('blue');
+  });
+  $('.btn2-4').click(function(){
+    $('.s2 .select ~ span').addClass('blue');
+  });
+</script>
+<hr>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+</body>
+
+
+</html>

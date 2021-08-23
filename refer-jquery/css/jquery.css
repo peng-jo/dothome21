@@ -1,0 +1,94 @@
+.view {
+  padding: 20px;
+  border: 1px solid #f2f2f2;
+}
+.view ul {
+  display: flex;
+  /* justify-content: center */
+  flex-wrap: wrap;
+}
+.view li {
+  border: 1px solid #e6e6e6;
+  padding: 20px;
+  margin: 10px;
+  color:#222;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.view .red {
+  border: 1px dashed #a51a3d;
+  background-color: #f9f2f4;
+  color: #a51a3d;
+}
+.view .blue {
+  border: 1px dashed #3d90b7;
+  background-color: #e7f6fd;
+  color: #3d90b7;
+}
+.btn {
+  padding: 20px;
+  border: 1px solid #f2f2f2;
+  border-top: 0;
+}
+.btn a{
+  border: 1px solid #e6e6e6;
+  padding: 7px 25px;
+  display: inline-block;
+  border-radius: 40px;
+  margin:4px 0;
+  color:#222;
+  transition: all 0.2s;
+}
+.btn a:hover{
+  background-color: #000;
+  color:#fff;
+}
+.sample h2{
+  background-color: #f2f6fd; 
+  
+}
+
+.view2 > div span{
+  display: inline-block;
+  border: 1px solid #e6e6e6;
+  padding: 20px;
+  margin: 5px 5px 10px 5px;
+  color:#222;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.view2 > div em {
+  background-color: #000;
+  color: #fff;
+  padding: 4px;
+  border-radius: 5px;
+  font-style: normal;
+  margin: 5px;
+}
+
+
+
+
+@media (max-width:800px){
+  .view{
+    padding: 10px 10px 0 10px;
+  }
+  .view li{
+    padding: 10px;
+    margin: 0 8px 8px 0px;
+  }
+  .btn{
+    padding: 20px;
+  }
+  .table {
+    overflow: auto;
+  }
+  .table table th {
+    font-weight: normal;
+    white-space: nowrap;
+  }
+  .table table td {
+    white-space: nowrap;
+  }
+}

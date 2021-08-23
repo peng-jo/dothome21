@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+
+<script>
+  const obj = {
+    a: 1000,
+    b: 2000,
+    c: 3000
+  }
+  let sum = 0;
+
+
+  for(let i in obj){
+    document.write(obj[i],"<br>");
+  }
+  for(let i in obj){
+    sum += obj[i];
+  }
+
+  document.write(sum,"<br>");
+  sum -= obj.a;
+  document.write(sum,"<br>");
+  sum -= obj.a;
+  document.write(sum,"<br>");
+
+  for(let i in obj){
+    document.write(obj[i]/obj.a,"<br>");
+  }
+  for(let i in obj){
+    document.write(i,"<br>");
+  }
+  
+
+  
+
+
+  const obj2 = [
+    {a: 1000},
+    {b: 2000},
+    {c: 3000}
+  ];
+  let sum2 = 0;
+
+  for(let i of obj2){
+    for(let j in i){
+      document.write(i[j],"<br>");
+      sum2 += i[j];
+    }
+  }
+
+
+  document.write(sum2,"<br>");
+  sum2 -= obj2[0].a;
+  document.write(sum2,"<br>");
+  sum2 -= obj2[0].a;
+  document.write(sum2,"<br>");
+
+  for(let i of obj2){
+    for(let j in i){
+      document.write(i[j]/obj2[0].a,"<br>");
+    }
+  }
+
+  for(let i of obj2 ){
+    document.write(Object.keys(i),"<br>");
+  }
+
+  const obj3 = [1000, 2000, 3000, "a", "b", "c"];
+  let sum3 = 0;
+  for(let i=0 ; i<3 ; i++){
+    document.write(obj3[i],"<br>");
+    sum3 += obj3[i];
+  } 
+
+  document.write(sum3,"<br>");
+  obj3.forEach((element, index, array)=>{
+    if(typeof(element) === 'number'){
+      document.write(element/array[0],"<br>");
+    }
+  });
+
+  obj3.forEach((element, index)=>{
+    if(typeof(element) === 'string'){
+      document.write(element,"<br>");
+    }
+  });
+
+
+
+  
+
+</script>
+</body>
+</html>
