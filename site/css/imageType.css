@@ -4,7 +4,7 @@ body {
 
 .imageType {
   padding: 100px 0;
-  margin-top:100px;
+  margin:100px 0;
   font-family: 'GmarketSans';
   background-color: #fff;
   box-shadow: 0 0 50px rgba(0,0,0,0.1);
@@ -26,7 +26,7 @@ h2 {
 
 /* 01 */
 .imageType01 {
-  color: white;
+  color:#fff;
   width: 1200px;
   margin: 0 auto;
 }
@@ -39,11 +39,11 @@ h2 {
 .imageType01 .img-wrap .container article {
   padding: 15px;
   background-color: rgba( 0, 0, 0, 0.7 );
-  opacity: 0.7;
   width: 475px;
   position: absolute;
   bottom: 30px;
   left:30px;
+  color:#fff;
 }
 
 .imageType01 .img-wrap .container img {
@@ -52,14 +52,12 @@ h2 {
 }
 
 .imageType01 .img-wrap .container article .img-title {
-  font-weight: 400;
   font-size: 30px;
   display: block;
   margin-bottom: 20px;
 }
 
 .imageType01 .img-wrap .container article .img-desc {
-  font-weight: 300;
   font-size: 12px;
   display: block;
   line-height: 1.4;
@@ -67,16 +65,49 @@ h2 {
 }
 
 .imageType01 .img-wrap .container article .img-link a {
-  color:white;
+  color:#fff;
   font-weight: 300;
   font-size: 14px;
 }
 
 /* 02 */
-.imageType02 {}
-.imageType02 .img-wrap .container .img-wrap {
+.imageType02 {
+  width: 1200px;
+  margin: 0 auto;
+}
+.imageType02 .container .img-wrap {
   display: flex;
   gap:20px
 }
+.imageType02 .container .img-wrap .img {
+  position: relative;
+  width: 388px;
+  height: 440px;
+}
+.imageType02 .container .img-wrap .img article {
+  color:#fff;
+  position: absolute;
+  top: 186px;
+  left: 50%;
+  transform: translate(-50%, -20%);
+}
+.imageType02 .container .img-wrap .img article .title{
+  padding: 5px 18px 0px 18px;
+  line-height: 28px;
+  margin-bottom: 10px;
+  width:fit-content;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 30px;
 
-
+}
+.imageType02 .container .img-wrap .img article .link{
+  
+  padding: 5px 10px;
+  border-radius: 25px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 12px;
+  width:fit-content;
+  margin: 0 auto;
+}
