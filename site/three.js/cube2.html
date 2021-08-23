@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three.js</title>
+  <style>
+    canvas { 
+      display: block;
+      width: 100%;
+    }
+  </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/var.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    
+</head>
+<body>
+  
+<canvas id="c"></canvas>
+<script src="../../assets/js/three.min.js"></script>
+</body>
+<script>
+function main(){
+  const canvas = document.querySelector('#c');
+  //WebGLRenderer 생성
+  /*
+    렌더러 :
+    (renderer)는 여러분이 입력한 데이터를
+     실제로 canvas에 그려주는 역할을 맡습니다. 
+  */
+  const renderer = new THREE.WebGLRenderer({canvas});
+
+  // the canvas default
+  const fov = 75;
+  const aspect = 2;  
+  const near = 0.1;
+  const far = 5;
+  //카메라 생성
+  const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.z = 2;
+
+  /* 씬 생성 */
+  const scene = new THREE.Scene();
+  
+  /*모양 지정*/
+  const boxWidth = 1;
+  const boxHeight = 1;
+  const boxDepth = 1;
+  const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+  
+  /* 색지정 */
+  const material = new THREE.MeshPhongMaterial({color: 0x44aa88});  // greenish blue
+  const cube = new THREE.Mesh(geometry, material);
+  
+  /* 장면에 추가*/
+  scene.add(cube);
+  
+  const color = 0xFFFFFF;
+  const intensity = 1;
+  const light = new THREE.DirectionalLight(color, intensity);
+  light.position.set(-1, 2, 4);
+  scene.add(light);
+
+  /*그리기*/
+  renderer.render(scene, camera);
+
+  function render(time) {
+    time *= 0.001;  // convert time to seconds
+  
+    cube.rotation.x = time;
+    cube.rotation.y = time;
+  
+    renderer.render(scene, camera);
+    /* requestAnimationFrame 함수에 업데이트*/
+    requestAnimationFrame(render);
+  }
+requestAnimationFrame(render);
+
+}
+
+main();
+</script>
+
+</html>
