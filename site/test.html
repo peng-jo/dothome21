@@ -5,22 +5,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Three.js</title>
-  <script src="../assets/js/three.min.js"></script>
+  <style>
+    canvas { display: block; }
+  </style>
     <!-- CSS -->
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/var.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
-
+    
 </head>
 <body>
 <div id="webgl-output"></div>
+<script src="../assets/js/three.min.js"></script>
 </body>
 <script>
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 0.1, 1000 );
-//
+const scene = new THREE.Scene(); //씬
+const camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 0.1, 1000 ); //카메라
+
+const geometry = new THREE.BoxGeometry(); //큐브에 필요한 꼭짓점과 면이 포함되어 있다.
+const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } ); //색칠해줄 요소
+const cube = new THREE.Mesh( geometry, material ); //삽입
+
 const renderer = new THREE.WebGLRenderer();
- </script>
+
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement );
+
+
+scene.add( cube );
+
+camera.position.z = 5; //큐브와 위치가 겹치기 때문에 카메라 위치를 변경함
+
+
+function animate() {
+  cube.rotation.x += 0.01;
+  cube.rotation.y += 0.01;
+	requestAnimationFrame( animate );
+	renderer.render( scene, camera );
+}
+animate();
+</script>
 
 </html>
