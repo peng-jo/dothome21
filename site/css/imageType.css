@@ -3,6 +3,7 @@ body {
 }
 
 .imageType {
+  position: relative;
   padding: 100px 0;
   margin:100px 0;
   font-family: 'GmarketSans';
@@ -109,3 +110,82 @@ h2 {
   width:fit-content;
   margin: 0 auto;
 }
+
+
+/* #3 */
+.imageType03 {
+  width: 1200px;
+  margin:0 auto;
+  color:white;
+}
+.imageType03 a {
+  color: inherit;
+  font-size: 14px;
+}
+.imageType03 .img-wrap .img-main {
+  position: absolute;
+  width: 590px;
+}
+.imageType03 .img-wrap .img-main .img {
+  position: relative;
+}
+.imageType03 .img-wrap .img-main .img article {
+  position: absolute;
+  left: 30px;
+  bottom: 58px;
+  padding:15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 350px;
+  height: 138px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.imageType03 .img-wrap .img-main .img article .title {
+  font-size: 30px;
+  display: block;
+}
+.imageType03 .img-wrap .img-main .img article .desc {
+  font-size: 14px;
+  display: block;
+}
+.imageType03 .img-wrap .img-main .img .img-link {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  padding:3px 15px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+} 
+
+
+.imageType03 .img-wrap .img-sub {
+  margin-left: 610px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  gap:20px;
+}
+.imageType03 .img-wrap .img-sub .img {
+  width: 285px;
+  position: relative;
+}
+
+.imageType03 .img-wrap .img-sub .img .img-pic{
+  float:left;
+  height: 285px;
+}
+.imageType03 .img-wrap .img-sub .img article {
+  padding: 15px 15px 13px 15px;
+  position: absolute;
+  width: max-content;
+  left:50%;
+  transform: translate(-50%, -20%);
+  top: 172px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.imageType03 .img-wrap .img-sub .img article .title {
+  font-size:30px;
+
+}
+
