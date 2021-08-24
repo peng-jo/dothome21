@@ -52,32 +52,50 @@ function main(){
   const boxDepth = 1;
   const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
   
-  /* 색지정 */
-  const material = new THREE.MeshPhongMaterial({color: 0x44aa88});  // greenish blue
-  const cube = new THREE.Mesh(geometry, material);
-  
-  /* 장면에 추가*/
-  scene.add(cube);
+
+  /* 큐브 만들기 함수*/
+  const makeInstance = function(geometry, color, x) {
+    // 색지정
+    const material = new THREE.MeshPhongMaterial({color});
+    
+    const cube = new THREE.Mesh(geometry, material);
+    /* 장면에 추가*/
+    scene.add(cube);
+
+    cube.position.x = x;
+
+    return cube;
+  }  
+
+  const cubes = [
+    makeInstance(geometry, 0x44aa88,  0),
+    makeInstance(geometry, 0x8844aa, -2),
+    makeInstance(geometry, 0xaa8844,  2),
+  ];
   
   const color = 0xFFFFFF;
   const intensity = 1;
   const light = new THREE.DirectionalLight(color, intensity);
   light.position.set(-1, 2, 4);
   scene.add(light);
+  
 
-  /*그리기*/
-  renderer.render(scene, camera);
 
   function render(time) {
-    time *= 0.001;  // convert time to seconds
-  
-    cube.rotation.x = time;
-    cube.rotation.y = time;
+    time *= 0.01;  // convert time to seconds
+    
+    cubes.forEach((cube, index)=>{
+      cube.rotation.x = 10;
+      cube.rotation.y = 10;
+      cube.rotation.z = time;
+    });
+
   
     renderer.render(scene, camera);
     /* requestAnimationFrame 함수에 업데이트*/
     requestAnimationFrame(render);
   }
+
 requestAnimationFrame(render);
 
 }
