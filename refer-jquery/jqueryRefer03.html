@@ -377,7 +377,6 @@
   $(".btn3-1").click(function(){
     if( $(".ex3 > div").hasClass("active") ){
         $(".ex3 > div.active").removeClass("active");
-        console.log('active');
     }
   });
 }
@@ -396,7 +395,6 @@
   $(".btn3-1").click(function(){
     if( $(".ex3 > div").hasClass("active") ){
         $(".ex3 > div.active").removeClass("active");
-        console.log('active');
     }
   });
 </script>
@@ -469,44 +467,38 @@
 </div>
 
 <script>
-  // const dObj = {
-  //   circle : $(".circle"),
-  //   object : obj = [
-  //   {
-  //     name:"가로(width)", 
-  //     size:function(){
-  //       return this.circle.width()
-  //     }
-  //   },
-  //   {
-  //     name:"가로(innerWidth)",
-  //     size: function(){
-  //        return this.circle.innerWidth()
-  //     }
-  //   },
-  //   {
-  //     name:"가로(outerWidth)", 
-  //     size: function(){return this.circle.outerWidth()}
-  //   },
-  //   {
-  //     name:"세로(height)", 
-  //     size: function(){return this.circle.height()}
-  //   },
-  //   {
-  //     name:"세로(innerHeight)", 
-  //     size: function(){return this.circle.innerHeight()}
-  //   },
-  //   {
-  //     name:"가로(outerHeight)", 
-  //     size: function(){return this.circle.outerHeight()}
-  //   }
-  // ]
-  // }
-  // dObj.object.forEach((el, index, array)=>{
-  //   $(`.btn4-${index+1}`).click(function(){
-  //     demension(el.name,el.size());
-  //   });
-  // });
+  const circle = $(".circle");
+  const cObj = [
+    {
+      name:"가로(width)", 
+      size: () => circle.width()
+    },
+    {
+      name:"가로(innerWidth)",
+      size: () => circle.innerWidth()
+    },
+    {
+      name:"가로(outerWidth)", 
+      size: () => circle.outerWidth()
+    },
+    {
+      name:"세로(height)", 
+      size: () => circle.height()
+    },
+    {
+      name:"세로(innerHeight)", 
+      size: () => circle.innerHeight()
+    },
+    {
+      name:"가로(outerHeight)", 
+      size: () => circle.outerHeight()
+    }
+  ]
+  cObj.forEach((el, index, array)=>{
+    $(`.btn4-${index+1}`).click(function(){
+      demension(el.name,el.size());
+    });
+  });
 
   function demension( name, size ){
     $(".text4").text(`이 원의 ${name} 값은 ${size} px 입니다.`);
@@ -514,33 +506,33 @@
 
   
 
-  $(".btn4-1").click(function(){
-    demension( "가로(width)", $(".circle").width() );
-  })
-  $(".btn4-2").click(function(){ 
-    demension( "가로(innerWidth)", $(".circle").innerWidth() );
-  })
-  $(".btn4-3").click(function(){ 
-    demension( "가로(outerWidth)", $(".circle").outerWidth() );
-  })
-  $(".btn4-4").click(function(){ 
-    demension( "세로(height)", $(".circle").height() );
-  })
-  $(".btn4-5").click(function(){ 
-    demension( "세로(innerHeight)", $(".circle").innerHeight() );
-  })
-  $(".btn4-6").click(function(){ 
-    demension( "가로(outerHeight)", $(".circle").outerHeight() );
-  })
-  $(".btn4-7").click(function(){ 
-    $(".text4").text(`이 샘플 박스의 가로 값은${$("#sample4").width()} px 입니다.`);
-  })
-  $(".btn4-8").click(function(){ 
-    $(".text4").text(`이 문서의 가로 값은${$(document).width()} px 입니다.`);
-  })
-  $(".btn4-9").click(function(){ 
-    $(".text4").text(`이 브라우저의 가로 값은${$(window).width()} px 입니다.`);
-  })
+  // $(".btn4-1").click(function(){
+  //   demension( "가로(width)", $(".circle").width() );
+  // })
+  // $(".btn4-2").click(function(){ 
+  //   demension( "가로(innerWidth)", $(".circle").innerWidth() );
+  // })
+  // $(".btn4-3").click(function(){ 
+  //   demension( "가로(outerWidth)", $(".circle").outerWidth() );
+  // })
+  // $(".btn4-4").click(function(){ 
+  //   demension( "세로(height)", $(".circle").height() );
+  // })
+  // $(".btn4-5").click(function(){ 
+  //   demension( "세로(innerHeight)", $(".circle").innerHeight() );
+  // })
+  // $(".btn4-6").click(function(){ 
+  //   demension( "가로(outerHeight)", $(".circle").outerHeight() );
+  // })
+  // $(".btn4-7").click(function(){ 
+  //   $(".text4").text(`이 샘플 박스의 가로 값은${$("#sample4").width()} px 입니다.`);
+  // })
+  // $(".btn4-8").click(function(){ 
+  //   $(".text4").text(`이 문서의 가로 값은${$(document).width()} px 입니다.`);
+  // })
+  // $(".btn4-9").click(function(){ 
+  //   $(".text4").text(`이 브라우저의 가로 값은${$(window).width()} px 입니다.`);
+  // })
 
 </script>
 <hr>
@@ -631,7 +623,7 @@
   }
 </style>
 <div id="sample6" class="sample mt20">
-  <h2>06. <span class="dot"></span></h2>
+  <h2>06. offset() / position() <span class="dot"></span></h2>
     <div class="view ex6">
       <span class="circle circle6"></span>
       <p class="text text6">여기는 텍스트 영역 입니다.</p>
