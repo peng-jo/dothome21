@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism-okaidia.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/jquery.css" rel="stylesheet" type="text/css" />
 </head>
@@ -415,7 +416,7 @@
     width: 100px;
     padding: 10px;
     margin: 10px;
-    border: 5px solid #f5c5ded3;
+    border: 5px solid #eb97d3;
     border-radius: 50%;
     background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
   }
@@ -548,7 +549,7 @@
     width: 100px;
     padding: 10px;
     margin: 10px;
-    border: 5px solid #f5c5ded3;
+    border: 5px solid #eb97d3;
     border-radius: 50%;
     background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
   }
@@ -567,7 +568,7 @@
     <div class="code">
 <pre class="line-numbers"><code class="language-js">{
   $(".btn5-0").click(function(){
-    $(".circle5").outerWidth("100").outerHeight("100");
+    $(".circle5").width("70").height("70");
   });
   $(".btn5-1").click(function(){
     $(".circle5").width("300");
@@ -585,7 +586,7 @@
 </div>
 <script>
   $(".btn5-0").click(function(){
-    $(".circle5").outerWidth("100").outerHeight("100");
+    $(".circle5").width("70").height("70");
   });
   $(".btn5-1").click(function(){
     $(".circle5").width("300");
@@ -617,7 +618,7 @@
     width: 100px;
     padding: 10px;
     margin: 10px;
-    border: 5px solid #f5c5ded3;
+    border: 5px solid #eb97d3;
     border-radius: 50%;
     background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
   }
@@ -656,17 +657,96 @@
 
 <script>
   $(".btn6-1").click(function(){
-    $(".text6").text("이 원의 x축 값은" + $(".circle6").offset().left+ "px 입니다.");
+    $(".text6").text("이 원의 x축 값은" + parseInt($(".circle6").offset().left)+ "px 입니다.");
   })
   $(".btn6-2").click(function(){
-    $(".text6").text("이 원의 y축 값은" + $(".circle6").offset().top+ "px 입니다.");
+    $(".text6").text("이 원의 y축 값은" + parseInt($(".circle6").offset().top)+"px 입니다.");
   })
   $(".btn6-3").click(function(){
-    $(".text6").text("이 원의 x축 값은" + $(".circle6").position().left+ "px 입니다.");
+    $(".text6").text("이 원의 x축 값은" + parseInt($(".circle6").position().left)+ "px 입니다.");
   })
   $(".btn6-4").click(function(){
-    $(".text6").text("이 원의 y축 값은" + $(".circle6").position().top+ "px 입니다.");
+    $(".text6").text("이 원의 y축 값은" + parseInt($(".circle6").position().top)+ "px 입니다.");
   })
+</script>
+<hr>
+
+
+
+<style>
+  .ex7 {
+    min-height: 300px;
+    position: relative;
+  }
+  .ex7 .circle{
+    position: absolute;
+    left: 50%; top: 50%;bottom: 0;right: 0;
+    margin-top:-50px;
+    margin-left:-50px;
+    display: block;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    border-radius: 50%;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  }
+</style>
+<div id="sample7" class="sample mt20">
+  <h2>07.  <span class="dot"></span></h2>
+    <div class="view ex7">
+      <div class="text text7">
+        <p href="#ex" class="text7-1">offset().left = <span>0</span></p>
+        <p href="#ex" class="text7-2">offset().top = <span>0</span></p>
+        <p href="#ex" class="text7-3">position().left = <span>0</span></p>
+        <p href="#ex" class="text7-4">position().top = <span>0</span></p>     
+        <p href="#ex" class="text7-5"></p>     
+      </div>
+      <p class="circle circle7"></p>
+    </div>
+    <div class="btn">
+      <a href="#ex" class="btn7-1">버튼을 드래그하세요</a>
+    </div>
+    <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+  $( function() {
+    $( ".circle7" ).draggable({
+      start: function(){
+        $(".text7-5").text("드래그가 시작되었습니다.");
+      },
+      drag: function(){
+        $(".text7-1 span").text( parseInt($(".circle7").offset().left) + "px" );
+        $(".text7-2 span").text( parseInt($(".circle7").offset().top) + "px" );
+        $(".text7-3 span").text( parseInt($(".circle7").position().left) + "px" );
+        $(".text7-4 span").text( parseInt($(".circle7").position().top) + "px" );
+      },
+      stop: function(){
+        $(".text7-5").text("드래그가 끝났습니다.");
+      }
+    });
+  });
+}
+</code></pre>
+  </div>
+</div>
+
+
+<script>
+  $( function() {
+    $( ".circle7" ).draggable({
+      start: function(){
+        $(".text7-5").text("드래그가 시작되었습니다.");
+      },
+      drag: function(){
+        $(".text7-1 span").text( parseInt($(".circle7").offset().left) + "px" );
+        $(".text7-2 span").text( parseInt($(".circle7").offset().top) + "px" );
+        $(".text7-3 span").text( parseInt($(".circle7").position().left) + "px" );
+        $(".text7-4 span").text( parseInt($(".circle7").position().top) + "px" );
+      },
+      stop: function(){
+        $(".text7-5").text("드래그가 끝났습니다.");
+      }
+    });
+  });
 </script>
 <hr>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>

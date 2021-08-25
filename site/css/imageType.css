@@ -1,8 +1,9 @@
 body {
-  background-color: #f3f3f3;
+  background-color: #F3F3F3;
 }
 
 .imageType {
+  margin: 150px 0;
   position: relative;
   padding: 100px 0;
   margin:100px 0;
@@ -25,7 +26,6 @@ h2 {
   color: black;
 }
 
-/* 01 */
 .imageType01 {
   color:#fff;
   width: 1200px;
@@ -71,8 +71,11 @@ h2 {
   font-size: 14px;
 }
 
+
+
+
 /* 02 */
-.imageType02 {
+/* .imageType02 {
   width: 1200px;
   margin: 0 auto;
 }
@@ -109,6 +112,71 @@ h2 {
   font-size: 12px;
   width:fit-content;
   margin: 0 auto;
+} */
+
+.imageType02 {
+  font-family: 'GmarketSans';
+  padding: 100px 0;
+}
+.imageType02 h2 {
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 36px;
+}
+.imageType02 {}
+.imageType02 .image-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.imageType02 .image {
+  width: 386px;
+  position: relative;
+  perspective: 800px;
+}
+.imageType02 .image::after {
+  content: '';
+  background: #fff;
+  display: block;
+  position: absolute;
+  left: 30px; top: 30px; right: 30px; bottom: 30px;
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transition: all 0.4s ease-in-out;
+}
+.imageType02 .image:hover::after {
+  opacity: 0.9;
+  transform: rotateX(0deg);
+}
+.imageType02 .image .image-img {}
+.imageType02 .image .image-cont {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  transform: translate(-50%, 50%);
+  z-index: 1000;
+  transition: all 0.3s ease-out;
+}
+.imageType02 .image:hover .image-cont {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+.imageType02 .image .image-title {
+  font-size: 30px;
+  font-weight: 500;
+  color: #000;
+}
+
+.imageType02 .image .image-btn {
+  display: inline-block;
+  color:#fff;
+  padding:7px 24px 5px 24px;
+  background-color: #000;
+  border-radius: 40px;
+  font-weight: 300;
+  margin-top:15px;
 }
 
 

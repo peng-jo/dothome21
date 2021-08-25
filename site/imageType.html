@@ -13,8 +13,21 @@
       
       <!-- Image Type CSS -->
       <link rel="stylesheet" href="css/imageType.css">
+
 </head>
 <body>
+
+<!-- 이미지를 표현하는 방법
+  1. 이미지 img 태그 (alt) ==> 의미가 있을 때
+  
+  2. 이미지를 background 속성 ==> 의미가 없을 때 (장식,배경)
+  
+  3. 의미가 있는 이미지도 background로 사용 ==> 이미지 스프라이트 기법
+     이미지 스프라이트를 사용하게 접근성이 깨짐 ==> IR 효과 IR 효과(alt) 
+  
+  4. 이미지 해상도 ==> 이미지 분류  ==> picture 태그, figure 태그
+-->
+
 
 <!-- #1번 -->
 
@@ -57,13 +70,40 @@
           </article>
         </div>
   </div>
-
-     
   </div>
 </div>
 
+<!-- <section class="imageType">
+  <div class="container">
+    <div class="imageType01">
+      <h2>취미생활 즐기기</h2>
+      <div class="img-wrap">
+        <div class="image">
+          <img src="img/image01.jpg" alt="수채화 이미지입니다.">
+          <div class="image-cont">
+            <h3>수채화 그리기</h3>
+            <p>수채화는 물과 수채화 물감, 붓, 휴지 준비물만 있으면 됩니다. 습식 기법과 건식 기법등을이용해 다른 사람과 같이 다양한 수채화를 그리보세요.</p>
+            <a class="image-btn black" href="#ex">자세히 보기</a>
+          </div>
+        </div>
+      </div>
+      <div class="image">
+        <img class="image-img" src="img/image02.jpg" alt="도자기 이미지 입니다.">
+        <div class="image-cont">
+          <h3 class="image-title">도자기 빚기</h3>
+          <p class="image-desc">핀칭 기법은 손가락의 힘만으로 흙을 눌러 원하는 형태로 만드는 작업이며 코일링 기법은 길다랗게 말아서 쌓아 올기는 기법입니다. 다른 사람과 함께 도자기를 빚어 보세요.
+          </p>
+          <a class="image-btn black" href="#ex">자세히 보기</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section> -->
+
+
 <!-- #2번 -->
-<div class="imageType">
+<!-- <div class="imageType">
   <div class="imageType02">
   <header>
     <h2>축구를 즐겨보자</h2>
@@ -71,7 +111,7 @@
   <div class="container">
     <div class="img-wrap">
       <div class="img">
-        <img src="img/image03.jpg" alt="" class="img-pic">
+        <img src="img/image03.jpg" alt="축구이미지" class="img-pic">
         <article>
           <span class="title">
             연습경기
@@ -82,7 +122,7 @@
         </article>
       </div>
       <div class="img">
-        <img src="img/image04.jpg" alt="" class="img-pic">
+        <img src="img/image04.jpg" alt="축구이미지" class="img-pic">
         <article>
           <span class="title">
             프리킥 연습
@@ -93,7 +133,7 @@
         </article>
       </div>
       <div class="img">
-        <img src="img/image05.jpg" alt="" class="img-pic">
+        <img src="img/image05.jpg" alt="축구이미지" class="img-pic">
         <article>
           <span class="title">
             패널티킥 연습
@@ -106,8 +146,38 @@
     </div>
   </div>
   </div>
-</div>
+</div> -->
 
+<section class="imageType">
+  <div class="container">
+    <div class="imageType02">
+      <h2>깊은 저 바닷속 해파리</h2>
+      <div class="image-wrap">
+        <figure class="image">
+          <img class="image-img" src="img/imageType03.jpg" alt="해파리 이미지">
+          <figcaption class="image-cont">
+            <h3 class="image-title" >해파리형태</h3>
+            <a href="#" class="image-btn">자세히 보기</a>
+          </figcaption>
+        </figure>
+        <figure class="image">
+          <img class="image-img" src="img/imageType04.jpg" alt="해파리 이미지">
+          <figcaption class="image-cont">
+            <h3 class="image-title" >해파리 종류</h3>
+            <a href="#" class="image-btn">자세히 보기</a>
+          </figcaption>
+        </figure>
+        <figure class="image">
+          <img class="image-img" src="img/imageType05.jpg" alt="해파리 이미지">
+          <figcaption class="image-cont">
+            <h3 class="image-title" >위험한 해파리</h3>
+            <a href="#" class="image-btn">자세히 보기</a>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div class="imageType">
   <div class="imageType03">
