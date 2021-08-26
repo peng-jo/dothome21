@@ -89,7 +89,7 @@
 </code></pre>
         </div>
     </div>
-
+    </div>
     <hr>
 
     <div id="sample2" class="sample">
@@ -551,7 +551,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+    <script src="./js/result.js"></script>
     <script>
+        
         //sample1
         //01. 변수 : 데이터 저장소
         {
@@ -563,6 +565,8 @@
             document.write(x, "<br>");
             document.write(y, "<br>");
             document.write(z, "<br><br>");
+
+            makeResult(1,x,y,z);
         }
         
         //sample2
@@ -580,6 +584,8 @@
             document.write(x, "<br>");
             document.write(y, "<br>");
             document.write(z, "<br><br>");
+
+            makeResult(2,x,y,z);
         }
         
         //sample3
@@ -598,6 +604,7 @@
             document.write(x, "<br>");
             document.write(y, "<br>");
             document.write(z, "<br><br>");
+            makeResult(3,x,y,z);
         }
         
         //sample4
@@ -615,6 +622,7 @@
             document.write(x, "<br>");
             document.write(y, "<br>");
             document.write(z, "<br><br>");
+            makeResult(4,x,y,z);
         }
 
         //sample5
@@ -629,6 +637,7 @@
             document.write(arr[0], "<br>");
             document.write(arr[1], "<br>");
             document.write(arr[2], "<br><br>");
+            makeResult(5, arr[0], arr[1], arr[2]);
         }
         
         //sample6
@@ -640,6 +649,7 @@
             document.write(arr[0], "<br>");
             document.write(arr[1], "<br>");
             document.write(arr[2], "<br><br>");
+            makeResult(6, arr[0], arr[1], arr[2]);
         }
         
         //sample7
@@ -924,6 +934,17 @@
             document.write(typeof(und), "<br>");
             document.write(typeof(sym), "<br>");
         }
+        // function addToggleEvent( ){
+        //     document.querySelector(".toggle-btn").addEventListener("click",()=>{
+        //         document.querySelector(".toggle-result").innerHTML = "text";
+        //         document.querySelector(".toggle-result").classList.toggle("none");
+        //     })
+        // };
+    
+       
+
+        
     </script>
+
 </body>
 </html>

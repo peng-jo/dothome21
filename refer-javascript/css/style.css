@@ -54,7 +54,9 @@ img {
 ul {
     list-style: none;
 }
-
+ol {
+  padding-left: 28px;
+}
 a {
     text-decoration: none;
     color : #000;
@@ -229,10 +231,35 @@ h2{
   color: #fff;
 }
 
-.table {
-  
-  
+.toggle {
+  margin-top: 5px;
+  border-radius: 5px;
 }
+.toggle-btn {
+  
+  padding: 5px;
+  border: 1px solid #e6e6e6;
+  display: block;
+  border-radius: 5px 5px 0 0;
+}
+.toggle-result {
+  display: inline-block;
+  width:100%;
+  background-color: #272822;
+  color:#f8f8f2;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  padding:10px;
+  text-align: left;
+  border-radius: 0  0 5px 5px;
+  line-height: 1.5;
+}
+
+.none {
+  display:none;
+}
+
 .table table tr:nth-child(even){
   background-color: #f2f6fd;
 }

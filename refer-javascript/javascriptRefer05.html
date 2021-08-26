@@ -61,6 +61,7 @@
       <li><a href=#sample6>06. 문자열 메서드 : charAt() : 지정한 인덱스의 문자를 추출 : 반환(문자)</a> <a class="sam" href="javascriptSample01.html">sample</a></li>
       <li><a href=#sample7>07. 문자열 메서드 : slice() : 지정한 범위 내 문자열을 추출 : 반환(문자열)</a></li>
       <li><a href=#sample7>07. 문자열 메서드 : subString() : 지정한 범위 내 문자열을 추출 : 반환(문자열)</a></li>
+      <li><a href=#sample7>07. 문자열 메서드 : substr() : 지정한 범위 내 문자열을 추출 : 반환(문자열)</a></li>
       <li><a href=#sample8>08. 문자열 메서드 : replace() : 문자열 변경 : 반환(문자열)</a></li>
       <li><a href=#sample9>09. 문자열 메서드 : split() : 문자열 반환 : 반환(문자열)</a></li>
       <li><a href=#sample10>10. 문자열 메서드 : padStart() : 문자열 추가 : 반환(문자열)</a></li>
@@ -494,7 +495,7 @@
 <hr>
 
 <div id="sample7" class="sample mt20">
-  <h2>07. 문자열 메서드 : slice() / subString() : 지정한 범위 내 문자열을 추출 : 반환(문자) <span class="dot"></span></h2>
+  <h2>07. 문자열 메서드 : slice() / subString() / substr() : 지정한 범위 내 문자열을 추출 : 반환(문자) <span class="dot"></span></h2>
   <div class="view">
       <table>
         <colgroup>
@@ -581,7 +582,7 @@
   const text6 = str.substring(5, 1);
   document.querySelector(".sample07_R6").innerHTML = text6;
 
-  const text7 = str.substring(4, 2);
+  const text7 = str.substr(4, 2);
   document.querySelector(".sample07_R7").innerHTML = text7;
 }
 </code></pre>
@@ -1207,7 +1208,7 @@
   document.querySelector(".sample07_M6").innerHTML = ".substring(5, 1)";
   document.querySelector(".sample07_R6").innerHTML = text6;
 
-  const text7 = str.substring(4, 2);
+  const text7 = str.substr(4, 2);
   
   document.querySelector(".sample07_N7").innerHTML = "7";
   document.querySelector(".sample07_Q7").innerHTML = str;
