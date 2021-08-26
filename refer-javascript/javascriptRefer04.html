@@ -279,17 +279,6 @@
   document.write("*** 11. forEach() ***");
 
   const num = [100, 200, 300, 400 , 500];
-
-  //for문
-  for(let i=0; i&ltnum.length; i++){
-    document.write(num[i]);
-  }
-
-  //forEach()
-  num.forEach(function(index){
-    document.write(index);
-  });
-  //forEach(element, index, array);
   
   num.forEach((element ,index, array)=>{
     document.write(element);
@@ -401,220 +390,227 @@
 </div>
 </div>
 <hr>
+<script src="./js/result.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
 <script>
   //sample1
   //if문
   {
+    const print = new makeResult2(1);
     const x = 100;
 
     //true, false, 1, "", 0, "1", 0, null, undefined, [], {}
     if(true){
-      document.write("*** 01 if문 ***<br>");
-      document.write("조건문이 실행되었습니다.(true)<br><br>");
+      print.add("*** 01 if문 ***<br>");
+      print.add("조건문이 실행되었습니다.(true)<br>");
     }else{
-      document.write("*** 01 if문 ***<br>");
-      document.write("조건문이 실행되었습니다.(false)<br><br>");
+      print.add("*** 01 if문 ***<br>");
+      print.add("조건문이 실행되었습니다.(false)<br>");
     }
+    print.print()
   }
 
   //sample2
   //다중if문
   {
+    const print = new makeResult2(2);
     let num = 100;
 
     if( num === 90 ){
-      document.write("*** 02 if문 ***<br>");
-      document.write("조건문이 실행되었습니다.( num === 90 )<br><br>");
+      print.add("*** 02 if문 ***<br>");
+      print.add("조건문이 실행되었습니다.( num === 90 )<br>");
     }else if( num === 100 ){
-      document.write("*** 02 if문 ***<br>");
-      document.write("조건문이 실행되었습니다.( num === 100 )<br><br>");
+      print.add("*** 02 if문 ***<br>");
+      print.add("조건문이 실행되었습니다.( num === 100 )<br>");
     }else if( num === 200 ){
-      document.write("*** 02 if문 ***<br>");
-      document.write("조건문이 실행되었습니다.( num === 200 )<br><br>");
+      print.add("*** 02 if문 ***<br>");
+      print.add("조건문이 실행되었습니다.( num === 200 )<br>");
     }else if( num === 300 ){
-      document.write("*** 02 if문 ***<br>");
-      document.write("조건문이 실행되었습니다.( num === 300 )<br><br>");
+      print.add("*** 02 if문 ***<br>");
+      print.add("조건문이 실행되었습니다.( num === 300 )<br>");
     }
+    print.print();
   }
 
   //sample3
   //중첩if문
   {
+    const print = new makeResult2(3);
     let num = 100;
     if(num === 100 ){
-      document.write("*** 03. 중첩 if문 ***<br>");
-      document.write("조건문이 실행되었습니다.(1)<br><br>");
+      print.add("*** 03. 중첩 if문 ***<br>");
+      print.add("조건문이 실행되었습니다.(1)<br>");
       if(num === 100 ){
-        document.write("*** 03. 중첩 if문 ***<br>");
-        document.write("조건문이 실행되었습니다.(2)<br><br>");
+        print.add("*** 03. 중첩 if문 ***<br>");
+        print.add("조건문이 실행되었습니다.(2)<br>");
         if( num === 100 ){
-          document.write("*** 03. 중첩 if문 ***<br>");
-          document.write("조건문이 실행되었습니다.(3)<br><br>");
+          print.add("*** 03. 중첩 if문 ***<br>");
+          print.add("조건문이 실행되었습니다.(3)<br>");
         }
       }
     }else{
-      document.write("*** 03. 중첩 if문 ***<br>");
-      document.write("조건문이 실행되었습니다.(4)<br>");
+      print.add("*** 03. 중첩 if문 ***<br>");
+      print.add("조건문이 실행되었습니다.(4)<br>");
     }
+    print.print();
   }
 
   //sample4
   //switch문
   {
     let num = 100;
-
+    const print = new makeResult2(4);
     switch( num ){
       case 100 :
-        document.write("*** 04. switch문 ***<br>");
-        document.write("조건문이 실행되었습니다.( num === 100)<br>");
+        print.add("*** 04. switch문 ***<br>");
+        print.add("조건문이 실행되었습니다.( num === 100)<br>");
         break;
       case 200 :
-        document.write("*** 04. switch문 ***<br>");
-        document.write("조건문이 실행되었습니다.( num === 200)<br>");
+        print.add("*** 04. switch문 ***<br>");
+        print.add("조건문이 실행되었습니다.( num === 200)<br>");
         break;
       case 300 :
-        document.write("*** 04. switch문 ***<br>");
-        document.write("조건문이 실행되었습니다.( num === 300)<br>");
+        print.add("*** 04. switch문 ***<br>");
+        print.add("조건문이 실행되었습니다.( num === 300)<br>");
       break;
       default :
-        document.write("*** 04. switch문 ***<br>");
-        document.write("조건문이 실행되었습니다.(num == 값이 없음)<br><br>");
+        print.add("*** 04. switch문 ***<br>");
+        print.add("조건문이 실행되었습니다.(num == 값이 없음)<br>");
       break;
     }
-    document.write("<br>");
+    print.print();
   }
 
   //sample5
   //삼항 연산자(조건부 연산자)
   {
+    const print = new makeResult2(5);
     let num = 100;
 
-    document.write("*** 05. 조건부연산자 ***<br>");
-    ( num == 100 ) ? document.write("true<br></br>") : document.write("false<br></br>")
+    print.add("*** 05. 조건부연산자 ***<br>");
+    ( num == 100 ) ? print.add("true<br>") : print.add("false<br>");
+    print.print();
   }
 
   //sample6
   //if문 생략
 
   {
+    const print = new makeResult2(6);
     let num = 100
     
-    document.write("*** 06. if문 생략 ***<br>");
+    print.add("*** 06. if문 생략 ***<br>");
     if(true)
-      document.write("true<br>");
+      print.add("true<br>");
     else
-      document.write("false<br>");
-    document.write("<br>");
+      print.add("false<br>");
+
+    print.print();
   }
 
   //sample7
   //while문
   {
-    document.write("*** 07. while문 ***<br>");
+    const print = new makeResult2(7);
+    print.add("*** 07. while문 ***<br>");
     
     let num = 1;
     while( num <= 10 ){
-      document.write(num+" 반복문이 실행되었습니다.<br>");
+      print.add(num+" 반복문이 실행되었습니다.<br>");
       num++;
     }
-    document.write("<br>");
+
+    print.print();
   }
 
   //sample8
   //do while문
   {
-    document.write("*** 08. do while문 ***<br>");
+    const print = new makeResult2(8);
+    print.add("*** 08. do while문 ***<br>");
     
     let num = 1;
     do {
-      document.write(num+ "반복문이 실행되었습니다.<br>");
+      print.add(num+ ". 반복문이 실행되었습니다.<br>");
       num++;
     }while( num <= 10 );
 
-    document.write("<br><br>");
+
+    print.print();
   }
 
   //sample9
   //for문 : 반복문
   {
-    document.write("*** 09. for문 ***<br>");
+    const print = new makeResult2(9);
+    print.add("*** 09. for문 ***<br>");
 
     //for(초깃값; 조건식; 증감값){
     //    실행문
     //}
 
     for( let i=1; i<=10; i++){
-      document.write(i+". 반복문이 실행되었습니다.<br>");
+      print.add(i+". 반복문이 실행되었습니다.<br>");
     }
-    document.write("<br>");
+    print.print();
   }
 
   //sample10
   //중첩 for문 : 반복문
   {
-    document.write("*** 10. 중첩 for문 ***<br>");
+    const print = new makeResult2(10);
+    print.add("*** 10. 중첩 for문 ***<br>");
     for(var i=1; i<=5; i++){
-      document.write(i+". 아이 반복문이 실행되었습니다.<br>");
+      print.add(i+". 아이 반복문이 실행되었습니다.<br>");
       for(var j=1; j<=5; j++){
-        document.write(j+". 제이 반복문이 실행되었습니다.<br>");
+        print.add(j+". 제이 반복문이 실행되었습니다.<br>");
       }
     }
-    document.write("<br><br>");
+
+    print.print();
   }
 
   //sample11
   //11. forEach() : 배열에서만 사용 가능
   {
-    document.write("*** 11. forEach()문 ***<br>");
+    const print = new makeResult2(11);
+    print.add("*** 11. forEach()문 ***<br>");
 
     const num = [100, 200, 300, 400 , 500];
 
-    //for문
-    for(let i=0; i<num.length; i++){
-      document.write(num[i],"<br>");
-    }
-    document.write("<br>");
-
-    //forEach()
-    num.forEach(function(index){
-      document.write(index);
-      document.write("<br>");
-    });
-    document.write("<br>");
-    //forEach(element, index, array)
-    
     num.forEach((element ,index, array)=>{
-      document.write(element,"<br>");
-      document.write(index,"<br>");
-      document.write(array,"<br>");
+      print.add(element,"<br>");
+      print.add(index,"<br>");
+      print.add(array,"<br>");
     });
-    document.write("<br><br>");
+    print.print();
   }
 
   //sample12
   //12. for of문 : 배열에서 사용
   {
-    document.write("*** 12. for of문 ***<br>");
+    const print = new makeResult2(12);
+    print.add("*** 12. for of문 ***<br>");
 
     const num = [100, 200, 300, 400, 500];
 
     for( let i of num ){
-      document.write(i+". 반복문이 실행되었습니다.<br>");
+      print.add(i+". 반복문이 실행되었습니다.<br>");
     }
 
-    document.write("<br>");
+    print.print();
   }
   //sample13
   //13. for in문 : 객체에서 사용
   {
-    document.write("*** 13. for in문 ***<br>");
+    const print = new makeResult2(13);
+    print.add("*** 13. for in문 ***<br>");
 
     const num = [100, 200, 300, 400, 500];
 
     for( let i in num ){
-      document.write(num[i]+". 반복문이 실행되었습니다.<br>");
+      print.add(num[i]+". 반복문이 실행되었습니다.<br>");
     }
     
     const obj = {
@@ -626,42 +622,47 @@
     };
 
     for( let key in obj ){
-      document.write(key, "<br>" )
-      document.write(obj[key], "<br>" )
+      print.add(key, "<br>" )
+      print.add(obj[key], "<br>" )
     }
 
-    document.write("<br>")
+    print.print();
   }
   //sample14
   //14. break 문
   {
-    document.write("*** 14. break문 ***<br>");
+    const print = new makeResult2(14);
+    print.add("*** 14. break문 ***<br>");
     //while문을 이용해서 1부터 20까지 출력을 해주세요!!
     let num = 1;
     while(num<20){
-      document.write(num, "&nbsp" );
+      print.add(num, "&nbsp" );
       if( num === 10 ){
         break;
       }
       num++
     }
-    document.write("<br>");
+    print.add("<br>");
 
     //while문을 이용해서 1부터 20까지 출력을 해주세요!!
 
     for(let i = 1; i<=20; i++ ){      
-      document.write(i, "&nbsp" );
+      print.add(i, "&nbsp" );
       if( i === 10 ){
         break;
       }
     }
-    document.write("<br><br>");
+
+
+    print.print();
   }
 
   //sample15
   //15. continue 문
   {
-    document.write("*** 14. continue문 ***<br>");
+    const print = new makeResult2(15);
+
+    print.add("*** 14. continue문 ***<br>");
     //while문을 이용해서 1부터 20까지 출력을 해주세요!
     
     let num = 0;
@@ -673,8 +674,9 @@
       if( num > 19){
         break;
       }
-      document.write(num, "&nbsp")
+      print.add(num, "&nbsp")
     }
+    print.print();
   }
 
 </script>

@@ -830,7 +830,7 @@
                 javascript
                 400
             */
-            makeResult(17, "함수안 : 100 500 javascript 400"," / 함수밖 : ",x, y, z, a );
+            makeResult(17, "함수안 : 100 500 javascript 400"," <br> 함수밖 : ",x, y, z, a );
         }
 
         //18
@@ -840,18 +840,18 @@
             let y = "100";
             let result = "";
 
-            result += x + " : " +typeof(x)+" / ";
+            result += x + " : " +typeof(x)+"<br>";
 
-            result += y + " : " +typeof(y)+" / ";
+            result += y + " : " +typeof(y)+"<br>";
             
             x = "" + x; //숫자를 문자열로 형 변환
-            result += x + " : " +typeof(x)+" / ";
+            result += x + " : " +typeof(x)+"<br>";
 
             y = Number(y); //내장객체
-            result += y + " : " +typeof(y)+" / ";
+            result += y + " : " +typeof(y)+"<br>";
 
             x = Number(x);
-            result += x + " : " +typeof(x)+" / ";
+            result += x + " : " +typeof(x)+"<br>";
 
             y = String(y); //내장객체
             result += y + " : " +typeof(y);

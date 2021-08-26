@@ -255,12 +255,12 @@ h2{
   border-bottom: 1px solid #ddd;
   padding: 10px;
 }
-.table table td a{
+/* .table table td a{
   color: #0e43f1;
 }
 .table table td a:visited{
   color: #ca6ef5;
-}
+} */
 
 .view {
   padding: 20px;
