@@ -74,8 +74,8 @@ h2{
 .list li a{
   font-size: 14px;
 }
+
 .sample {
-    border: 1px solid #e6e6e6;
     border-radius: 5px;
 }
 
@@ -158,7 +158,7 @@ h2{
 
 .sample pre {
     margin: 0 !important;
-    border-radius: 0;
+    border-radius: 0 0 5px 5px;
 }
 
 .sample .desc {
@@ -234,6 +234,7 @@ h2{
 .toggle {
   margin-top: 5px;
   border-radius: 5px;
+  display: block;
 }
 .toggle-btn {
   
@@ -243,7 +244,7 @@ h2{
   border-radius: 5px 5px 0 0;
 }
 .toggle-result {
-  display: inline-block;
+  display: none;
   width:100%;
   background-color: #272822;
   color:#f8f8f2;
@@ -252,12 +253,12 @@ h2{
   word-wrap: normal;
   padding:10px;
   text-align: left;
-  border-radius: 0  0 5px 5px;
+  border-radius: 0  5px 5px 5px;
   line-height: 1.5;
 }
 
 .none {
-  display:none;
+  display:inline-block;
 }
 
 .table table tr:nth-child(even){

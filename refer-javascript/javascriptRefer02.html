@@ -594,7 +594,7 @@
 
 
 
-
+<script src="./js/result.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
 <script>
@@ -603,11 +603,12 @@
 {
   let x = 100, y = 200, z = "javascript";
 
-  document.write(" *** 01. 변수 : 데이터 불러오기 ***<br>");
-  document.write(x, "<br>");
-  document.write(y, "<br>");
-  document.write(z, "<br>");
-  document.write("<br><br>");
+//   document.write(" *** 01. 변수 : 데이터 불러오기 ***<br>");
+//   document.write(x, "<br>");
+//   document.write(y, "<br>");
+//   document.write(z, "<br>");
+//   document.write("<br><br>");
+  makeResult(1, x, y, z);
 }
 //sample2
 //02. 상수 데이터 저장소 : 데이터 값이 변하지 않음
@@ -620,22 +621,24 @@
     // z = "jquery"
     // Uncaught TypeError: Assignment to constant variable.
 
-    document.write("*** 02. 상수 ***<br>");
-    document.write(x, "<br>");
-    document.write(y, "<br>");
-    document.write(z, "<br><br>");
+    // document.write("*** 02. 상수 ***<br>");
+    // document.write(x, "<br>");
+    // document.write(y, "<br>");
+    // document.write(z, "<br><br>");
+    makeResult(2, x, y, z);
 }
-//sample2
-//02. 데이터 불러오기 : 배열
+//sample3
+//03. 데이터 불러오기 : 배열
 {
   const arr = [100, 200, "javascript"];
 
-  document.write(" *** 03. 배열 : 데이터 불러오기 ***<br>");
+//   document.write(" *** 03. 배열 : 데이터 불러오기 ***<br>");
   
-  document.write(arr[0], "<br>");
-  document.write(arr[1], "<br>");
-  document.write(arr[2], "<br>");
-  document.write("<br><br>");
+//   document.write(arr[0], "<br>");
+//   document.write(arr[1], "<br>");
+//   document.write(arr[2], "<br>");
+//   document.write("<br><br>");
+    makeResult(3, arr[0], arr[1], arr[2]);
 }
 
 //sample3
@@ -643,13 +646,15 @@
 {
   const arr = [100, 200, ["javascript", "jquery"]];
   
-  document.write(" *** 04. 배열 : 데이터불러오기 : 2차 배열 ***<br>");
-  document.write(arr[0], "<br>");
-  document.write(arr[1], "<br>");
-  document.write(arr[2][0], "<br>");
-  document.write(arr[2][1], "<br>");
-  document.write(arr[2], "<br>");
-  document.write("<br><br>");
+//   document.write(" *** 04. 배열 : 데이터불러오기 : 2차 배열 ***<br>");
+//   document.write(arr[0], "<br>");
+//   document.write(arr[1], "<br>");
+//   document.write(arr[2][0], "<br>");
+//   document.write(arr[2][1], "<br>");
+//   document.write(arr[2], "<br>");
+//   document.write("<br><br>");
+
+    makeResult(4, arr[0], arr[1], arr[2][0], arr[2][1], arr[2]);
 }
 
 
@@ -658,9 +663,11 @@
 {
   const arr = [100, 200, "javascript"];
 
-  document.write(" *** 05. 배열 : 데이터 불러오기 : 갯수 구하기 ***<br>");
-  document.write(arr.length);
-  document.write("<br><br>");
+//   document.write(" *** 05. 배열 : 데이터 불러오기 : 갯수 구하기 ***<br>");
+//   document.write(arr.length);
+//   document.write("<br><br>");
+  makeResult(5, arr.length);
+
 }
 
 //sample6
@@ -668,12 +675,12 @@
 {
   const arr = [100, 200, 300, 400, 500];
 
-  document.write(" *** 06. 배열 : 데이터 불러오기 : for문 ***<br>");
-  
+//   document.write(" *** 06. 배열 : 데이터 불러오기 : for문 ***<br>");
+  let result = "";
   for(let i = 0; i < arr.length; i++){
-    document.write(arr[i],"<br>");
+    result += arr[i]+" ";
   }
-  document.write("<br><br>");
+  makeResult(6, result);
 }
 
 //sample

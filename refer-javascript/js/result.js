@@ -23,10 +23,10 @@ function makeToggle(text){
   
   return toggle;
 }
+
 function makeResult( id, text ){
   if( arguments.length > 2){
     const sliced = [].slice.call(arguments, 1);
-    console.log(sliced.toString(), )
     document.querySelector(`#sample${id} .code`).appendChild(makeToggle(sliced.toString().replace(/\,/g," ")));
   }else{
     document.querySelector(`#sample${id} .code`).appendChild(makeToggle(text));   
