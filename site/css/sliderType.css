@@ -77,14 +77,14 @@ body {
   left: 25px;
   top: 50%;
   transform: translateY(-50%);
-  background-color:rgba(0, 0, 0, 0.3);
+  /* background-color:rgba(0, 0, 0, 0.3); */
 }
 .sliderType01 .slider .slider-arrow a.right{
   position: absolute;
   right: 25px;
   top: 50%;
   transform: translateY(-50%);
-  background-color:rgba(0, 0, 0, 0.3);
+  /* background-color:rgba(0, 0, 0, 0.3); */
 }
 .sliderType01 .slider .slider-dot {
   position: absolute;
