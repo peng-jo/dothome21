@@ -47,24 +47,24 @@
         </ul>
     </nav>
     <hr>
-    <ul class="list">
-        <li><a href="#sample1">01. 변수 : 데이터 저장</a></li>
-        <li><a href="#sample2">02. 변수 : 데이터 저장 + 데이터 변경</a></li>
-        <li><a href="#sample3">03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</a></li>
-        <li><a href="#sample4">04. 상수 : 데이터 저장(변하지 않음)</a></li>
-        <li><a href="#sample5">05. 배열 : 데이터 저장(여러개) : 표현방법1</a></li>
-        <li><a href="#sample6">06. 배열 : 데이터 저장(여러개) : 표현방법2</a></li>
-        <li><a href="#sample7">07. 배열 : 데이터 저장(여러개) : 표현방법3</a></li>
-        <li><a href="#sample8">08. 배열 : 데이터 저장(여러개) : 표현방법4</a></li>
-        <li><a href="#sample9">09. 객체 : 데이터 저장(키와 값) : 표현방법1 : 배열 스타일</a></li>
-        <li><a href="#sample10">10. 객체 : 데이터 저장(키와 값) : 표현방법2 : 객체 스타일</a></li>
-        <li><a href="#sample11">11. 객체 : 데이터 저장(키와 값) : 표현방법3 : 키워드 생략</a></li>
-        <li><a href="#sample12">12. 객체 : 데이터 저장(키와 값) : 표현방법4</a></li>
-        <li><a href="#sample13">13. 객체 : 데이터 저장(키와 값) : 표현방법5 : 배열 속에 객체</a></li>
-        <li><a href="#sample14">14. 객체 : 데이터 저장(키와 값) : 표현방법6 : 객체 속에 배열</a></li>
-        <li><a href="#sample15">15. 객체 : 데이터 저장(키와 값) : 표현방법7 : 객체 속에 변수</a></li>
-        <li><a href="#sample16">16. 객체 : 데이터 저장(키와 값) : 표현방법8 : 객체 속에 함수</a></li>
-    </ul>
+    <ol class="list">
+        <li><a href="#sample1">변수 : 데이터 저장</a></li>
+        <li><a href="#sample2">변수 : 데이터 저장 + 데이터 변경</a></li>
+        <li><a href="#sample3">변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</a></li>
+        <li><a href="#sample4">상수 : 데이터 저장(변하지 않음)</a></li>
+        <li><a href="#sample5">배열 : 데이터 저장(여러개) : 표현방법1</a></li>
+        <li><a href="#sample6">배열 : 데이터 저장(여러개) : 표현방법2</a></li>
+        <li><a href="#sample7">배열 : 데이터 저장(여러개) : 표현방법3</a></li>
+        <li><a href="#sample8">배열 : 데이터 저장(여러개) : 표현방법4</a></li>
+        <li><a href="#sample9">객체 : 데이터 저장(키와 값) : 표현방법1 : 배열 스타일</a></li>
+        <li><a href="#sample10">객체 : 데이터 저장(키와 값) : 표현방법2 : 객체 스타일</a></li>
+        <li><a href="#sample11">객체 : 데이터 저장(키와 값) : 표현방법3 : 키워드 생략</a></li>
+        <li><a href="#sample12">객체 : 데이터 저장(키와 값) : 표현방법4</a></li>
+        <li><a href="#sample13">객체 : 데이터 저장(키와 값) : 표현방법5 : 배열 속에 객체</a></li>
+        <li><a href="#sample14">객체 : 데이터 저장(키와 값) : 표현방법6 : 객체 속에 배열</a></li>
+        <li><a href="#sample15">객체 : 데이터 저장(키와 값) : 표현방법7 : 객체 속에 변수</a></li>
+        <li><a href="#sample16">객체 : 데이터 저장(키와 값) : 표현방법8 : 객체 속에 함수</a></li>
+    </ol>
     <h2 class="mt20">추가</h2>
         <ul class="list">
             <li><a href="#sample17">01. 변수의 종류 : 변수(전역/지역), 매개변수</a></li>
@@ -786,16 +786,16 @@
         }
         //17. 변수의 종류 : 지역변수, 전역변수
         {
-            document.write("*** 17. 변수의 종류 : 지역변수, 전역변수 ***<br>");
-
+            // document.write("*** 17. 변수의 종류 : 지역변수, 전역변수 ***<br>");
+            const print = new makeResult2(17);
             let x = 100; // 전역변수
             let y = 200;
             let z = "javascript";
             let a = 300;
 
-            document.write(x, "<br>"); 
-            document.write(y, "<br>");
-            document.write(z, "<br><br>");
+            print.add(x, "<br>"); 
+            print.add(y, "<br>");
+            print.add(z, "<br><br>");
 
             function func5(){
                 let x = 100; //변수설정 : 지역변수
@@ -804,19 +804,19 @@
                 a = 400;     //전역 변수 : 변수 값이 300 -> 400 변경
                 y = 500;     //지역 변수 : 변수 값이 200 -> 500 변경
 
-                document.write("함수안", "<br>")
-                document.write(x, "<br>");
-                document.write(y, "<br>");
-                document.write(z, "<br>");
-                document.write(a, "<br><br>");
+                print.add("함수안", "<br>")
+                print.add(x, "<br>");
+                print.add(y, "<br>");
+                print.add(z, "<br>");
+                print.add(a, "<br><br>");
             }
             func5();
 
-            document.write("함수밖", "<br>")
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
-            document.write(a, "<br><br>");
+            print.add("함수밖", "<br>")
+            print.add(x, "<br>");
+            print.add(y, "<br>");
+            print.add(z, "<br>");
+            print.add(a);
             /*
                 함수안
                 100
@@ -830,12 +830,12 @@
                 javascript
                 400
             */
-            makeResult(17, "함수안 : 100 500 javascript 400"," <br> 함수밖 : ",x, y, z, a );
+            print.print();
         }
 
         //18
         {
-            document.write("*** 18. 변수의 변환 : 형 변환 ***<br>");
+            // document.write("*** 18. 변수의 변환 : 형 변환 ***<br>");
             let x = 100;
             let y = "100";
             let result = "";
@@ -865,7 +865,7 @@
         //변수 : 숫자(Number), 문자(String), 함수(function), 배열(Array), 객체(object), 불린(boolean), null
         //       객체(object), 불린(boolean), 특수값(null, undefined), 심볼(symbol)
         {
-            document.write("*** 19. 변수의 유형 : 데이터 타입 ***<br>");
+            // document.write("*** 19. 변수의 유형 : 데이터 타입 ***<br>");
 
             let num1 = 100;
             let str  = "javascript";

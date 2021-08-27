@@ -18,7 +18,12 @@
   box-sizing: border-box;
   
 }
-
+ol {
+  padding-left: 28px;
+}
+li {
+  font-size : 14px;
+}
 body {
   line-height: 1.6;
   padding: 5%;
@@ -54,9 +59,7 @@ img {
 ul {
     list-style: none;
 }
-ol {
-  padding-left: 28px;
-}
+
 a {
     text-decoration: none;
     color : #000;
@@ -76,7 +79,8 @@ h2{
 }
 
 .sample {
-    border-radius: 5px;
+  border-radius: 5px;
+
 }
 
 .sample h2 {
@@ -291,8 +295,9 @@ h2{
 
 
 .view {
-  padding: 20px;
+
   overflow:auto;
+  border: 1px solid #e3e3e3;
 }
 
 .view table {
