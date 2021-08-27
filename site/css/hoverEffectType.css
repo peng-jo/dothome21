@@ -25,7 +25,6 @@ body {
     width: 590px;
     height: 385px;
 }
-
 .imageType01 .image:first-child {
     margin-right: 20px;
 }
@@ -38,32 +37,27 @@ body {
     transform: scale(1);
     transition: opacity 0.4s, transform 0.4s;
 }
-
 .imageType01 .image:hover .image-img {
     opacity: 1;
     transform: scale(1.1);
 }
-
 .imageType01 .image .image-cont {
     position: absolute;
+    color: #fff;
     left: 30px;
     bottom: 30px;
-    color: #fff;
 }
 .imageType01 .image .image-title {
+    margin-bottom: 6px;
     font-size: 30px;
     font-weight: 500;
-    margin-bottom: 6px;
     transform: translateY(100px);
-    /* transfrom 움직이는시간 딜레이 */
     transition: transform 0.35s 0.35s; 
 }
 .imageType01 .image:hover .image-title {
     transform: translateY(0px);
     transition: transform 0.35s;
 }
-
-
 .imageType01 .image .image-desc {
     font-size: 14px;
     font-weight: 500;
