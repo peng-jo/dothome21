@@ -5,7 +5,7 @@ body {
 }
 .container {
   width: 1200px;
-  padding: 96px 0 100px 0;
+  padding: 100px 0 100px 0;
 }
 .cardType {
   margin: 100px 0;
@@ -230,4 +230,46 @@ body {
   text-decoration: underline;
 }
 
+/* 4 */
+.cardType04 {
+  font-family: 'GmarketSans';
+}
+.cardType04 h2 {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  text-align: center;
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 68px;
+}
 
+.cardType04 .card-wrap {
+  display: flex;
+  gap:20px;
+}
+.cardType04 .card-wrap .card {
+  padding-left: 44px;
+  background-color: #f2f2f2;
+  border: solid 1px #ededed;
+  border-radius: 14px;
+  width: 388px;
+}
+.cardType04 .card-wrap .card .topic {
+  margin: 56px 0 14px 0;
+  display: block;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.cardType04 .card-wrap .card .title {
+  margin-bottom: 64px;
+  display: block;
+  font-size: 24px;
+  line-height: 1.5;
+}
+.cardType04 .card-wrap .card .img {
+  float:right;
+  width: 344px;
+  margin-bottom: 66px;
+  box-shadow: 0 0 50px rgba(0,0,0,0.1);
+}
