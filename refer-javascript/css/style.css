@@ -68,11 +68,11 @@ h2{
   word-break: break-all;
 }
 .list li .sam {
-  color: #fff;
   background-color: #000;
   color : #fff;
   border-radius:30px;
   padding : 0 20px;
+  margin-left: 5px;
 }
 .list li a{
   font-size: 14px;
