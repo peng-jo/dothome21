@@ -33,13 +33,9 @@ function makeResult( id, text ){
   }
 }
 /*
-미안하다 지금까지 이 코드 보여줄려고 어그로 끌었다...
 const print = new makeREsult2();
 print.add(text);
 print.print();
-이 세줄이면 토글 기능에 엘리먼트 생성기능에 텍스트 넣는 기능까지 할수있다...
-가슴이 웅장해진다.......
-실화냐? 내가알던 팡션이 아니다... 프로토타입 함수는 전설이다...
 */
 function makeResult2(id){
   this.id = id;
