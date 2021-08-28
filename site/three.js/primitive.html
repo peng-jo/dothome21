@@ -41,14 +41,14 @@ function main(){
   const renderer = new THREE.WebGLRenderer({canvas});
 
   // the canvas default
-  const fov = 75;
-  const aspect = canvas.clientWidth / canvas.clientHeight; 
+  const fov = 40;
+  const aspect = 2;
   const near = 0.1;
-  const far = 5;
+  const far = 1000;
 
   //카메라 생성
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.z = 2;
+  camera.position.z = 120;
 
   /* 씬 생성 */
   const scene = new THREE.Scene();
@@ -80,12 +80,48 @@ function main(){
     makeInstance(geometry, 0xaa8844,  2),
   ];
   
-  const color = 0xFFFFFF;
+  const color = 0xAAAAAA;
   const intensity = 1;
+  //빛 지정
   const light = new THREE.DirectionalLight(color, intensity);
   light.position.set(-1, 2, 4);
   scene.add(light);
   
+  const objects = [];
+  const spread = 15;
+  
+  // Object3D를 매개변수로 받아 씬에 추가함
+  const addObject = (x, y, obj) => {
+    obj.position.x = x * spread;
+    obj.position.y = y * spread;
+  
+    scene.add(obj);
+    objects.push(obj);
+  }
+
+  //물체를 무작위로 채색하는 함수
+  const createMaterial = () => {
+  const material = new THREE.MeshPhongMaterial({
+    side: THREE.DoubleSide,
+  });
+ 
+  const hue = Math.random();
+  const saturation = 1;
+  const luminance = .5;
+  material.color.setHSL(hue, saturation, luminance);
+ 
+  return material;
+}
+
+/*
+  매개변수로 받은 geometry와 앞서 만든 createMaterial 함수를 사용해 
+  무작위로 색칠한 물체를 만들고, addObject 함수로 씬에 추가합니다.
+*/
+const addSolidGeometry = (x, y, geometry) => {
+  const mesh = new THREE.Mesh(geometry, createMaterial());
+  addObject(x, y, mesh);
+}
+
   const resizeRendererToDisplaySize = (renderer)=> {
   const canvas = renderer.domElement;
   const width = canvas.clientWidth;

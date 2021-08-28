@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three.js</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    #c { 
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+    
+  </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/var.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    
+</head>
+<body>
+  
+<canvas id="c"></canvas>
+</body>
+<script type="module">
+import * as THREE from  '../../assets/js/three.module.js'
+function main(){
+  const canvas = document.querySelector('#c');
+  //WebGLRenderer 생성
+  /*
+    렌더러 :
+    (renderer)는 여러분이 입력한 데이터를
+     실제로 canvas에 그려주는 역할을 맡습니다. 
+  */
+  const renderer = new THREE.WebGLRenderer({canvas});
+
+  // the canvas default
+  const fov = 75;
+  const aspect = 2;  // the canvas default
+  const near = 0.1;
+  const far = 100;
+
+
+  //카메라 생성
+  const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.z = 10;
+
+  /* 씬 생성 */
+  const scene = new THREE.Scene();
+  
+  /*모양 지정*/
+  const boxWidth = 1;
+  const boxHeight = 1;
+  const boxDepth = 1;
+  const geometry = new THREE.BufferGeometry();
+  // const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+
+  const vertices = [
+  // 앞쪽
+  { pos: [-1, -1,  1], norm: [ 0,  0,  1], uv: [0, 0], },
+  { pos: [ 1, -1,  1], norm: [ 0,  0,  1], uv: [1, 0], },
+  { pos: [-1,  1,  1], norm: [ 0,  0,  1], uv: [0, 1], },
+
+  { pos: [ 1,  1,  1], norm: [ 0,  0,  1], uv: [1, 1], },
+  // 오른쪽
+  { pos: [ 1, -1,  1], norm: [ 1,  0,  0], uv: [0, 0], },
+  { pos: [ 1, -1, -1], norm: [ 1,  0,  0], uv: [1, 0], },
+  { pos: [ 1,  1,  1], norm: [ 1,  0,  0], uv: [0, 1], },
+ 
+
+  { pos: [ 1,  1, -1], norm: [ 1,  0,  0], uv: [1, 1], },
+  // 뒤쪽
+  { pos: [ 1, -1, -1], norm: [ 0,  0, -1], uv: [0, 0], },
+  { pos: [-1, -1, -1], norm: [ 0,  0, -1], uv: [1, 0], },
+  { pos: [ 1,  1, -1], norm: [ 0,  0, -1], uv: [0, 1], },
+
+  { pos: [-1,  1, -1], norm: [ 0,  0, -1], uv: [1, 1], },
+  // 왼쪽
+  { pos: [-1, -1, -1], norm: [-1,  0,  0], uv: [0, 0], },
+  { pos: [-1, -1,  1], norm: [-1,  0,  0], uv: [1, 0], },
+  { pos: [-1,  1, -1], norm: [-1,  0,  0], uv: [0, 1], },
+
+  { pos: [-1,  1,  1], norm: [-1,  0,  0], uv: [1, 1], },
+  // 상단
+  { pos: [ 1,  1, -1], norm: [ 0,  1,  0], uv: [0, 0], },
+  { pos: [-1,  1, -1], norm: [ 0,  1,  0], uv: [1, 0], },
+  { pos: [ 1,  1,  1], norm: [ 0,  1,  0], uv: [0, 1], },
+
+  { pos: [-1,  1,  1], norm: [ 0,  1,  0], uv: [1, 1], },
+  // 하단
+  { pos: [ 1, -1,  1], norm: [ 0, -1,  0], uv: [0, 0], },
+  { pos: [-1, -1,  1], norm: [ 0, -1,  0], uv: [1, 0], },
+  { pos: [ 1, -1, -1], norm: [ 0, -1,  0], uv: [0, 1], },
+
+  { pos: [-1, -1, -1], norm: [ 0, -1,  0], uv: [1, 1], },
+];
+
+const positions = [];
+const normals = [];
+const uvs = [];
+for (const vertex of vertices){
+  positions.push(...vertex.pos);
+  normals.push(...vertex.norm);
+  uvs.push(...vertex.uv);
+}
+
+
+  const positionNumComponents = 3;
+  const normalNumComponents = 3;
+  const uvNumComponents = 2;
+  geometry.setAttribute(
+      'position',
+      new THREE.BufferAttribute(new Float32Array(positions), positionNumComponents));
+  geometry.setAttribute(
+      'normal',
+      new THREE.BufferAttribute(new Float32Array(normals), normalNumComponents));
+  geometry.setAttribute(
+      'uv',
+      new THREE.BufferAttribute(new Float32Array(uvs), uvNumComponents));
+      geometry.setIndex([
+   0,  1,  2,   2,  1,  3,  // 앞쪽
+   4,  5,  6,   6,  5,  7,  // 오른쪽
+   8,  9, 10,  10,  9, 11,  // 뒤쪽
+  12, 13, 14,  14, 13, 15,  // 왼쪽
+  16, 17, 18,  18, 17, 19,  // 상단
+  20, 21, 22,  22, 21, 23,  // 하단
+]);
+
+  const color = 0xFFFFFF;
+  const intensity = 1;
+  const light = new THREE.DirectionalLight(color, intensity);
+  light.position.set(-1, 2, 4);
+  scene.add(light);
+
+  const loader = new THREE.TextureLoader();
+  const texture = loader.load('https://threejsfundamentals.org/threejs/resources/images/star.png');
+   /* 큐브 만들기 함수*/
+  const makeInstance = function(geometry, color, x) {
+    // 색지정
+    const material = new THREE.MeshPhongMaterial({color,map: texture});
+    
+    const cube = new THREE.Mesh(geometry, material);
+    /* 장면에 추가*/
+    scene.add(cube);
+
+    cube.position.x = x;
+
+    return cube;
+  }  
+  console.log(geometry);
+  const cubes = [
+    makeInstance(geometry, 0x44aa88,  0),
+    makeInstance(geometry, 0x8844aa, -4),
+    makeInstance(geometry, 0xaa8844,  4),
+  ];
+
+
+  const resizeRendererToDisplaySize = (renderer)=> {
+  const canvas = renderer.domElement;
+  const width = canvas.clientWidth;
+  const height = canvas.clientHeight;
+  const needResize = canvas.width !== width || canvas.height !== height;
+  if (needResize) {
+    renderer.setSize(width, height, false);
+  }
+  return needResize;
+}
+
+
+  function render(time) {
+    time *= 0.001;  // convert time to seconds
+    
+    cubes.forEach((cube, index)=>{
+      cube.rotation.x = 10;
+      cube.rotation.y = 10;
+
+    });
+    
+    if(resizeRendererToDisplaySize(renderer)){
+      const canvas = renderer.domElement;
+      camera.aspect  = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix(); 
+    }
+
+  
+    renderer.render(scene, camera);
+    /* requestAnimationFrame 함수에 업데이트*/
+    requestAnimationFrame(render);
+  }
+
+requestAnimationFrame(render);
+
+}
+
+main();
+</script>
+
+</html>
