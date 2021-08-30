@@ -289,14 +289,23 @@ body {
   text-align: center;
 }
 .cardType05 .card-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-
+  overflow: hidden;  
 }
 .cardType05 .card-wrap .card {
+  box-sizing: border-box;
+  margin-right: 26px;
+  float: left;
+  width: 382px;
+  height: 590px;
   border-radius: 5px;
   border: 1px solid #eeee;
+  margin-bottom: 30px;
+}
+.cardType05 .card-wrap .card:nth-child(3){
+  margin-right: 0px;
+}
+.cardType05 .card-wrap .card:nth-child(6){
+  margin-right: 0px;
 }
 .cardType05 .card-wrap .card article {
 
@@ -346,8 +355,7 @@ body {
   height: 19px;
 }
 .cardType05 .card-wrap .card-img {
-  height: 374px;
-  width: 360px;
+
   margin-bottom: 40px;
 }
 .cardType05 .card-wrap .card-new {
@@ -381,7 +389,8 @@ body {
   margin-right: 10px;
 }
 .cardType05 .card-wrap .card-buy a {
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 700;
   color: #fff;
   line-height: 32px;
 }
@@ -392,8 +401,9 @@ body {
   border: 1px solid #eeee;
 }
 .cardType05 .card-wrap .card-info a {
+  font-size: 14px;
+  font-weight: 700;
   background-color: #fff;
-  font-size: 12px;
   line-height: 32px;
 }
 
