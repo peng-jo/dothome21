@@ -275,7 +275,7 @@ body {
 }
 /* 5 */
 .cardType05 {
-  font-family: 'NanumGothic';
+  font-family: 'NanumSqure';
 }
 .cardType05 h2 {
   font-weight: bold;
@@ -292,33 +292,78 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
+
 }
 .cardType05 .card-wrap .card {
-  flex-basis: 384px;
+  border-radius: 5px;
   border: 1px solid #eeee;
 }
 .cardType05 .card-wrap .card article {
+
   margin-left: 40px;
   margin-bottom: 48px;
 }
-.cardType05 .card-wrap .card-title {
+.cardType05 .card-lamp {
   display: inline-block;
-  font-size: 24px;
-  font-weight: 800;
-  margin-bottom: 10px;
+  background-position: -286px -4px;
+  background-repeat: no-repeat;
+  width: 143px;
+  height: 22px;
+}
+.cardType05 .card-clock {
+  display: inline-block;
+  background-position: -286px -59px;
+  background-repeat: no-repeat;
+  width: 136px;
+  height: 17px;
+}
+.cardType05 .card-Friends {
+  display: inline-block;
+  background-position: -4px -231px;
+  background-repeat: no-repeat;
+  width: 153px;
+  height: 17px;
+}
+.cardType05 .card-wave {
+  display: inline-block;
+  background-position: -286px -34px;
+  background-repeat: no-repeat;
+  width: 139px;
+  height: 17px;
+}
+.cardType05 .card-mini {
+  display: inline-block;
+  background-position: -4px -129px;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 17px;
+}
+.cardType05 .card-edition {
+  display: inline-block;
+  background-position: -4px -102px;
+  background-repeat: no-repeat;
+  width: 201px;
+  height: 19px;
 }
 .cardType05 .card-wrap .card-img {
-  margin-bottom: 36px;
+  height: 374px;
+  width: 360px;
+  margin-bottom: 40px;
 }
 .cardType05 .card-wrap .card-new {
-  text-align: center;
-  color: #fff;
   display: inline-block;
-  margin-left: 10px;
-  border-radius: 20px;
-  width: 42px;  height: 20px;
-  font-size: 12px;
+  width: 42px;
+  margin-left: 4px;
+  font-family: -apple-system,BlinkMacSystemFont,sans-serif;
+  font-size: 11px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  color: #fff;
+  text-align: center;
+  border-radius: 9px;
   background-color: #fa615b;
+  vertical-align: top;
 }
 .cardType05 .card-wrap .card-desc {
   display: block;
@@ -327,7 +372,6 @@ body {
   font-weight: normal;
   margin-bottom: 10px;
 }
-
 .cardType05 .card-wrap .card-buy {
   text-align: center;
   display: inline-block;
