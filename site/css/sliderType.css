@@ -5,6 +5,8 @@ body {
   margin:150px 0;
   background-color: #fff;
   box-shadow: 0 0 50px rgba(0,0,0,0.1);
+  color:#fff;
+  font-family: 'Gmakertsans';
 }
 
 /* sliderType01 */
@@ -13,7 +15,7 @@ body {
 }
 .sliderType01 .slider {
   position: relative;
-  color:#fff;
+
 }
 .sliderType01 .slider .slider-inner {
   width: 1400px;
@@ -113,5 +115,3 @@ body {
   display: inline-block;
   margin-left: 7px;
 }
-
-

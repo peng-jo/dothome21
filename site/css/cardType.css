@@ -155,7 +155,7 @@ body {
 }
 
 .cardType03{
-  font-family: 'NanumSquare', sans-serif !important;
+  font-family: 'NanumSquare' !important;
   font-weight: 400;
 }
 .cardType03 .title{
@@ -273,3 +273,79 @@ body {
   margin-bottom: 66px;
   box-shadow: 0 0 50px rgba(0,0,0,0.1);
 }
+/* 5 */
+.cardType05 {
+  font-family: 'NanumGothic';
+}
+.cardType05 h2 {
+  font-weight: bold;
+  font-size: 52px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.cardType05 p {
+  font-size: 14px;
+  margin-bottom: 84px;
+  text-align: center;
+}
+.cardType05 .card-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.cardType05 .card-wrap .card {
+  flex-basis: 384px;
+  border: 1px solid #eeee;
+}
+.cardType05 .card-wrap .card article {
+  margin-left: 40px;
+  margin-bottom: 48px;
+}
+.cardType05 .card-wrap .card-title {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.cardType05 .card-wrap .card-img {
+  margin-bottom: 36px;
+}
+.cardType05 .card-wrap .card-new {
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+  display: inline-block;
+  margin-left: 10px;
+  border-radius: 20px;
+  width: 42px;  height: 20px;
+  font-size: 12px;
+  background-color: #fa615b;
+}
+.cardType05 .card-wrap .card-desc {
+  display: block;
+  font-size: 16px;
+  line-height: 2;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.cardType05 .card-wrap .card-buy {
+  text-align: center;
+  line-height: 32px;
+  display: inline-block;
+  width: 90px; height: 32px;
+  background-color: #05d686;
+  color: #fff;
+  margin-right: 10px;
+  font-size: 12px;
+}
+.cardType05 .card-wrap .card-info {
+  display: inline-block;
+  text-align: center;
+  line-height: 32px;
+  width: 90px; height: 32px;
+  background-color: #fff;
+  font-size: 12px;
+  border: 1px solid #eeee;
+}
+

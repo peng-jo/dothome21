@@ -1,6 +1,6 @@
 function addToggleEvent(btn, span){
-  btn.addEventListener("click",()=>{
-      span.classList.toggle("none");
+  $(btn).click(()=>{
+      $(span).toggle("none");
   });
 };
 
@@ -27,9 +27,9 @@ function makeToggle(text){
 function makeResult( id, text ){
   if( arguments.length > 2 || typeof(text) === 'object'){
     const sliced = [].slice.call(arguments, 1);
-    document.querySelector(`#sample${id} .code`).appendChild(makeToggle(sliced.toString().replace(/\,/g," ")));
+    $(`#sample${id} .code`).append(makeToggle(sliced.toString().replace(/\,/g," ")));
   }else{
-    document.querySelector(`#sample${id} .code`).appendChild(makeToggle(text));   
+    $(`#sample${id} .code`).append(makeToggle(text));   
   }
 }
 /*
@@ -52,29 +52,29 @@ makeResult2.prototype.add = function(text){
 };
 
 makeResult2.prototype.print = function(){
-  document.querySelector(`#sample${this.id} .code`).appendChild(this.makeToggle(this.text));
+  $(`#sample${this.id} .code`).append(this.makeToggle(this.text));
 }
 makeResult2.prototype.addToggleEvent = function(btn, span){
-  btn.addEventListener("click",()=>{
-      span.classList.toggle("none");
+  $(btn).click(()=>{
+    $(span).toggle("none");
   });
 };
 makeResult2.prototype.makeToggle = function(text){
-  const toggle = document.createElement("div");
-  toggle.className = "toggle";
+  const $toggle = $("<div></div>");
+  $toggle.attr("class", "toggle");
 
-  const btn = document.createElement("button");
-  btn.className ="toggle-btn";
-  btn.innerText ="결과보기";
+  const $btn = $("<button></button>");
+  $btn.attr("class", "toggle-btn");
+  $btn.text("결과보기");
 
-  const span = document.createElement("span");
-  span.className = "toggle-result"
-  span.innerHTML = text ;
+  const $span = $("<span></span>");
+  $($span).attr("class","toggle-result");
+  $($span).html(text);
 
-  this.addToggleEvent(btn, span);
+  this.addToggleEvent($btn, $span);
 
-  toggle.appendChild(btn);
-  toggle.appendChild(span);
+  $($toggle).append($btn);
+  $($toggle).append($span);
   
-  return toggle;
+  return $toggle;
 }
