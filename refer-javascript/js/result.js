@@ -5,23 +5,23 @@ function addToggleEvent(btn, span){
 };
 
 function makeToggle(text){
-  const toggle = document.createElement("div");
-  toggle.className = "toggle";
+  const $toggle = $("<div></div>");
+  $toggle.attr("class", "toggle");
 
-  const btn = document.createElement("button");
-  btn.className ="toggle-btn";
-  btn.innerText ="결과보기";
+  const $btn = $("<button></button>");
+  $btn.attr("class", "toggle-btn");
+  $btn.text("결과보기");
 
-  const span = document.createElement("span");
-  span.className = "toggle-result"
-  span.innerHTML = text ;
+  const $span = $("<span></span>");
+  $($span).attr("class","toggle-result");
+  $($span).html(text);
 
-  addToggleEvent(btn, span);
+  addToggleEvent($btn, $span);
 
-  toggle.appendChild(btn);
-  toggle.appendChild(span);
+  $($toggle).append($btn);
+  $($toggle).append($span);
   
-  return toggle;
+  return $toggle;
 }
 
 function makeResult( id, text ){
