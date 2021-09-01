@@ -309,26 +309,19 @@ $gradient6 : linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
     }
 }
 
-@media (max-width:1200px) {
-    #nav {
-        li {
-            a {
-                width: 80px;
-                height: 40px;
-                line-height: 40px;
-            }
-        }
-    }
-}
 
 @media (max-width:800px) {
     #nav {
-        li {
-            a {
-                font-size: 12px;
-                height: 30px;
-                line-height: 30px;
-            }
+        ul {          
+            li { 
+                display: inline-block;
+                a {
+                    width: 80px;
+                    font-size: 12px;
+                    height: 30px;
+                    line-height: 30px;
+                }
+            } 
         }
     }
 }
