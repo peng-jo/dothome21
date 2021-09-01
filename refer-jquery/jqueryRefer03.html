@@ -151,7 +151,7 @@
         </thead>
         <tbody>
           <tr>
-            <td class="center" rowspan="4" >Attributes</td>
+            <td class="center" rowspan="5" >Attributes</td>
             <td>.attr</td>
             <td>$("selector").clone()</td>
             <td></td>
@@ -474,6 +474,9 @@
     </div>
     <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+function demension( name, size ){
+  $(".text4").text(`이 원의 ${name} 값은 ${size} px 입니다.`);
+}
 $(".btn4-1").click(function(){
   demension( "가로(width)", $(".circle").width() );
 })
@@ -495,7 +498,7 @@ $(".btn4-6").click(function(){
 $(".btn4-7").click(function(){ 
   demension( "가로(outerHeight)", $(".circle").outerHeight() );
 })
-  $(".btn4-8").click(function(){ 
+$(".btn4-8").click(function(){ 
   demension( "가로(outerHeight)", $(".circle").outerHeight(true) );
 })
 $(".btn4-9").click(function(){ 
