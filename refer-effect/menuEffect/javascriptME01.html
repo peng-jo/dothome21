@@ -24,10 +24,44 @@
             <li><a href="#">2</a></li>
         </ul>
     </div>
+    
+    <div class="btn-wrap">
 
+      </div>
+      <div id="modal">
+        <div class="modal-bg">
+          <div class="modal-cont">
+            <h2>소스보기</h2>
+<pre>
+&ltscript>
+    document.querySelector(".info button").addEventListener("click",()=>{
+        document.querySelector("#modal").className = "";
+        document.querySelector("#modal").classList.add("show");
+    });
+
+    document.querySelector("#modal button").addEventListener("click",()=>{
+        document.querySelector("#modal").classList.add("hide");
+    });
+&lt/script>
+</pre>
+            <button>닫기</button>
+          </div>
+        </div>
+      </div>
     
     <div class="info bottom">
         <button>소스보기</button>
     </div>
+    <script>
+        document.querySelector(".info button").addEventListener("click",()=>{
+            document.querySelector("#modal").className = "";
+            document.querySelector("#modal").classList.add("show");
+        });
+
+        document.querySelector("#modal button").addEventListener("click",()=>{
+            document.querySelector("#modal").classList.add("hide");
+        });
+
+    </script>
 </body>
 </html>
