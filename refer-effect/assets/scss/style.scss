@@ -410,12 +410,13 @@ background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
     #nav {
         ul {          
             li { 
-                display: inline-block;
+                float: left;
                 a {
-                    width: 80px;
-                    font-size: 12px;
-                    height: 30px;
-                    line-height: 30px;
+                    width: 50px;
+                    font-size: 10px;
+                    height: 20px;
+                    line-height: 20px;
+
                 }
             } 
         }
