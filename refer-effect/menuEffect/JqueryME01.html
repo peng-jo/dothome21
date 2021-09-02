@@ -57,7 +57,7 @@
         }
     </style>
 </head>
-<body class="bg1 bg">
+<body class="bg2 bg">
     <main>
         <div id="tab-menu">
             <div class="tab-btn">
@@ -95,19 +95,20 @@
     </main>
     <!-- info -->
     <div class="info">
-        <h1>Javascript Menu Effect01</h1>
+        <h1>Jquery Menu Effect01</h1>
         <p>메뉴 이펙트 - 탭 메뉴 </p>
     </div>
-      <div class="info right">
+    <!-- //info -->
+    <div class="info right">
         <ul>
-            <li class="active"><a href="javascriptME01.html">1</a></li>
+            <li><a href="javascriptME01.html">1</a></li>
             <li><a href="javascriptME02.html">2</a></li>
             <li><a href="javascriptME03.html">3</a></li>
             <li><a href="javascriptME04.html">4</a></li>
             <li><a href="javascriptME05.html">5</a></li>
         </ul>
         <ul>
-          <li><a href="JqueryME01.html">1</a></li>
+          <li class="active"><a href="JqueryME01.html">1</a></li>
           <li><a href="JqueryME02.html">2</a></li>
           <li><a href="JqueryME03.html">3</a></li>
           <li><a href="JqueryME04.html">4</a></li>
@@ -133,8 +134,10 @@
                         <li><a href="#">JAVASCRIPT</a></li>
                     </ul>
                 </div>
-                <div class="view-cont">
-                <div class="html">
+
+    <!-- cont -->
+    <div class="view-cont">
+    <div class="html">
 <pre><code class="language-html">&lthtml&gt
     &ltdiv id="tab-menu"&gt
     &ltdiv class="tab-btn"&gt
@@ -171,8 +174,8 @@
     &lt/div&gt
 &lthtml&gt
 </code></pre>
-                </div>
-                <div class="css">
+    </div>
+    <div class="css">
 <pre><code class="language-css">&ltstyle&gt
     #tab-menu {
         max-width: 600px;
@@ -223,9 +226,9 @@
     }
 &lt/style&gt
 </code></pre>
-                </div>
+    </div>
 
-                <div class="javascript">
+    <div class="javascript">
 <pre><code class="language-js">&ltscript&gt
     const tabBtn = document.querySelectorAll(".tab-btn ul li");
     const tabCont = document.querySelectorAll(".tab-cont &gt div");
@@ -245,8 +248,8 @@
     })
 &lt/script&gt
 </code></pre>
-                </div>
-                <div class="jquery">
+    </div>
+    <div class="jquery">
 <pre><code class="language-js">&ltscript&gt
     const tabBtn = $(".tab-btn ul li");
     const tabCont = $(".tab-cont &gt div");
@@ -264,9 +267,13 @@
     });
 &lt/script&gt
 </code></pre>
-                </div>
-                </div>             
-            </div>         
+    </div>
+
+
+
+    </div>
+    <!-- cont -->
+    </div>           
             <button>닫기</button>
           </div>
         </div>
@@ -279,25 +286,28 @@
 
 
     <!-- script -->
+    <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/custom.js"></script>
     <script>
-        const tabBtn = document.querySelectorAll(".tab-btn ul li");
-        const tabCont = document.querySelectorAll(".tab-cont > div");
+        const tabBtn = $(".tab-btn ul li");   //5개의 버튼을 변수에 할당
+        const tabCont = $(".tab-cont > div"); //5개의 컨텐츠를 변수에 할당
 
-        tabBtn.forEach( ( element, index ) =>{
-            element.addEventListener("click",function(){
-                tabBtn.forEach((el)=>{
-                    el.classList.remove("active");
-                });
-                element.classList.add("active");
+        //1. 버튼을 클릭하면 클릭한 버튼한테 active 추가
+        //2. 버튼을 클릭하지 않은 다른 버튼은 active 제거
+        //3. 버튼한테 인덱스 설정.
+        //4. 1번째 버튼은 1번째 컨텐츠 연결
+        //5. 모든 컨텐츠를 안보이게 설정
+        //6. 클릭한 버튼의 해당 컨텐츠만 보이게 설정
+        tabBtn.click(function(e){
+            let target = $(this);
+            tabBtn.removeClass("active");
+            target.addClass("active");
 
-                tabCont.forEach(el => {
-                    el.style.display = "none";
-                });
-                tabCont[index].style.display = "block";
-            });
-        })
+            let index = target.index();
+            tabCont.css("display", "none");
+            tabCont.eq(index).css("display", "block");
+        });
     </script>
 </body>
 </html>
