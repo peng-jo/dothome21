@@ -517,7 +517,7 @@ img {
           animation: unfoldOut 1s ease forwards;
 }
 
-#modal.show.modal-bg .modal-cont {
+#modal.show .modal-bg .modal-cont {
   -webkit-transform: scale(0);
           transform: scale(0);
   -webkit-animation: zoomIn 0.5s 0.8s ease forwards;

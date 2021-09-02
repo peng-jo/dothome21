@@ -440,7 +440,7 @@ $gradient6 : linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
         &.hide {
             animation: unfoldOut 1s ease forwards;
         }
-        &.modal-bg .modal-cont {
+        .modal-bg .modal-cont {
             transform: scale(0);
             animation: zoomIn 0.5s 0.8s ease forwards;
         }
@@ -449,6 +449,8 @@ $gradient6 : linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
             animation: zoomOut 0.5s ease forwards;
         }
     }
+
+    
     
 }
 
@@ -464,15 +466,15 @@ $gradient6 : linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
     }
   }
 @keyframes unfoldOut {
-0% {
-    transform: scaley(1) scalex(1);
-}
-50% {
-    transform: scaley(0.005) scalex(1);
-}
-100% {
-    transform: scaley(0.005) scalex(0);
-}
+    0% {
+        transform: scaley(1) scalex(1);
+    }
+    50% {
+        transform: scaley(0.005) scalex(1);
+    }
+    100% {
+        transform: scaley(0.005) scalex(0);
+    }
 }
 
 @keyframes zoomIn {
@@ -517,6 +519,10 @@ $gradient6 : linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
         }
     }
     .bg {
+        // .modal-cont{
+        //     position: absolute;
+        //     top: 5%;
+        // }
         .code-view{
             width: 90vw;
             code {
