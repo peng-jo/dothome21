@@ -154,6 +154,14 @@ img {
   background-image: url(../img/bg10@2.jpg);
 }
 
+.iphone main {
+  padding: 10px;
+}
+
+.android main {
+  padding: 10px;
+}
+
 #main {
   overflow: hidden;
   width: 100%;
