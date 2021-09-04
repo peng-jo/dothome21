@@ -386,16 +386,19 @@
     <h2>18. 콜백 함수 : 반복문 <span class="dot"></span></h2>
     <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    document.write("*** 18. 콜백 함수 *** ");
+    let result = "";
 
-    function funcA(){
-        document.write("함수A가 실행되었습니다.");
+    function func(){
+        return "함수가 실행되었습니다.";
     }
-    function funcB(str){
-        document.write("함수B가 실행되었습니다.");
-        str();
+
+    function callback(str){
+        for(let i = 1 ; i&lt=5 ; i++){
+            result +=str();
+        }
+        makeResult(18, "*** 18. 콜백 함수 *** ", result);
     }
-    funcB(funcA);
+    callback(func)
 }
 </code></pre>
 </div>
@@ -551,8 +554,8 @@
     const youName2 = "조범수";
     const youjob2  = "프론트앤드 개발자";
 
-    func("1", "조범수", "웹 퍼블리셔");
-    func("2", "조범수", "프론앤드 개발자");
+    func(youNum1, youName1, youjob1);
+    func(youNum2, youNum2, youjob2);
 }
 </code></pre>
 </div>
@@ -706,10 +709,10 @@
 
 <!-- sample28 -->
 <div id="sample28" class="sample mt20">
-    <h2>28. 함수 유형 : 프로토타입 함수 <span class="dot"></span></h2>
+    <h2>28. 함수 유형 : 객체 리터럴 함수 <span class="dot"></span></h2>
     <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    document.write(" *** 28. 함수 유형 : 프로토타입 함수 *** ");
+    document.write(" *** 28. 함수 유형 : 객체 리터럴 함수 *** ");
 
     function Func(num, name, job){
         this.num  = num;
@@ -717,15 +720,19 @@
         this.job  = job;
     } 
 
-    Func.prototype.result = function(){
-        document.write(`${this.num}. 내이름은 ${this.name}이며 직업은 ${this.job} 입니다.`);
+    Func.prototype = {
+        result1: function(){
+            return `${this.num}. 내이름은 ${this.name}이며 직업은 ${this.job} 입니다.<br>`;
+        },
+        result2: function(){
+            return `${this.num}. 내이름은 ${this.name}이며 직업은 ${this.job} 입니다.<br>`;
+        }
     }
 
     const info1 = new Func(1, "조범수", "웹퍼블리셔"); //인스턴스 생성
-    const info2 = new Func(2, "조범수", "프론트앤드 개발자"); //인스턴스 생성
 
-    info1.result();
-    info2.result();
+    info1.result1();
+    info1.result2();
 }
 </code></pre>
 </div>
