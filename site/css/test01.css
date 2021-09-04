@@ -1,22 +1,25 @@
 body {
-  
+  overflow-x: hidden;
 }
 #main {
   background-image: url('../img/main-bg@2x.png');
   font-family: 'NanumSquare';
   color: #fff;
 }
+#sub {
+  width: 100%;
+  padding: 150px 0;
+  background-color: #1c1c1c;
+}
 .header-wrap {
   background: rgba(20,20,20,.9)
 }
 #main header {
-  position: relative;
-  width: 1600px;
+
   height: 100px;
   margin: 0 auto;
 }
 #main header ul{
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,6 +94,8 @@ body {
   width: 1024px;
   margin: 0 auto;
   padding: 166px 0 50px;
+  position: relative;
+  
 }
 .banner .swiper{
   position: relative;
@@ -105,10 +110,12 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
+  background-image: linear-gradient(
+180deg,rgba(0,0,0,.5) 24%,rgba(0,0,0,.3) 85%);
 }
 .swiper-button-uniq {
   position: absolute;
-  top: 75%;
+  top: 60%;
   left: -32px;
   width: 64px;
   height: 64px;
@@ -122,7 +129,7 @@ body {
 }
 .swiper-button-uniq2 {
   position: absolute;
-  top: 75%;
+  top: 60%;
   right: -32px;
   width: 64px;
   height: 64px;
@@ -136,7 +143,7 @@ body {
 }
 .swiper-button-uniq svg {
   position: absolute;
-  top: 50%;  left: 50%;
+  top:50%;  left: 50%;
   transform: translate(-50%, -50%);
   stroke: #fff;
 }
@@ -182,4 +189,137 @@ body {
 }
 .swiper-wrapper .swiper-slide:nth-child(12) {
   background-image: url('../img/slider6.jpg');
+}
+.swiper-wrapper .swiper-slide .slider-inner a {
+ position: absolute;
+ top: 52px;
+ left: 70px;
+ width: 330px;
+}
+.swiper-pagination {
+  width: auto !important;
+  position: absolute;
+  top: 80%;
+  margin-left: 70px;
+  z-index: 1;
+}
+.swiper-pagination-bullet {
+  
+  --swiper-theme-color : #fff;
+}
+.swiper-wrapper .swiper-slide .slider-inner .title {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 19px;
+  display: block;
+  font-weight: 800;
+  color: hsla(0,0%,100%,.6);
+}
+.swiper-wrapper .swiper-slide .slider-inner .desc {
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -.6px;
+  display: block;
+  font-weight: 700;
+  color: #fff;
+}
+
+.swiper-wrapper .swiper-slide .slider-inner .link {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -.2px;
+  color: #fff;
+}
+.black{
+  width: 100%;
+  background-color: #1c1c1c;
+}
+
+#main .support-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 150px 0;
+}
+#main .support-wrapper em {
+  display: block;
+  margin-bottom: 72px;
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 68px;
+  letter-spacing: -1px;
+  text-align: left;
+  color: #6d8bff;
+}
+#main .support-wrapper .support {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#main .support-wrapper .support:nth-child(2){
+  margin-left: 32px;
+}
+#main .support-wrapper .support-inner {
+  width: 496px;
+  border-radius: 15px;
+  background-image: linear-gradient(
+140deg,#36373a 6%,#242628 80%);
+}
+#main .support-wrapper .support:nth-child(1) .support-inner {
+  height: 870px;
+}
+#main .support-wrapper .support:nth-child(1) img {
+  height: 593px;
+}
+#main .support-wrapper .support:nth-child(2) .support-inner:nth-child(1) {
+  position: relative;
+  height: 570px;
+}
+#main .support-wrapper .support:nth-child(2) .support-inner:nth-child(1) img{
+  height: 294px;
+  position: absolute;
+  bottom: 0;
+}
+#main .support-wrapper .support:nth-child(2) .support-inner:nth-child(2) {
+  margin-top: 32px;
+  height: 541px;
+}
+#main .support-wrapper .support:nth-child(2) .support-inner:nth-child(2) img {
+  position: absolute;
+  bottom: 0;
+}
+
+.support-wrapper article {
+  padding: 52px 50px 0;
+}
+.support-wrapper  .title {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 19px;
+  color: hsla(0,0%,100%,.6)
+}
+.support-wrapper  .desc {
+  display: block;
+  padding-top: 10px;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -1.06px;
+  color: #fff;  
+}
+.support-wrapper  .link {
+  display: inline-block;
+  padding-top: 18px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -.2px;
+  color: #6d8bff;
+}
+#sub2 .sub-wrapper {
+  width: 1024px;
 }
