@@ -395,6 +395,7 @@ body {
   height: 207px;
 }
 #sub2 {
+  text-align: center;
   padding: 135px 0;
   width: 100%;
   box-sizing: border-box;
@@ -402,7 +403,7 @@ body {
   background-position: 50% 50%;
   background-size: auto 100%;
   background-repeat: repeat-x;
-  text-align: center;
+  background-size: cover;
 }
 #sub2 strong {
   display: block;
