@@ -59,18 +59,22 @@
       hljs.highlightElement(el);
     });
   });
-  //Modal
-  document.querySelector(".info button").addEventListener("click",()=>{
-    document.querySelector("#modal").className = "";
-    document.querySelector("#modal").classList.add("show");
-  });
   
-  document.querySelector("#modal button").addEventListener("click",()=>{
-    document.querySelector("#modal").classList.add("hide");
-  });
   //Code tab menu
   const tabView = document.querySelectorAll(".view-title ul li");
   const tabViewCont = document.querySelectorAll(".view-cont > div");
+
+  //Modal
+  function modal(element){
+    document.querySelector(`.${element} button`).addEventListener("click",()=>{
+      document.querySelector("#modal").className = "";
+      document.querySelector("#modal").classList.add("show");
+    });
+    
+    document.querySelector("#modal button").addEventListener("click",()=>{
+      document.querySelector("#modal").classList.add("hide");
+    });
+  }
 
   tabView.forEach( ( element, index ) =>{
     element.addEventListener("click",function(){
