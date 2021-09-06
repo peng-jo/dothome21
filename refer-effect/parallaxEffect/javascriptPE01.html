@@ -627,7 +627,85 @@
 &ltstyle&gt</code></pre>
                         </div>
                         <div class="javascript">
-<pre><code class="language-javascript"></code></pre> 
+<pre><code class="language-javascript">&ltscript&gt
+	document.querySelectorAll(".paraNav ul li a").forEach( el =&gt {
+		el.addEventListener("click", e =&gt {
+			e.preventDefault();
+			document.querySelector( el.getAttribute("href")).scrollIntoView({
+				behavior : "smooth"
+			});
+		});
+	});
+	for(let i = 1 ; i &lt 10; i++ ){
+		document.querySelector('.offset'+i).innerText = parseInt(document.getElementById("section"+i).offsetTop + "px" );
+	}
+	window.addEventListener("scroll",function(){
+
+		let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+		
+		if(scrollTop &gt= document.getElementById("section1").offsetTop-2 ){
+			document.querySelectorAll(".paraNav ul li").forEach( el =&gt{
+				el.classList.remove("active");  
+			})
+			document.querySelector(".paraNav ul li:nth-child(1)").classList.add("active");
+		}
+		if(scrollTop &gt= document.getElementById("section2").offsetTop-2 ){
+			document.querySelectorAll(".paraNav ul li").forEach( el =&gt{
+				el.classList.remove("active");  
+			})
+			document.querySelector(".paraNav ul li:nth-child(2)").classList.add("active");
+		}
+		if(scrollTop &gt= document.getElementById("section3").offsetTop-2 ){
+			document.querySelectorAll(".paraNav ul li").forEach( el =&gt{
+				el.classList.remove("active");  
+			})
+			document.querySelector(".paraNav ul li:nth-child(3)").classList.add("active");
+		}
+		if(scrollTop &gt= document.getElementById("section4").offsetTop-2 ){
+			document.querySelectorAll(".paraNav ul li").forEach( el =&gt{
+				el.classList.remove("active");  
+			})
+			document.querySelector(".paraNav ul li:nth-child(4)").classList.add("active");
+		}
+		if(scrollTop &gt= document.getElementById("section5").offsetTop-2 ){
+			document.querySelectorAll(".paraNav ul li").forEach( el =&gt{
+				el.classList.remove("active");  
+			})
+			document.querySelector(".paraNav ul li:nth-child(5)").classList.add("active");
+		}
+		if(scrollTop &gt= document.getElementById("section6").offsetTop-2 ){
+			document.querySelectorAll(".paraNav ul li").forEach( el =&gt{
+				el.classList.remove("active");  
+			})
+			document.querySelector(".paraNav ul li:nth-child(6)").classList.add("active");
+		}
+		if(scrollTop &gt= document.getElementById("section7").offsetTop-2 ){
+			document.querySelectorAll(".paraNav ul li").forEach( el =&gt{
+				el.classList.remove("active");  
+			})
+			document.querySelector(".paraNav ul li:nth-child(7)").classList.add("active");
+		}
+		if(scrollTop &gt= document.getElementById("section8").offsetTop-2 ){
+			document.querySelectorAll(".paraNav ul li").forEach( el =&gt{
+				el.classList.remove("active");  
+			})
+			document.querySelector(".paraNav ul li:nth-child(8)").classList.add("active");
+		}
+		if(scrollTop &gt= document.getElementById("section9").offsetTop-2 ){
+			document.querySelectorAll(".paraNav ul li").forEach( el =&gt{
+				el.classList.remove("active");  
+			})
+			document.querySelector(".paraNav ul li:nth-child(9)").classList.add("active");
+		}
+
+		document.querySelector('.paraScroll span').innerText = parseInt(scrollTop);
+
+		for(let i = 1 ; i &lt 10; i++ ){
+			document.querySelector('.offset'+i).innerText = parseInt(document.getElementById("section"+i).offsetTop + "px" );
+		}
+	})
+	modal('source');
+&lt/script&gt</code></pre> 
                         </div>
                     </div>
                 </div>
