@@ -676,9 +676,9 @@ $gradient6 : linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
             border-radius: 50%;
             text-decoration: none;
         }
-        &.active a {
-            color: #fff;
-            background-color: #000;
+        &.active a{
+            color: #000;
+            background-color: #fff;
         }
 
     }

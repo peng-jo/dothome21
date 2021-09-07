@@ -794,8 +794,8 @@ img {
 }
 
 .paraFooter li.active a {
-  color: #fff;
-  background-color: #000;
+  color: #000;
+  background-color: #fff;
 }
 
 .content-item:nth-child(1) .img {
