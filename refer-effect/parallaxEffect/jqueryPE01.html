@@ -157,8 +157,35 @@
 <!-- //main -->
 ​
 <!-- footer -->
+<!-- footer -->
 <footer class="paraFooter">
-​
+    <h1>Parallax <em>Scrolling</em></h1>
+    <div class="footerInfo">
+        <h2>자바스크립트</h2>
+        <ul>
+            <li class="active"><a href="javascriptPE01.html">1</a></li>
+            <li><a href="javascriptPE01.html">2</a></li>
+            <li><a href="javascriptPE02.html">3</a></li>
+            <li><a href="javascriptPE03.html">4</a></li>
+            <li><a href="javascriptPE04.html">5</a></li>
+            <li><a href="javascriptPE05.html">6</a></li>
+            <li><a href="javascriptPE06.html">7</a></li>
+            <li><a href="javascriptPE07.html">8</a></li>
+        </ul>
+    </div>
+    <div class="footerInfo">
+        <h2>제이쿼리</h2>
+        <ul> 
+            <li><a href="jqueryPE01.html">1</a></li>
+            <li><a href="jqueryPE02.html">2</a></li>
+            <li><a href="jqueryPE03.html">3</a></li>
+            <li><a href="jqueryPE04.html">4</a></li>
+            <li><a href="jqueryPE05.html">5</a></li>
+            <li><a href="jqueryPE06.html">6</a></li>
+            <li><a href="jqueryPE07.html">7</a></li>
+            <li><a href="jqueryPE08.html">8</a></li>
+        </ul>
+    </div>
 </footer>
 <!-- //footer -->
 <!-- source -->
@@ -694,6 +721,31 @@
             
         $(window).scroll(function(){
 
+
+            // if( scrollTop >= $(".content-item").eq(0).offset().top -2 ){
+            //     $(".paraDot ul li").eq(0).addClass("active").siblings().removeClass("active")
+            // }
+            // if( scrollTop >= $(".content-item").eq(1).offset().top -2 ){
+            //     $(".paraDot ul li").eq(1).addClass("active").siblings().removeClass("active")
+            // }
+            // if( scrollTop >= $(".content-item").eq(2).offset().top -2 ){
+            //     $(".paraDot ul li").eq(2).addClass("active").siblings().removeClass("active")
+            // }
+            // if( scrollTop >= $(".content-item").eq(3).offset().top -2 ){
+            //     $(".paraDot ul li").eq(3).addClass("active").siblings().removeClass("active")
+            // }
+            // if( scrollTop >= $(".content-item").eq(4).offset().top -2 ){
+            //     $(".paraDot ul li").eq(4).addClass("active").siblings().removeClass("active")
+            // }
+            // if( scrollTop >= $(".content-item").eq(5).offset().top -2 ){
+            //     $(".paraDot ul li").eq(5).addClass("active").siblings().removeClass("active")
+            // }
+            // if( scrollTop >= $(".content-item").eq(6).offset().top -2 ){
+            //     $(".paraDot ul li").eq(6).addClass("active").siblings().removeClass("active")
+            // }
+            
+
+
             let scrollTop = parseInt($(window).scrollTop());
             const $section = $(".paraCont > section")          
 
@@ -706,6 +758,8 @@
             //info
             $(".paraScroll span").text(scrollTop);
         });
+
+
         modal('source');
     </script>
 </body>
