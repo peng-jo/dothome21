@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 나눔스퀘어 폰트 -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <title>네이버 인플루언서 센터</title>
+  <style>
+    .bgs {
+      background-color: rgb(240, 247, 250)!important;
+    }
+    .bgw {
+      background-color: #fff !important;
+    }
+    .mt20 {
+      margin-top: 20px;
+    }
+    .mr20 {
+      margin-right: 20px;
+    }
+    body {
+      font-family: 'NanumSquare' !important;
+    }
+    strong {
+      font-weight: bold !important;
+    }
+    .header {
+      z-index: 100;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      background: #fff;
+      border-bottom: 2px solid #eeee;
+    }
+    .header-wrap {
+      position: relative;
+      margin: 0 auto;
+      width: 1600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    }
+    header .header-list {
+      display: flex;
+      justify-content: center;
+    }
+    header .header-list ul {
+      list-style: none;
+    }
+    header .header-list li {
+      display: inline;
+     
+    }
+    header .header-list li a {
+      margin: 0 11px;
+      font-size: 18px;
+      line-height: 20px;
+      color: rgba(0,0,0,.6);
+      padding: 15px;
+    }
+    .header .header-left {
+      position: absolute;
+      top: 35px;
+      left: 40px;
+    }
+    .header-left img {
+      width: 30px; height: 30px;
+    }
+    .header-left svg {
+      margin-left: 10px;
+      width: 194px;
+      height: 30px;
+    }
+    .header .header-right {
+      position: absolute;
+      top: 31px;
+      right: 40px;
+      border: 1px solid rgba(0,0,0,0.3);
+      vertical-align: top;
+      line-height: 36px;
+      padding: 0 20px;
+      border-radius: 20px;
+    }
+    .section1 {     
+      margin-top: 100px;  
+      padding: 134px 0 114px;
+      background: url('./img/inlufe01.jpg') no-repeat;
+      background-size: cover;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .section1 .title {
+      display: inline-block;
+      border-bottom: 4px solid;
+      
+      margin-bottom: 35px;
+      font-size: 20px;
+      line-height: 34px;
+    }
+    .section1 em {
+      display: block;
+      font-size: 50px;
+      line-height: 70px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .section1 .desc {
+      display: block;
+      margin-top: 16px;
+      font-size: 20px;
+      line-height: 32px;
+      font-weight: 500;
+    }
+    .section2 {
+      background-color: rgb(240, 250, 247);
+      padding: 70px 0;
+    }
+    .section2 .member-wrap {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 1024px;
+    }
+
+    .section2 .member-cont1 .member-title {
+      display: block;
+      font-size: 42px;
+      line-height: 53px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 17px;
+    }
+    .section2 .member-cont1 .member-desc {
+      display: block;
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 500;
+      color:rgb(0, 0, 0, .5)
+    }
+    .section2 .member-cont1 .link-wrap {
+      display: flex;
+    }
+    .section2 .member-cont1 .member-link2:nth-child(2){
+      margin-left: 15px;
+      box-shadow: rgb(88 181 243 / 30%) 0px 10px 30px 0px;
+      background: rgb(75, 130, 247)!important; 
+    }
+    .section2 .member-cont1 .member-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+      width: 322px;
+      height: 62px;
+      border-radius: 31px;
+      background: #0cd796;
+      font-size: 18px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px 0 rgb(40 221 111 / 30%);
+    }
+    .section2 .member-cont1 .member-link2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+      width: 222px;
+      height: 62px;
+      border-radius: 31px;
+      background: #0cd796;
+      font-size: 20px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px 0 rgb(40 221 111 / 30%);
+     }
+    .section2 .member-cont1 a {
+      color: #fff;
+    }
+    .section2 .member-cont2 {
+      width: 500px;
+      height: 315px;
+    }
+    .section2 .produce {
+      box-sizing: border-box;
+      margin: 60px auto 0;
+      width: 1024px;
+      padding: 44px 51px;
+      border-radius: 15px;
+      box-shadow: 0 8px 10px 0 rgb(113 171 142 / 5%);
+      border: 1px solid #e6f2ec;
+      background: #fff;
+    }
+
+    .section2 .produce .subject {
+      float: left;
+      margin-right: 30px;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 700;
+      color: #12ca8f;
+    }
+    .section2 .produce .desc {
+      overflow: hidden;
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 500;
+      color: rgba(0,0,0,.7);
+    }
+    footer {
+      height: 200px;
+      text-align: center;
+      width: 100%;
+      background: #000;
+    }
+    #aside {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 54px;
+      border-bottom: 1px solid rgba(29, 29, 29, 0.39);
+      background: #000;
+    }
+    #aisde a{
+      color: rgb(134, 132, 132);
+      font-size: 14px;
+      line-height: 17px;
+      font-weight: 500;
+    }
+    footer .login {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+      width: 80px;
+      height: 29px;
+      border-radius: 4px;
+      background: #323232;
+      
+      letter-spacing: -.5px;
+      color: #999;
+    }
+    footer a {
+      color: rgb(177, 177, 177);
+      font-size: 15px;
+    }
+    footer .login a{
+      font-size: 13px;
+    }
+    footer p {
+      font-size: 15px;
+      color: rgb(66, 66, 66);
+      margin-top: 10px;
+      margin-bottom: 12px;
+    }
+    footer .naver svg {
+      fill :rgb(66, 66, 66);
+    }
+    
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-wrap">
+      <span class="header-left"><img src="https://ncreatorsnext.pstatic.net/img/logo.a61f5142308413b313275c691aa13c9a.gif" alt="" width="22" class="MobileGnb__image_logo___1Prf7"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 194 30" fill="#121212" aria-hidden="true" width="142"><path d="M8.134 0v6.417L3.139 0H0v12.14h3.33V5.48l5.185 6.66h2.949V0zm9.924 0L12.89 12.226h3.537l.868-2.167h4.682l.885 2.167h3.607L21.301 0h-3.243zm1.596 3.989l1.352 3.45h-2.722l1.37-3.45zM34.219.086l-2.757 7.683L28.705.086h-3.764l4.925 12.227h3.122L37.913.086zm4.87 0v12.14h9.851V9.365h-6.521V7.44h5.827V4.787h-5.827V2.948h6.434V.086zm17.15 5.828c1.144 0 1.804-.555 1.804-1.44V4.44c0-.954-.694-1.44-1.822-1.44H54.02v2.914h2.22zM50.655.087h5.74c1.855 0 3.14.485 3.954 1.318.711.693 1.075 1.63 1.075 2.826v.035c0 1.856-.988 3.087-2.497 3.729l2.896 4.231h-3.884L55.493 8.55h-1.475v3.676h-3.363V.086zM0 29.757h3.382v-12.14H0zm5.6-12.139h3.139l4.995 6.416v-6.416h3.33v12.139h-2.948L8.93 23.098v6.659H5.6zm13.612 0h9.711v2.948h-6.347v2.063h5.74v2.793h-5.74v4.335h-3.364zm11.235 0h3.365v9.191h5.878v2.948h-9.243zm10.178 6.815v-6.815h3.417v6.746c0 1.751.884 2.584 2.236 2.584 1.354 0 2.238-.798 2.238-2.497v-6.833h3.417v6.729c0 3.919-2.238 5.636-5.69 5.636-3.45 0-5.618-1.752-5.618-5.55m13.299-6.815h9.764v2.861h-6.435v1.838h5.828v2.654h-5.828v1.925h6.522v2.861h-9.851zm11.565 0h3.139l4.994 6.416v-6.416h3.33v12.139h-2.948l-5.185-6.659v6.659h-3.33zm13.195 6.104v-.035c0-3.537 2.723-6.312 6.4-6.312 2.48 0 4.075 1.04 5.15 2.532l-2.532 1.96c-.694-.868-1.491-1.423-2.654-1.423-1.7 0-2.896 1.44-2.896 3.209v.034c0 1.821 1.197 3.244 2.896 3.244 1.266 0 2.012-.59 2.74-1.474l2.533 1.803C89.176 28.838 87.633 30 84.944 30c-3.468 0-6.26-2.653-6.26-6.278m13.073-6.104h9.764v2.861h-6.434v1.838h5.827v2.654h-5.827v1.925h6.521v2.861h-9.851zm17.15 5.827c1.144 0 1.803-.555 1.803-1.44v-.034c0-.954-.694-1.44-1.82-1.44h-2.203v2.914h2.22zm-5.585-5.827h5.74c1.856 0 3.14.485 3.955 1.317.71.694 1.075 1.63 1.075 2.827v.035c0 1.856-.989 3.087-2.497 3.729l2.896 4.231h-3.884l-2.446-3.676h-1.475v3.676h-3.364v-12.14zm16.854 6.104v-.035c0-3.537 2.722-6.312 6.399-6.312 2.48 0 4.075 1.04 5.15 2.532l-2.532 1.96c-.694-.868-1.491-1.423-2.653-1.423-1.7 0-2.896 1.44-2.896 3.209v.034c0 1.821 1.196 3.244 2.896 3.244 1.266 0 2.012-.59 2.74-1.474l2.532 1.803c-1.145 1.578-2.688 2.74-5.376 2.74-3.468 0-6.26-2.653-6.26-6.278m13.073-6.104h9.764v2.861h-6.434v1.838h5.827v2.654h-5.827v1.925h6.521v2.861h-9.851zm11.565 0h3.139l4.995 6.416v-6.416h3.33v12.139h-2.949l-5.185-6.659v6.659h-3.33zm16.576 2.948h-3.642v-2.949h10.649v2.949h-3.642v9.191h-3.365zm8.479-2.948h9.763v2.861h-6.433v1.838h5.826v2.654h-5.826v1.925h6.52v2.861h-9.85zm17.149 5.827c1.144 0 1.803-.555 1.803-1.44v-.034c0-.954-.693-1.44-1.82-1.44h-2.203v2.914h2.22zm-5.585-5.827h5.741c1.855 0 3.139.485 3.954 1.317.71.694 1.075 1.63 1.075 2.827v.035c0 1.856-.988 3.087-2.497 3.729l2.896 4.231h-3.884l-2.446-3.676h-1.474v3.676h-3.365v-12.14z"></path></svg></span>
+      <span class="header-right">인플루언서로 로그인</span>
+      <ul class="header-list">
+        <li><a href="#">인플루언서 안내</a></li>
+        <li><a href="#">광고 수익 혜택</a></li>
+        <li><a href="#">성장 지원 프로그램</a></li>
+        <li><a href="#">브랜드 커낵트</a></li>
+        <li><a href="#">공지</a></li>
+      </ul>
+    </div>
+  </header>
+  <section class="section1">
+    <span class="title">멤버십 혜택</span>
+    <em>인플루언서 활동에 꼭 필요한<br>
+      네이버의 다양한 멤버십 혜택을 제공합니다.</em>
+    <span class="desc">전국 파트너스퀘어의 스튜디오, 편집실 이용부터 네이버플러스 멤버십 이용권 1년 무료 혜택까지. <br>
+      네이버 인플루언서라면 네이버의 다양한 멤버십 혜택들을 누릴 수 있습니다.</span>
+  </section>
+  <section class="section2">
+    <div class="member-wrap">
+      <span class="member-cont1">
+        <span class="member-title">어디에서든 나를 빛내줄<br>
+          온라인 네임카드</span>
+        <span class="member-desc">네이버 인플루언서라면 누구나 나만의
+          네임카드 다운받고<br> 홈을 알릴 수 있습니다 
+          나를 더 예쁘고 멋지게 소개할 수<br> 있도록
+          온라인 네임카드를 만들어보세요.</span>
+        <span class="member-link"> <a href="#">온라인 네임카드 만들기</a> </span>
+      </span>
+      <img src="img/influe02.png" alt="인플루언서 사진" class="member-cont2">
+    </div>
+    <article class="produce">
+        <div>
+          <span class="subject mr20">신청 자격</span>
+          <span class="desc">홈을 개설한 네이버 인플루언서라면 누구나</span>
+        </div>
+        <div class="mt20">
+          <span class="subject mr20">혜택 상세</span>
+          <span class="desc">운영중인 다른 채널에 내 인플루언서 홈을 홍보할 수 있는 네임카드 이미지 소스를 제공합니다.</span>
+        </div>
+    </article>
+  </section>
+  <section class="section2 bgw">
+    <div class="member-wrap">
+      <img src="img/influe03.png" alt="오픈클래스사진" class="member-cont2">
+      <span class="member-cont1">
+        <span class="member-title">전국 파트너스퀘어<br>
+          스튜디오, 편집실 제공</span>
+        <span class="member-desc">파트너스퀘어는 사진/동영상 컨텐츠를 보다 잘 만들 수<br>
+          있는 지원을 받는 곳입니다. 크리에이터를 위한 다양한<br>
+          스튜디오를 경험해보세요.</span>
+        <span class="member-link"> <a href="#">파트스퀘어 이용하기</a> </span>
+      </span>
+    </div>
+
+    <article class="produce">
+        <div>
+          <span class="subject mr20">신청 자격</span>
+          <span class="desc">홈을 개설한 네이버 인플루언서라면 누구나</span>
+        </div>
+        <div class="mt20">
+          <span class="subject mr20">혜택 상세</span>
+          <p class="desc">서울(역삼, 종로, 홍대, 상수), 부산, 광주에 위치한 파트너스퀘어 내 다양한 스튜디오 및 편집실을 이용 <br> 할 수 있습니다. <br>
+            (단,<strong> 홍대점은 전월 기준 팬수 1,000 이상</strong>인 경우에만 이용 가능합니다.)</p>
+        </div>
+        <div class="mt20">
+          <span class="subject mr20">이용 방법</span>
+          <p class="desc">네이버 파트너스퀘어에서 창작자 인증을 해야합니다. <br>
+            (단, <strong>홍대점 경우 당월 인플루언서 승인 시 익월 15일</strong>에 이용 권한이 부여됩니다.)</p>
+        </div>
+    </article>
+  </section>
+  <section class="section2">
+    <div class="member-wrap">
+      <span class="member-cont1">
+        <span class="member-title">네이버플러스 멤버십<br>1년 무료 제공</span>
+        <span class="member-desc">키워드 챌린지에 참여한 인플루언서들에게 네이버플러스 <br>
+          멤버십을 선물로 드려요. 오디오클립, 웹툰, 클라우드, <br>
+          바이브 등 다양한 서비스를 이용해보세요.</span>
+        <span class="link-wrap">
+          <span class="member-link2"> <a href="#">내 맴버쉽 확인하기</a> </span>
+          <span class="member-link2"> <a href="#">지급조건 상세보기</a> </span>
+        </span>
+      </span>
+      <img src="img/influe04.png" alt="오픈클래스사진" class="member-cont2">
+    </div>
+
+    <article class="produce">
+        <div>
+          <span class="subject mr20">신청 자격</span>
+          <span class="desc">키워드 챌린지에 참여한 네이버 인플루언서</span>
+        </div>
+        <div class="mt20">
+          <span class="subject mr20">혜택 상세</span>
+          <p class="desc">쇼핑할 때마다 네이버페이 포인트 최대 5% 적립 가능한 네이버플러스 멤버십 12개월 무료 이용권을 드립니다. <br>
+            (1인당 최초 1회 지급)</p>
+        </div>
+        <div class="mt20">
+          <span class="subject mr20">제공 방법</span>
+          <p class="desc">매월 1일자에 개별 이메일을 통해 이용권 지급이 안내됩니다. <br>
+            (이번 달에 자격 요건을 달성한 분들은 다음 달 1일자에 이용권이 지급됩니다.)</p>
+        </div>
+    </article>
+  </section>
+  <aside id="aside">
+    <a href="#">TOP</a>
+  </aside>
+  <footer>
+    <span class="login"><a href="#">로그인</a></span>
+    <p>NAVER Copyright © NAVER Corp. All Rights Reserved.</p>
+    <span class="naver"><a rel="noopener noreferrer" href="https://www.navercorp.com" target="_blank" class="Footer__naver___usfby" aria-label="NAVER"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 16" aria-hidden="true" width="74" height="16"><path d="M21.897 1l-5.464 14h4.644l.66-1.853h5.237l.66 1.853h4.643L26.814 1h-4.917zm2.459 4.411l1.557 4.373h-3.115l1.558-4.373zM47.165 1v14H58.16v-3.431h-6.556V9.682h6.35V6.319h-6.35V4.43h6.419V1zm-6.078 0l-3.278 9.205L34.53 1h-4.643l5.463 14h4.917L45.73 1zM10.492 1v7.493L5.302 1H1v14h4.507V7.507L10.697 15h4.302V1zm56.545 6.52h-2.39V4.568h2.39c.81 0 1.468.661 1.468 1.476s-.657 1.476-1.468 1.476zm3.034 2.677l.422-.178c1.62-.68 2.443-2.154 2.443-4.024 0-1.769-.642-3.077-1.908-3.889C69.851 1.351 68.325 1 66.226 1h-5.882v14h4.371v-3.912h1.57L68.95 15h4.644l-3.522-4.803z"></path></svg></a></span>
+  </footer>
+</body>
+</html>
