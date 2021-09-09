@@ -298,6 +298,10 @@ img {
   z-index: -1;
 }
 
+.bg.purple::before {
+  background-color: rgba(134, 75, 255, 0.829);
+}
+
 .bg .btn-wrap {
   position: absolute;
   left: 50%;
@@ -410,6 +414,10 @@ img {
   margin-bottom: 10px;
 }
 
+.info h1 a {
+  color: #fff;
+}
+
 .info p {
   font-weight: 300;
   font-size: 18px;
@@ -436,6 +444,12 @@ img {
 .info li.active a {
   background-color: #fff;
   color: #000;
+}
+
+.info.left {
+  top: auto;
+  left: 0;
+  bottom: 0;
 }
 
 .info.right {
@@ -466,6 +480,24 @@ img {
   -webkit-box-shadow: 0 -50px 0 #fff inset;
           box-shadow: 0 -50px 0 #fff inset;
   color: #000;
+}
+
+.info.list {
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  position: fixed;
+  left: 20px;
+  bottom: 70px;
+  color: #fff;
+  padding: 20px;
+  font-size: 12px;
+  line-height: 1.8;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.info.list li {
+  display: block;
 }
 
 #modal {

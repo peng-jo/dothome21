@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 클로바</title>
+
+<style>
+
+body{
+    font-family: 'NanumSquare' !important;
+}
+
+header .inner {
+    margin-left: 123px;
+    margin:0 auto;
+    width: 1140px;
+    height: 86px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .inner ul li {
+    display: inline-block;
+}
+header .inner ul li a {
+    display: block;
+    height: 86px;
+    padding: 34px 36px;
+    color: rgba(0,0,0,.6);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    box-sizing: border-box;
+}
+
+.header-right .header-right-square{
+    display: inline-block;
+    padding: 8px 13px;
+    border: 1px solid rgba(0,0,0,.4);
+    font-size: 12px;
+
+    line-height: 14px;
+    border-radius: 3px;
+}
+header .inner .img{
+    background-position: -4px -62px;
+    background-repeat: no-repeat;
+    width: 145px;
+    height: 22px;
+    display: block;
+    background-size: 335px 311px;
+    background-image: linear-gradient(transparent,transparent),url(https://static-clova.pstatic.net/static/d15c0af/img/sprite/sp_svg_icon.svg);
+}
+
+.section1 {
+    height: 390px;
+    
+    background: url(./img/clova01.png) no-repeat 50%;
+    background-size: cover;
+}
+
+
+
+.section2 {
+    background-color: #fff;
+}
+.cardType {
+    margin-top: 150px;
+    font-family: 'NanumSqure';
+}
+.cardType h2 {
+    font-weight: bold;
+    font-size: 52px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.cardType p {
+    font-size: 14px;
+    margin-bottom: 84px;
+    text-align: center;
+}
+.cardType .card-wrap {
+    overflow: hidden;    
+}
+.cardType .card-wrap .card {
+    box-sizing: border-box;
+    margin-right: 26px;
+    float: left;
+    width: 382px;
+    height: 590px;
+    border-radius: 5px;
+    border: 1px solid #eeee;
+    margin-bottom: 30px;
+}
+.cardType .card-wrap .card:nth-child(3){
+    margin-right: 0px;
+}
+.cardType .card-wrap .card:nth-child(6){
+    margin-right: 0px;
+}
+.cardType .card-wrap .card article {
+    margin-left: 40px;
+    margin-bottom: 48px;
+}
+.cardType .card-lamp {
+    display: inline-block;
+    background-position: -286px -4px;
+    background-repeat: no-repeat;
+    width: 143px;
+    height: 22px;
+}
+.cardType .card-clock {
+    display: inline-block;
+    background-position: -286px -59px;
+    background-repeat: no-repeat;
+    width: 136px;
+    height: 17px;
+}
+.cardType .card-Friends {
+    display: inline-block;
+    background-position: -4px -231px;
+    background-repeat: no-repeat;
+    width: 153px;
+    height: 17px;
+}
+.cardType .card-wave {
+    display: inline-block;
+    background-position: -286px -34px;
+    background-repeat: no-repeat;
+    width: 139px;
+    height: 17px;
+}
+.cardType .card-mini {
+    display: inline-block;
+    background-position: -4px -129px;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 17px;
+}
+.cardType .card-edition {
+    display: inline-block;
+    background-position: -4px -102px;
+    background-repeat: no-repeat;
+    width: 201px;
+    height: 19px;
+}
+.cardType .card-wrap .card-img {
+    margin-bottom: 40px;
+}
+.cardType .card-wrap .card-new {
+    display: inline-block;
+    width: 42px;
+    margin-left: 4px;
+    font-size: 11px;
+    line-height: 18px;
+    font-weight: 700;
+    letter-spacing: -.24px;
+    color: #fff;
+    text-align: center;
+    border-radius: 9px;
+    background-color: #fa615b;
+    vertical-align: top;
+}
+.cardType .card-wrap .card-desc {
+    display: block;
+    font-size: 17px;
+    line-height: 30px;
+    margin-top: 15px;
+    color: #4a4a4a;
+}
+.cardType .card-wrap .card-buy {
+    
+    text-align: center;
+    display: inline-block;
+    width: 90px; height: 32px;
+    background-color: #05d686;
+    margin-right: 10px;
+}
+.cardType .card-wrap .card-buy a {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 32px;
+}
+.cardType .card-wrap .card-info {
+    display: inline-block;
+    text-align: center;
+    width: 90px; height: 32px;
+    border: 1px solid #eeee;
+    margin-top: 15px;
+}
+.cardType .card-wrap .card-info a {
+    font-size: 14px;
+    font-weight: 700;
+    background-color: #fff;
+    line-height: 32px;
+}
+.cardType .card-wrap .lg {
+    display: block;
+    margin: 0px;
+    padding: 2px;
+    width: 69px;
+    background-color: #c20034;
+    border-radius: 9px;
+    color: #fff;
+    text-align: center;
+    font-size: 11px;
+    line-height: 18px;
+    font-weight: 700;
+}
+.cardType .card-wrap .clock2 {
+    margin-top: 17px;
+    display: block;
+    background-position: -4px -206px;
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 17px;
+    background-image: linear-gradient(transparent,transparent),url(https://static-clova.pstatic.net/static/d15c0af/img/sprite/sp_svg_product_bridge.svg);
+    background-size: 433px 277px;
+}
+.section3 .card-wrap .card {
+    height: 610px;
+}
+.cardType .card-wrap .clock {
+    margin-top: 17px;
+    display: block;
+    background-position: -4px -256px;
+    background-repeat: no-repeat;
+    width: 145px;
+    height: 17px;
+    background-image: linear-gradient(transparent,transparent),url(https://static-clova.pstatic.net/static/d15c0af/img/sprite/sp_svg_product_bridge.svg);
+    background-size: 433px 277px;
+}
+.cardType .card-wrap .friends {
+    margin-top: 17px;
+    display: block;
+    background-position: -4px -256px;
+    background-repeat: no-repeat;
+    width: 145px;
+    height: 17px;
+    background-image: linear-gradient(transparent,transparent),url(https://static-clova.pstatic.net/static/d15c0af/img/sprite/sp_svg_product_bridge.svg);
+    background-size: 433px 277px;
+}
+.cardType .card-wrap .on {
+    margin-top: 17px;
+    display: block;
+    background-position: -286px -84px;
+    background-repeat: no-repeat;
+    width: 126px;
+    height: 18px;
+    background-image: linear-gradient(transparent,transparent),url(https://static-clova.pstatic.net/static/d15c0af/img/sprite/sp_svg_product_bridge.svg);
+    background-size: 433px 277px;
+}
+.section4 {
+    padding: 75px 0 70px;
+    border-top: 1px solid rgba(0,0,0,.1);
+    background-color: #f7f7f7;
+    text-align: center;
+}
+.section4 .title {
+    width: 100%;
+    display: block;
+    font-size: 32px;
+    line-height: 46px;
+    font-weight: bold;
+}
+.section4 .desc {
+    display: block;
+    width: 100%; 
+    margin-top: 12px;
+    font-size: 18px;
+    line-height: 20px;
+    color: rgba(0,0,0,.5);
+}
+.section4 .link {
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+    margin-top: 21px;
+    padding: 16px 0px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #fff;
+    text-align: center;
+    border-radius: 25px;
+    background-color: #2284f5;
+}
+footer {
+    position: relative;
+    min-width: 1240px;
+    height: 132px;
+    background-color: #191919;
+    color: #666;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 14px;
+}
+footer .inner {
+    position: relative;
+    overflow: hidden;
+    width: 1140px;
+    padding: 40px 0;
+    margin: 0 auto;
+}
+footer .inner .top .naver{
+    float: left;
+    background-position: -4px -34px;
+    background-repeat: no-repeat;
+    width: 145px;
+    height: 20px;
+
+    background-size: 335px 311px;
+    background-image: linear-gradient(transparent,transparent),url(https://static-clova.pstatic.net/static/d15c0af/img/sprite/sp_svg_icon.svg);
+}
+footer .inner .top .sns li{
+    float: right;
+    margin-left: 26px;
+}
+footer .inner .top .sns li:nth-child(1){
+    background-position: -128px -92px;
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 18px;
+    background-size: 335px 311px;
+    background-image: linear-gradient(transparent,transparent),url(https://static-clova.pstatic.net/static/d15c0af/img/sprite/sp_svg_icon.svg);
+}
+footer .inner .top .sns li:nth-child(2){
+    background-position: -114px -244px;
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+    background-size: 335px 311px;
+    background-image: linear-gradient(transparent,transparent),url(https://static-clova.pstatic.net/static/d15c0af/img/sprite/sp_svg_icon.svg);
+}
+footer .inner .top .sns li:nth-child(3){
+    background-position: -88px -244px;
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+    background-size: 335px 311px;
+    background-image: linear-gradient(transparent,transparent),url(https://static-clova.pstatic.net/static/d15c0af/img/sprite/sp_svg_icon.svg);
+}
+footer .inner .top .sns li:nth-child(4){
+    background-position: -138px -218px;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 14px;
+    margin-top: 3px;
+    background-size: 335px 311px;
+    background-image: linear-gradient(transparent,transparent),url(https://static-clova.pstatic.net/static/d15c0af/img/sprite/sp_svg_icon.svg);
+}
+footer a {
+    color: #666;
+}
+footer .inner .bottom {
+    float: left;
+    margin-top: 18px;
+}
+.m10 {
+    margin:0 10px;
+}
+.ml198 {
+    margin-left: 198px;
+}
+.ml120 {
+    margin-left: 120px;
+}
+
+</style>
+</head>
+<body>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+
+
+    <!-- 나눔스퀘어 폰트 -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+    <header>
+        <div class="inner">
+            <a href="#" class="img"></a>
+            <ul>
+                <li><a href="#">기술 · 솔루션</a></li>
+                <li><a href="#">제품</a></li>
+                <li><a href="#">플랫폼</a></li>
+                <li><a href="#">파트너</a></li>
+                <li><a href="#">리서치</a></li>
+            </ul>
+            <span class="header-right">
+                <span class="header-right-square">
+                    <a href="#">Biz Start</a>
+                </span>
+                <span class="header-right-square">
+                    <a href="#">비즈니스 문의</a>
+                </span>
+            </span>
+        </div>
+    </header>
+    <section class="section1">
+
+    </section>
+    <section class="section2">
+        <div class="container">
+            <div class="cardType">
+                <h2>AI Devices</h2>
+                <p>AI 기술이 집약된 제품으로 편리한 일상을 만나보세요.</p>
+                <ul class="card-wrap">
+                    <li class="card">
+                        <img src="img/image16.jpg" alt="" class="card-img">
+                        <article>
+                            <img class="card-lamp" src="img/lamp.svg"/>
+                            <span class="card-new">
+                                new
+                            </span>
+                            <span class="card-desc">
+                                책을 읽어주는 아이 친구<br>프리미엄 기능의 스마트 램프
+                            </span>
+                            <span class="card-buy"><a href="#">구매하기</a></span>
+                            <span class="card-info"><a href="#">알아보기</a></span>
+                        </article>
+                    </li>
+                    <li class="card">
+                        <img src="img/image17.jpg" alt="" class="card-img">
+                            <article>     
+                                <img class="card-clock" src="img/clock.svg" />
+                                <span class="card-new">
+                                    new
+                                </span>
+                                <span class="card-desc">
+                                    매일의 일상을 편리하게<br>변화시켜줄 스마트 클릭
+                                </span>
+                                <span class="card-info"><a href="#" >알아보기</a></span>
+                            </article>
+                    </li>
+                    <li class="card">
+                        <img src="img/image18.jpg" alt="" class="card-img">
+                        <article>
+                            <img class="card-Friends" src="img/friedns.svg" />
+                            <span class="card-desc">
+                                음악 추천부터 네이버 검색까지<br>다재다능한 스마트 스피커
+                            </span>
+                            <span class="card-info"><a href="#">알아보기</a></span>
+                        </article>
+                    </li>
+                    <li class="card">
+                        <img src="img/image19.jpg" alt="" class="card-img">
+                        <article>
+                            <img class="card-wave" src="img/wave.svg" />
+                            <span class="card-desc">
+                                풍부하고 선명한 사운드로 즐기는<br>최적의 스마트홈 스피커
+                            </span>
+                            <span class="card-info"><a href="#">알아보기</a></span>
+                        </article>
+                    </li>
+                    <li class="card">
+                        <img src="img/image20.jpg" alt="" class="card-img">
+                        <article>
+                            <img class="card-mini" src="img/mini.svg" />
+                            <span class="card-desc">
+                                더 작고 더 가벼워진<br>스마트 스피커
+                        </span>
+                            <span class="card-info"><a href="#">알아보기</a></span>
+                        </article>
+                    </li>
+                    <li class="card">
+                        <img src="img/image21.jpg" alt="" class="card-img">
+                        <article>
+                            <img class="card-edition" src="img/edition.svg" />
+                            <span class="card-desc">
+                                고양이형 만능 로봇 도라에몽을<br>모티브로 한 스마트 스피커
+                            </span>
+                            <span class="card-info"><a href="#">알아보기</a></span>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section3">
+        <div class="container">
+            <div class="cardType">
+                <h2>With Partners</h2>
+                <p>파트너사와 함게 만든 클로바 스마트 디바이스들을 만나보세요.</p>
+                <ul class="card-wrap">
+                    <li class="card">
+                        <img src="img/img_clova_clock_plus2.png" alt="" class="card-img" />
+                        <article>
+                            <span class="lg">
+                                width LG U+
+                            </span>
+                            <span class="clock2"></span>
+
+                            <span class="card-desc">
+                                집 안을 확장하고 연결하는 <br>
+                                우리 집 생활 필수품
+                            </span>
+
+                            <span class="card-info"><a href="#">알아보기</a></span>
+                        </article>
+                    </li>
+                    <li class="card">
+                        <img src="img/img_clova_clock_plus2.png" alt="" class="card-img">
+                            <article>     
+                                <span class="lg">
+                                    width LG U+
+                                </span>
+                                <span class="clock"></span>
+                                <span class="card-desc">
+                                    매일의 일상을 편리하게<br>변화시켜줄 스마트 클릭
+                                </span>
+                                <span class="card-info"><a href="#" >알아보기</a></span>
+                            </article>
+                    </li>
+                    <li class="card">
+                        <img src="img/img_clova_friends_plus.png" alt="" class="card-img">
+                        <article>
+                            <span class="lg">
+                                width LG U+
+                            </span>
+                            <span class="friends"></span>
+                            <span class="card-desc">
+                                유플러스 전용 기능을 <br>
+                                더한 스마트 스피커
+                            </span>
+                            <span class="card-info"><a href="#" >알아보기</a></span>
+                        </article>
+                    </li>
+                    <li class="card">
+                        <img src="img/img_clova_on.png" alt="" class="card-img">
+                        <article> 
+                            <span class="lg">
+                                width LG U+
+                            </span>
+                            <span class="on"></span>
+                            <span class="card-desc">
+                                미니멀 디자인의 <br>
+                                컴팩트 스마트 스피커
+                            </span>
+                            <span class="card-info"><a href="#">알아보기</a></span>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section4">
+        <span class="title">인공지능 플랫폼 클로바와 함께 <br>
+            당신의 일상이 더욱 편리해집니다.</span>
+        <span class="dsec">스마트 디바이스를 더욱 스마트하게 이용하는 명령어 가이드</span>
+        <a class="link">클로바 명령어 가이드</a>
+    </section>
+    <footer>
+        <div class="inner">
+            <div class="top">
+                <span class="naver"></span>
+                <ul class="sns">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <span>고객센터 1833-5387</span><span class="m10">|</span><span>09:00 - 18:00 (주말, 공휴일 휴무) </span>
+                <span class="ml198">Powered by NAVER · LINE</span>
+
+                <a class="ml120" href="#">공지사항</a><span class="m10">|</span>
+                <a href="#">이용약관</a><span class="m10">|</span>
+                <a href="#">CLOVA 채용안내</a><span class="m10">|</span>
+                <a href="#">CLOVA JP</a>
+
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

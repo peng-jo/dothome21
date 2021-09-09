@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/highlight.min.css">
+    <style>
+    body {
+      overflow: hidden;
+    }
+    .mouseCont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color:#fff;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        /* cursor: none; */
+        /* font-family: 'Nexon'; */
+    }
+    .mouseCont p {
+      font-size: 2.5vw;
+      line-height: 2;
+      font-weight: 300;
+    }
+    .mouseCont h2 {
+      font-size: 3vw;
+      font-weight: normal;
+    }
+    .mouseCont span {
+      border-bottom: 0.2vw dashed #68FFE0;
+      /* color: #68FFE0; */
+    }
+    .cursor {
+      position: absolute;
+      left: 0; top: 0;
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      z-index: 9999;
+      background-color: rgba(255,255,255,0.1);
+      user-select: none;
+      pointer-events: none;
+      transition: 
+        background-color .2s,
+        border-color .2s,
+        border-radius .2s,
+        transform .6s;
+    }
+    .cursor.style1 {
+      background-color: rgba(255,165,0,0.4);
+      border-color: orange;
+    }
+    .cursor.style2 {
+      background-color: rgba(188, 104, 245, 0.4);
+      border-color: rgb(150, 0, 255);
+      transform: rotateY(720deg) scale(2);
+    }
+    .cursor.style3 {
+      background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Bill_Gates_2014.jpg/220px-Bill_Gates_2014.jpg);
+      background-size: cover;
+      border-radius: 20px;
+      background-color: rgba(255, 187, 181, 0.4);
+      border-color: rgb(255, 84, 84);
+      transform: rotateX(360deg) scale(2);
+    }
+    .cursor.style4 {
+      background: url(https://ww.namu.la/s/e76860c71a6b2edd294a24c056862bb68b8d8e9348ce91f8d0a8c1091c4917209b71e745e38c9708e644127e4cce4d96c100b211d2724d6faae2ad831b49fa515ba68a59d9f73e9f6030faa022ab15549224877c45c10bf84765fb79bc25fd919c0e2b33518c3e0d0514abf56d53ab48);
+      transform: rotate(20deg); transform-origin: 0 100%;
+      background-size: cover;
+      background-color: rgba(240, 255, 101, 0.2);
+      border-color: rgb(240, 255, 101);
+    }
+    .cursor.style5 {
+      background: url(https://w.namu.la/s/a9af6e40361fb16087f57db69bc66d0ab0a37a47a058da71e3ea73d227d5dab5cc6ca599e0686f48381a125a11628a7d75cfdbe7a2eafa432ed076efae96a8bf10ee5bbdf499292d85b7c626265916d4277ee9187c1ed34ce20aa360bc11821523db7367ce62476c48e4dc7bd7fc14dd);
+      background-size: cover;
+      border-color: rgb(255, 124, 255);
+      transform: rotate3d(1,0,0,-60deg);
+    }
+    .cursor.style6 {
+      border-color: rgba(135, 255, 124, 0.596);
+      border-color: rgb(135, 255, 124);
+      transform: rotateX(180deg);
+      
+    }
+    </style>
+</head>
+<body class="bg1 bg purple">
+
+    <!-- contetns -->
+    <main>
+      <div class="cursor"></div>
+
+      <article class="mouseCont">
+        <p> <span class="style1">  The Internet is</span>  <span class="style2">becoming the town square</span><span class="style3">for the global village of tomorrow.</span></p>
+        <h2> <span class="style4">인터넷은 미래에</span> <span class="style5">등장할 지구촌 광장이</span> <span class="style6">되고 있다.</span></h2>
+      </article>
+      <!-- The Internet is becoming the town square for the global village of tomorrow. 
+
+인터넷은 미래에 등장할 지구촌 광장이 되고 있다. -->
+    </main>
+    <!-- contetns -->
+    <!-- info -->
+    <div class="info">
+        <h1>Mouse Effect01 - Javascript </h1>
+        <p>마우스 이펙트 - 마우스 따라다니기</p>
+    </div>
+    <div class="info right">
+      <ul>
+          <li class="active"><a href="javascriptME01.html">1</a></li>
+          <li><a href="javascriptME02.html">2</a></li>
+          <li><a href="javascriptME03.html">3</a></li>
+          <li><a href="javascriptME04.html">4</a></li>
+          <li><a href="javascriptME05.html">5</a></li>
+      </ul>
+      <ul>
+        <li><a href="JqueryME01.html">1</a></li>
+        <li><a href="JqueryME02.html">2</a></li>
+        <li><a href="JqueryME03.html">3</a></li>
+        <li><a href="JqueryME04.html">4</a></li>
+        <li><a href="JqueryME05.html">5</a></li>
+      </ul>
+    </div>
+    <div class="info left list">
+      <ul>
+        <li>ClientX : <span class="clientX">0</span></li>
+        <li>ClientY : <span class="clientY">0</span></li>
+        <li>offsetX : <span class="offsetX">0</span></li>
+        <li>offsetY : <span class="offsetY">0</span></li>
+        <li>pageX : <span class="pageX">0</span></li>
+        <li>pageY : <span class="pageY">0</span></li>
+        <li>screenX : <span class="screenX">0</span></li>
+        <li>screenY : <span class="screenY">0</span></li>
+      </ul>
+    </div>
+
+      <div id="modal">
+        <div class="modal-bg">
+          <div class="modal-cont">
+            <div class="code-view">
+                <div class="view-header">
+                    <div class="dot" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="view-title">
+                    <ul>
+                        <li class="active"><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JAVASCRIPT</a></li>
+                    </ul>
+                </div>
+                <div class="view-cont">
+                <div class="html">
+<pre><code class="language-html">
+</code></pre>
+                </div>
+                <div class="css">
+<pre><code class="language-css">
+</code></pre>
+                </div>
+
+                <div class="javascript">
+<pre><code class="language-js">
+</code></pre>
+                </div>
+                <div class="jquery">
+<pre><code class="language-js">
+</code></pre>
+                </div>
+                </div>             
+            </div>         
+            <button>닫기</button>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="info bottom">
+        <button>소스보기</button>
+    </div>
+
+
+
+    <!-- script -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script>
+
+        //출력용
+        window.addEventListener("mousemove",function(e){
+            document.querySelector(".clientX").innerText = e.clientX + " px"; //브라우저 X좌표 기준
+            document.querySelector(".clientY").innerText = e.clientY+ " px"; //브라우저 Y좌표 기준
+            document.querySelector(".offsetX").innerText = e.offsetX+ " px"; //요소 X좌표 기준
+            document.querySelector(".offsetY").innerText = e.offsetY+ " px"; //요소 Y좌표 기준
+            document.querySelector(".pageX").innerText = e.pageX+ " px"; //페이지 X좌표 기준
+            document.querySelector(".pageY").innerText = e.pageY+ " px"; //페이지 Y좌표 기준
+            document.querySelector(".screenX").innerText = e.screenX+ " px"; //디바이스 X좌표 기준
+            document.querySelector(".screenY").innerText = e.screenY+ " px"; //디바이스 X좌표 기준
+        })
+
+        const mouseCont = document.querySelectorAll('.mouseCont span');
+        const cursor = document.querySelector('.cursor');
+
+        mouseCont.forEach( ( span, index ) => {
+          span.addEventListener('mouseover', function(){
+            cursor.classList.add(span.getAttribute("class"));
+          });
+          span.addEventListener('mouseout', function(){
+            cursor.classList.remove(span.getAttribute("class"));
+          });
+        });
+
+        // document.querySelector(".mouseCont .style1").addEventListener("mouseover",function(){
+        //     document.querySelector(".cursor").classList.add("style1");
+        // });
+        // document.querySelector(".mouseCont .style1").addEventListener("mouseout",function(){
+        //     document.querySelector(".cursor").classList.remove("style1");
+        // });
+
+        // document.querySelector(".mouseCont .style2").addEventListener("mouseover",function(){
+        //     document.querySelector(".cursor").classList.add("style2");
+        // });
+        // document.querySelector(".mouseCont .style2").addEventListener("mouseout",function(){
+        //     document.querySelector(".cursor").classList.remove("style2");
+        // });
+
+        // document.querySelector(".mouseCont .style3").addEventListener("mouseover",function(){
+        //     document.querySelector(".cursor").classList.add("style3");
+        // });
+        // document.querySelector(".mouseCont .style4").addEventListener("mouseover",function(){
+        //     document.querySelector(".cursor").classList.add("style4");
+        // });.....
+
+        window.addEventListener("mousemove",function(e){
+            document.querySelector(".cursor").style.left = e.clientX - 25 + "px";
+            document.querySelector(".cursor").style.top = e.clientY - 25 + "px";
+            let x = e.clientX - 25 + "px";
+            let y = e.clientY - 25 + "px";
+
+            document.querySelector(".cursor").style.cssText = `left:${x};top:${y};`;
+        });
+    </script>
+</body>
+</html>
