@@ -20,7 +20,7 @@
         width: 100%;
         height: 100vh;
         overflow: hidden;
-        /* cursor: none; */
+        cursor: none;
         /* font-family: 'Nexon'; */
     }
     .mouseCont p {
@@ -33,7 +33,7 @@
       font-weight: normal;
     }
     .mouseCont span {
-      border-bottom: 0.2vw dashed #68FFE0;
+      border-bottom: 0.2vw dashed #a7cc73;
       /* color: #68FFE0; */
     }
     .cursor {
@@ -237,7 +237,7 @@
         // });
         // document.querySelector(".mouseCont .style4").addEventListener("mouseover",function(){
         //     document.querySelector(".cursor").classList.add("style4");
-        // });.....
+        // });
 
         window.addEventListener("mousemove",function(e){
             document.querySelector(".cursor").style.left = e.clientX - 25 + "px";
@@ -245,8 +245,9 @@
             let x = e.clientX - 25 + "px";
             let y = e.clientY - 25 + "px";
 
-            document.querySelector(".cursor").style.cssText = `left:${x};top:${y};`;
+            // document.querySelector(".cursor").style.cssText = `left:${x};top:${y};`;
         });
+        modal('info');
     </script>
 </body>
 </html>
