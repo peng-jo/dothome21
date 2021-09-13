@@ -12,103 +12,17 @@
   </style>
 </head>
 <body>
-<canvas>
-
-</canvas>
+  <canvas>
+  </canvas>
 </body>
 <script type="module">
 import * as THREE from  '../../assets/js/three.module.js';
-const canvas = document.querySelector('canvas');
-function main(){
-
-  //WebGLRenderer 생성
-  /*
-    렌더러 :
-    (renderer)는 여러분이 입력한 데이터를
-    실제로 canvas에 그려주는 역할을 맡습니다. 
-  */
-const renderer = new THREE.WebGLRenderer({canvas});
-// the canvas default
-const fov = 75;
-const aspect = canvas.clientWidth / canvas.clientHeight; 
-const near = 0.1;
-const far = 5;
-
-//카메라 생성
-const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-camera.position.z = 2;
-
-const resizeRendererToDisplaySize = (renderer)=> {
-  const canvas = renderer.domElement;
-  const width = canvas.clientWidth;
-  const height = canvas.clientHeight;
-  const needResize = canvas.width !== width || canvas.height !== height;
-  if (needResize) {
-    renderer.setSize(width, height, false);
-  }
-  return needResize;
-}
-/* 씬 생성 */
-const scene = new THREE.Scene();
-
-
 async function loadFile(url) {
   const req = await fetch(url);
   return req.text();
 }
-function addBoxes(file) {
-  const { min, max, data } = file;
-  const range = max - min;
 
-  // 육면체 geometry를 만듭니다.
-  const boxWidth = 1;
-  const boxHeight = 1;
-  const boxDepth = 1;
-  const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
-  // 중심이 아닌 양의 z축 방향으로 커지게끔 만듭니다.
-  geometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0, 0, 0.5));
-
-  // 아래 헬퍼 Object3D는 육면체들의 위치 변화를 간단하게 만들어줍니다.
-  // lonHelper를 Y축으로 돌려 경도(longitude)를 맞출 수 있습니다.
-  const lonHelper = new THREE.Object3D();
-  scene.add(lonHelper);
-  // latHelper를 X축으로 돌려 위도(latitude)를 맞출 수 있습니다.
-  const latHelper = new THREE.Object3D();
-  lonHelper.add(latHelper);
-  // positionHelper는 다른 요소의 기준축을 구체의 끝에 맞추는 역할을 합니다.
-  const positionHelper = new THREE.Object3D();
-  positionHelper.position.z = 1;
-  latHelper.add(positionHelper);
-
-  const lonFudge = Math.PI * .5;
-  const latFudge = Math.PI * -0.135;
-  data.forEach((row, latNdx) => {
-    row.forEach((value, lonNdx) => {
-      if (value === undefined) {
-        return;
-      }
-      const amount = (value - min) / range;
-      const material = new THREE.MeshBasicMaterial();
-      const hue = THREE.MathUtils.lerp(0.7, 0.3, amount);
-      const saturation = 1;
-      const lightness = THREE.MathUtils.lerp(0.1, 1.0, amount);
-      material.color.setHSL(hue, saturation, lightness);
-      const mesh = new THREE.Mesh(geometry, material);
-      scene.add(mesh);
-
-      // 헬퍼들을 특정 위도와 경도로 이동시킵니다.
-      lonHelper.rotation.y = THREE.MathUtils.degToRad(lonNdx + file.xllcorner) + lonFudge;
-      latHelper.rotation.x = THREE.MathUtils.degToRad(latNdx + file.yllcorner) + latFudge;
-
-      // positionHelper의 위치를 해당 mesh의 위치로 지정합니다.
-      positionHelper.updateWorldMatrix(true, false);
-      mesh.applyMatrix4(positionHelper.matrixWorld);
-
-      mesh.scale.set(0.005, 0.005, THREE.MathUtils.lerp(0.01, 0.5, amount));
-    });
-  });
-}
-const parseData = (text)=>{
+function parseData(text) {
   const data = [];
   const settings = {data};
   let max;
@@ -137,7 +51,7 @@ const parseData = (text)=>{
   return Object.assign(settings, {min, max});
 }
 
-const drawData = (file)=>{
+function drawData(file) {
   const {min, max, ncols, nrows, data} = file;
   const range = max - min;
   const ctx = document.querySelector('canvas').getContext('2d');
@@ -161,50 +75,22 @@ const drawData = (file)=>{
       const lightness = amount;
       ctx.fillStyle = hsl(hue, saturation, lightness);
       ctx.fillRect(lonNdx, latNdx, 1, 1);
-      });
     });
-  }
-
-  function px(v) {
-    return `${v | 0}px`;
-  }
-
-  function hsl(h, s, l) {
-    return `hsl(${h * 360 | 0},${s * 100 | 0}%,${l * 100 | 0}%)`;
-  }
-
-  
-  // server -> ./resouce/gpw_v4.asc
-
-  const loader = new THREE.TextureLoader();
-  const texture = loader.load('resource/world.jpg', renderer);
-  const geometry = new THREE.SphereGeometry(1, 64, 32);
-  const material = new THREE.MeshBasicMaterial({ map: texture });
-  scene.add(new THREE.Mesh(geometry, material));
-
-  function render(time) {
-    time *= 0.001;  // convert time to seconds
-    
-    if(resizeRendererToDisplaySize(renderer)){
-      const canvas = renderer.domElement;
-      camera.aspect  = canvas.clientWidth / canvas.clientHeight;
-      camera.updateProjectionMatrix(); 
-    }
-
-    renderer.render(scene, camera);
-    /* requestAnimationFrame 함수에 업데이트*/
-    requestAnimationFrame(render);
-  }
-  requestAnimationFrame(render);
-    console.log('load');
-    loadFile('https://threejsfundamentals.org/threejs/resources/data/gpw/gpw_v4_basic_demographic_characteristics_rev10_a000_014mt_2010_cntm_1_deg.asc')
-    .then(parseData)
-    .then(drawData);
-
- 
-  
+  });
 }
-window.addEventListener('load',main);
-  </script>
+
+function px(v) {
+  return `${v | 0}px`;
+}
+
+function hsl(h, s, l) {
+  return `hsl(${h * 360 | 0},${s * 100 | 0}%,${l * 100 | 0}%)`;
+}
+
+loadFile('./resources/gpw_v4.asc')
+  .then(parseData)
+  .then(drawData);
+
+</script>
 
 </html>
