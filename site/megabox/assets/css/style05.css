@@ -93,6 +93,7 @@
 /* 배너 */
 
 .banner_menu {
+    z-index: 1000;
     overflow: hidden;
     position: absolute;
     left: 0; top: 20px;
