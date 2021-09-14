@@ -172,42 +172,38 @@
     <script src="../assets/js/custom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script>
+        const li = document.querySelectorAll(".info.left.list li");
+        const cursor = document.querySelector(".cursor");
+        li.forEach((el, index)=>{
+            el.addEventListener("click",()=>{
+                li.forEach( element =>{
+                    element.classList.remove("active");
+                })
+                const text = el.textContent || el.innerText;
+                cursor.style.mixBlendMode = text;
+                el.classList.add("active");
+            });
+        });
+
         const w = document.querySelector(".cursor").clientWidth / 2;
         const h = document.querySelector(".cursor").clientHeight / 2;
+
+        
         //움직임 효과
         document.addEventListener("mousemove", e =>{
             gsap.to(".cursor", { duration: .5, left:e.pageX - 5, top: e.pageY - 5});
         });
 
-        //출력용
-        // $(".info.left.list li").click(function(){
-        //     $(".info.left.list li").removeClass("active");
-        //     const text = $(this).addClass("active").text();
-        //     console.log(text)
-        //     $(".cursor").css("mix-blend-mode", text);
-        // });
-        const btn = document.querySelectorAll(".info.left.list li");
-        const cursor = document.querySelector(".cursor")
-        btn.forEach((el, index)=>{
-            el.addEventListener("click", (li)=>{
-                btn.forEach( (el)=>{
-                    el.classList.remove("active");
-                })
-                const text = el.textContent || el.innerText;
-                cursor.style.mixBlendMode = text;
-                btn[index].classList.add("active");
-            })
-        });
+        
+       
 
         //오버 효과
         document.querySelectorAll(".mouseCont em").forEach( em => {
             em.addEventListener("mouseenter", ()=> {
-                console.log("mouseeter");
                 document.querySelector(".cursor").classList.add("active");
             });
             em.addEventListener("mouseleave", ()=> {
                 document.querySelector(".cursor").classList.remove("active");
-                console.log("mouseleave");
             });
         });
 

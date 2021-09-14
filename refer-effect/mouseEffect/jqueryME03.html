@@ -189,11 +189,12 @@
             $(".cursor").removeClass("active");
         });
 
+        const $li = $(".info.left.list li");
         //출력용
-        $(".info.left.list li").click(function(){
-            $(".info.left.list li").removeClass("active");
+        $li.click(function(){
+          $li.removeClass("active");
+
             const text = $(this).addClass("active").text();
-            console.log(text)
             $(".cursor").css("mix-blend-mode", text);
         });
     </script>
