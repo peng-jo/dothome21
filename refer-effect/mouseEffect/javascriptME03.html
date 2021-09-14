@@ -45,94 +45,53 @@
         width: 10px; height: 10px;
         border-radius: 50%;
         z-index: 9999;
-        background-color: rgba(255,255,255,0.1);
+        background-color: #fff;
         user-select: none;
         pointer-events: none;
-        transition: transform .3s, opacity .2s;
+        transition: transform .3s;
+        mix-blend-mode: difference;
     }
     .cursor.active {
-        opacity: .5;
-        transform: scale(0);
+        transform: scale(20);
     }
-    .cursor-follower {
-        position: absolute;
-        width: 30px; height: 30px;
-        background: rgba(255,255,255,0.3);
-        border-radius: 50%;
-        user-select: none;
-        pointer-events: none;
-        transition: transform 0.6s, opacity 0.2s;
+    .info.left.list li.active {
+        text-decoration: underline;
     }
-    .cursor-follower.active {
-        opacity: .7;
-        transform: scale(4);
-        background: rgba(245, 190, 87);
-    }
-    .cursor.show {
-        opacity: .5;
-        transform: scale(1);
-        background: rgba(255, 51, 0, 1);
-    }
-    .cursor-follower {
-        position: absolute;
-        width: 30px; height: 30px;
-        background: rgba(255,255,255,0.3);
-        border-radius: 50%;
-        user-select: none;
-        pointer-events: none;
-        transition: transform 0.6s ease-in-out, opacity 0.2s ease-in-out;
-    }
-    .cursor-follower.active {
-        transform: scale(5);
-        background: rgba(255, 166, 0, 0.6);
-    }
-    .cursor-follower.show {
-        transform: scale(5);
-        background: rgba(255, 51, 0, 0.6);
-    }
-    .info, .info a {
-        cursor: none;
-    }
+
     </style>
 </head>
-<body class="bg2 bg purple">
+<body class="bg4 bg purple">
 
     <!-- contetns -->
     <main>
         <div class="cursor"></div>
-        <div class="cursor-follower"></div>
       <article class="mouseCont">
           <p>
-            <em>Success is a lousy teacher.</em>
-            It seduces smart people into thinking they can't lose.
+            <em>Be nice to nerds.</em>
+            Be nice to nerds. Chances are you'll end up working for one.
           </p>
           <h2>
-            <em>성공은 형편없는 선생이다.</em> 똑똑한 사람들로 하여금 절대 패할 수 없다고 착각하게 만든다.
-          </h2>
-        
-        
-        
-        
+            <em>괴짜들에게 잘 해주십시오.</em> 나중에 그 사람 밑에서 일하게 될 수도 있습니다.
+          </h2>   
       </article>
-
     </main>
     <!-- contetns -->
     <!-- info -->
     <div class="info">
-        <h1>Mouse Effect02 - Jquery </h1>
-        <p>마우스 이펙트 - 마우스 따라다니기</p>
+        <h1>Mouse Effect03 - JAVASCRIPT </h1>
+        <p>마우스 이펙트 - 브랜딩 이펙트</p>
     </div>
     <div class="info right">
       <ul>
           <li><a href="javascriptME01.html">1</a></li>
           <li><a href="javascriptME02.html">2</a></li>
-          <li><a href="javascriptME03.html">3</a></li>
+          <li class="active"><a href="javascriptME03.html">3</a></li>
           <li><a href="javascriptME04.html">4</a></li>
           <li><a href="javascriptME05.html">5</a></li>
       </ul>
       <ul>
         <li><a href="JqueryME01.html">1</a></li>
-        <li class="active"><a href="JqueryME02.html">2</a></li>
+        <li><a href="JqueryME02.html">2</a></li>
         <li><a href="JqueryME03.html">3</a></li>
         <li><a href="JqueryME04.html">4</a></li>
         <li><a href="JqueryME05.html">5</a></li>
@@ -140,8 +99,21 @@
     </div>
     <div class="info left list">
       <ul>
-        <li>pageX : <span class="pageX">0</span></li>
-        <li>pageY : <span class="pageY">0</span></li>
+        <li>multiply</li>
+        <li>screen</li>
+        <li>overlay</li>
+        <li>darken</li>
+        <li>lighten</li>
+        <li>color-dodge</li>
+        <li>color-burn</li>
+        <li>hard-light</li>
+        <li>soft-light</li>
+        <li class="active">difference</li>
+        <li>exclusion</li>
+        <li>hue</li>
+        <li>saturation</li>
+        <li>color</li>
+        <li>luminosity</li>
       </ul>
     </div>
 
@@ -196,45 +168,49 @@
 
 
     <!-- script -->
-    <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/custom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script>
-
-        const cursor = $(".cursor");
-        const follower = $(".cursor-follower");
+        const w = document.querySelector(".cursor").clientWidth / 2;
+        const h = document.querySelector(".cursor").clientHeight / 2;
+        //움직임 효과
+        document.addEventListener("mousemove", e =>{
+            gsap.to(".cursor", { duration: .5, left:e.pageX - 5, top: e.pageY - 5});
+        });
 
         //출력용
-        $(window).mousemove(function(e){
-            $(".pageX").text(e.pageX + "px");
-            $(".pageY").text(e.pageY + "px");
+        // $(".info.left.list li").click(function(){
+        //     $(".info.left.list li").removeClass("active");
+        //     const text = $(this).addClass("active").text();
+        //     console.log(text)
+        //     $(".cursor").css("mix-blend-mode", text);
+        // });
+        const btn = document.querySelectorAll(".info.left.list li");
+        const cursor = document.querySelector(".cursor")
+        btn.forEach((el, index)=>{
+            el.addEventListener("click", (li)=>{
+                btn.forEach( (el)=>{
+                    el.classList.remove("active");
+                })
+                const text = el.textContent || el.innerText;
+                cursor.style.mixBlendMode = text;
+                btn[index].classList.add("active");
+            })
         });
 
-        //움직임 효과
-        $(window).mousemove(function(e){
-            // cursor.css({left:e.pageX - 5, top:e.pageY - 5})
-            // follower.css({left:e.pageX - 15, top:e.pageY - 15})
-            gsap.to(cursor,{duration: 0.3, left:e.pageX - 5, top:e.pageY - 5});
-            gsap.to(follower,{duration: 0.6, left:e.pageX - 15, top:e.pageY - 15});
+        //오버 효과
+        document.querySelectorAll(".mouseCont em").forEach( em => {
+            em.addEventListener("mouseenter", ()=> {
+                console.log("mouseeter");
+                document.querySelector(".cursor").classList.add("active");
+            });
+            em.addEventListener("mouseleave", ()=> {
+                document.querySelector(".cursor").classList.remove("active");
+                console.log("mouseleave");
+            });
         });
 
-
-        $(".mouseCont em").hover(function(){
-            cursor.addClass("active");
-            follower.addClass("active");
-        },function(){
-            cursor.removeClass("active");
-            follower.removeClass("active");
-        });
-
-        $(".info").hover(function(){
-            cursor.addClass("show");
-            follower.addClass("show");
-        },function(){
-            cursor.removeClass("show");
-            follower.removeClass("show");
-        });
     </script>
 </body>
 </html>
