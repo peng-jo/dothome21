@@ -29,7 +29,7 @@
 <body class="parallax">
     <!-- header -->
     <header class="paraInfo">
-        <h1><a href="index.html"> Perallex Effect01- JQuery</a></h1>
+        <h1><a href="index.html"> Perallex Effect03- Javascript</a></h1>
         <p>패랠랙스 스크로링효과 - 숨김메뉴 </p>
     </header>
     <!-- //header -->
@@ -163,11 +163,11 @@
     <div class="footerInfo">
         <h2>자바스크립트</h2>
         <ul>
-            <li><a href="javascriptPE01.html">2</a></li>
-            <li><a href="javascriptPE02.html">3</a></li>
-            <li><a href="javascriptPE03.html">4</a></li>
-            <li><a href="javascriptPE04.html">5</a></li>
-            <li><a href="javascriptPE05.html">6</a></li>
+            <li><a href="javascriptPE01.html">1</a></li>
+            <li><a href="javascriptPE02.html">2</a></li>
+            <li class="active"><a href="javascriptPE03.html">3</a></li>
+            <li><a href="javascriptPE04.html">4</a></li>
+            <li><a href="javascriptPE05.html">5</a></li>
         </ul>
     </div>
     <div class="footerInfo">
@@ -175,7 +175,7 @@
         <ul> 
             <li><a href="jqueryPE01.html">1</a></li>
             <li><a href="jqueryPE02.html">2</a></li>
-            <li class="active"><a href="jqueryPE03.html">3</a></li>
+            <li><a href="jqueryPE03.html">3</a></li>
             <li><a href="jqueryPE04.html">4</a></li>
             <li><a href="jqueryPE05.html">5</a></li>
         </ul>
@@ -695,40 +695,30 @@
     <!-- script -->
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/custom.js"></script>
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
-        $(".paraNav ul li").click(function(e){
-            e.preventDefault();
-            let target = $(this);
-            let index = target.index();
-            let section = $('.content-item').eq(index);
-            
-            let offset = section.offset().top;
-            $('html ,body').animate({ scrollTop : offset},600);
-        });
 
-        $(document).scroll(function(){
-            let scrollTop = $(this).scrollTop();
-            
-            //버튼용
-            $(".content-item").each(function( index, element ){
-                if( scrollTop >= $(this).offset().top -2 ){
-                    $(".paraNav ul li").eq(index).addClass("active").siblings().removeClass("active");
-                }
+        document.querySelectorAll(".paraNav ul li a").forEach(( a ,index )=>{
+            a.addEventListener("click",function(e){
+                e.preventDefault();
+                document.querySelector(a.getAttribute("href")).scrollIntoView({
+                    behavior : "smooth"
+                });
+                document.querySelectorAll(".paraNav ul li").forEach((li)=>{
+                    li.classList.remove("active");
+                })
+                console.log(this.parentElement);
+                this.parentElement.classList.add("active");
             });
-
-            //숨김 메뉴
+        });
+        window.addEventListener("scroll", ()=>{
+            let scrollTop = document.documentElement.scrollTop || window.scrollY || window.pageYOffset;
 
             if( scrollTop > 10){
-                $(".paraNav").addClass("show");
-            } else {
-                $(".paraNav").removeClass("show");
+                document.querySelector(".paraNav").classList.add("show");
+            }else{
+                document.querySelector(".paraNav").classList.remove("show");
             }
-
-            //출력용
-            $('.paraScroll span').text(scrollTop);
-
+            document.querySelector('.paraScroll span').textContent = scrollTop;
         });
 
 
