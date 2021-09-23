@@ -302,6 +302,10 @@ img {
   background-color: rgba(97, 129, 51, 0.7);
 }
 
+.bg.brown::before {
+  background-color: rgba(50, 37, 11, 0.9);
+}
+
 .bg .btn-wrap {
   position: absolute;
   left: 50%;
@@ -407,7 +411,7 @@ img {
 
 .info h1 {
   font-weight: 300;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 1.6;
   border-bottom: 1px dashed #fff;
   display: inline-block;

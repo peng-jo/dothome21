@@ -266,6 +266,11 @@ $gradient6 : linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
         }
     }
 
+    &.brown {
+        &::before {
+            background-color: rgba(50, 37, 11, 0.9);
+        }
+    }
 .btn-wrap {
 	position: absolute;
 	left: 50%; top: 50%;
@@ -359,7 +364,7 @@ $gradient6 : linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
     top: 0;
     h1 {
        font-weight: 300;
-       font-size: 40px;
+       font-size: 30px;
        line-height: 1.6;
        border-bottom: 1px dashed #fff;
        display: inline-block;
