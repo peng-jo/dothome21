@@ -29,7 +29,7 @@
 <body class="parallax">
     <!-- header -->
     <header class="paraInfo">
-        <h1><a href="index.html"> Perallex Effect03- Javascript</a></h1>
+        <h1><a href="index.html"> Perallex Effect03 - Javascript</a></h1>
         <p>패랠랙스 스크로링효과 - 숨김메뉴 </p>
     </header>
     <!-- //header -->
@@ -703,11 +703,6 @@
                 document.querySelector(a.getAttribute("href")).scrollIntoView({
                     behavior : "smooth"
                 });
-                document.querySelectorAll(".paraNav ul li").forEach((li)=>{
-                    li.classList.remove("active");
-                })
-                console.log(this.parentElement);
-                this.parentElement.classList.add("active");
             });
         });
         window.addEventListener("scroll", ()=>{
@@ -719,6 +714,15 @@
                 document.querySelector(".paraNav").classList.remove("show");
             }
             document.querySelector('.paraScroll span').textContent = scrollTop;
+
+            document.querySelectorAll(".content-item").forEach((item, index)=>{
+                if( scrollTop >= item.offsetTop -2 ){
+                    document.querySelectorAll(".paraNav ul li").forEach(li =>{
+                        li.classList.remove("active");
+                    });
+                    document.querySelector(".paraNav ul li:nth-child("+(index+1)+")").classList.add("active");
+                }
+            })
         });
 
 
