@@ -119,11 +119,11 @@
           <li><a href="javascriptME05.html">5</a></li>
       </ul>
       <ul>
-        <li class="active"><a href="JqueryME01.html">1</a></li>
-        <li><a href="JqueryME02.html">2</a></li>
-        <li><a href="JqueryME03.html">3</a></li>
-        <li><a href="JqueryME04.html">4</a></li>
-        <li><a href="JqueryME05.html">5</a></li>
+        <li class="active"><a href="jqueryME01.html">1</a></li>
+        <li><a href="jqueryME02.html">2</a></li>
+        <li><a href="jqueryME03.html">3</a></li>
+        <li><a href="jqueryME04.html">4</a></li>
+        <li><a href="jqueryME05.html">5</a></li>
       </ul>
     </div>
     <div class="info left list">
@@ -154,25 +154,215 @@
                     <ul>
                         <li class="active"><a href="#">HTML</a></li>
                         <li><a href="#">CSS</a></li>
-                        <li><a href="#">JAVASCRIPT</a></li>
+                        <li><a href="#">Jquery</a></li>
                     </ul>
                 </div>
                 <div class="view-cont">
                 <div class="html">
-<pre><code class="language-html">
+<pre><code class="language-html">&lthtml&gt
+  &ltbody class="bg1 bg purple"&gt
+      &lt!-- contetns --&gt
+      &ltmain&gt
+        &ltdiv class="cursor"&gt&lt/div&gt
+  
+        &ltarticle class="mouseCont"&gt
+          &ltp&gt &ltspan class="style1"&gt  The Internet is&lt/span&gt  &ltspan class="style2"&gtbecoming the town square&lt/span&gt&ltspan class="style3"&gtfor the global village of tomorrow.&lt/span&gt&lt/p&gt
+          &lth2&gt &ltspan class="style4"&gt인터넷은 미래에&lt/span&gt &ltspan class="style5"&gt등장할 지구촌 광장이&lt/span&gt &ltspan class="style6"&gt되고 있다.&lt/span&gt&lt/h2&gt
+        &lt/article&gt
+        &lt!-- The Internet is becoming the town square for the global village of tomorrow. 
+  
+  인터넷은 미래에 등장할 지구촌 광장이 되고 있다. --&gt
+      &lt/main&gt
+      &lt!-- contetns --&gt
+      &lt!-- info --&gt
+      &ltdiv class="info"&gt
+          &lth1&gtMouse Effect01 - Javascript &lt/h1&gt
+          &ltp&gt마우스 이펙트 - 마우스 따라다니기&lt/p&gt
+      &lt/div&gt
+      &ltdiv class="info right"&gt
+        &ltul&gt
+            &ltli class="active"&gt&lta href="javascriptME01.html"&gt1&lt/a&gt&lt/li&gt
+            &ltli&gt&lta href="javascriptME02.html"&gt2&lt/a&gt&lt/li&gt
+            &ltli&gt&lta href="javascriptME03.html"&gt3&lt/a&gt&lt/li&gt
+            &ltli&gt&lta href="javascriptME04.html"&gt4&lt/a&gt&lt/li&gt
+            &ltli&gt&lta href="javascriptME05.html"&gt5&lt/a&gt&lt/li&gt
+        &lt/ul&gt
+        &ltul&gt
+          &ltli&gt&lta href="jqueryME01.html"&gt1&lt/a&gt&lt/li&gt
+          &ltli&gt&lta href="jqueryME02.html"&gt2&lt/a&gt&lt/li&gt
+          &ltli&gt&lta href="jqueryME03.html"&gt3&lt/a&gt&lt/li&gt
+          &ltli&gt&lta href="jqueryME04.html"&gt4&lt/a&gt&lt/li&gt
+          &ltli&gt&lta href="jqueryME05.html"&gt5&lt/a&gt&lt/li&gt
+        &lt/ul&gt
+      &lt/div&gt
+      &ltdiv class="info left list"&gt
+        &ltul&gt
+          &ltli&gtClientX : &ltspan class="clientX"&gt0&lt/span&gt&lt/li&gt
+          &ltli&gtClientY : &ltspan class="clientY"&gt0&lt/span&gt&lt/li&gt
+          &ltli&gtoffsetX : &ltspan class="offsetX"&gt0&lt/span&gt&lt/li&gt
+          &ltli&gtoffsetY : &ltspan class="offsetY"&gt0&lt/span&gt&lt/li&gt
+          &ltli&gtpageX : &ltspan class="pageX"&gt0&lt/span&gt&lt/li&gt
+          &ltli&gtpageY : &ltspan class="pageY"&gt0&lt/span&gt&lt/li&gt
+          &ltli&gtscreenX : &ltspan class="screenX"&gt0&lt/span&gt&lt/li&gt
+          &ltli&gtscreenY : &ltspan class="screenY"&gt0&lt/span&gt&lt/li&gt
+        &lt/ul&gt
+      &lt/div&gt
+  
+      &ltdiv class="info bottom"&gt
+          &ltbutton&gt소스보기&lt/button&gt
+      &lt/div&gt
+  &lt/body&gt
+&lt/html&gt
 </code></pre>
                 </div>
                 <div class="css">
-<pre><code class="language-css">
+<pre><code class="language-css">&ltstyle&gt&gt
+  body {
+    overflow: hidden;
+  }
+  .mouseCont {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color:#fff;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      cursor: none;
+      /* font-family: 'Nexon'; */
+  }
+  .mouseCont p {
+    font-size: 2.5vw;
+    line-height: 2;
+    font-weight: 300;
+  }
+  .mouseCont h2 {
+    font-size: 3vw;
+    font-weight: normal;
+  }
+  .mouseCont span {
+    border-bottom: 0.2vw dashed #a7cc73;
+    /* color: #68FFE0; */
+  }
+  .cursor {
+    position: absolute;
+    left: 0; top: 0;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    z-index: 9999;
+    background-color: rgba(255,255,255,0.1);
+    user-select: none;
+    pointer-events: none;
+    transition: 
+      background-color .2s,
+      border-color .2s,
+      border-radius .2s,
+      transform .6s;
+  }
+  .cursor.style1 {
+    background-color: rgba(255,165,0,0.4);
+    border-color: orange;
+  }
+  .cursor.style2 {
+    background-color: rgba(188, 104, 245, 0.4);
+    border-color: rgb(150, 0, 255);
+    transform: rotateY(720deg) scale(2);
+  }
+  .cursor.style3 {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Bill_Gates_2014.jpg/220px-Bill_Gates_2014.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    background-color: rgba(255, 187, 181, 0.4);
+    border-color: rgb(255, 84, 84);
+    transform: rotateX(360deg) scale(2);
+  }
+  .cursor.style4 {
+    background: url(https://ww.namu.la/s/e76860c71a6b2edd294a24c056862bb68b8d8e9348ce91f8d0a8c1091c4917209b71e745e38c9708e644127e4cce4d96c100b211d2724d6faae2ad831b49fa515ba68a59d9f73e9f6030faa022ab15549224877c45c10bf84765fb79bc25fd919c0e2b33518c3e0d0514abf56d53ab48);
+    transform: rotate(20deg); transform-origin: 0 100%;
+    background-size: cover;
+    background-color: rgba(240, 255, 101, 0.2);
+    border-color: rgb(240, 255, 101);
+  }
+  .cursor.style5 {
+    background: url(https://w.namu.la/s/a9af6e40361fb16087f57db69bc66d0ab0a37a47a058da71e3ea73d227d5dab5cc6ca599e0686f48381a125a11628a7d75cfdbe7a2eafa432ed076efae96a8bf10ee5bbdf499292d85b7c626265916d4277ee9187c1ed34ce20aa360bc11821523db7367ce62476c48e4dc7bd7fc14dd);
+    background-size: cover;
+    border-color: rgb(255, 124, 255);
+    transform: rotate3d(1,0,0,-60deg);
+  }
+  .cursor.style6 {
+    border-color: rgba(135, 255, 124, 0.596);
+    border-color: rgb(135, 255, 124);
+    transform: rotateX(180deg);
+    
+  }
+&lt/style&gt
 </code></pre>
                 </div>
 
-                <div class="javascript">
-<pre><code class="language-js">
-</code></pre>
-                </div>
                 <div class="jquery">
-<pre><code class="language-js">
+<pre><code class="language-js">&ltscript&gt
+  //마우스 움직임 
+  $(window).mousemove(function(e){
+  $(".clientX").text(e.clientX + " px"); //브라우저 X좌표 기준
+  $(".clientY").text(e.clientY+ " px"); //브라우저 Y좌표 기준
+  $(".offsetX").text(e.offsetX+ " px"); //요소 X좌표 기준
+  $(".offsetY").text(e.offsetY+ " px"); //요소 Y좌표 기준
+  $(".pageX").text(e.pageX+ " px"); //페이지 X좌표 기준
+  $(".pageY").text(e.pageY+ " px"); //페이지 Y좌표 기준
+  $(".screenX").text(e.screenX+ " px"); //디바이스 X좌표 기준
+  $(".screenY").text(e.screenY+ " px"); //디바이스 X좌표 기준
+  });
+  
+  const mouseCont = $('.mouseCont span');
+  
+  //마우스 움직이기
+  $(window).mousemove(function(e){
+  $('.cursor').css({left : e.clientX-25, top: e.clientY-25});
+
+  $('.mouseCont em').hover(function(){
+    $('.cursor').addClass("active");
+  } ,function(){
+    $('.cursor').removeClass("active");
+  }); 
+
+
+  $('.mouseCont .style1').hover(function(){
+    $('.cursor').addClass("style1");
+  } ,function(){
+    $('.cursor').removeClass("style1");
+  }); 
+  $('.mouseCont .style2').hover(function(){
+    $('.cursor').addClass("style2");
+  } ,function(){
+    $('.cursor').removeClass("style2");
+  }); 
+
+  $('.mouseCont .style3').hover(function(){
+    $('.cursor').addClass("style3");
+  } ,function(){
+    $('.cursor').removeClass("style3");
+  }); 
+
+  $('.mouseCont .style4').hover(function(){
+    $('.cursor').addClass("style4");
+  } ,function(){
+    $('.cursor').removeClass("style4");
+  }); 
+
+  $('.mouseCont .style5').hover(function(){
+    $('.cursor').addClass("style5");
+  } ,function(){
+    $('.cursor').removeClass("style5");
+  }); 
+  $('.mouseCont .style6').hover(function(){
+    $('.cursor').addClass("style6");
+  } ,function(){
+    $('.cursor').removeClass("style6");
+  }); 
+  });
+&lt/script&gt
 </code></pre>
                 </div>
                 </div>             
@@ -301,6 +491,7 @@
 
 
       });
+      modal('info');
     </script>
 </body>
 </html>

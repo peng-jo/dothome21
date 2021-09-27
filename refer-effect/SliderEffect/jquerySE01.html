@@ -98,25 +98,112 @@
                     <ul>
                         <li class="active"><a href="#">HTML</a></li>
                         <li><a href="#">CSS</a></li>
-                        <li><a href="#">JAVASCRIPT</a></li>
+                        <li><a href="#">JQUERY</a></li>
                     </ul>
                 </div>
                 <div class="view-cont">
                 <div class="html">
-<pre><code class="language-html">
+<pre><code class="language-html">&lthtml&gt
+    &ltbody class="bg bg10 brown"&gt
+        &lt!-- contetns --&gt
+        &ltmain&gt
+            &ltdiv class="slider-wrap"&gt
+                &ltdiv class="slider-img"&gt
+                    &ltdiv class="slider" data-name="이미지1"&gt&ltimg src="../assets/img/bg1.jpg" &gt&lt/div&gt
+                    &ltdiv class="slider" data-name="이미지2"&gt&ltimg src="../assets/img/bg2.jpg"&gt&lt/div&gt
+                    &ltdiv class="slider" data-name="이미지3"&gt&ltimg src="../assets/img/bg3.jpg"&gt&lt/div&gt
+                    &ltdiv class="slider" data-name="이미지4"&gt&ltimg src="../assets/img/bg4.jpg"&gt&lt/div&gt
+                    &ltdiv class="slider" data-name="이미지5"&gt&ltimg src="../assets/img/bg5.jpg"&gt&lt/div&gt
+                &lt/div&gt
+            &lt/div&gt
+        &lt/main&gt
+        &lt!-- //contetns --&gt
+        &lt!-- info --&gt
+        &ltdiv class="info"&gt
+            &lth1&gtSlider Effect01 - javascript &lt/h1&gt
+            &ltp&gt이미지 슬라이드 - 페이드 효과&lt/p&gt
+        &lt/div&gt
+        &ltdiv class="info right"&gt
+            &ltul&gt
+                &ltli class="active"&gt&lta href="javascriptSE01.html"&gt1&lt/a&gt&lt/li&gt
+                &ltli&gt&lta href="javascriptSE02.html"&gt2&lt/a&gt&lt/li&gt
+                &ltli&gt&lta href="javascriptSE03.html"&gt3&lt/a&gt&lt/li&gt
+                &ltli&gt&lta href="javascriptSE04.html"&gt4&lt/a&gt&lt/li&gt
+                &ltli&gt&lta href="javascriptSE05.html"&gt5&lt/a&gt&lt/li&gt
+            &lt/ul&gt
+            &ltul&gt
+            &ltli&gt&lta href="jquerySE01.html"&gt1&lt/a&gt&lt/li&gt
+            &ltli&gt&lta href="jquerySE02.html"&gt2&lt/a&gt&lt/li&gt
+            &ltli&gt&lta href="jquerySE03.html"&gt3&lt/a&gt&lt/li&gt
+            &ltli&gt&lta href="jquerySE04.html"&gt4&lt/a&gt&lt/li&gt
+            &ltli&gt&lta href="jquerySE05.html"&gt5&lt/a&gt&lt/li&gt
+            &lt/ul&gt
+        &lt/div&gt
+        &lt!-- //info --&gt
+    &lt/body&gt
+&lt/html&gt
 </code></pre>
                 </div>
                 <div class="css">
-<pre><code class="language-css">
+<pre><code class="language-css">&ltstyle&gt&gt
+    .slider-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .slider-img {
+        position: relative;
+        width: 800px;
+        height: 480px;
+    }
+    .slider-img img {
+        width: 100%;
+    }
+    .slider {
+        position: absolute;
+        left: 0; top: 0;
+        transition: all 0.3s;
+    }
+    .slider::before{
+        position: absolute;
+        left: 5px; top: 5px;
+        background: rgba(0,0,0,.4);
+        color: #fff;
+        padding: 5px 10px 3px;
+        line-height: 1;
+        font-family: "NEXONLv1Gothic";
+        content : attr(data-name);
+    }
+    .slider:nth-child(1){z-index: 5;}
+    .slider:nth-child(2){z-index: 4;}
+    .slider:nth-child(3){z-index: 3;}
+    .slider:nth-child(4){z-index: 2;}
+    .slider:nth-child(5){z-index: 1;}
+&lt/style&gt
 </code></pre>
                 </div>
 
                 <div class="javascript">
-<pre><code class="language-js">
-</code></pre>
-                </div>
-                <div class="jquery">
-<pre><code class="language-js">
+<pre><code class="language-js">&ltscript&gt&gt
+    const sliderWrap = $(".slider-wrap");
+    const sliderImg = $(".slider-img");
+    const slider = $(".slider");
+    
+    let currentIndex = 0; //현재 보이는 이미지(첫 번째 이미지)
+    let sliderCount = slider.length; //이미지 갯수
+
+    setInterval(function(){ //2초에한번 함수실행
+        let nextIndex = (currentIndex + 1) % sliderCount;
+    
+        //현재 보이는 이미지를 사라지게
+        slider.eq(currentIndex).fadeOut();
+        //다음 이미지를 나타나게
+        slider.eq(nextIndex).fadeIn();
+
+        currentIndex = nextIndex;
+    },2000)
+&lt/script&gt
 </code></pre>
                 </div>
                 </div>             

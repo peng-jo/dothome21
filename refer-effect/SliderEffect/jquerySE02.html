@@ -113,25 +113,132 @@
                     <ul>
                         <li class="active"><a href="#">HTML</a></li>
                         <li><a href="#">CSS</a></li>
-                        <li><a href="#">JAVASCRIPT</a></li>
+                        <li><a href="#">JQUERY</a></li>
                     </ul>
                 </div>
                 <div class="view-cont">
                 <div class="html">
-<pre><code class="language-html">
+<pre><code class="language-html">&lthtml&gt
+    &ltbody class="bg bg10 brown"&gt
+
+        &lt!-- contetns --&gt
+        &ltmain&gt
+            &ltdiv class="slider-wrap"&gt
+                &ltdiv class="slider-img"&gt
+                    &ltdiv class="slider-inner"&gt
+                        &ltdiv&gt class="slider" data-name="이미지1"&gt&ltimg src="../assets/img/bg1.jpg"&gt&lt/div&gt
+                        &ltdiv&gt class="slider" data-name="이미지2"&gt&ltimg src="../assets/img/bg2.jpg"&gt&lt/div&gt
+                        &ltdiv&gt class="slider" data-name="이미지3"&gt&ltimg src="../assets/img/bg3.jpg"&gt&lt/div&gt
+                        &ltdiv&gt class="slider" data-name="이미지4"&gt&ltimg src="../assets/img/bg4.jpg"&gt&lt/div&gt
+                        &ltdiv&gt class="slider" data-name="이미지5"&gt&ltimg src="../assets/img/bg5.jpg"&gt&lt/div&gt
+                    &lt/div&gt
+                &lt/div&gt
+            &lt/div&gt
+        &lt/main&gt
+        &lt!-- contetns --&gt
+        &lt!-- info --&gt
+        &ltdiv class="info"&gt
+            &lth1&gtSlider Effect02 - javascript &lt/h1&gt
+            &ltp&gt이미지 슬라이드 - 좌로 움직이기&lt/p&gt
+        &lt/div&gt
+        &ltdiv class="info right"&gt
+            &ltul&gt
+                &ltli&gt&lta&gt href="javascriptSE01.html"&gt1&lt/a&gt&lt/li&gt
+                &ltli class="active"&gt&lta&gt href="javascriptSE02.html"&gt2&lt/a&gt&lt/li&gt
+                &ltli&gt&lta&gt href="javascriptSE03.html"&gt3&lt/a&gt&lt/li&gt
+                &ltli&gt&lta&gt href="javascriptSE04.html"&gt4&lt/a&gt&lt/li&gt
+                &ltli&gt&lta&gt href="javascriptSE05.html"&gt5&lt/a&gt&lt/li&gt
+            &lt/ul&gt
+            &ltul&gt
+            &ltli&gt&lta&gt href="jquerySE01.html"&gt1&lt/a&gt&lt/li&gt
+            &ltli&gt&lta&gt href="jquerySE02.html"&gt2&lt/a&gt&lt/li&gt
+            &ltli&gt&lta&gt href="jquerySE03.html"&gt3&lt/a&gt&lt/li&gt
+            &ltli&gt&lta&gt href="jquerySE04.html"&gt4&lt/a&gt&lt/li&gt
+            &ltli&gt&lta&gt href="jquerySE05.html"&gt5&lt/a&gt&lt/li&gt
+            &lt/ul&gt
+        &lt/div&gt
+    &lt/body&gt
+&lt/html&gt
 </code></pre>
                 </div>
                 <div class="css">
-<pre><code class="language-css">
+<pre><code class="language-css">&ltstyle&gt
+    /* slider */
+    .slider-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .slider-img img {
+        width: 100%;
+    }
+
+    .slider-img {
+        position: absolute;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        height: 480px;
+        overflow: hidden;
+    }
+    .slider-inner {
+        position: relative;
+        float: left;
+        width: 4000px;
+        height: 480px;
+        overflow: hidden;
+        left: 0;
+        transition: all 0.6s;
+    }
+    .slider-inner .slider{
+        position: relative;
+        float: left;
+        width: 800px;
+        height: 480px;  
+    }
+    .slider-inner .slider::before{
+        position: absolute;
+        left: 5px; top: 5px;
+        background: rgba(0,0,0,.4);
+        color: #fff;
+        padding: 5px 10px 3px;
+        line-height: 1;
+        font-family: "NEXONLv1Gothic";
+        content : attr(data-name);
+    }
+    .slider-inner .slider:nth-child(1){z-index: 5;}
+    .slider-inner .slider:nth-child(2){z-index: 4;}
+    .slider-inner .slider:nth-child(3){z-index: 3;}
+    .slider-inner .slider:nth-child(4){z-index: 2;}
+    .slider-inner .slider:nth-child(5){z-index: 1;}
+&lt/style&gt
 </code></pre>
                 </div>
 
                 <div class="javascript">
-<pre><code class="language-js">
-</code></pre>
-                </div>
-                <div class="jquery">
-<pre><code class="language-js">
+<pre><code class="language-js">&ltscript&gt&gt
+    const sliderWrap = $(".slider-wrap");
+    const sliderImg = $(".slider-img");
+    const sliderInner = $(".slider-inner");
+    const slider = $(".slider");
+
+    let sliderduration = 600;
+    let sliderEasing = "easeOutExpo";
+    let curruentIndex = 0;
+    let sliderCount = slider.length; //이미지 갯수
+    setInterval(function(){
+        //3초에 한번씩 왼쪽으로 800px을 이동 시켜야 함.
+        // sliderInner.animate({left:"-800px"});
+        // sliderInner.animate({left:"-1600px"});
+        
+        (curruentIndex &lt sliderCount - 1 ) ? curruentIndex++ : curruentIndex = 0;
+        let sliderPosition = curruentIndex * -slider.width();
+        sliderInner.animate({left:sliderPosition}, sliderduration, sliderEasing);
+
+        console.log(curruentIndex);
+    }, 2000)
+&lt/script&gt
 </code></pre>
                 </div>
                 </div>             

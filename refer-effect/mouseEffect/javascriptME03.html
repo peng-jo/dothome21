@@ -8,8 +8,202 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/highlight.min.css">
     <style>
+        body {
+            overflow: hidden;
+        }
+        .mouseCont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color:#fff;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            cursor: none;
+            /* font-family: 'Nexon'; */    
+        }
+        .mouseCont p {
+            font-size: 2vw;
+            line-height: 2;
+            font-weight: 600;
+        }
+        .mouseCont h2 {
+            font-size: 2.2vw;
+            font-weight: 600;
+        }
+
+        .mouseCont em {
+            font-size: normal;
+            color:orange;
+            border-bottom: 0.2vw dashed orange;
+            
+        }
+        .cursor {
+            position: absolute;
+            left: 0; top: 0;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            z-index: 9999;
+            background-color: #fff;
+            user-select: none;
+            pointer-events: none;
+            transition: transform .3s;
+            mix-blend-mode: difference;
+        }
+        .cursor.active {
+            transform: scale(20);
+        }
+        .info.left.list li.active {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg4 bg purple">
+
+    <!-- contetns -->
+    <main>
+        <div class="cursor"></div>
+      <article class="mouseCont">
+          <p>
+            <em>Be nice to nerds.</em>
+            Be nice to nerds. Chances are you'll end up working for one.
+          </p>
+          <h2>
+            <em>괴짜들에게 잘 해주십시오.</em> 나중에 그 사람 밑에서 일하게 될 수도 있습니다.
+          </h2>   
+      </article>
+    </main>
+    <!-- contetns -->
+    <!-- info -->
+    <div class="info">
+        <h1>Mouse Effect03 - JAVASCRIPT </h1>
+        <p>마우스 이펙트 - 브랜딩 이펙트</p>
+    </div>
+    <div class="info right">
+      <ul>
+          <li><a href="javascriptME01.html">1</a></li>
+          <li><a href="javascriptME02.html">2</a></li>
+          <li class="active"><a href="javascriptME03.html">3</a></li>
+          <li><a href="javascriptME04.html">4</a></li>
+          <li><a href="javascriptME05.html">5</a></li>
+      </ul>
+      <ul>
+        <li><a href="jqueryME01.html">1</a></li>
+        <li><a href="jqueryME02.html">2</a></li>
+        <li><a href="jqueryME03.html">3</a></li>
+        <li><a href="jqueryME04.html">4</a></li>
+        <li><a href="jqueryME05.html">5</a></li>
+      </ul>
+    </div>
+    <div class="info left list">
+      <ul>
+        <li>multiply</li>
+        <li>screen</li>
+        <li>overlay</li>
+        <li>darken</li>
+        <li>lighten</li>
+        <li>color-dodge</li>
+        <li>color-burn</li>
+        <li>hard-light</li>
+        <li>soft-light</li>
+        <li class="active">difference</li>
+        <li>exclusion</li>
+        <li>hue</li>
+        <li>saturation</li>
+        <li>color</li>
+        <li>luminosity</li>
+      </ul>
+    </div>
+
+      <div id="modal">
+        <div class="modal-bg">
+          <div class="modal-cont">
+            <div class="code-view">
+                <div class="view-header">
+                    <div class="dot" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="view-title">
+                    <ul>
+                        <li class="active"><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JAVASCRIPT</a></li>
+                    </ul>
+                </div>
+                <div class="view-cont">
+                <div class="html">
+<pre><code class="language-html">&lthtml&gt
+	&ltbody class="bg4 bg purple"&gt
+		&lt!-- contetns --&gt
+		&ltmain&gt
+			&ltdiv class="cursor"&gt&lt/div&gt
+		  &ltarticle class="mouseCont"&gt
+			  &ltp&gt
+				&ltem&gtBe nice to nerds.&lt/em&gt
+				Be nice to nerds. Chances are you'll end up working for one.
+			  &lt/p&gt
+			  &lth2&gt
+				&ltem&gt괴짜들에게 잘 해주십시오.&lt/em&gt 나중에 그 사람 밑에서 일하게 될 수도 있습니다.
+			  &lt/h2&gt   
+		  &lt/article&gt
+		&lt/main&gt
+		&lt!-- contetns --&gt
+		&lt!-- info --&gt
+		&ltdiv class="info"&gt
+			&lth1&gtMouse Effect03 - JAVASCRIPT &lt/h1&gt
+			&ltp&gt마우스 이펙트 - 브랜딩 이펙트&lt/p&gt
+		&lt/div&gt
+		&ltdiv class="info right"&gt
+		  &ltul&gt
+			  &ltli&gt&lta href="javascriptME01.html"&gt1&lt/a&gt&lt/li&gt
+			  &ltli&gt&lta href="javascriptME02.html"&gt2&lt/a&gt&lt/li&gt
+			  &ltli class="active"&gt&lta href="javascriptME03.html"&gt3&lt/a&gt&lt/li&gt
+			  &ltli&gt&lta href="javascriptME04.html"&gt4&lt/a&gt&lt/li&gt
+			  &ltli&gt&lta href="javascriptME05.html"&gt5&lt/a&gt&lt/li&gt
+		  &lt/ul&gt
+		  &ltul&gt
+			&ltli&gt&lta href="jqueryME01.html"&gt1&lt/a&gt&lt/li&gt
+			&ltli&gt&lta href="jqueryME02.html"&gt2&lt/a&gt&lt/li&gt
+			&ltli&gt&lta href="jqueryME03.html"&gt3&lt/a&gt&lt/li&gt
+			&ltli&gt&lta href="jqueryME04.html"&gt4&lt/a&gt&lt/li&gt
+			&ltli&gt&lta href="jqueryME05.html"&gt5&lt/a&gt&lt/li&gt
+		  &lt/ul&gt
+		&lt/div&gt
+		&ltdiv class="info left list"&gt
+		  &ltul&gt
+			&ltli&gtmultiply&lt/li&gt
+			&ltli&gtscreen&lt/li&gt
+			&ltli&gtoverlay&lt/li&gt
+			&ltli&gtdarken&lt/li&gt
+			&ltli&gtlighten&lt/li&gt
+			&ltli&gtcolor-dodge&lt/li&gt
+			&ltli&gtcolor-burn&lt/li&gt
+			&ltli&gthard-light&lt/li&gt
+			&ltli&gtsoft-light&lt/li&gt
+			&ltli class="active"&gtdifference&lt/li&gt
+			&ltli&gtexclusion&lt/li&gt
+			&ltli&gthue&lt/li&gt
+			&ltli&gtsaturation&lt/li&gt
+			&ltli&gtcolor&lt/li&gt
+			&ltli&gtluminosity&lt/li&gt
+		  &lt/ul&gt
+		&lt/div&gt
+
+		&ltdiv class="info bottom"&gt
+			&ltbutton&gt소스보기&lt/button&gt
+		&lt/div&gt
+	&lt/body&gt
+&lt/html&gt
+</code></pre>
+                </div>
+                <div class="css">
+<pre><code class="language-css">&ltstyle&gt
     body {
-      overflow: hidden;
+        overflow: hidden;
     }
     .mouseCont {
         display: flex;
@@ -57,100 +251,71 @@
     .info.left.list li.active {
         text-decoration: underline;
     }
-
-    </style>
-</head>
-<body class="bg4 bg purple">
-
-    <!-- contetns -->
-    <main>
-        <div class="cursor"></div>
-      <article class="mouseCont">
-          <p>
-            <em>Be nice to nerds.</em>
-            Be nice to nerds. Chances are you'll end up working for one.
-          </p>
-          <h2>
-            <em>괴짜들에게 잘 해주십시오.</em> 나중에 그 사람 밑에서 일하게 될 수도 있습니다.
-          </h2>   
-      </article>
-    </main>
-    <!-- contetns -->
-    <!-- info -->
-    <div class="info">
-        <h1>Mouse Effect03 - JAVASCRIPT </h1>
-        <p>마우스 이펙트 - 브랜딩 이펙트</p>
-    </div>
-    <div class="info right">
-      <ul>
-          <li><a href="javascriptME01.html">1</a></li>
-          <li><a href="javascriptME02.html">2</a></li>
-          <li class="active"><a href="javascriptME03.html">3</a></li>
-          <li><a href="javascriptME04.html">4</a></li>
-          <li><a href="javascriptME05.html">5</a></li>
-      </ul>
-      <ul>
-        <li><a href="JqueryME01.html">1</a></li>
-        <li><a href="JqueryME02.html">2</a></li>
-        <li><a href="JqueryME03.html">3</a></li>
-        <li><a href="JqueryME04.html">4</a></li>
-        <li><a href="JqueryME05.html">5</a></li>
-      </ul>
-    </div>
-    <div class="info left list">
-      <ul>
-        <li>multiply</li>
-        <li>screen</li>
-        <li>overlay</li>
-        <li>darken</li>
-        <li>lighten</li>
-        <li>color-dodge</li>
-        <li>color-burn</li>
-        <li>hard-light</li>
-        <li>soft-light</li>
-        <li class="active">difference</li>
-        <li>exclusion</li>
-        <li>hue</li>
-        <li>saturation</li>
-        <li>color</li>
-        <li>luminosity</li>
-      </ul>
-    </div>
-
-      <div id="modal">
-        <div class="modal-bg">
-          <div class="modal-cont">
-            <div class="code-view">
-                <div class="view-header">
-                    <div class="dot" aria-hidden="true">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div class="view-title">
-                    <ul>
-                        <li class="active"><a href="#">HTML</a></li>
-                        <li><a href="#">CSS</a></li>
-                        <li><a href="#">JAVASCRIPT</a></li>
-                    </ul>
-                </div>
-                <div class="view-cont">
-                <div class="html">
-<pre><code class="language-html">
-</code></pre>
-                </div>
-                <div class="css">
-<pre><code class="language-css">
+&lt/style&gt
 </code></pre>
                 </div>
 
                 <div class="javascript">
-<pre><code class="language-js">
+<pre><code class="language-js">&ltscript&gt&gt
+    const li = document.querySelectorAll(".info.left.list li");
+    const cursor = document.querySelector(".cursor");
+    li.forEach((el, index)=&gt{
+        el.addEventListener("click",()=&gt{
+            li.forEach( element =&gt{
+                element.classList.remove("active");
+            })
+            const text = el.textContent || el.innerText;
+            cursor.style.mixBlendMode = text;
+            el.classList.add("active");
+        });
+    });
+    
+    const w = document.querySelector(".cursor").clientWidth / 2;
+    const h = document.querySelector(".cursor").clientHeight / 2;
+    
+    //움직임 효과
+    document.addEventListener("mousemove", e =&gt{
+        gsap.to(".cursor", { duration: .5, left:e.pageX - 5, top: e.pageY - 5});
+    });
+    
+    //오버 효과
+    document.querySelectorAll(".mouseCont em").forEach( em =&gt {
+        em.addEventListener("mouseenter", ()=&gt {
+            document.querySelector(".cursor").classList.add("active");
+        });
+        em.addEventListener("mouseleave", ()=&gt {
+            document.querySelector(".cursor").classList.remove("active");
+        });
+    });
+&lt/script&gt
 </code></pre>
                 </div>
                 <div class="jquery">
-<pre><code class="language-js">
+<pre><code class="language-js">&ltscript&gt
+    const w = $(".cursor").width() / 2;
+    const h = $(".cursor").height() / 2;
+    
+    //움직임 효과
+    $(window).mousemove(function(e){
+        gsap.to(".cursor", {duration: 0.4, left: e.pageX - w, top: e.pageY - h});
+    });
+    
+    //오버 효과
+    $(".mouseCont em").hover(function(){
+        $(".cursor").addClass("active");
+    },function(){
+        $(".cursor").removeClass("active");
+    });
+    
+    const $li = $(".info.left.list li");
+    //출력용
+    $li.click(function(){
+      $li.removeClass("active");
+    
+        const text = $(this).addClass("active").text();
+        $(".cursor").css("mix-blend-mode", text);
+    });
+&lt/script&gt
 </code></pre>
                 </div>
                 </div>             
@@ -206,7 +371,7 @@
                 document.querySelector(".cursor").classList.remove("active");
             });
         });
-
+        modal('info');
     </script>
 </body>
 </html>
