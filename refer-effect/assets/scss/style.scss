@@ -528,6 +528,7 @@ $gradient6 : linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
 }
 // parallax
 .parallax {
+    overflow-x: hidden;
     background: #222;
     color: #fff;
     font-family: 'NEXONLv1Gothic';
