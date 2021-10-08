@@ -12,38 +12,38 @@
     .paraNav {
        top:20px;
        transition: top 0.4s ease;
-   }
+    }
 
-   .paraNav.hide {
+    .paraNav.hide {
        top:-200px;
-   }
-   .paraNav li a {
+    }
+    .paraNav li a {
        width: auto;
        padding: 5px;
        width: 30px;
        height: 30px;
-   }
-   .paraNav li.active a {
+    }
+    .paraNav li.active a {
        border-radius: 30px;
-   }
-   .paraCont .content-item .img-Wrap {
+    }
+    .paraCont .content-item .img-Wrap {
        background: transparent;
-   }
+    }
 
-   /* reveal */
-   .reveal > div,
-   .reveal > span {
+    /* reveal */
+    .reveal > div,
+    .reveal > span {
        opacity: 0;
-   }
-   .reveal.show > div,
-   .reveal.show > span {
+    }
+    .reveal.show > div,
+    .reveal.show > span {
        animation: opacity 1000ms 200ms linear forwards ;
-   }
+    }
 
-   .reveal {
+    .reveal {
        position: relative;
-   }
-   .reveal::before {
+    }
+    .reveal::before {
        content: '';
        position: absolute;
        right: 0;
@@ -53,9 +53,9 @@
        z-index: 100;
        background: #fff;
        background-color: #fff;
-   }
+    }
 
-   .reveal.reveal-two::after {
+    .reveal.reveal-two::after {
        content: '';
        position: absolute;
        right: 0;
@@ -65,67 +65,67 @@
        z-index: 100;
        background: rgb(255, 127, 8);
        background-color: rgb(255, 127, 8);
-   }
+    }
 
-   /* 기본값 */
-   .reveal.show::before {
-       animation: reveal 1000ms cubic-bezier(0.77, 0, 0.18, 1);
-   }
-   .reveal-RTL.show::before {
-       animation: reveal-RTL 1000ms cubic-bezier(0.77, 0, 0.18, 1);
-   }
-   .reveal-TTB.show::before {
-       animation: reveal-TTB 1000ms cubic-bezier(0.77, 0, 0.18, 1);
-   }
-   .reveal-BTT.show::before {
-       animation: reveal-BTT 1000ms cubic-bezier(0.77, 0, 0.18, 1);
-   }
+    /* 기본값 */
+    .reveal.show::before {
+        animation: reveal 1000ms cubic-bezier(0.77, 0, 0.18, 1);
+    }
+    .reveal-RTL.show::before {
+        animation: reveal-RTL 1000ms cubic-bezier(0.77, 0, 0.18, 1);
+    }
+    .reveal-TTB.show::before {
+        animation: reveal-TTB 1000ms cubic-bezier(0.77, 0, 0.18, 1);
+    }
+    .reveal-BTT.show::before {
+        animation: reveal-BTT 1000ms cubic-bezier(0.77, 0, 0.18, 1);
+    }
 
-   /* 두가지 */
-   .reveal.show::after {
+    /* 두가지 */
+    .reveal.show::after {
        animation: reveal 1000ms 300ms cubic-bezier(0.77, 0, 0.18, 1);
-   }
-   .reveal-RTL.show::after {
+    }
+    .reveal-RTL.show::after {
        animation: reveal 1000ms 300ms cubic-bezier(0.77, 0, 0.18, 1);
-   }
-   .reveal-TTB.show::after {
+    }
+    .reveal-TTB.show::after {
        animation: reveal 1000ms 300ms cubic-bezier(0.77, 0, 0.18, 1);
-   }
-   .reveal-BTT.show::after {
+    }
+    .reveal-BTT.show::after {
        animation: reveal 1000ms 300ms cubic-bezier(0.77, 0, 0.18, 1);
-   }
+    }
 
-   @keyframes opacity {
-       0% {opacity: 0;}
-       60% {opacity: 0;}
-       70% {opacity: 1;}
-       100% {opacity: 1;}
-   }
-
-   @keyframes reveal {
-       0% {width: 0; left: 0;}
-       50% {width: 100%; left: 0;}
-       80% {width: 100%; left: 0;}
-       100% {width: 0; left: 100%;}
-   }
-   @keyframes reveal-RTL {
-       0% {width: 0; right: 0;}
-       50% {width: 100%; right: 0;}
-       80% {width: 100%; right: 0;}
-       100% {width: 0; right: 100%;}
-   }
-   @keyframes reveal-TTB {
-       0% {width: 100%; height: 0; top: 0;}
-       50% {width: 100%; height: 100%; top: 0;}
-       80% {width: 100%; height: 100%; top: 0}
-       100% {width: 100%; height: 0; top: 100%;}
-   }
-   @keyframes reveal-BTT {
-       0% {width: 100%; height: 0; top:auto; bottom: 0;}
-       50% {width: 100%; height: 100%; top:auto; bottom: 0;}
-       80% {width: 100%; height: 100%; top:auto; bottom: 0;}
-       100% {width: 100%; height: 0; top:auto; bottom: 100%;}
-   }
+    @keyframes opacity {
+        0% {opacity: 0;}
+        60% {opacity: 0;}
+        70% {opacity: 1;}
+        100% {opacity: 1;}
+    }
+ 
+    @keyframes reveal {
+        0% {width: 0; left: 0;}
+        50% {width: 100%; left: 0;}
+        80% {width: 100%; left: 0;}
+        100% {width: 0; left: 100%;}
+    }
+    @keyframes reveal-RTL {
+        0% {width: 0; right: 0;}
+        50% {width: 100%; right: 0;}
+        80% {width: 100%; right: 0;}
+        100% {width: 0; right: 100%;}
+    }
+    @keyframes reveal-TTB {
+        0% {width: 100%; height: 0; top: 0;}
+        50% {width: 100%; height: 100%; top: 0;}
+        80% {width: 100%; height: 100%; top: 0}
+        100% {width: 100%; height: 0; top: 100%;}
+    }
+    @keyframes reveal-BTT {
+        0% {width: 100%; height: 0; top:auto; bottom: 0;}
+        50% {width: 100%; height: 100%; top:auto; bottom: 0;}
+        80% {width: 100%; height: 100%; top:auto; bottom: 0;}
+        100% {width: 100%; height: 0; top:auto; bottom: 100%;}
+    }
 </style>
 </head>
 <body class="parallax">
@@ -152,7 +152,6 @@
             <li><a href="#section7">s7</a></li>
             <li><a href="#section8">s8</a></li>
             <li><a href="#section9">s9</a></li>
-
         </ul>
     </nav>
 
@@ -163,7 +162,7 @@
             <figure class="img-Wrap reveal">
                 <div class="img"></div>
             </figure>
-                <p class="desc reveal" data-delay="500"> <span>싸구려 커피를 마신다 미지근해 적잖이 속이 쓰려온다</span> </p>
+                <p class="desc reveal" data-delay="200"> <span>싸구려 커피를 마신다 미지근해 적잖이 속이 쓰려온다</span> </p>
         </section>
         <!-- //section1 -->
 ​
@@ -173,7 +172,7 @@
             <figure class="img-Wrap reveal reveal-RTL">
                 <div class="img"></div>
             </figure>
-            <p class="desc reveal reveal-RTL" data-delay="500"> <span>눅눅한 비닐장판에 발바닥이 쩍 달라붙었다 떨어진다</span> </p>
+            <p class="desc reveal reveal-RTL" data-delay="200"> <span>눅눅한 비닐장판에 발바닥이 쩍 달라붙었다 떨어진다</span> </p>
         </section>
         <!-- //section2 -->
 ​
@@ -183,7 +182,7 @@
             <figure class="img-Wrap reveal reveal-BTT">
                 <div class="img"></div>
             </figure>
-            <p class="desc reveal reveal-BTT" data-delay="500"> <span>이제는 아무렇지 않어 바퀴벌레 한 마리쯤</span></p>
+            <p class="desc reveal reveal-BTT" data-delay="200"> <span>이제는 아무렇지 않어 바퀴벌레 한 마리쯤</span></p>
         </section>
         <!-- //section3 -->
 ​
@@ -193,7 +192,7 @@
             <figure class="img-Wrap reveal reveal-BTT">
                 <div class="img"></div>
             </figure>
-            <p class="desc reveal" data-delay="500"> <span> 무거운 매일 아침엔 다만 그저 약간의 기침이</span></p>
+            <p class="desc reveal" data-delay="200"> <span> 무거운 매일 아침엔 다만 그저 약간의 기침이</span></p>
         </section>
         <!-- //section4 -->
 ​
@@ -203,7 +202,7 @@
             <figure class="img-Wrap reveal reveal-two reveal-BTT">
                 <div class="img"></div>
             </figure>
-            <p class="desc reveal reveal-two reveal-TTB " data-delay="500"> <span>축축한 이불을 갠다 삐걱대는 문을 열고</span> </p>
+            <p class="desc reveal reveal-two reveal-TTB " data-delay="200"> <span>축축한 이불을 갠다 삐걱대는 문을 열고</span> </p>
         </section>
         <!-- //section5 -->
 ​
@@ -223,7 +222,7 @@
             <figure class="img-Wrap reveal reveal-two reveal-TTB">
                 <div class="img"></div>
             </figure>
-            <p class="desc reveal reveal-two reveal-BTT" data-delay="500"> <span>수만번 본 것만 같다 어지러워 쓰러질 정도로</span></p>
+            <p class="desc reveal reveal-two reveal-BTT" data-delay="200"> <span>수만번 본 것만 같다 어지러워 쓰러질 정도로</span></p>
         </section>
         <!-- //section7 -->
 ​
@@ -233,7 +232,7 @@
             <figure class="img-Wrap reveal reveal-two reveal-BTT">
                 <div class="img"></div>
             </figure>
-            <p class="desc reveal reveal-two reveal-RTL" data-delay="500"> <span>수만번 본 것만 같다 어지러워 쓰러질 정도로</span> </p>
+            <p class="desc reveal reveal-two reveal-RTL" data-delay="200"> <span>수만번 본 것만 같다 어지러워 쓰러질 정도로</span> </p>
         </section>
         <!-- //section8 -->
 ​
@@ -243,7 +242,7 @@
             <figure class="img-Wrap reveal reveal-two reveal-TTB">
                 <div class="img"></div>
             </figure>
-            <p class="desc reveal reveal-two reveal-RTL" data-delay="500"> <span>눅눅한 비닐장판에 발바닥이 쩍하고 달라붙었다가 떨어진다</span> </p>
+            <p class="desc reveal reveal-two reveal-RTL" data-delay="200"> <span>눅눅한 비닐장판에 발바닥이 쩍하고 달라붙었다가 떨어진다</span> </p>
         </section>
     </div>
     <!-- //contents -->
@@ -637,8 +636,7 @@
                         document.querySelectorAll(".paraNav ul li").forEach(li => {
                             li.classList.remove("active");
                         });
-                        document.querySelector(".paraNav ul li:nth-child(" + (index + 1) + ")").classList.add(
-                            "active");
+                        document.querySelector(".paraNav ul li:nth-child(" + (index + 1) + ")").classList.add("active");
                     }
                 })
             });

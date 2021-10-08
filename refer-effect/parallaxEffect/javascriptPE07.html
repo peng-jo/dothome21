@@ -562,11 +562,11 @@
             document.querySelectorAll(".content-item").forEach((el,index) => {
                 if ( scrollTop >= el.offsetTop - window.innerHeight / 2) {
                     gsap.to(el.querySelectorAll(".split span"), {
-                        duration: .5,
+                        duration: .5, 
                         opacity: 1,
-                        stagger: 0.05,
+                        stagger: 0.05, //여러개의 개체가 같은 효과를 0.05 간격으로 실행
                         y: 0,
-                        ease: "power3.out",
+                        ease: "power3.out", //ease 효과
                         rotation: 0,
                         scale: 1
                     });

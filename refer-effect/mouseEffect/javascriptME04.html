@@ -84,7 +84,7 @@
     <!-- contetns -->
     <!-- info -->
     <div class="info">
-        <h1>Mouse Effect04 - Jquery </h1>
+        <h1>Mouse Effect04 - Javascript </h1>
         <p>마우스 이펙트 - 마우스 방향에 따라 움직이기</p>
     </div>
     <div class="info right">
@@ -185,7 +185,6 @@
             //기준점 가운데로 변경
             standardX = window.innerWidth / 2 - pageX;
             standardY = window.innerHeight / 2 - pageY;
-
             //최소값-100 최댓값100 
             maxX = Math.max(-100, Math.min(100, standardX));
             maxY = Math.max(-100, Math.min(100, standardY));
@@ -193,7 +192,7 @@
             //각도를 줄인다.
             angleX = maxX * 0.1;
             angleY = maxY * 0.1;
-
+            
             //부드럽게 설정
             softX += (angleX - softX) * 0.6;
             softY += (angleY - softY) * 0.6;
