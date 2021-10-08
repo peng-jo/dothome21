@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테스트5</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        font-size: 12px;
+    }
+    .container {
+        width: 960px;
+        margin: 0 auto;
+    }
+    ul,
+    li {
+        list-style: none;
+    }
+    .logo {
+        float: left;
+        width: 120px;
+    }
+    .logo img {
+        margin-top: 20px;
+        height: 70px;
+        width: 120px;
+    }
+    .menu {
+        float: right;
+    }
+    .menu ul li {
+        display: inline-block;
+        padding: 40px 20px;
+    }
+    .banner {
+        margin-bottom: 20px;
+    }
+    .banner img {
+        width: 960px;
+        height: 360px;
+    }
+    /* 컨텐츠1 */
+    .contents1 {
+        
+    }
+    .contents1 .notice {
+        float: left;
+    }
+    .contents1 .banner2 {
+        float: right;
+    }
+    .banner2 img {
+        width: 470px;
+        height: 210px;
+    }
+    .contents1 {
+        overflow: hidden;
+        margin-bottom: 40px;
+    }
+    .contents1 .notice {
+        box-sizing: border-box;
+        border: 1px solid #DDDDDD;
+        width: 470px;
+        height: 210px;
+        padding: 34px;
+    }
+    .contents1 .notice .title {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .contents1 .notice .list {
+
+    }
+    .contents1 .notice .more {
+        padding-right: 8px;
+        float: right;
+        position: relative;
+    }
+    .contents1 .notice .plus {
+        position: relative;
+        float: right;
+        width: 17px; height: 17px;
+        background-color: #5D2FEA;
+        border-radius: 20px;
+    }
+    .contents1 .notice .plus::after {
+        content : '+';
+        position: absolute;
+        left: 50%; top: 40%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+    }
+
+    .contents1 .notice .list span {
+        float: right;
+        color: #585858;
+    }
+    .contents1 .notice .list li {
+        margin-bottom: 16px;
+        font-size: 12px;
+    }
+    .contents2 {
+        margin-bottom: 30px;
+    }
+    .contents2 h1 {
+        margin-bottom: 18px;
+    }
+    .contents2 .experience-wrap {
+        padding-bottom: 50px;
+        border-bottom: 1px solid #d9d9d9;
+    }
+    .contents2 .experience {
+        box-sizing: border-box;
+        display: inline-block;
+        margin-right: 13px;
+    }
+    .contents2 .experience:nth-last-child(1){
+        margin-right: 0;
+    }
+    .contents2 .experience img {
+        display: block;
+        width: 100%;
+        width: 227px; height: 227px;
+        margin-bottom: 25px;
+    }
+    .contents2 .experience .desc {
+        font-size: 16px
+    }
+    footer {
+        font-size: 12px;
+        color: #646464;
+        padding-bottom: 30px;
+    }
+    footer .footer-main {
+        margin-bottom: 32px;
+    }
+</style>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./img/img01.jpg" alt="로고">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>즐길거리</li>
+                    <li>요금/우대혜택</li>
+                    <li>참여프로그램</li>
+                    <li>이용가이드</li>
+                    <li>소통서비스</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- //header -->
+    <section class="banner">
+        <div class="container">
+            <img src="./img/img02.jpg" alt="배너">
+        </div>
+        <!-- //container -->
+    </section>
+    <!-- //section -->
+    <section class="contents1">
+        <div class="container">
+            <article class="notice">
+                <div class="title">
+                    <span class="title-new">롯데월드 소식 |</span>
+                    <span class="title-new">뉴스 &middot; 공지</span>
+                </div>
+                <span class="plus"></span>
+                <span class="more">더보기
+                   
+                </span>
+                
+                <!-- title -->
+                <div class="list">
+                    <ul>
+                        <li>그럴싸진관 미라클 <span>2018.11.19</span> </li>
+                        <li>드림스테이지 '힘내 소중한 너' <span>2018.11.20</span> </li>
+                        <li>'힘내 소중한 너'음원 발매<span>2018.11.13</span> </li>
+                        <li>이용 요금 조정 안내<span>2018.11.12</span> </li>
+                    </ul>
+                </div>
+            </article>
+            <!-- //list -->
+            <article class="banner2">
+                <img src="./img/img03.jpg" alt="배너2">
+            </article>
+            <!-- //banner2 -->
+        </div>
+        <!-- //container -->
+    </section>
+    <!-- //section -->
+    <section class="contents2">
+        <div class="container">
+            <h1>특별한 경험</h1>
+            <article class="experience-wrap">
+                <ul>
+                    <li class="experience">
+                        <img src="./img/img04.jpg" alt="안내이미지1">
+                        <span class="desc">연간회원안내</span>
+                    </li>
+                    <li class="experience">
+                        <img src="./img/img05.jpg" alt="안내이미지2">
+                        <span class="desc">프리미엄투어</span>
+                    </li>
+                    <li class="experience">
+                        <img src="./img/img06.jpg" alt="안내이미지3">
+                        <span class="desc">공연참여 프로그램</span>
+                    </li>
+                    <li class="experience">
+                        <img src="./img/img07.jpg" alt="안내이미지4">
+                        <span class="desc">단체프로그램</span>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </section>
+    <!-- //section -->
+    <footer>
+        <div class="container">
+            <p class="footer-main">
+                서울특별시 송파구 올림픽로 240호텔롯데 롯데월드 | 대표자:박동기<br>
+                사업자등록번호:219-85-00014 | 통신판매업자신고번호:송파 제5513호 | 전화 1661-2000
+            </p>
+            <p>
+                COPYRIHGT 2018LOTTEWORLD.ALL RIGHTS RESERVED
+            </p>
+        </div>
+
+    </footer>
+    <!--// footer1 -->
+</body>
+</html>
