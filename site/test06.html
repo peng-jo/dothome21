@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테스트6</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        margin: 0 auto;
+        width: 1000px;
+        height: inherit;
+    }
+    ul,
+    li {
+        list-style: none;
+    }
+    /* 헤더 */
+    header {
+        position: relative;
+        height: 70px;
+    }
+    header ul {
+        float: right;
+    }
+    header li {
+        font-size: 14px;
+        display: inline-block;
+        margin-right: 66px;
+        font-weight: bold;
+        padding: 24px 0 27px 0;
+    }
+    header li:nth-child(5) {
+        margin-right: 5px;
+    }
+    header .header-logo {
+        position: absolute;
+        top: 50%;
+        transform:translateY(-50%);
+        height: 30px;
+        width: 100px;
+        float: left;
+        padding: 5px;
+    }
+    /* slider */
+    #banner {
+        width: 100%;
+        height: 390px;
+        margin-bottom: 27px;
+    }
+    #banner .slider-img {
+        position: relative;
+    }
+    #banner .slider-img .slider {
+        position: absolute;
+        top: 0; top: 0;
+    }
+    #banner .slider-img .slider img {
+        display: block;
+        width: 100%;
+        height: 390px;
+    }
+    #banner .slider-img .slider:nth-child(1) {
+        z-index: 5;
+    }
+    #banner .slider-img .slider:nth-child(2) {
+        z-index: 4;
+    }
+    #banner .slider-img .slider:nth-child(3) {
+        z-index: 3;
+    }
+    #banner .slider-img .slider:nth-child(4) {
+        z-index: 2;
+    }
+    #banner .slider-img .slider:nth-child(5) {
+        z-index: 1;
+    }
+    #del {
+        height: 138px;
+        margin-bottom: 48px;
+    }
+    /* 딜리버리 */
+    #del .del {
+        box-sizing:border-box;
+        float: left;
+        position: relative;
+        height: 138px;
+        width: 490px;
+        padding: 26px 0 26px 26px;
+        background: #F2F2F2;
+        margin-right: 20px;
+    }
+    #del .del:nth-child(2) {
+        margin-right: 0;
+    }
+    .del-title {
+        font-weight: bold;
+        font-size: 14px;
+        display: block;
+        margin-bottom: 14px;
+    }
+    .del-desc {
+        font-size: 10px;
+        display: block;
+        margin-bottom: 26px;
+    }
+    .del-search {
+        position: relative;
+        padding-left: 14px;
+        font-weight: bold;
+        font-size: 12px;
+        display: block;
+    }
+    .del-search::before {
+        position: absolute;
+        left: 0;
+        top: 0px;
+        width: 12px;
+        height: 16px;
+        content: "";
+        background-image: url("img/test06/map.jpg");
+        background-size: cover;
+    }
+    .del-search2 {
+        position: relative;
+        padding-left: 20px;
+        font-weight: bold;
+        font-size: 14px;
+        display: block;
+    }
+    .del-search2::before {
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 15px;
+        height: 15px;
+        content: "";
+        background-image: url("img/test06/clock.jpg");
+        background-size: cover;
+    }
+    .del-img {
+        position: absolute;
+        right: 38px;
+        bottom: 26px;
+        width: 70px;
+        height: 57px;
+    }
+    
+    /* 배너2 */
+    #banner2 {
+        margin-bottom: 54px;
+    }
+    #banner2 .tab-btn {
+        margin-bottom: 34px;
+    }
+    #banner2 .tab-btn li {
+        display: inline-block;
+        font-size: 22px;
+    }
+    #banner2 .tab-btn li.active {
+        font-weight: bold;
+    }
+    #banner2 .tab-btn li:nth-child(2) {
+        position: relative;
+        padding-left: 35px;
+        margin-left: 0;
+    }
+    #banner2 .tab-btn li:nth-child(2)::after {
+        position: absolute;
+        content: '|';
+        font-size: 22px;
+        top: -2px;
+        left: 16px;
+    }
+    #banner2 .tab-wrap {
+        float: left;
+        position: relative;
+        width: 310px;
+        height: 374px;
+        margin-right: 35px;
+    }
+    #banner2 .tab-wrap:nth-child(3) {
+        margin-right: 0px;
+    }
+    #banner2 .tab-cont {
+        width: 100%;
+        height: 374px;
+    }
+    #banner2 .tab-cont .tab-img {
+        width: 310px;
+        height: 310px;
+        margin-bottom: 18px;
+    }
+    #banner2 .tab-cont .tab-img2 {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 34px;
+        height: 34px;
+    }
+    #banner2 .tab-cont .tab-title {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 18px;
+        font-weight: bold;
+    }
+    #banner2 .tab-cont .tab-desc {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    #banner2 .tab-cont .tab-desc2 {
+        display: inline-block;
+        font-size: 16px;
+    }
+    .footer {
+        position: relative;
+        background: #202020;
+        height: 176px;
+        color: #fff;
+    }
+    .footer .right {
+        padding: 37px 25px 0px 0px;
+        float: right;
+        font-size: 8px;
+    }
+    .footer ul {
+        margin-bottom: 34px;
+    }
+    .footer li {
+        position: relative;
+        padding-left: 49px;
+        display: inline-block;
+        font-weight: bold;
+    }
+    .footer li:nth-child(1) {
+        padding-left: 0px;
+    }
+    .footer li:nth-child(1)::before {
+        content: "";
+    }
+    .footer li::before {
+        position: absolute;
+        left: 23px;
+        top: -1px;
+        content: "|";
+        color: #7B7B7B;
+    }
+    .logo2 {
+        position: absolute;
+        left: 12px;
+        top: 36px;
+        height: 55px;
+        width: 160px;
+    }
+    footer .de {
+        color : #7B7B7B;
+        margin-bottom: 8px;
+    }
+</style>
+<body>
+    <header>
+        <div class="container">
+            <img class="header-logo" src="./img/test06/logo.jpg" alt="로고">
+            <ul>
+                <li>COOKIT소개</li>
+                <li>COOKIT 메뉴</li>
+                <li>리뷰</li>
+                <li>이벤트</li>
+                <li>MY쿡킷</li>
+            </ul>
+        </div>
+    </header>
+    <!-- //header -->
+    <section id="banner">
+        <div class="container">
+            <div class="slider-img">
+                <div class="slider" ><img src="./img/test06/banner.jpg"></div>
+                <div class="slider" ><img src="./img/test06/banner.jpg"></div>
+                <div class="slider" ><img src="./img/test06/banner.jpg"></div>
+                <div class="slider" ><img src="./img/test06/banner.jpg"></div>
+                <div class="slider" ><img src="./img/test06/banner.jpg"></div>
+            </div>
+        </div>
+    </section>
+    <section id="del">
+        <div class="container">
+            <div class="del">
+                <span class="del-title">우리집도 COOKIT 배송이 되나요?</span>
+                <span class="del-desc">배송이 가능한지 알려드려요.</span>
+                <span class="del-search">배송지 검색</span>
+                <img class="del-img" src="./img/test06/b1.jpg" alt="배달1"/>
+            </div>
+            <div class="del">
+                <span class="del-title">7월 30일(화)에 받을 수 있어요</span>
+                <span class="del-desc">오전 7시까지 주문하시면 다음날 배송됩니다.</span>
+                <span class="del-search2">63:28:32 남은시간</span>
+                <img class="del-img" src="./img/test06/b2.jpg" alt="배달1"/>
+            </div>
+        </div>
+    </section>
+    <!-- //section -->
+    <section id="banner2">
+        <div class="container">
+            <div class="tab-btn">
+                <ul>
+                    <li class="active">실시간 베스트</li>
+                    <li>생생한 리뷰</li>
+                </ul>
+            </div>
+            <div class="tab-cont">
+                <div class="cont1">
+                    <div class="tab-wrap">
+                        <img class="tab-img" src="./img/test06/m1.jpg" alt="메뉴">
+                        <span class="tab-title">
+                            평양식 어복쟁반
+                        </span>
+                        <span class="tab-desc">
+                            33,800원
+                        </span>
+                        <span class="tab-desc2">
+                             /3인분
+                        </span>
+                        <img class="tab-img2" src="./img/test06/s1.jpg" alt="카트" />
+                    </div>
+                    <!-- //tab-wrap -->
+                    <div class="tab-wrap">
+                        <img class="tab-img" src="./img/test06/m2.jpg" alt="메뉴">
+                        <span class="tab-title">
+                            새우주쭈꾸미삼겹살
+                        </span>
+                        <span class="tab-desc">
+                            29,800원
+                        </span>
+                        <span class="tab-desc2">
+                             /3인분
+                        </span>
+                        <img class="tab-img2" src="./img/test06/s1.jpg" alt="카트" />
+                    </div>
+                    <!-- //tab-wrap -->
+                    <div class="tab-wrap">
+                        <img class="tab-img" src="./img/test06/m3.jpg" alt="메뉴">
+                        <span class="tab-title">
+                            방풍나물 아귀찜
+                        </span>
+                        <span class="tab-desc">
+                            32,800원
+                        </span>
+                        <span class="tab-desc2">
+                             /3인분
+                        </span>
+                        <img class="tab-img2" src="./img/test06/s1.jpg" alt="카트" />
+                    </div>
+                    <!-- //tab-wrap -->
+                </div>
+                <!-- //cont1 -->
+                <div class="cont2">
+                    
+                </div>
+                <!-- //cont2 -->
+            </div>
+            <!-- //tab-cont -->
+        </div>
+    </section>
+    <!-- //section -->
+    
+    <!-- //section -->
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <img class="logo2" src="./img/test06/logo2.jpg" alt="로고2">
+                <div class="right">
+                    <ul>
+                        <li>이용약관</li>
+                        <li>개인정보처리 방침</li>
+                        <li>법적고지</li>
+                        <li>사업자정보 확인</li>
+                    </ul>
+                    <div class="de">씨제이제일제당(주) | 대표자: 신현재</div>
+                    <div class="de">주소:서울 중구 동호로 330 CJ제일제당 센터 (우) 04560  |  사업자등록번호:104-86-09535</div>
+                    <div class="de">통신판매업신고 중구 제 07767호  |  개인정보보호책임자:류화정</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <script>
+
+
+        const slider = document.querySelectorAll(".slider");
+        
+        let currentIndex = 0; //현재 보이는 이미지(첫 번째 이미지)
+        let sliderCount = slider.length; //이미지 갯수
+
+        setInterval(function(){ //2초에한번 함수실행
+            let nextIndex = (currentIndex + 1) % sliderCount;
+      
+            //현재 보이는 이미지를 사라지게
+            slider[currentIndex].style.opacity = "0";
+            
+            //다음 이미지를 나타나게
+            slider[nextIndex].style.opacity = "1";
+            currentIndex = nextIndex;
+            
+        },2000)
+    </script>
+    
+</body>
+</html>
