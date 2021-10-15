@@ -56,7 +56,6 @@
         .slider-inner .slider:nth-child(3){z-index: 3;}
         .slider-inner .slider:nth-child(4){z-index: 2;}
         .slider-inner .slider:nth-child(5){z-index: 1;}
-
     </style>
 </head>
 <body class="bg bg10 brown">
@@ -91,20 +90,22 @@
         <p>이미지 슬라이드 - 위로 움직이기</p>
     </div>
     <div class="info right">
-      <ul>
-          <li><a href="javascriptSE01.html">1</a></li>
-          <li><a href="javascriptSE02.html">2</a></li>
-          <li><a href="javascriptSE03.html">3</a></li>
-          <li><a href="javascriptSE04.html">4</a></li>
-          <li><a href="javascriptSE05.html">5</a></li>
-      </ul>
-      <ul>
-        <li><a href="jquerySE01.html">1</a></li>
-        <li><a href="jquerySE02.html">2</a></li>
-        <li><a href="jquerySE03.html">3</a></li>
-        <li class="active"><a href="jquerySE04.html">4</a></li>
-        <li><a href="jquerySE05.html">5</a></li>
-      </ul>
+        <ul>
+            <li><a href="javascriptSE01.html">1</a></li>
+            <li><a href="javascriptSE02.html">2</a></li>
+            <li><a href="javascriptSE03.html">3</a></li>
+            <li><a href="javascriptSE04.html">4</a></li>
+            <li><a href="javascriptSE05.html">5</a></li>
+            <li><a href="javascriptSE06.html">6</a></li>
+        </ul>
+        <ul>
+          <li><a href="jquerySE01.html">1</a></li>
+          <li><a href="jquerySE02.html">2</a></li>
+          <li><a href="jquerySE03.html">3</a></li>
+          <li class="active"><a href="jquerySE04.html">4</a></li>
+          <li><a href="jquerySE05.html">5</a></li>
+          <li><a href="jquerySE06.html">6</a></li>
+        </ul>
     </div>
 
 
@@ -128,16 +129,110 @@
                 </div>
                 <div class="view-cont">
                 <div class="html">
-<pre><code class="language-html">
+<pre><code class="language-html">&ltmain&gt
+	&ltdiv class="slider-wrap"&gt
+		&ltdiv class="slider-img slier-img1"&gt
+			&ltdiv class="slider-inner slider-inner1"&gt
+				&ltdiv class="slider slider1" data-name="이미지1"&gt&ltimg src="../assets/img/bg8.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider1" data-name="이미지2"&gt&ltimg src="../assets/img/bg9.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider1" data-name="이미지3"&gt&ltimg src="../assets/img/bg10.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider1" data-name="이미지4"&gt&ltimg src="../assets/img/bg11.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider1" data-name="이미지5"&gt&ltimg src="../assets/img/bg12.jpg"&gt&lt/div&gt
+			&lt/div&gt
+		&lt/div&gt
+		&ltdiv class="slider-img slier-img2"&gt
+			&ltdiv class="slider-inner slider-inner2"&gt
+				&ltdiv class="slider slider2" data-name="이미지1"&gt&ltimg src="../assets/img/bg8.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider2" data-name="이미지2"&gt&ltimg src="../assets/img/bg9.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider2" data-name="이미지3"&gt&ltimg src="../assets/img/bg10.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider2" data-name="이미지4"&gt&ltimg src="../assets/img/bg11.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider2" data-name="이미지5"&gt&ltimg src="../assets/img/bg12.jpg"&gt&lt/div&gt
+			&lt/div&gt
+		&lt/div&gt
+	&lt/div&gt
+&lt/main&gt
 </code></pre>
                 </div>
                 <div class="css">
-<pre><code class="language-css">
+<pre><code class="language-css">&ltstyle&gt
+	/* slider */
+	.slider-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+	}
+	.slider-img img {
+		width: 100%;
+	}
+
+	.slider-img {
+		/* position: absolute;
+		left: 50%; top: 50%;
+		transform: translate(-50%, -50%); */
+		margin: 10px;
+		width: 600px;
+		height: 360px;
+		overflow: hidden;
+	}
+	.slider-inner {
+		position: relative;
+		float: left;
+		width: 600px;
+		height: 1800px;
+		overflow: hidden;
+	}
+	.slider-inner .slider{
+		position: relative;
+		float: left;
+		width: 600px;
+		height: 360px;
+	}
+	.slider-inner .slider::before{
+		position: absolute;
+		left: 5px; top: 5px;
+		background: rgba(0,0,0,.4);
+		color: #fff;
+		padding: 5px 10px 3px;
+		line-height: 1;
+		font-family: "NEXONLv1Gothic";
+		content : attr(data-name);
+	}
+	.slider-inner .slider:nth-child(1){z-index: 5;}
+	.slider-inner .slider:nth-child(2){z-index: 4;}
+	.slider-inner .slider:nth-child(3){z-index: 3;}
+	.slider-inner .slider:nth-child(4){z-index: 2;}
+	.slider-inner .slider:nth-child(5){z-index: 1;}
+&lt/style&gt
 </code></pre>
                 </div>
 
                 <div class="javascript">
-<pre><code class="language-js">
+<pre><code class="language-js">&ltscript&gt
+	const sliderInner1 = $(".slider-inner1");
+	const sliderInner2 = $(".slider-inner2");
+	const slider1 = $(".slider1");
+	const slider2 = $(".slider2");
+
+	let currentIndex = 0;
+	let sliderCount = slider1.length; //이미지 갯수
+	
+	const sliderHeight1 = slider1.height();
+	const sliderHeight2 = slider2.height();
+
+	setInterval(function(){
+		// 위로 움직이기
+		( currentIndex &lt sliderCount -1 ) ? currentIndex++ : currentIndex = 0
+		let sliderPosition = currentIndex * - sliderHeight1;
+
+		sliderInner1.animate({ top: sliderPosition }, 600, "easeOutExpo");
+
+		sliderInner2.animate({top: - sliderHeight2}, 600, "easeOutExpo",function(){
+			$(".slider2:first-child").appendTo(sliderInner2);
+			sliderInner2.css("top","");
+		});
+	},3000);
+&lt/script&gt
 </code></pre>
                 </div>
                 </div>             
@@ -161,7 +256,6 @@
     <script src="../assets/js/custom.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script>
-
         const sliderInner1 = $(".slider-inner1");
         const sliderInner2 = $(".slider-inner2");
         const slider1 = $(".slider1");
@@ -172,22 +266,19 @@
         
         const sliderHeight1 = slider1.height();
         const sliderHeight2 = slider2.height();
-    
 
         setInterval(function(){
-            
             // 위로 움직이기
             ( currentIndex < sliderCount -1 ) ? currentIndex++ : currentIndex = 0
             let sliderPosition = currentIndex * - sliderHeight1;
 
             sliderInner1.animate({ top: sliderPosition }, 600, "easeOutExpo");
 
-            sliderInner2.animate({top: - sliderHeight2}, 400, function(){
+            sliderInner2.animate({top: - sliderHeight2}, 600, "easeOutExpo",function(){
                 $(".slider2:first-child").appendTo(sliderInner2);
                 sliderInner2.css("top","");
             });
-        },3000)
-
+        },3000);
 
         modal('info');
     </script>

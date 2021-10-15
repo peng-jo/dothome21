@@ -255,13 +255,13 @@ img {
 #nav a {
   color: #fff;
   text-decoration: none;
-  width: 100px;
+  width: 5vw;
   height: 50px;
   line-height: 50px;
   display: inline-block;
   border-radius: 50px;
   border: 1px solid #fff;
-  font-size: 14px;
+  font-size: 15px;
   text-align: center;
   margin: 4px;
   font-family: "NEXONLv1Gothic";

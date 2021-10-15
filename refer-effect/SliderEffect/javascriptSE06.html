@@ -179,16 +179,202 @@
                 </div>
                 <div class="view-cont">
                 <div class="html">
-<pre><code class="language-html">
+<pre><code class="language-html">&ltmain&gt
+	&ltdiv class="slider-wrap"&gt
+		&ltdiv class="slider-img"&gt
+			&ltdiv class="slider-inner"&gt
+				&ltdiv class="slider" data-name="이미지1"&gt&ltimg src="../assets/img/bg1.jpg"&gt&lt/div&gt
+				&ltdiv class="slider" data-name="이미지2"&gt&ltimg src="../assets/img/bg2.jpg"&gt&lt/div&gt
+				&ltdiv class="slider" data-name="이미지3"&gt&ltimg src="../assets/img/bg3.jpg"&gt&lt/div&gt
+				&ltdiv class="slider" data-name="이미지4"&gt&ltimg src="../assets/img/bg4.jpg"&gt&lt/div&gt
+				&ltdiv class="slider" data-name="이미지5"&gt&ltimg src="../assets/img/bg5.jpg"&gt&lt/div&gt
+			&lt/div&gt
+		&lt/div&gt
+		&ltdiv class="slider-btn"&gt
+			&lta href="#" class="prev"&gtPREV&lt/a&gt
+			&lta href="#" class="next"&gtNEXT&lt/a&gt
+		&lt/div&gt
+		&ltdiv class="slider-dot"&gt
+		&lt/div&gt
+	&lt/div&gt
+&lt/main&gt
 </code></pre>
                 </div>
                 <div class="css">
-<pre><code class="language-css">
+<pre><code class="language-css">&ltstyle&gt
+	/* slider */
+	.slider-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		position: relative;
+	}
+	.slider-img img {
+		width: 100%;
+	}
+
+	.slider-img {
+		position: absolute;
+		left: 50%; top: 50%;
+		transform: translate(-50%, -50%);
+		width: 800px;
+		height: 480px;
+		overflow: hidden;
+	}
+	.slider-inner {
+		position: relative;
+		float: left;
+		/* width: 4000px; */
+		height: 480px;
+		overflow: hidden;
+	}
+	.slider-inner .slider{
+		position: relative;
+		float: left;
+		width: 800px;
+		height: 480px;
+	}
+	.slider-inner .slider::before{
+		position: absolute;
+		left: 5px; top: 5px;
+		background: rgba(0,0,0,.4);
+		color: #fff;
+		padding: 5px 10px 3px;
+		line-height: 1;
+		font-family: "NEXONLv1Gothic";
+		content : attr(data-name);
+	}
+	.slider-inner .slider:nth-child(1){z-index: 5;}
+	.slider-inner .slider:nth-child(2){z-index: 4;}
+	.slider-inner .slider:nth-child(3){z-index: 3;}
+	.slider-inner .slider:nth-child(4){z-index: 2;}
+	.slider-inner .slider:nth-child(5){z-index: 1;}
+	.slider-btn a{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 1000;
+		width: 50px;
+		height: 50px;
+		background: rgba(0, 0, 0, .4);
+		line-height: 50px;
+		text-align: center;
+		display: block;
+		text-decoration: none;
+		color: #fff;
+		transition: all 0.2s;
+	}
+
+	.slider-btn a:hover {
+		background: rgba(241, 96, 86, 1);
+	}
+
+	.slider-btn .prev {
+		left: 0;
+	}
+
+	.slider-btn .next {
+		right: 0;
+	}
+	.slider-dot {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 20px;
+	}
+	.slider-dot .dot {
+		width: 20px;
+		height: 20px;
+		background: rgba(0,0,0,0.4);
+		display: inline-block;
+		border-radius: 50%;
+		transition: all 0.3;
+		text-indent: -9999px;
+		margin: 3px;
+	}
+	.slider-dot .dot.active {
+		background: #fff;
+		color: rgba(0,0,0,0.4);
+	} 
+&lt/style&gt
 </code></pre>
                 </div>
 
                 <div class="javascript">
-<pre><code class="language-js">
+<pre><code class="language-js">&ltscript&gt
+	const sliderWrap = document.querySelector(".slider-wrap");
+	const sliderImg = document.querySelector(".slider-img");
+	const sliderInner = document.querySelector(".slider-inner");
+	const sliderBtn = document.querySelector(".slider");
+	const slider = document.querySelectorAll(".slider");
+	const sliderBtnPrev = document.querySelector(".prev");
+	const sliderBtnNext = document.querySelector(".next");
+	const sliderDot = document.querySelector(".slider-dot");
+
+	let sliderCount = slider.length;
+	let sliderWidth = sliderBtn.clientWidth;
+	let sliderTotalwidth = sliderWidth * sliderCount;
+	let currentIndex = 0;
+	let dotIndex  = "";
+	
+	//즉시실행 함수
+	(()=&gt{
+		//이미지 가로값 세팅
+		sliderInner.style.width = sliderTotalwidth + "px";
+		sliderInner.style.transition = "all 500ms ease-in";
+		sliderInner.style.left = 0;
+		
+		//닷 메뉴
+		slider.forEach(( e, i)=&gt{
+			let active = "";
+			if( i === currentIndex) active = "active";
+			dotIndex += `&lta href='#' class='dot ${active}'&gt"${i}"&lt/a&gt`;
+		})
+		sliderDot.innerHTML = dotIndex;
+	})()  
+
+	//이미지 움직이기
+	const gotoSlider = num =&gt{
+		sliderInner.style.left = - sliderWidth * num + "px";
+		currentIndex = num;
+		dotActive();
+	}
+	//왼쪽 버튼
+	const btnPrev = (e) =&gt {
+		e.preventDefault();
+		let prevIndex = ( currentIndex - 1 ) % sliderCount;
+		if( currentIndex == 0 ) prevIndex = sliderCount - 1;
+
+		gotoSlider(prevIndex);
+	}
+
+	//오른쪽 버튼
+	const btnNext = (e) =&gt {
+		e.preventDefault();
+		let prevIndex = (currentIndex + 1) % sliderCount;
+		
+		gotoSlider(prevIndex);
+	}
+
+	function dotActive(){
+		sliderDot.querySelectorAll("a").forEach((el,index)=&gt{
+			index == currentIndex ? el.classList.add('active') : el.classList.remove('active');
+		});
+	}
+
+	// 닷 메뉴 셋팅
+	sliderDot.querySelectorAll("a").forEach(( dot, index)=&gt{
+		dot.addEventListener("click", (e)=&gt{
+			e.preventDefault();
+			gotoSlider(index);
+			dotActive();
+		});
+	});
+
+	sliderBtnPrev.addEventListener("click", btnPrev);
+	sliderBtnNext.addEventListener("click", btnNext);
+&lt/script&gt
 </code></pre>
                 </div>
                 </div>             

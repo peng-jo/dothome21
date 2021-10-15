@@ -91,20 +91,22 @@
         <p>이미지 슬라이드 - 위로 움직이기</p>
     </div>
     <div class="info right">
-      <ul>
-        <li><a href="javascriptSE01.html">1</a></li>
-        <li><a href="javascriptSE02.html">2</a></li>
-        <li><a href="javascriptSE03.html">3</a></li>
-        <li class="active"><a href="javascriptSE04.html">4</a></li>
-        <li><a href="javascriptSE05.html">5</a></li>
-      </ul>
-      <ul>
-        <li><a href="jquerySE01.html">1</a></li>
-        <li><a href="jquerySE02.html">2</a></li>
-        <li><a href="jquerySE03.html">3</a></li>
-        <li><a href="jquerySE04.html">4</a></li>
-        <li><a href="jquerySE05.html">5</a></li>
-      </ul>
+        <ul>
+            <li><a href="javascriptSE01.html">1</a></li>
+            <li><a href="javascriptSE02.html">2</a></li>
+            <li><a href="javascriptSE03.html">3</a></li>
+            <li class="active"><a href="javascriptSE04.html">4</a></li>
+            <li><a href="javascriptSE05.html">5</a></li>
+            <li><a href="javascriptSE06.html">6</a></li>
+        </ul>
+        <ul>
+          <li><a href="jquerySE01.html">1</a></li>
+          <li><a href="jquerySE02.html">2</a></li>
+          <li><a href="jquerySE03.html">3</a></li>
+          <li><a href="jquerySE04.html">4</a></li>
+          <li><a href="jquerySE05.html">5</a></li>
+          <li><a href="jquerySE06.html">6</a></li>
+        </ul>
     </div>
 
 
@@ -128,16 +130,136 @@
                 </div>
                 <div class="view-cont">
                 <div class="html">
-<pre><code class="language-html">
+<pre><code class="language-html">&ltmain&gt
+	&ltdiv class="slider-wrap"&gt
+		&ltdiv class="slider-img slier-img1"&gt
+			&ltdiv class="slider-inner slider-inner1"&gt
+				&ltdiv class="slider slider1" data-name="이미지1"&gt&ltimg src="../assets/img/bg8.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider1" data-name="이미지2"&gt&ltimg src="../assets/img/bg9.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider1" data-name="이미지3"&gt&ltimg src="../assets/img/bg10.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider1" data-name="이미지4"&gt&ltimg src="../assets/img/bg11.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider1" data-name="이미지5"&gt&ltimg src="../assets/img/bg12.jpg"&gt&lt/div&gt
+			&lt/div&gt
+		&lt/div&gt
+		&ltdiv class="slider-img slier-img2"&gt
+			&ltdiv class="slider-inner slider-inner2"&gt
+				&ltdiv class="slider slider2" data-name="이미지1"&gt&ltimg src="../assets/img/bg8.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider2" data-name="이미지2"&gt&ltimg src="../assets/img/bg9.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider2" data-name="이미지3"&gt&ltimg src="../assets/img/bg10.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider2" data-name="이미지4"&gt&ltimg src="../assets/img/bg11.jpg"&gt&lt/div&gt
+				&ltdiv class="slider slider2" data-name="이미지5"&gt&ltimg src="../assets/img/bg12.jpg"&gt&lt/div&gt
+			&lt/div&gt
+		&lt/div&gt
+	&lt/div&gt
+&lt/main&gt
 </code></pre>
                 </div>
                 <div class="css">
-<pre><code class="language-css">
+<pre><code class="language-css">&ltstyle&gt
+	/* slider */
+	.slider-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+	}
+	.slider-img img {
+		width: 100%;
+	}
+
+	.slider-img {
+		/* position: absolute;
+		left: 50%; top: 50%;
+		transform: translate(-50%, -50%); */
+		margin: 10px;
+		width: 600px;
+		height: 360px;
+		overflow: hidden;
+	}
+	.slider-inner {
+		position: relative;
+		float: left;
+		width: 600px;
+		height: 1800px;
+		overflow: hidden;
+	}
+	.slider-inner .slider{
+		position: relative;
+		float: left;
+		width: 600px;
+		height: 360px;
+	}
+	.slider-inner .slider::before{
+		position: absolute;
+		left: 5px; top: 5px;
+		background: rgba(0,0,0,.4);
+		color: #fff;
+		padding: 5px 10px 3px;
+		line-height: 1;
+		font-family: "NEXONLv1Gothic";
+		content : attr(data-name);
+	}
+	.slider-inner .slider:nth-child(1){z-index: 5;}
+	.slider-inner .slider:nth-child(2){z-index: 4;}
+	.slider-inner .slider:nth-child(3){z-index: 3;}
+	.slider-inner .slider:nth-child(4){z-index: 2;}
+	.slider-inner .slider:nth-child(5){z-index: 1;}
+&lt/style&gt
 </code></pre>
                 </div>
 
                 <div class="javascript">
-<pre><code class="language-js">
+<pre><code class="language-js">&ltscript&gt
+	const sliderWrap = document.querySelector(".slider-wrap");
+
+	const sliderInner1 = document.querySelector(".slider-inner1");
+	const sliderInner2 = document.querySelector(".slider-inner2");
+
+	const slider1 = document.querySelectorAll(".slider1");
+	const slider2 = document.querySelectorAll(".slider2");
+
+	let sliderHeight1 = document.querySelector(".slider1").offsetHeight;
+	let sliderHeight2 = document.querySelector(".slider2").offsetHeight;
+
+	let sliderCount1 = slider1.length;
+	let sliderCount2 = slider2.length;
+
+	let sliderClone = sliderInner2.firstElementChild.cloneNode(true);
+	sliderInner2.appendChild(sliderClone);
+	sliderInner2.style.height = "2160px";
+
+
+	let currentIndex1 = 0;
+	let currentIndex2 = 0;
+	
+
+
+	setInterval(() =&gt {
+		currentIndex1 &lt sliderCount1 - 1  ? currentIndex1++ : currentIndex1 = 0;
+
+		let sliderPosition = currentIndex1 * -sliderHeight1;
+
+		sliderInner1.style.transition = "all 0.3s";
+		sliderInner1.style.top = sliderPosition + "px";
+		
+
+	}, 3000);
+
+	setInterval(() =&gt {
+		
+		currentIndex2++; //0 1 2 3 4 5
+		sliderInner2.style.transition = "all 0.3s";
+		sliderInner2.style.transform = "translateY("+ -sliderHeight2 * currentIndex2+"px)";
+		if( currentIndex2 === sliderCount2 ){
+			setTimeout(()=&gt{
+				sliderInner2.style.transition = "0s";
+				sliderInner2.style.transform = "translateY(0)";
+			},300);
+			currentIndex2 = 0;
+		}
+	
+	}, 3000);
+&lt/script&gt
 </code></pre>
                 </div>
                 </div>             

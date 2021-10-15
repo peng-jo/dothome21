@@ -81,20 +81,22 @@
         <p>이미지 슬라이드 - 좌로 움직이기(연속적으로)</p>
     </div>
     <div class="info right">
-      <ul>
-          <li><a href="javascriptSE01.html">1</a></li>
-          <li><a href="javascriptSE02.html">2</a></li>
-          <li><a href="javascriptSE03.html">3</a></li>
-          <li><a href="javascriptSE04.html">4</a></li>
-          <li><a href="javascriptSE05.html">5</a></li>
-      </ul>
-      <ul>
-        <li><a href="jquerySE01.html">1</a></li>
-        <li><a href="jquerySE02.html">2</a></li>
-        <li class="active"><a href="jquerySE03.html">3</a></li>
-        <li><a href="jquerySE04.html">4</a></li>
-        <li><a href="jquerySE05.html">5</a></li>
-      </ul>
+        <ul>
+            <li><a href="javascriptSE01.html">1</a></li>
+            <li><a href="javascriptSE02.html">2</a></li>
+            <li><a href="javascriptSE03.html">3</a></li>
+            <li><a href="javascriptSE04.html">4</a></li>
+            <li><a href="javascriptSE05.html">5</a></li>
+            <li><a href="javascriptSE06.html">6</a></li>
+        </ul>
+        <ul>
+          <li><a href="jquerySE01.html">1</a></li>
+          <li><a href="jquerySE02.html">2</a></li>
+          <li class="active"><a href="jquerySE03.html">3</a></li>
+          <li><a href="jquerySE04.html">4</a></li>
+          <li><a href="jquerySE05.html">5</a></li>
+          <li><a href="jquerySE06.html">6</a></li>
+        </ul>
     </div>
 
 
@@ -118,16 +120,92 @@
                 </div>
                 <div class="view-cont">
                 <div class="html">
-<pre><code class="language-html">
+<pre><code class="language-html">&ltmain&gt
+	&ltdiv class="slider-wrap"&gt
+		&ltdiv class="slider-img"&gt
+			&ltdiv class="slider-inner"&gt
+				&ltdiv class="slider" data-name="이미지1"&gt&ltimg src="../assets/img/bg1.jpg"&gt&lt/div&gt
+				&ltdiv class="slider" data-name="이미지2"&gt&ltimg src="../assets/img/bg2.jpg"&gt&lt/div&gt
+				&ltdiv class="slider" data-name="이미지3"&gt&ltimg src="../assets/img/bg3.jpg"&gt&lt/div&gt
+				&ltdiv class="slider" data-name="이미지4"&gt&ltimg src="../assets/img/bg4.jpg"&gt&lt/div&gt
+				&ltdiv class="slider" data-name="이미지5"&gt&ltimg src="../assets/img/bg5.jpg"&gt&lt/div&gt
+			&lt/div&gt
+		&lt/div&gt
+	&lt/div&gt
+&lt/main&gt
 </code></pre>
                 </div>
                 <div class="css">
-<pre><code class="language-css">
+<pre><code class="language-css">&ltstyle&gt
+	/* slider */
+	.slider-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+	}
+	.slider-img img {
+		width: 100%;
+	}
+
+	.slider-img {
+		position: absolute;
+		left: 50%; top: 50%;
+		transform: translate(-50%, -50%);
+		width: 800px;
+		height: 480px;
+		overflow: hidden;
+	}
+	.slider-inner {
+		position: relative;
+		float: left;
+		width: 4000px;
+		height: 480px;
+		overflow: hidden;
+	}
+	.slider-inner .slider{
+		position: relative;
+		float: left;
+		width: 800px;
+		height: 480px;
+	}
+	.slider-inner .slider::before{
+		position: absolute;
+		left: 5px; top: 5px;
+		background: rgba(0,0,0,.4);
+		color: #fff;
+		padding: 5px 10px 3px;
+		line-height: 1;
+		font-family: "NEXONLv1Gothic";
+		content : attr(data-name);
+	}
+	.slider-inner .slider:nth-child(1){z-index: 5;}
+	.slider-inner .slider:nth-child(2){z-index: 4;}
+	.slider-inner .slider:nth-child(3){z-index: 3;}
+	.slider-inner .slider:nth-child(4){z-index: 2;}
+	.slider-inner .slider:nth-child(5){z-index: 1;}
+&lt/style&gt
 </code></pre>
                 </div>
 
                 <div class="javascript">
-<pre><code class="language-js">
+<pre><code class="language-js">&ltscript&gt
+	const sliderWrap = $(".slider-wrap");
+	const sliderImg = $(".slider-img");
+	const sliderInner = $(".slider-inner");
+	const slider = $(".slider");
+
+	let curruentIndex = 0;
+	
+	const sliderWidth = slider.width();
+
+	setInterval(function(){
+		sliderInner.animate({left: -sliderWidth}, 400, function(){
+			$(".slider:first-child").appendTo(sliderInner);
+			// sliderInner.css("left","");
+		});
+	},3000);
+&lt/script&gt
 </code></pre>
                 </div>
                 </div>             
@@ -163,9 +241,9 @@
         setInterval(function(){
             sliderInner.animate({left: -sliderWidth}, 400, function(){
                 $(".slider:first-child").appendTo(sliderInner);
-                sliderInner.css("left","");
+                // sliderInner.css("left","");
             });
-        },3000)
+        },3000);
         
         modal('info');
     </script>
