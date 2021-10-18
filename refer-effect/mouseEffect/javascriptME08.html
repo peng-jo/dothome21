@@ -72,7 +72,7 @@
     .box-item {
         display: grid;
         grid-template-columns: repeat(10, 50px);
-        grid-template-rows: repeat(4, 50px);
+        grid-template-rows: repeat(6, 50px);
         grid-gap: 30px;
     }
     .box-item .item {
@@ -143,6 +143,28 @@
                 <div class="item"></div>
                 <div class="item"></div>
                 <div class="item"></div>
+
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
             </div>
         </div>
     </main>
@@ -178,7 +200,6 @@
       <ul>
         <li>pageX : <span class="pageX">0</span></li>
         <li>pageY : <span class="pageY">0</span></li>
-        <li>radian : <span class="radian">0</span></li>
       </ul>
     </div>
 
@@ -236,7 +257,7 @@
             const mouseX = e.clientX;
             const mouseY = e.clientY;
         
-                document.querySelectorAll(".item").forEach( item =>{
+                document.querySelectorAll(".item").forEach( (item,index) =>{
 
                     // const itemX = el.offsetTop  + 25;
                     // const itemY = el.offsetLeft + 25;
@@ -252,12 +273,15 @@
                     const itemY = item.offsetTop - mouseY;
 
                     const dist = Math.sqrt(itemX * itemX + itemY * itemY);
+                    
                     const score = Math.exp(dist * -0.003);
-
+                    
                     item.style.transform = `scale(${score})`;
-
+                    
 
                 });
+                document.querySelector(".pageX").textContent = e.pageX;
+                document.querySelector(".pageY").textContent = e.pageY;
                 gsap.to(".cursor",{duration:.3, left:e.pageX, top:e.pageY});
         });
 
