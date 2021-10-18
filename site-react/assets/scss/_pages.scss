@@ -17,4 +17,42 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    br {
+        display: none;
+    }
+}
+#mainCont2 {
+    background: #000;
+    height: 100vh;
+    color: #fff;
+    font-family: $font-main2;
+    font-weight: 100;
+    line-height: 1.1;
+    font-size: 6vw;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+
+    br {
+        display: none;
+    }
+}
+
+@media (max-width:800px) {
+    #mainCont {
+        br {
+            display: block;
+        }
+    }
+}
+@media (max-width:800px) {
+    #mainCont2 {
+        span {
+            display: none;
+        }
+        br {
+            display: block;
+        }
+    }
 }
