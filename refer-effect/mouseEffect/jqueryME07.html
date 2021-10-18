@@ -155,8 +155,6 @@
       <ul>
         <li>pageX : <span class="pageX">0</span></li>
         <li>pageY : <span class="pageY">0</span></li>
-        <li>standardX : <span class="standardX">0</span></li>
-        <li>standardY : <span class="standardY">0</span></li>
       </ul>
     </div>
 
@@ -216,6 +214,9 @@
 
             gsap.to(".spanSlow",{ duration : 0.4 , x :positionSlow});
             gsap.to(".spanFast",{ duration : 0.4 , x :positionFast});
+
+            $(".pageX").text(e.pageX);
+            $(".pageY").text(e.pageY);
         }
         
         $(window).on("mousemove", mouseMove);

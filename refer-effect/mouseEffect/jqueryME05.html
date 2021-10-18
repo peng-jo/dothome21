@@ -175,10 +175,10 @@
 
             $(".mImg img").attr({"style":"transform: translate("+standardX/20+"px,"+standardY/20+"px)"});
 
-            document.querySelector(".pageX").textContent = e.pageX;
-            document.querySelector(".pageY").textContent = e.pageY;
-            document.querySelector(".standardX").textContent = standardX;
-            document.querySelector(".standardY").textContent = standardY;
+            $(".pageX").text(e.pageX);
+            $(".pageY").text(e.pageY);
+            $(".standardX").text(standardX);
+            $(".standardY").text(standardY);
 
         });
         modal('info');
