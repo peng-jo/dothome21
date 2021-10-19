@@ -1157,7 +1157,8 @@ table {
   }
   #aboutCont .about3 {
     position: relative;
-    overflow: none;
+    overflow: visible;
+    margin-bottom: 60vh;
   }
   #aboutCont .about3 img {
     width: 100%;
@@ -1165,7 +1166,8 @@ table {
   }
   #aboutCont .about3 div {
     display: block;
-    top: 300px;
+    position: absolute;
+    top: 200px;
     left: 0;
   }
   #aboutCont .about3 div p {
