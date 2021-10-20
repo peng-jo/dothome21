@@ -168,128 +168,135 @@
         display: none;
     }
 }
+
 //#aboutCont
-#aboutCont h3 {
-    font-family: $font-main;
-    margin: 13vw 0 10vw 0;
-    font-size: 18px;
+#aboutCont {
+    h3 {
+        font-family: $font-main;
+        margin: 13vw 0 10vw 0;
+        font-size: 7.5vw;
+    }
+    span, p {
+        font-size: 18px;
+        line-height: 1.5;
+        font-family: $font-kor1;
+    }
+    .about1  {
+        img {
+            display: block;
+            height: 30vw;
+            margin-bottom: 3vw;
+        }
+        span {
+            display: inline-block;
+            margin-bottom: 1.3vw;
+        }
+        p {
+            width: 43vw;
+            margin-bottom: 16vw;
+        }
+    }
+    .about2 {
+        overflow: hidden;
+        div {
+            position: absolute;
+        
+            margin-left: 46vw;
+        }
+        img {
+            display: block;
+            float: left;
+            width: 43vw;
+            height: 100vh;
+            margin-bottom: 372px;
+        }
+        span {
+            display: block;
+            margin-bottom: 37px;
+        }
+        p {
+            float: left;
+            display: block;
+            width: 384px;
+        }
+    }
+    .about3 {
+        position: relative;
+        margin-bottom: 20vh;
+        overflow: hidden;
+        div {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        p {
+            display: inline-block;
+            width: 25vw;
+        }
+        span {
+            display: block;
+        }
+        img {
+            height: 480px;
+            float: right;
+            width: 38vw;
+        }
+    }
 }
-#aboutCont span, p {
-    font-size: 1vw;
-    line-height: 1.5;
-    font-family: $font-kor1;
-}
-#aboutCont .about1 img {
-    display: block;
-    height: 30vw;
-    margin-bottom: 3vw;
-}
-#aboutCont .about1 span {
-    display: inline-block;
-    margin-bottom: 1.3vw;
-}
-#aboutCont .about1 p {
-    width: 43vw;
-    margin-bottom: 16vw;
-}
-#aboutCont .about2  {
-    overflow: hidden;
-}
-#aboutCont .about2 div {
-    position: absolute;
 
-    margin-left: 46vw;
-}
-#aboutCont .about2 img {
-    display: block;
-    float: left;
-    width: 43vw;
-    height: 100vh;
-    margin-bottom: 372px;
-}
-#aboutCont .about2 span {
-    display: block;
-    margin-bottom: 37px;
-}
-#aboutCont .about2 p {
-    float: left;
-    display: block;
-    width: 384px;
-}
-#aboutCont .about3 {
-    position: relative;
-}
- 
-#aboutCont .about3 {
-    position: relative;
-    overflow: hidden;
-}
-#aboutCont .about3 div {
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-#aboutCont .about3 p {
-    display: inline-block;
-    width: 25vw;
-}
-#aboutCont .about3 span {
-    display: block;
-}
-#aboutCont .about3 img {
-    height: 480px;
-    float: right;
-    width: 50vw;
- 
-}
-#aboutCont .about3 {
-    position: relative;
-    margin-bottom: 20vh;
-    overflow: hidden;
-}
+
+
 @media (max-width: 1100px) {
-    #aboutCont .about1 p {
-        width: 100%;
-    }
-    #aboutCont .about2 img {
-        width: 100%;
-        height: 30vw;
-        margin-bottom: 10vh;
-    }
-    #aboutCont .about2 div {
-        position: relative;
-        display: block;
-        margin-left: 0;
-    }
-    #aboutCont .about2 {
-        margin-bottom: 10vh;
-    }
-    #aboutCont .about2 p {
-        width: 100%;
-    }
-    #aboutCont .about3 {
-        position: relative;
-        overflow: visible;
-        margin-bottom:60vh;
-    }
-    #aboutCont .about3 img {
-        width: 100%;
-        height: 30vw;
-    }
-    #aboutCont .about3 div {
-        display: block;
-        position: absolute;
-        top: 200px;
-        left: 0;
+    #aboutCont {
+        h3 {
+            margin-top: 14vh;
 
+        }
+        .about1 p {
+            width: 100%;
+        }
+        .about2 {
+            margin-bottom: 10vh;
+            img {
+                width: 100%;
+                height: 30vw;
+                margin-bottom: 3vw;
+            }
+            div {
+                position: relative;
+                display: block;
+                margin-left: 0;
+            }
+            p {
+                width: 100%;
+            }
+            span {
+                margin-bottom: 37px;
+            }
+        }
+        .about3 {
+            position: relative;
+            overflow: visible;
+            margin-bottom: 70vh;
+            img {
+                width: 100%;
+                height: 30vw;
+            }
+            div {
+                display: block;
+                position: absolute;
+                top: 33vw;
+                left: 0;
+                p {
+                    margin-bottom: 37px;
+                    width: 100%;
+                }
+                span {
+                    margin-bottom: 3vh;
+                }
+            }
+        }
     }
-    #aboutCont .about3 div p {
-        margin-bottom: 37px;
-        width: 100%;
-    }
-   
-   
-    
 }
 
 //#footer
