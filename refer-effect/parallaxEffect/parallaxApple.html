@@ -34,6 +34,27 @@
             src: url(https://cdn.jsdelivr.net/gh/webfontworld/NEXONGothic/NEXONLv2GothicBold.woff) format('woff');
             font-display: swap;
         }
+        @font-face {
+            font-family: 'NEXONLv1Gothic';
+            font-weight: 300;
+            font-style: normal;
+            src: url(https://cdn.jsdelivr.net/gh/webfontworld/NEXONGothic/NEXONLv1GothicLowOTFLight.woff) format('woff');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'NEXONLv1Gothic';
+            font-weight: 400;
+            font-style: normal;
+            src: url(https://cdn.jsdelivr.net/gh/webfontworld/NEXONGothic/NEXONLv1GothicOTF.woff) format('woff');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'NEXONLv1Gothic';
+            font-weight: 700;
+            font-style: normal;
+            src: url(https://cdn.jsdelivr.net/gh/webfontworld/NEXONGothic/NEXONLv1GothicOTFBold.woff) format('woff');
+            font-display: swap;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -62,14 +83,21 @@
         }
         #contents {
         }
+        #contents > div {
+            position: relative;
+        }
         #section1 {
             height: 7000px;
         }
         #section2 {
             height: 7000px;
             background: #000;
+            z-index: 2000;
         }
-        #section3 {}
+        #section3 {
+            height: 3000px;
+            z-index: 3000;
+        }
         #section4 {}
         #section5 {}
         #section6 {}
@@ -103,7 +131,7 @@
             width: 30vw;
             height: 30vw;
             background: #000;
-            border-radius: 50%;
+            border-radius: 50vw;
         }
         .s1Text4 span {
             font-size: 4vw;
@@ -111,7 +139,8 @@
             position: absolute;
             left: 50%; top: 50%;
         }
-        /* section1 */
+
+        /* section2 */
         .s2Text1 {
             font-weight: 500;
             font-size: 4vw;
@@ -126,20 +155,19 @@
             text-transform: capitalize;
         }
 
-        .s2Text2 {
+        .s2Text2 > div {
+            color: #fff;
             display: flex;
-            justify-content:space-between;
-            top: 30%;
-            color:#fff;
+            justify-content: space-between;
             width: 55vw;
-            overflow: hidden;
+            opacity: 0;
         }
-        .s2Text2 h2 {
+        .s2Text2 > div h2 {
             flex: 0 0 30%;
             font-size: 2vw;
             line-height: 1.4;
         }
-        .s2Text2 p {
+        .s2Text2 > div p {
             flex: 0 0 60%;
             font-size: 1.1vw;
             line-height: 1.7;
@@ -156,11 +184,31 @@
             top: 70%;
         }
         .s2Text3 .img-wrap {
-            padding: 3.4%;
-            box-sizing: border-box;
+            position: relative;
+            width: 94%; height: 100%;
+            margin: 3%;
+            overflow:hidden;
+            border-radius: 1vw;
         }
-        .s2Text3 .img-wrap div {
-            overflow: hidden;
+        .s2Text3 .img-wrap > div {
+            position: absolute;
+            left: 100%; top: 0;
+            width: 100%;
+        }
+        .s2Text3 .img-wrap > div a {
+            position: absolute;
+            left: 50%; top: 50%;
+            transform:  translate(-50%, -50%);
+            width: 10vw; height: 10vw;
+            background: rgba(0,0,0,0.8);
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 10vw;
+            font-size: 2vw;
+        }
+        .s2Text3 .img-wrap > div:nth-child(1) {
+            left: 0;
         }
         .s2Text3 .img-wrap img {
             border-top-left-radius: 1vw;
@@ -186,12 +234,16 @@
             <div class="s1Text3 fixed"
                 data-3200 = "width: 0vw;"
                 data-4200 = "width: 100vw;"
+                data-10200 = "width: 100vw; display: block"
+                data-10201 = "width: 100vw; display: none"
             ><img src="../assets/img/bg4@2.jpg" alt="이미지"></div>
             <div class="s1Text4 fixed"
                 data-3800 = "width: 0vw; height: 0vw;"
                 data-4300 = "width: 40vw; height: 40vw;"
                 data-5500 = "width: 40vw; height: 40vw;"
                 data-6500 = "width: 250vw; height: 250vw;"
+                data-24000 = "width: 250vw; height: 250vw;"
+                data-25000 = "width: 0; height: 0;" 
                 ><span
                     data-4000 = "transform: translate(-50%, -50%) scale(0) rotate(-360deg)"
                     data-4500 = "transform: translate(-50%, -50%) scale(1) rotate(0deg)"
@@ -202,60 +254,177 @@
         <!-- //section1 -->
         <section id="section2">
             <div class="s2Text1 fixed"
-                data-7000 = "transform: translate(-50%, 0%); scale(1); top:50%; opacity:0;"
-                data-8000 = "transform: translate(-50%, -50%); scale(1); top:50%; opacity:1;"
-                data-9000 = "transform: translate(-50%, -50%); scale(0.7); top:14%; opacity:1;"
+                data-7000 = "transform: translate(-50%, 0%) scale(1); top:50%; opacity:0;"
+                data-8000 = "transform: translate(-50%, -50%) scale(1); top:50%; opacity:1;"
+                data-9000 = "transform: translate(-50%, -50%) scale(0.7); top:14%; opacity:1;"
+
+                data-23000 = "transform: translate(-50%, -50%) scale(0.7); top:14%; opacity:1;"
+                data-24000 = "transform: translate(-50%, -50%) scale(1); top:50%; opacity:1;"
+                data-24500 = "transform: translate(-50%, -50%) scale(1); top:50%; opacity:1;"
+                data-25000 = "transform: translate(-50%, -50%) scale(0); top:50%; opacity:1;"
+                
             >I've Been Working On Sites</div>
 
-            <div class="s2Text2 fixed"
-                data-9000 = "opacity:0; top:60%;"
-                data-10000 = "opacity:1; top:30%;"
-                data-11000 = "opacity:1; top:30%;"
-                data-12000 = "opacity:0; top:60%;"
-            >
-                <h2>웹표준을 준수한 웹 표준 사이트 제작</h2>
+            <div class="s2Text2"   >
+                <div class="t1 fixed"
+                    data-9000="opacity: 0; top: 50%;"
+                    data-10000="opacity: 1; top: 30%;"
+                    data-11500="opacity: 1; top: 30%;"
+                    data-12500="opacity: 0; top: 50%;"
+                >
+                    <h2>웹표준을 준수한<br>웹 표준 사이트 제작</h2>
 
-                <p>웹접근성지침서2.0을 바탕으로 사이트를 제작하였습니다. 웹 표준에 필요한 인식의
-                    용이성, 운용의 용이성, 이해의 용이성, 견고성을 바탕으로 코딩을 하였으며, 크로스브
-                    라우징도 작업하였습니다.
-                </p>
-            </div>
-            <div class="s2Text2 fixed"
-                data-12000 = "opacity:0; top:60%;"
-                data-13000 = "opacity:1; top:30%;"
-                data-14000 = "opacity:1; top:30%;"
-                data-15000 = "opacity:0; top:60%;"
-            >
-                <h2>웹표준을 준수한 웹 표준 사이트 제작2</h2>
+                    <p>웹접근성지침서2.0을 바탕으로 사이트를 제작하였습니다. 웹 표준에 필요한 인식의
+                        용이성, 운용의 용이성, 이해의 용이성, 견고성을 바탕으로 코딩을 하였으며, 크로스브
+                        라우징도 작업하였습니다.
+                    </p>
+                </div>
+                <div div class="t2 fixed"
+                    data-12500="opacity: 0; top: 50%;"
+                    data-13500="opacity: 1; top: 30%;"
+                    data-15000="opacity: 1; top: 30%;"
+                    data-16000="opacity: 0; top: 50%;"      
+                >
+                    <h2>반응형을 준수한<br>반응형 사이트 제작</h2>
 
-                <p>웹접근성지침서2.0을 바탕으로 사이트를 제작하였습니다. 웹 표준에 필요한 인식의
-                    용이성, 운용의 용이성, 이해의 용이성, 견고성을 바탕으로 코딩을 하였으며, 크로스브
-                    라우징도 작업하였습니다.
-                </p>
+                    <p>웹접근성지침서2.0을 바탕으로 사이트를 제작하였습니다. 웹 표준에 필요한 인식의
+                        용이성, 운용의 용이성, 이해의 용이성, 견고성을 바탕으로 코딩을 하였으며, 크로스브
+                        라우징도 작업하였습니다.
+                    </p>
+                </div>
+                <div div class="t3 fixed"
+                    data-16000="opacity: 0; top: 50%;"
+                    data-17000="opacity: 1; top: 30%;"
+                    data-18500="opacity: 1; top: 30%;"
+                    data-19500="opacity: 0; top: 50%;"
+                >
+                    <h2>php를 이용한 <br>웹표준 사이트 제작</h2>
+
+                    <p>웹접근성지침서2.0을 바탕으로 사이트를 제작하였습니다. 웹 표준에 필요한 인식의
+                        용이성, 운용의 용이성, 이해의 용이성, 견고성을 바탕으로 코딩을 하였으며, 크로스브
+                        라우징도 작업하였습니다.
+                    </p>
+                </div>
+                <div div class="t4 fixed"
+                    data-19500="opacity: 0; top: 50%;"
+                    data-20500="opacity: 1; top: 30%;"
+                    data-22500="opacity: 1; top: 30%;"
+                    data-23500="opacity: 0; top: 50%;"
+                >
+                    <h2>리액트를 이용한 <br>웹표준 사이트 제작</h2>
+
+                    <p>웹접근성지침서2.0을 바탕으로 사이트를 제작하였습니다. 웹 표준에 필요한 인식의
+                        용이성, 운용의 용이성, 이해의 용이성, 견고성을 바탕으로 코딩을 하였으며, 크로스브
+                        라우징도 작업하였습니다.
+                    </p>
+                </div>  
             </div>
             <div class="s2Text3 fixed"
                 data-8000 = "top:210%; transform: translate(-50%, -50%) scale(3.4);"
                 data-9000 = "top:70%; transform: translate(-50%, -50%) scale(1);"
+                data-22500 = "opacity: 1; top:70%;"
+                data-23500 = "opacity: 0; top: 210%;"
             >
-                <div class="img-wrap">
-                <div class="img1">
-                    <img src="../assets/img/apple-site01.jpg" alt="1"
-                        data-11000 = "transform: translate(0%, 0%);"
-                        data-12000 = "transform: translate(-100%, 0%);"
-                    >
+            <div class="img-wrap"
+                data-0="display:block"
+                data-26000="display:block"
+                data-26001="display:none"
+            >
+                <div class="img1"
+                    data-11000 = "left: 0%"
+                    data-13000 = "left: -100%"
+                >
+                    <a class="view" href="#">view</a>
+                    <img src="../assets/img/apple-site01.jpg" alt="사이트1">
                 </div>
-                <div class="img2">
-                    <img src="../assets/img/apple-site02.jpg" alt="2"
-                        data-11000 = "transform: translate(100%, 0%);"
-                        data-12000 = "transform: translate(0%, 0%);"
-                    >
+                <div class="img2"
+                    data-11000 = "left: 100%"
+                    data-13000 = "left: 0%"
+                    data-15000 = "left: 0%"
+                    data-16000 = "left: -100%"
+                >
+                    <a class="view" href="#">view</a>
+                    <img src="../assets/img/apple-site02.jpg" alt="사이트2">
                 </div>
-                <div class="img3"></div>
-                <div class="img4"></div>
+                <div class="img3"
+                    data-15000 = "left: 100%"
+                    data-16000 = "left: 0%"
+                    data-18000 = "left: 0%"
+                    data-19000 = "left: -100%"
+                >
+                    <a class="view" href="#">view</a>
+                    <img src="../assets/img/apple-site03.jpg" alt="사이트3">
+                </div>
+                <div class="img4"
+                    data-18000 = "left: 100%"
+                    data-19000 = "left: 0%"
+                >
+                    <a class="view" href="#">view</a>
+                    <img src="../assets/img/apple-site03.jpg" alt="사이트4">
+                </div>
             </div>
         </section>
         <!-- //section2 -->
-        <section id="section3"></section><!-- //section3 -->
+        <style>
+            .s3Text1 {
+                font-size: 8vw;
+                font-weight: 100;
+                font-family: 'NEXONLv1Gothic';
+                text-transform: uppercase;
+                font-weight: 700;
+                border-radius: 4vw;
+                border: 1vw solid #000;
+                padding: 14vw 2vw;
+                box-sizing: border-box;
+            }
+
+
+            .s3Text1 span {
+                display: inline-block;
+
+            }
+            
+        </style>
+        <section id="section3">
+            <div class="s3Text1 fixed"
+                data-26000 = "transform: translate(-50%, -50%) scale(1)"
+                data-27000 = "transform: translate(-50%, -50%) scale(1.5)"
+                data-27500 = "transform: translate(-50%, -50%) scale(1)"
+            >
+                <span class="s1"
+                    data-26000 = "transform: scale(1)"
+                    data-26500 = "transform: scale(2.2)"
+                    data-27000 = "transform:scale(1)"
+  
+                >s</span>  
+                <span class="s2"  
+                    data-26100 = "transform:  scale(1)"
+                    data-26600 = "transform:  scale(2.2)"
+                    data-27100 = "transform:  scale(1)"
+                >c</span>  
+                <span class="s3"  
+                    data-26200 = "transform:  scale(1)"
+                    data-26700 = "transform:  scale(2.2)"
+                    data-27200 = "transform:  scale(1)"
+                >r</span>  
+                <span class="s4"  
+                    data-26300 = "transform:  scale(1)"
+                    data-26800 = "transform:  scale(2.2)"
+                    data-27300 = "transform:  scale(1)"
+                >i</span>  
+                <span class="s5"  
+                    data-26400 = "transform:  scale(1)"
+                    data-26900 = "transform:  scale(2.2)"
+                    data-27400 = "transform:  scale(1)"
+                >p</span>
+                <span class="s6"
+                    data-26500 = "transform:scale(1)"
+                    data-27000 = "transform:scale(2.2)"
+                    data-27500 = "transform:scale(1)"
+                >t</span>
+            </div>
+        </section>
+        <!-- //section3 -->
         <section id="section4"></section><!-- //section4 -->
         <section id="section5"></section><!-- //section5 -->
         <section id="section6"></section><!-- //section6 -->
