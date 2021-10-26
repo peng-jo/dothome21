@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 </head>
 <style>
+     @font-face {
+        font-family: 'Cafe24SsurroundAir';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
     @font-face {
         font-family: 'Cafe24Syongsyong';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Syongsyong.woff') format('woff');
@@ -39,8 +45,8 @@
     .audio .btn-sound {
         width: 30px;
         height: 30px;
-        background: #a6c8e9;
-        line-height: 28px;
+        background: #516E84;
+        line-height: 30px;
         text-align: center;
         display: block;
         color: #fff;
@@ -50,7 +56,7 @@
     }
 
     body {
-        background: #7176AD;
+        background: #b2c1dd;
         font-family: 'Cafe24Syongsyong';
     }
 
@@ -68,7 +74,44 @@
     }
     .success {
         display: none;
+        position: fixed;
+        left: 0; top: 0;
+        width: 100%;
+        height: 100vh;
+        backdrop-filter: blur(10px);
+        background: rgba(0,0,0,0.2);
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 10000;
     }
+    .success h2 {
+        font-family: 'Cafe24SsurroundAir';
+        font-size: 6vw;
+        color:#fff;
+        margin-bottom: 20px;
+    }
+    .success .class-continue {
+        font-family: 'Cafe24SsurroundAir';
+        font-size: 23px;
+        background: #000;
+        border: 0;
+        color: #fff;
+        padding: 1vw 4vw;
+        margin: 1vw;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: all 0.3s;
+    }
+    .success .class-continue:hover{
+        color: #000;
+        background: #fff;
+    }
+    .success.is-visible {
+        display: flex;
+    }
+    
     /* card */
     .cardWrap {
         display: grid;
@@ -79,7 +122,7 @@
         top: 50%;
         transform: translate(-50%, -50%);
         perspective: 600px;
-        border: 6px solid #223C6F;
+        border: 6px solid #516E84;
         padding: 1vw;
         border-radius: 1vw;
     }
@@ -91,6 +134,18 @@
         transition: all 0.6s;
         cursor: pointer;
     }
+    .card.is-selected {
+        transform: rotateY(-180deg);
+    }
+    .card[data-matched=true]{
+        animation: matchSuccess 0.4s ease-out 3 forwards;
+    }
+    @keyframes matchSuccess {
+        0% {transform: rotateY(180deg) scale(1); }
+        50% {transform: rotateY(180deg) scale(1.05); }
+        100% {transform: rotateY(180deg) scale(1); }
+    }
+
     .cardWrap .card>div {
         position: absolute;
         left: 0;
@@ -98,7 +153,7 @@
         width: 100%;
         height: 100%;
         border-radius: .4vw;
-        background-color: #1D2C57;
+        background-color: #516E84;
         backface-visibility: hidden;
         background-position: center;
         background-repeat: no-repeat;
@@ -112,7 +167,9 @@
     .cardWrap .card .back {
         transform: rotateY(-180deg);
     }
-
+    .cardWrap.is-disabled {
+        pointer-events: none;
+    }
     /* card img */
     .cardWrap .card .front {
         background-image: url(img/sagittariusImg.png);
@@ -164,96 +221,96 @@
                 <!-- <i class="fa fa-volume-up " aria-hidden="true"></i> -->
                 <i class="fa fa-volume-off isPlaying" aria-hidden="true"></i>
             </span>
-            <audio id="theme-song" src="../assets/audio/Time to Spare - An Jone.mp3" loop="loop"></audio>
+            <audio id="theme-song" src="../assets/audio/First Of 3 - Jeremy Black.mp3" loop="loop"></audio>
         </article>
         <article class="title">
             <h1>카드 뒤집기 게임</h1>
             <div class="score">
-                <p class="truns">기회 :<span>5</span>번</p>
+                <p class="turns">기회 :<span>5</span>번</p>
                 <p class="attempts">시도 :<span>0</span></p>
-                <p class="wins">우승 :<span>50</span></p>
+                <p class="wins">우승 :<span>0</span></p>
             </div>
         </article>
         <div class="success">
             <h2 class="msg">GOOD 잘하시네요</h2>
             <h1>카드 뒤집기 게임</h1>
             <div class="score core">
-                <p class="truns">기회 : <span>5</span></p>
+                <p class="turns">기회 : <span>5</span></p>
                 <p class="attempts">시도 : <span>0</span></p>
-                <p class="wins">우승 : <span>50</span></p>
+                <p class="wins">우승 : <span>0</span></p>
             </div>
             <button class="class-continue">다시 도전하기</button>
         </div>
         <section class="cardWrap">
-            <div class="card" data-type="img1">
+            <div class="card" data-type="img1" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img1">
+            <div class="card" data-type="img1" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img2">
+            <div class="card" data-type="img2" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img2">
+            <div class="card" data-type="img2" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img3">
+            <div class="card" data-type="img3" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img3">
+            <div class="card" data-type="img3" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img4">
+            <div class="card" data-type="img4" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img4">
+            <div class="card" data-type="img4" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img5">
+            <div class="card" data-type="img5" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img5">
+            <div class="card" data-type="img5" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img6">
+            <div class="card" data-type="img6" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img6">
+            <div class="card" data-type="img6" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img7">
+            <div class="card" data-type="img7" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img7">
+            <div class="card" data-type="img7" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img8">
+            <div class="card" data-type="img8" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img8">
+            <div class="card" data-type="img8" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img9">
+            <div class="card" data-type="img9" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card" data-type="img9">
+            <div class="card" data-type="img9" data-matched="false">
                 <div class="front"></div>
                 <div class="back"></div>
             </div>
@@ -265,28 +322,174 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <script>
-    const $btnSound = $(".btn-sound");
-    const $themeSong = $("#theme-song")[0];
-    const selectedClass = "isSelected";
-    const dataType = "data-type";
-    let sound = [
-        "../assets/audio/Time to Spare - An Jone.mp3",
-        "../assets/audio/ok.mp3",
-        "../assets/audio/wrong.mp3",
-    ]
+    const $cardWrap = $(".cardWrap"),
+        $card = $(".card"),
+        $btnSound = $(".btn-sound"),
+        $themeSong = $("#theme-song")[0],
+        $success = $(".success"),
+        $successMsg = $(".success .msg"),
+        $btnContinue = $(".class-continue"),
+        $turns = $(".turns span"),
+        $wins = $(".wins span"),
+        $attempts = $(".attempts span"),
 
-    soundMatch = new Audio(sound[0]);
-    soundMatchFail = new Audio(sound[1]);
-    soundSuccess = new Audio(sound[2]);
+        dataMatch = "data-matched",
+        selectedClass = "is-selected",
+        dataType = "data-type",
+        playsoundClass = "is-playing",
+        visibleClass = "is-visible",
+        playStop = "is-disabled",
+        timeoutLength = 900;
+    let sound = [
+        "../assets/audio/up.mp3",
+        "../assets/audio/wrong.mp3",
+        "../assets/audio/ok.mp3",
+    ],    
+    soundMatch = new Audio(sound[0]),
+    soundMatchFail = new Audio(sound[1]),
+    soundSuccess = new Audio(sound[2]),
+    turnCount = 5,      //기회 횟수
+    attemptsCount = 0,   //시도 횟수
+    winsCount = 0,      //우승 횟수
+    card1, card2, msg;
 
     $btnSound.on("click", function () {
         $(this).find("i").toggleClass("fa fa-volume-up fa fa-volume-off");
-        $(this).toggleClass("isPlaying");
+        $(this).toggleClass("is-playing");
         //play
-        if ($(this).hasClass("isPlaying")) {
+        if ($(this).hasClass("is-playing")) {
             $themeSong.play();
         } else {
             $themeSong.pause();
         }
     });
+
+    //카드를 클릭하면 is-selected를 추가
+    $card.click(function(){
+        //dataMAtched == false 이면 클릭한 카드에 isSelected 클래스 추가
+        if( $(this).attr(dataMatch) == "false"){
+            $(this).addClass(selectedClass);
+        }
+        //만약에 카드1과 카드2가 같다면
+
+        let selectedCards = $("."+ selectedClass);
+
+        if( selectedCards.length == 2){
+            $cardWrap.addClass(playStop);
+            card1 = selectedCards.eq(0).attr(dataType);
+            card2 = selectedCards.eq(1).attr(dataType);
+            //카드1과 카드2가 같으면 datatMatched -> true
+            if( card1 == card2 ){
+                selectedCards.attr(dataMatch,true).removeClass(selectedClass);
+                $cardWrap.removeClass(playStop);
+                //성공 음악 재생
+                if( $btnSound.hasClass(playsoundClass) ){
+                    soundMatch.play();  
+                }
+                              
+            } else {
+                //실패 음악 재생
+                if( $btnSound.hasClass(playsoundClass) ){
+                    soundMatchFail.play(); 
+                }
+                setTimeout(()=>{
+                    turnCount--;
+                    $turns.html(turnCount); 
+                    selectedCards.removeClass(selectedClass);
+
+                    if( turnCount <= 0){
+                        turnCount = 5;
+                        attemptsCount++;
+
+                        
+                        $attempts.html(attemptsCount);
+                        $attempts.attr(dataMatch, false); //모든 카드를 초기화
+                        
+                    }
+                    $cardWrap.removeClass(playStop);
+                },400);            
+            }        
+        }
+        
+
+        //카드를 완성했을 때
+        //dataMatch의 true 갯수 == 전체 카드 갯수 : 성공 음악 추가, 우승 + 1, 성공메세지
+        if( $('['+dataMatch+''+'="true"]').length == $card.length){
+            setTimeout(function(){
+                //성공화면
+                $success.addClass(visibleClass);
+                winsCount++;
+                $wins.html(winsCount)
+                ///성공 음악추가 
+                //성공 음악 재생
+                if( $btnSound.hasClass(playsoundClass) ){
+                    soundSuccess.play();  
+                }
+                //완성 메세지
+                switch(attemptsCount){
+                    case (0) :
+                        msg = "레벨1... 최고의 실력입니다. 머리가 좋네요!!";
+                        break;
+                    case (1) :
+                        msg = "레벨2.. 그럭저럭 하네요~~~";
+                        break;
+                    case (2) :
+                        msg = "레벨3.. 머리가 나쁘네요~~~";
+                    break;
+                    case (3) :
+                        msg = "레벨4.. 머리가 진짜나쁘네요~~~";
+                    break;
+                    default :
+                        msg = "^...^";
+                    break;  
+                }
+                $successMsg.html(msg);
+                
+
+            },timeoutLength)
+
+        }
+       
+        //게임 다시 시작할때
+        $btnContinue.on("click",function(){
+            $success.removeClass(visibleClass);
+            shuffleCards();
+            turnCount = 5;
+            attemptsCount = 0;
+            $attempts.html(attemptsCount);
+            $turns.html(turnCount);
+        });
+
+        
+    });
+    function shuffleCards(){
+        $card.attr(dataMatch, false);
+        let cards = $cardWrap.children();
+        for( let i = 0 ; i<=cards.length; i++){
+            $cardWrap.append(cards.splice(Math.floor(Math.random()*cards.length),1)[0] );
+        }
+        // for()
+        // var num = [1,2,3,4,5,6,7,8,9];
+        // var remove = num.splice(3,1);
+        // var remove = num.splice(3,1);
+        // var remove = num.splice(1,1);
+        // var remove = num.splice(6,1);
+        // var remove = num.splice(8,1);
+        // var remove = num.splice(8,1);
+        // var remove = num.splice(2,1);
+        // var remove = num.splice(5,1);
+        // var remove = num.splice(7,1);
+
+        $card.each(function(index){
+            setTimeout((index)=>{
+                $(this).addClass(selectedClass);
+            },100 * index);
+        });
+        setTimeout((index)=>{
+            $card.removeClass(selectedClass);
+        },4000);
+    }
+
+    //카드 섞기 및 시작하기
+    shuffleCards();
 </script>
