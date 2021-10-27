@@ -177,95 +177,66 @@
     </ol>
 
     <div id="smaple1" class="sample">
-        <h2>세 수 중 최솟값 <span class="dot"></span></h2>
-        <p class="problem">Q. 100이하의 자연수 A, B, C를 입력받아 세 수 중 가장 작은 값을 출력하는 프로그램을 작성하세요.</p>
+        <h2>홀수 <span class="dot"></span></h2>
+        <p class="problem">Q. 7개의 수가 주어지면 그 숫자 중 가장 작은 수를 출력하는 프로그램을 작성하시오.
+            예를 들어 7개의 자연수 12, 77, 38, 41, 53, 92, 85 가 주어지면 이 중 홀수는
+            77, 41, 53, 85이므로 그 합은 256이 되고 최소값은 41이 됩니다.
+        </p>
         <div class="desc">
             <dl>
                 <dt>입력 설명</dt>
-                <dd>첫 번째 출에 100이하의 세 자연수가 입력된다.</dd>
+                <dd>자연수 7개가 주어지고 주어지는 자연수는 100보다 작고 홀수는 한 개 이상 반드시 존재합니다.</dd>
                 <dt>출력 설명</dt>
-                <dd>첫 번째 줄에 가장 작은 수를 출력한다.</dd>
+                <dd>홀수의 합을 출력하고 , 홀수 중에 최솟값을 출력합니다.</dd>
             </dl>
         </div>
         <div class="sam">
             <dl>
                 <td><i class="fa fa-keyboard-o" aria-hidden="true"></i>입력 에제</td>
-                <dd>10 50 85</dd>
+                <dd>12 77 38 41 52 92 85</dd>
                 <dt><i class="fa fa-print" aria-hidden="true"></i>출력 예제</dt>
-                <dd>10</dd>
+                <dd>41 203</dd>
             </dl>
         </div>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">
-    function solution(a,b,c){
-        let result = a;
-        if(a &lt b){
-            result = a;
-        }else {
-            result = b
-        }
-        if( result > b){
-            result = b;
-        }
-        return result;
-    }
-    console.log( solution(10,50,85) );
-</code>
-
-</pre>
-
-        </div>
-    </div>
-
-    <div id="smaple2" class="sample">
-        <h2>최솟값 구하기2 <span class="dot"></span></h2>
-        <p class="problem">Q. 7개의 수가 주어지면 그 숫자 중 가장 작은 수를 출력하는 프로그램을 작성하시오.</p>
-        <div class="desc">
-            <dl>
-                <dt>입력 설명</dt>
-                <dd>7개의 수가 주어진다.</dd>
-                <dt>출력 설명</dt>
-                <dd>가장작은 수를 출력한다.</dd>
-            </dl>
-        </div>
-        <div class="sam">
-            <dl>
-                <td><i class="fa fa-keyboard-o" aria-hidden="true"></i>입력 에제</td>
-                <dd>5 3 7 11 2 15 17</dd>
-                <dt><i class="fa fa-print" aria-hidden="true"></i>출력 예제</dt>
-                <dd>2</dd>
-            </dl>
-        </div>
-        <div class="code">
-<pre class="line-numbers"><code class="language-js">
-    var arr = [5, 3, 7, 11, 2, 15, 17];
+    var arr = [12, 77, 38, 41, 52, 92, 85];
     function solution(arr){
-        let pre = arr[0];
-        arr.forEach((el)=>{
-            if(pre > el){
-                pre = el;
+        let answer = [];
+        let sum = 0;
+        let min = Number.MAX_SAFE_INTEGER;
+        
+        for( let x of arr){
+            if( x % 2 === 1){
+                sum += x;
+                if( x < min){
+                    min = x;
+                }
             }
-        })
-        return pre;
+        }
+        answer.push(sum);
+        answer.push(min);
+
+        return answer;
     }
-    console.log(solution(arr));
+    solution(arr);
 
     function solution2(arr){
-        Math.min(...arr)
-    }
-    console.log(solution2(arr));
 
-    function solution3(arr){
-        Math.min.apply(Math, arr)
+        arr = arr.filter( el =>{
+            return el % 2 == 1;
+        });
+
+        return [Math.min(...arr), arr.reduce( (pre, cur) => pre + cur )];
     }
-    console.log(solution3(arr));
+
+    solution2(arr);
 </code>
 
 </pre>
         </div>
     </div>
-
-
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js" integrity="sha512-axJX7DJduStuBB8ePC8ryGzacZPr3rdLaIDZitiEgWWk2gsXxEFlm4UW0iNzj2h3wp5mOylgHAzBzM4nRSvTZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
