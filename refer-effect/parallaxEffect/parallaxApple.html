@@ -129,7 +129,7 @@
             font-weight: 700;
         }
         .s1Text2 {
-            font-size: 8vw;
+            font-size: 6vw;
             font-weight: 700;
             white-space: nowrap;
         }
@@ -241,9 +241,9 @@
             <div class="s1Text2 fixed"
                 data-1500 = "transform: translate(-50%, 0%); opacity:0;"
                 data-2000 = "transform: translate(-50%, -50%); opacity:1;"
-                data-2500 = "transform: translate(-50%, -50%); opacity:1; font-size: 8vw;"
+                data-2500 = "transform: translate(-50%, -50%); opacity:1; font-size: 6vw;"
                 data-3500 = "transform: translate(-50%, -50%); opacity:1; font-size: 0vw;"
-            >프론트앤드 개발자입니다.</div>
+            >프론트앤드 개발자 조범수 입니다.</div>
             <div class="s1Text3 fixed"
                 data-3200 = "width: 0vw;"
                 data-4200 = "width: 100vw;"
@@ -441,26 +441,26 @@
                 <span class="s1"
                     data-26000 = "transform: translate(0%, 0%) scale(1.4); opacity:1;"
                     data-26500 = "transform: translate(0%, 0%) scale(2.2)"
-                    data-27000 = "transform: translate(0%, 0%) scale(1); font-size:10vw"
+                    data-27000 = "transform: translate(0%, 0%) scale(1);"
                 >s</span>  
                 <span class="s2"  
-                    data-26100 = "position:relative; transform: scale(1); opacity:1;"
-                    data-26600 = "position:relative; transform: scale(2.2)"
-                    data-27100 = "position:relative; transform: scale(1)"
+                    data-26100 = "transform: scale(1); opacity:1;"
+                    data-26600 = "transform: scale(2.2)"
+                    data-27100 = "transform: scale(1)"
                 >c</span>  
                 <span class="s3"  
-                    data-26200 = "position:relative; transform: scale(1); opacity:1;"
+                    data-26200 = "transform: scale(1); opacity:1;"
                     data-26700 = "transform: scale(2.2);"
                     data-27200 = "transform: scale(1);"
 
                 >r</span>  
                 <span class="s4"  
-                    data-26300 = "position:relative; transform: scale(1); opacity:1;"
+                    data-26300 = "transform: scale(1); opacity:1;"
                     data-26800 = "transform: scale(2.2)"
                     data-27300 = "transform: scale(1)"
                 >i</span>  
                 <span class="s5"  
-                    data-26400 = "position:relative; transform:  scale(1); opacity:1;"
+                    data-26400 = "transform:  scale(1); opacity:1;"
                     data-26900 = "transform: scale(2.2)"
                     data-27400 = "transform: scale(1)"
                 >p</span>
@@ -472,22 +472,22 @@
             </div>
             <div class="s3Text2 fixed">
                 <iframe class="i1" src="../mouseEffect/javascriptME01.html" alt="mouse"
-                    data-34000 = "transform: translate3d(-80%, -50%, -10000px); opacity:0"
-                    data-35000 = "transform: translate3d(-80%, -50%, 0px); opacity:1"
-                    data-37000 = "transform: translate3d(-80%, -50%, 0px); opacity:1"
-                    data-38500 = "transform: translate3d(-80%, -50%, 1000px); opacity:0"
+                    data-28000 = "transform: translate3d(-80%, -50%, -10000px); opacity:0"
+                    data-29000 = "transform: translate3d(-80%, -50%, 0px); opacity:1"
+                    data-33000 = "transform: translate3d(-80%, -50%, 0px); opacity:1"
+                    data-36000 = "transform: translate3d(-80%, -50%, 1000px); opacity:0"
                 ></iframe>
                 <iframe class="i2" src="../parallaxEffect/javascriptPE01.html" alt="mouse"
-                    data-35000 = "transform: translate3d(-50%, -80%, -10000px); opacity:0"
-                    data-36000 = "transform: translate3d(-50%, -80%, 0px); opacity:1"
-                    data-37000 = "transform: translate3d(-50%, -80%, 0px); opacity:1"
-                    data-38000 = "transform: translate3d(-50%, -80%, 1000px); opacity:0"
+                    data-29000 = "transform: translate3d(-50%, -80%, -10000px); opacity:0"
+                    data-30000 = "transform: translate3d(-50%, -80%, 0px); opacity:1"
+                    data-33000 = "transform: translate3d(-50%, -80%, 0px); opacity:1"
+                    data-35000 = "transform: translate3d(-50%, -80%, 1000px); opacity:0"
                 ></iframe>
                 <iframe class="i3" src="../mouseEffect/jqueryME04.html" alt="mouse"
-                    data-36000 = "transform: translate3d(-30%, -30%, -10000px); opacity:0"
-                    data-37000 = "transform: translate3d(-30%, -30%, 0px); opacity:1"
-                    data-37000 = "transform: translate3d(-30%, -30%, 0px); opacity:1"
-                    data-37500 = "transform: translate3d(-30%, -30%, 1000px); opacity:0"
+                    data-30000 = "transform: translate3d(-30%, -30%, -10000px); opacity:0"
+                    data-31000 = "transform: translate3d(-30%, -30%, 0px); opacity:1"
+                    data-33000 = "transform: translate3d(-30%, -30%, 0px); opacity:1"
+                    data-34000 = "transform: translate3d(-30%, -30%, 1000px); opacity:0"
                 ></iframe>
             </div>
         </section>
@@ -654,34 +654,253 @@
             }
             .s4Text2 .ani3 {
                 display: flex;
-                justify-content: center;
                 opacity: 0;
                 transform: translate(-50%, -50%);
                 height: 50vh;
                 width: 50vw;
-                background: #fff;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                background-color: #FFEDB2;
             }
-            .s4Text2 .ani3 .load {
-                width: 10px;
+          
+            .ani3 .van:after {
+                content: "";
+                height: 2px;
+                width: 100%;
+                background-color: #000;
+                opacity: 0.7;
+                position: absolute;
+                left: 0%;
+            }
+
+            .ani3 .van-body {
+                background-color: #FFBF87;
+                border-radius: 30px 50px 10px 5px;
+                height: 100px;
+                width: 210px;
+                position: relative;
+                animation: bounce 0.25s ease-in-out infinite alternate;
+            }
+            .ani3 .van-body .canopy {
+                position: relative;
+                background-color: #FF9867;
+                border-radius: 30px 20px 0 0;
+                width: 92%;
                 height: 10px;
-                position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
-                /*change these sizes to fit into your project*/
-                width:100px;
-                height:100px;
+                top: -50px;
+                left: 8px;
+            }
+            .ani3 .van-body .roofrack {
+                width: 90px;
+                height: 3px;
+                background-color: #000;
+                opacity: 0.5;
+                position: relative;
+                top: -68px;
+                left: 75px;
+                display: flex;
+            }
+            .ani3 .van-body .roofrack .support {
+                height: 5px;
+                width: 3px;
+                background-color: #000;
+                position: relative;
+                top: 3px;
+                left: 10px;
+            }
+            .ani3 .van-body .roofrack .support:nth-of-type(2) {
+                left: 75px;
+            }
+            .ani3 .van-body .roofrack .board {
+                width: 100%;
+                height: 5px;
+                background-color: #FF9867;
+                position: relative;
+                top: -5px;
+                left: -15px;
+                border-radius: 20px 20px 0 0;
+            }
+            .ani3 .van-body .roofrack .board:before {
+                content: "";
+                width: 0;
+                position: absolute;
+                left: 10px;
+                top: -7px;
+                border-left: 3px solid #306D85;
+                border-top: 7px solid #FFEDB2;
+                background-color: #306D85;
+            }
+            .ani3 .van-body .tailpipe {
+                height: 5px;
+                width: 5px;
+                background-color: #000;
+                opacity: 0.5;
+                position: relative;
+                left: -5px;
+                top: 20px;
+                display: flex;
+            }
+            .ani3 .van-body .tailpipe .smoke {
+                border-radius: 50%;
+                background-color: #306D85;
+                position: absolute;
+                animation: smoke 0.8s ease-out infinite;
+            }
+            .ani3 .van-body .tailpipe .smoke:nth-of-type(1) {
+                height: 10px;
+                width: 10px;
+                left: -8px;
+                top: -3px;
+            }
+            .ani3 .van-body .tailpipe .smoke:nth-of-type(2) {
+                height: 14px;
+                width: 14px;
+                left: -16px;
+                top: -8px;
+            }
+            .ani3 .van-body .tailpipe .smoke:nth-of-type(3) {
+                height: 18px;
+                width: 18px;
+                left: -28px;
+                top: -14px;
+            }
+            .ani3 .van-body .window-layer {
+                background-color: #FFF;
+                border-radius: 30px 50px 0 0;
+                height: 50px;
+                opacity: 0.8;
+                display: flex;
+            }
+            .ani3 .van-body .window-layer .window {
+                position: relative;
+                background-color: #306D85;
+                border-radius: 5px;
+                opacity: 0.3;
+                height: 30px;
+                width: 30px;
+                top: 15px;
+            }
+            .ani3 .van-body .window-layer .window:before {
+                content: "";
+                height: 10px;
+                width: 100%;
+                position: absolute;
+                background-color: #FFF;
+                opacity: 0.5;
+            }
+            .ani3 .van-body .window-layer .window:nth-of-type(1) {
+                left: 50px;
+            }
+            .ani3 .van-body .window-layer .window:nth-of-type(2) {
+                left: 55px;
+            }
+            .ani3 .van-body .window-layer .window:nth-of-type(3) {
+                left: 60px;
+            }
+            .ani3 .van-body .window-layer .window:nth-of-type(4) {
+                left: 65px;
+                border-radius: 5px 40px 5px 5px;
+                width: 45px;
+            }
+            .ani3 .van-body .window-layer .window:nth-of-type(4) .me {
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+                background-color: #FFEDB2;
+                opacity: 0.9;
+                position: absolute;
+                top: 12px;
+                left: 10px;
+            }
+            .ani3 .van-body .rear,
+            .ani3 .van-body .front {
+                position: relative;
+            }
+            .ani3 .van-body .rear {
+                left: 20px;
+                border-radius: 5px 5px 0 0;
+                top: 22px;
+                height: 10px;
+                width: 40px;
+                background-color: #FFEDB2;
+            }
+            .ani3 .van-body .rear:before {
+                content: "";
+                display: block;
+                position: relative;
+                top: -15px;
+                height: 15px;
+                width: 40px;
+                background-color: #FFBF87;
+                z-index: 10;
+            }
+            .ani3 .van-body .front {
+                left: 155px;
+                border-radius: 15px 15px 0 0;
+                height: 23px;
+                width: 39px;
+                background-color: #FFEDB2;
             }
 
-            .ani3 .load hr{border:0;margin:0;width:40%;height:40%;position:absolute;border-radius:50%;animation:spin 2s ease infinite}
+            .ani3 .wheels {
+                display: flex;
+            }
+            .ani3 .wheels .wheel {
+                height: 30px;
+                width: 30px;
+                background-color: #FFF;
+                opacity: 0.7;
+                border: 5px solid #000;
+                border-radius: 50%;
+                position: relative;
+                top: 0;
+                left: 25px;
+                animation: spin 0.8s linear infinite;
+            }
+            .ani3 .wheels .wheel:after {
+                content: "";
+                height: 4px;
+                width: 4px;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                background-color: #FF9867;
+                position: absolute;
+                top: 4px;
+                left: 4px;
+                
+            }
+            .ani3 .wheels .wheel:last-of-type {
+                left: 128px;
+            }
 
-            .ani3 .load :first-child{background:#19A68C;animation-delay:-1.5s}
-            .ani3 .load :nth-child(2){background:#F63D3A;animation-delay:-1s}
-            .ani3 .load :nth-child(3){background:#FDA543;animation-delay:-0.5s}
-            .ani3 .load :last-child{background:#193B48}
-
-            @keyframes spin{
-                0%,100%{transform:translate(0)}
-                25%{transform:translate(160%)}
-                50%{transform:translate(160%, 160%)}
-                75%{transform:translate(0, 160%)}
+            @keyframes smoke {
+                0% {
+                    opacity: 0;
+                    height: 0;
+                    width: 0;
+                    left: 0;
+                    top: 0;
+                }
+                50% {
+                    opacity: 0.4;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+            @keyframes bounce {
+                0% {
+                    top: 17px;
+                }
+                100% {
+                    top: 20px;
+                }
+            }
+            @keyframes spin {
+                100% {
+                    transform: rotate(360deg);
+                }
             }
             .s4Text2 .title {
                 color: #fff;
@@ -741,58 +960,60 @@
 
 <section id="section4">
     <div class="s4Text1"
-        data-39999="display: none;"
-        data-40000="display: block;"
-        data-43000="display: block;"
+        data-34999="display: none;"
+        data-35000="display: block;"
+        data-38000="display: block;"
     >
         <div class="circle1 fixed"
-            data-40000 = "width:0vw; height:0vw;"
-            data-43000 = "width:200vw; height:200vw;"
-            
+            data-35000 = "width:0vw; height:0vw;"
+            data-38000 = "width:200vw; height:200vw;"
         >
         </div>
         <div class="circle2 fixed"
-            data-40050 = "width:0vw; height:0vw;"
-            data-43000 = "width:200vw; height:200vw;"
+            data-35050 = "width:0vw; height:0vw;"
+            data-38000 = "width:200vw; height:200vw;"
         >
         </div>
         <div class="circle3 fixed"
-            data-40100 = "width:0vw; height:0vw;"
-            data-43000 = "width:200vw; height:200vw;"
+            data-35100 = "width:0vw; height:0vw;"
+            data-38000 = "width:200vw; height:200vw;"
         >
         </div>
         <div class="circle4 fixed"
-            data-40150 = "width:0vw; height:0vw;"
-            data-43000 = "width:200vw; height:200vw;"
+            data-35150 = "width:0vw; height:0vw;"
+            data-38000 = "width:200vw; height:200vw;"
         >
         </div>
         <div class="circle5 fixed"
-            data-40200 = "width:0vw; height:0vw;"
-            data-43000 = "width:200vw; height:200vw;"
+            data-35200 = "width:0vw; height:0vw;"
+            data-38000 = "width:200vw; height:200vw;"
         ></div>
         <div class="circle6 fixed"
-            data-40250 = "width:0vw; height:0vw;"
-            data-43000 = "width:200vw; height:200vw;"
+            data-35250 = "width:0vw; height:0vw;"
+            data-38000 = "width:200vw; height:200vw;"
         ></div>
     </div>
     <div class="s4Text2 fixed"
-        data-41700 = "opacity:0"
-        data-42000 = "opacity:1"
+        data-36500 = "opacity:0"
+        data-36800 = "opacity:1"
     >
         <div class="text"
-            data-41700 = "opacity:1;"
-            data-42999 = "opacity:1;"
-            data-43000 = "opacity:0;"
-            data-43001 = "display:none;"
+            data-36800 = "opacity:1;"
+            data-37100 = "opacity:1;"
+            data-37400 = "opacity:0;"
+            data-37700 = "opacity:1;"
+            data-38100 = "opacity:1;"
+            data-38400 = "opacity:0;"
+
         >
             ANIMATION
         </div>
         
         <div class="ani1 fixed"
-            data-43000 = "opacity:0"
-            data-44000 = "transform: translate(-50%, -50%); opacity:1;"
-            data-45000 = "transform: translate(-50%, -50%); opacity:1;"
-            data-46000 = "transform: translate(-200%, -50%); opacity:1;"
+            data-39000 = "opacity:0"
+            data-40000 = "transform: translate(-50%, -50%); opacity:1;"
+            data-41000 = "transform: translate(-50%, -50%); opacity:1;"
+            data-42000 = "transform: translate(-200%, -50%); opacity:1;"
         >
             
         <div class="title">GOST</div>
@@ -842,28 +1063,55 @@
                 </p>
         </div>
         <div class="ani2 fixed"
-            data-45000 = "transform: translate( 50%, -50%); opacity:0;"
-            data-46000 = "transform: translate(-50%, -50%); opacity:1;"
-            data-47000 = "transform: translate(-50%, -50%); opacity:1;"
-            data-48000 = "transform: translate(-200%, -50%); opacity:1;"
+            data-41000 = "transform: translate( 50%, -50%); opacity:0;"
+            data-42000 = "transform: translate(-50%, -50%); opacity:1;"
+            data-43000 = "transform: translate(-50%, -50%); opacity:1;"
+            data-44000 = "transform: translate(-200%, -50%); opacity:1;"
         >
         <div class="title">BOX</div>
             <div class="box"></div>
         </div>
         <div class="ani3 fixed"
-            data-47000 = "transform: translate( 50%, -50%); opacity:0;"
-            data-48000 = "transform: translate(-50%, -50%); opacity:1;"
-            data-49000 = "transform: translate(-50%, -50%); opacity:1;"
-            data-50000 = "transform: translate(-200%, -50%); opacity:1;"
+            data-43000 = "transform: translate( 50%, -50%); opacity:0;"
+            data-44000 = "transform: translate(-50%, -50%); opacity:1;"
+            data-45000 = "transform: translate(-50%, -50%); opacity:1;"
+            data-46000 = "transform: translate(-200%, -50%); opacity:1;"
         >
-        <div class="title">SPIN CIRCLES</div>
-            <div class="load">
-                <hr/><hr/><hr/><hr/>
+        
+        <div class="van">
+            <div class="title">VAN</div>
+            <div class="van-body">
+              <div class="window-layer">
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window">
+                  <div class="me"></div>
+                </div>
+              </div>
+              <div class="canopy"></div>
+              <div class="roofrack">
+                <div class="support"></div>
+                <div class="support"></div>
+                <div class="board"></div>
+              </div>
+              <div class="tailpipe">
+                <div class="smoke"></div>
+                <div class="smoke"></div>
+                <div class="smoke"></div>
+              </div>
+              <div class="rear"></div>
+              <div class="front"></div>
             </div>
+            <div class="wheels">
+              <div class="wheel"></div>
+              <div class="wheel"></div>
+            </div>
+          </div>
         </div>
         <div class="s4Text3"
-            data-49999 ="display:none"
-            data-50000 ="display:block"
+            data-45999 ="display:none"
+            data-46000 ="display:block"
         >
             <h2>Contact ME!</h2>
             <div class="contact">
