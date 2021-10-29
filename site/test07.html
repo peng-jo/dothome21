@@ -387,6 +387,8 @@
         </div>
     </footer>
     <!-- //footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
 
         const sliderInner = document.querySelector(".banner-wraper");
@@ -434,23 +436,12 @@
                 tabCont[index].style.display = "flex";
             });
         })
-
-        const arcodianBtn = document.querySelectorAll('.arcodian2 > li')
-        const arcodiantabCont = document.querySelectorAll(".arcodian");
         
-        arcodianBtn.forEach( ( element, index ) =>{
-            element.addEventListener("click",function(){
-                arcodianBtn.forEach((el)=>{
-                    el.classList.remove("active");
-                });
-                element.classList.add("active");
-
-                arcodiantabCont.forEach(el => {
-                    el.style.display = "none";
-                });
-                arcodiantabCont[index].style.display = "block";
-            });
-        })
+        $(".arcodian2 > li").click(function() {
+            $(this).next(".arcodian").stop().slideToggle(300);
+            $(this).toggleClass('active').siblings().removeClass('active');
+            $(this).next(".arcodian").siblings(".arcodian").slideUp(300);
+        });
     </script>
 </body>
 </html>
