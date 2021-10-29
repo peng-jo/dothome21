@@ -18,7 +18,7 @@
 
     /* wrap */
     #wrap {
-        width: 1544px;
+        width: 1000px;
         margin: 0 auto;
         margin-top: 90px;
         overflow: hidden;
@@ -26,51 +26,54 @@
     /* side */
     #side {
         float: left;
-        width: 400px;
+        width: 253px;
 
     }
     #side .logo1 {
         width: 185px;
         height: 63px;
-        margin-bottom: 109px;
+        margin-bottom: 50px;
     }
 
-    #side .arcodian li {
-        padding: 20px 0 24px 17px;
+    #side .arcodian > li {
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+        border-bottom: 1px solid #E4E4E4;
         font-weight: bold;
-        border-bottom: 1.5px solid #E4E4E4;
     }
     #side .arcodian {
         display: none;
-        margin-bottom: 54px;
+
     }
     #side .arcodian.active {
         display: block;
-        margin-bottom: 54px;
+
     }
     #side .arcodian2 li.active {
         color: #0269E3;
-        margin-bottom: 46px;
+        margin-bottom: 28px;
     }
 
-    #side .arcodian2 li {
+    #side .arcodian2 > li {
+        margin-top: 20px;
         font-size: 20px;
-        margin-bottom: 26px;
+        margin-bottom: 8px;
         font-weight: bold;
         
     }
     /* main */
     #main {
-        width: 1050px;
-        margin-left: 90px;
+        width: 716px;
+        margin-left: 19px;
         float: left;
         margin-bottom: 40px;
     }
     #main .banner-hide {
         position: relative;
         overflow: hidden;
-        width: 1050px;
-        height: 610px;
+        width: 100%;
+        height: 400px;
         margin-bottom: 92px;
     }
     #main .banner-wraper {
@@ -84,7 +87,7 @@
         float: left;
         position: relative;
         width: 100%;
-        height: 610px;
+        height: 400px;
     }
     .main {
         text-align: center;
@@ -123,20 +126,20 @@
     }
     .main .tab-inner img {
         margin-bottom: 30px;
-        width: 150px;
-        height: 150px;
+        width: 96px;
+        height: 96px;
     }
     .main .tab-inner span {
 
         text-align: center;
         display: block;
-        font-size: 24px;
+        font-size: 16px;
         font-weight: bold;
         
     }
     .main .tab {
         display: none;
-        width: 1016px;
+
 
         justify-content: space-between;
         margin: 0 auto;
@@ -155,8 +158,8 @@
         background: #F7F7F7;
     }
     .notice .notice-inner {
-        width: 310px;
-        height: 430px;
+        width: 212px;
+        height: 278px;
         position: relative;
         border: 2px solid #E5E5EF;
         background: #fff;
@@ -164,32 +167,32 @@
     }
     .notice .notice-inner .notice-button {
         position: absolute;
-        right: 22px; top: 22px;
+        right: 14px; top: 14px;
     }
     .notice .notice-inner .notice-button img {
-        height: 44px;
-        width: 44px;
+        height: 28px;
+        width: 28px;
     }
     .notice .notice-inner h2 {
-        font-size: 30px;
+        font-size: 22px;
         font-weight: bold;
         margin-top: 48px;
-        margin-bottom: 32px;
+        margin-bottom: 22px;
     }
     .notice .notice-list {
-        padding-left: 38px;
+        padding-left: 30px;
         text-align: center;
     }
     .notice .notice-img {
         display: inline-block;
-        height: 140px;
-        width: 140px;
-        margin-bottom: 50px;
+        height: 88px;
+        width: 88px;
+        margin-bottom: 6px;
     }
     .notice .notice-list li {
         width: 262px;
         list-style-type: disc;
-        margin-bottom: 10px;
+
         color: #6A6A6A;
     }
     .notice .notice-list li span {
@@ -197,9 +200,9 @@
         
         text-align: initial;
         display: block;
-        font-size: 14px;
+        font-size: 8px;
         /* 한줄효과 */
-        width: 253px;
+        width: 177px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -209,27 +212,27 @@
     }
     footer {
       
-        padding: 28px 30px 60px 36px;
-        width: 1540px;
+        padding: 18px 20px 12px 24px;
+        width: 1000px;
         margin: 0 auto 90px auto;
         background: #EDF2F8;
     }
+    footer > img {
+        height: 89px;
+    }
     .footer-inner p {
         display: inline-block;
-        margin-left: 180px;
-        font-size: 24px;
-        line-height: 1.5;
-        width: 590px;
-        height: 100px;
+        margin-left: 48px;    line-height: 1.5;
+        width: 590px;    height: 100px;    margin-top: 27px;
     }
     .footer-inner .sns {
-        margin-top: 20px;
+        margin-top: -200px;
         float: right;
     }
     .footer-inner .sns img {
         float: left;
-        width: 116px;
-        height: 78px;
+        width: 78px;
+        height: 50px;
         display: block;
     }
     
@@ -243,8 +246,8 @@
 
 
             <ul class="arcodian2">
-                <li class="active">서비스</li>
-                <ul class="arcodian active">
+                <li>서비스</li>
+                <ul class="arcodian">
                     <li>분야별 정책정보</li>
                     <li>정책 뉴스</li>
                     <li>연구보고서</li>
@@ -372,8 +375,8 @@
     <footer>
         <div class="footer-inner">
             <img src="./img/test07/logo2.jpg" alt="로고">
-            <p>03171 서울특별시 세종대로 209 (세종로) 행정안전부
-                정부24 콜센터 1588-2188 정부미원안내콜센터 국번없이 110
+            <p>03171 서울특별시 세종대로 209 (세종로) 행정안전부 <br>
+                정부24 콜센터 1588-2188 정부미원안내콜센터 국번없이 110 <br>
                 Copyright © Ministry of the Interior and Safety. All Rights reserved.
             </p>
             <div class="sns">
