@@ -108,7 +108,7 @@
 
         #section4 {
             background: #000;
-            height: 9000px;
+            height: 10000px;
             z-index: 4000;
         }
 
@@ -522,9 +522,27 @@
                 left: 10%;
                 top: 60%;
             }
+            .s4Text2 {
+                font-family: 'NEXONLv1Gothic';
+            }
             .s4Text2 .text {
+                font-size: 10vw;
+                position: absolute;
+                left: 50%; top: 50%;
+                transform: translate(-50%, -100%);
                 font-weight: 500;
-                font-size: 4vw;
+                text-align: center;
+                color: #fff;
+                white-space: nowrap;
+                text-transform: capitalize;
+            }
+            .s4Text2 .text1 {
+
+                position: absolute;
+                left: 50%; top: 50%;
+                transform: translate(-50%, 20%);
+                font-weight: 500;
+                font-size: 7vw;
                 text-align: center;
                 color: #fff;
                 white-space: nowrap;
@@ -532,7 +550,9 @@
             }
             .s4Text2 .ani1 {
                 opacity: 0;
-                transform: translate(-50%, -50%);
+                position: absolute;
+                left: 50%; top: 50%;
+                transform: translate(100%, -50%) rotate(0deg);
                 height: 50vh;
                 width: 50vw;
                 background-color: white;
@@ -541,12 +561,13 @@
                 align-items: center;
                 justify-content: center;
             }
-            .s4Text2 .ani2 {
+            .s4Text2 > .ani2 {
                 display: flex;
-                
                 justify-content: center;
                 opacity: 0;
-                transform: translate(-50%, -50%);
+                position: absolute;
+                left: 50%; top: 50%;
+                transform: translate(100%, -50%) rotate(0deg);
                 height: 50vh;
                 width: 50vw;
                 background-image: linear-gradient(to top, #0ba360, #3cba92);
@@ -942,6 +963,9 @@
                 margin-bottom: 20px;
                 color: #fff;
             }
+            .van .title {
+                color: #C6B88A;
+            }
             
             #section4 .contact .title {
                 width: 100%;
@@ -955,7 +979,20 @@
             }
             .s4Text3 {
                 display: none;
+                opacity:0;
             }
+            .s4Text2 .ani4 {
+                display: flex;
+                opacity: 0;
+                transform: translate(-50%, -50%);
+                height: 50vh;
+                width: 50vw;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                background-color: #FFEDB2;
+            }
+            
         </style>
 
 <section id="section4">
@@ -996,8 +1033,18 @@
     <div class="s4Text2 fixed"
         data-36500 = "opacity:0"
         data-36800 = "opacity:1"
-    >
+    > 
         <div class="text"
+            data-36800 = "opacity:1;"
+            data-37100 = "opacity:1;"
+            data-37400 = "opacity:1;"
+            data-37700 = "opacity:1;"
+            data-38100 = "opacity:1;"
+            data-38400 = "opacity:0;"
+        >
+            ANIMATION    
+        </div>
+        <div class="text1"
             data-36800 = "opacity:1;"
             data-37100 = "opacity:1;"
             data-37400 = "opacity:0;"
@@ -1006,14 +1053,15 @@
             data-38400 = "opacity:0;"
 
         >
-            ANIMATION
+            Lodding...
         </div>
         
-        <div class="ani1 fixed"
-            data-39000 = "opacity:0"
-            data-40000 = "transform: translate(-50%, -50%); opacity:1;"
-            data-41000 = "transform: translate(-50%, -50%); opacity:1;"
-            data-42000 = "transform: translate(-200%, -50%); opacity:1;"
+        <div class="ani1"
+            data-39000 = "transform: translate(100%, -50%) rotate(0deg); opacity:0"
+            data-40000 = "transform: translate(-50%, -50%) rotate(25deg); opacity:1;"
+            data-41500 = "transform: translate(-50%, -50%) rotate(0deg); opacity:1;"
+            data-42000 = "transform: translate(-50%, -50%) rotate(15deg); opacity:1;"
+            data-43000 = "transform: translate(-200%, -50%) rotate(0deg); opacity:1;"
         >
             
         <div class="title">GOST</div>
@@ -1062,20 +1110,22 @@
                     </svg>
                 </p>
         </div>
-        <div class="ani2 fixed"
-            data-41000 = "transform: translate( 50%, -50%); opacity:0;"
-            data-42000 = "transform: translate(-50%, -50%); opacity:1;"
-            data-43000 = "transform: translate(-50%, -50%); opacity:1;"
-            data-44000 = "transform: translate(-200%, -50%); opacity:1;"
+        <div class="ani2"
+            data-43000 = "transform: translate(100%, -50%) rotate(0deg); opacity:0"
+            data-44000 = "transform: translate(-50%, -50%) rotate(25deg); opacity:1;"
+            data-45500 = "transform: translate(-50%, -50%) rotate(0deg); opacity:1;"
+            data-46000 = "transform: translate(-50%, -50%) rotate(15deg); opacity:1;"
+            data-47000 = "transform: translate(-200%, -50%) rotate(0deg); opacity:1;"
         >
-        <div class="title">BOX</div>
+            <div class="title">BOX</div>
             <div class="box"></div>
         </div>
         <div class="ani3 fixed"
-            data-43000 = "transform: translate( 50%, -50%); opacity:0;"
-            data-44000 = "transform: translate(-50%, -50%); opacity:1;"
-            data-45000 = "transform: translate(-50%, -50%); opacity:1;"
-            data-46000 = "transform: translate(-200%, -50%); opacity:1;"
+            data-47000 = "transform: translate(100%, -50%) rotate(0deg); opacity:0"
+            data-48000 = "transform: translate(-50%, -50%) rotate(25deg); opacity:1;"
+            data-49500 = "transform: translate(-50%, -50%) rotate(0deg); opacity:1;"
+            data-50000 = "transform: translate(-50%, -50%) rotate(15deg); opacity:1;"
+            data-51000 = "transform: translate(-200%, -50%) rotate(0deg); opacity:1;"
         >
         
         <div class="van">
@@ -1109,9 +1159,11 @@
             </div>
           </div>
         </div>
-        <div class="s4Text3"
-            data-45999 ="display:none"
-            data-46000 ="display:block"
+        </div>
+
+        <div class="s4Text3 fixed"
+            data-51000 ="display:none; opacity:0"
+            data-51900 ="display:block; opacity:1;"
         >
             <h2>Contact ME!</h2>
             <div class="contact">
@@ -1142,7 +1194,7 @@
         var s = skrollr.init();
         window.addEventListener("scroll", ()=>{
             let scrollTop = document.documentElement.scrollTop || window.scrollY || window.pageYOffset
-            document.querySelector(".scroll").innerHTML = scrollTop;
+            document.querySelector(".scroll").innerHTML = parseInt(scrollTop);
         });
     </script>
 </body>
