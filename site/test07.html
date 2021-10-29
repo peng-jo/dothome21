@@ -56,6 +56,7 @@
     }
 
     #side .arcodian2 > li {
+        color: #000;
         margin-top: 20px;
         font-size: 20px;
         margin-bottom: 8px;
@@ -438,11 +439,43 @@
             });
         })
         
-        $(".arcodian2 > li").click(function() {
-            $(this).next(".arcodian").stop().slideToggle(300);
-            $(this).toggleClass('active').siblings().removeClass('active');
-            $(this).next(".arcodian").siblings(".arcodian").slideUp(300);
+        const arcodian = document.querySelectorAll(".arcodian2 > li");
+        const list = document.querySelectorAll(".arcodian");
+
+        arcodian.forEach((element, index)=>{
+            element.addEventListener("click",function(){
+                let isBlock = true;
+
+                arcodian.forEach((el)=>{
+                    el.classList.remove("active");
+                });
+                element.classList.add("active");
+
+                if(list[index].style.display == "block"){
+                    isBlock = true;
+                } else {
+                    isBlock = false;
+                }
+
+                list.forEach(el => {
+                    el.style.display = "none";
+                });
+
+                if(isBlock){
+                    list[index].style.display = "none";
+                } else {
+                    list[index].style.display = "block";
+                }
+                
+            });
         });
+
+
+        // $(".arcodian2 > li").click(function() {
+        //     $(this).next(".arcodian").stop().slideToggle(300);
+        //     $(this).toggleClass('active').siblings().removeClass('active');
+        //     $(this).next(".arcodian").siblings(".arcodian").slideUp(300);
+        // });
     </script>
 </body>
 </html>
