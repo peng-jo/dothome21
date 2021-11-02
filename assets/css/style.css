@@ -384,7 +384,7 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: #f2a1d1;
+	background: #3C6A73;
 	color: #FFFFFF;
 	font-size: 25px;
 	font-weight: 300;
@@ -1700,7 +1700,7 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: #f2a1d1;
+	background: #3C6A73;
 	color: #FFFFFF;
 	font-size: 25px;
 	font-weight: 300;
@@ -1941,7 +1941,7 @@
 
 
 .donutImg {text-align: center; }
-.donutImg h5 {color: #f47cc3; font-size: 23px; padding-top: 22px; text-transform: uppercase;}
+.donutImg h5 {color: #2E5057; font-size: 23px; padding-top: 22px; text-transform: uppercase;}
 .donutImg p {color: #565656; font-size: 18px; }
 .donutImg span {color: #999; font-size: 12px; text-transform: uppercase;}
 
