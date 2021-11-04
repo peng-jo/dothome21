@@ -56,8 +56,11 @@
     }
 
     body {
-        background: #b2c1dd;
+        background-image: url(./img/bg.jpg);
+        background-size: cover;
+        height: 100%;
         font-family: 'Cafe24Syongsyong';
+        background-repeat: no-repeat;
     }
 
     .title {
@@ -122,7 +125,7 @@
         top: 50%;
         transform: translate(-50%, -50%);
         perspective: 600px;
-        border: 6px solid #516E84;
+        border: 6px solid #fff;
         padding: 1vw;
         border-radius: 1vw;
     }
@@ -172,10 +175,10 @@
     }
     /* card img */
     .cardWrap .card .front {
-        background-image: url(img/sagittariusImg.png);
+        background-image: url(img/bee.png);
 
     }
-
+   
     .card[data-type=img1] .back {
         background-image: url(img/cancer.png);
     }
@@ -210,6 +213,12 @@
 
     .card[data-type=img9] .back {
         background-image: url(img/virgo.png);
+    }
+    main,
+    html {
+        height: 100%;
+        width: 100%;
+        color:#516E84;
     }
 </style>
 
