@@ -167,6 +167,9 @@
             min-height: 300px;
             border: 4px ridge #CACACA;
         }
+        .question__quiz p {
+
+        }
         .question__title {
             position: relative;
             font-size: 34px;
@@ -191,6 +194,9 @@
         .question__answer {
             background: #E8E7E8;
             padding: 20px;
+        }
+        .question__answer p {
+            padding: 8px;
         }
         .question__answer__next.show {
             display: block;
@@ -306,6 +312,30 @@
             padding-bottom: 20px;
             font-size: 20px;
         }
+        .question__result {
+            position: absolute;
+            left: 0;top: 0;
+            width: 100%; height: 100%;
+            background: #ccc;
+            padding: 30px;
+            display: none;
+        }
+        .question__result.show {
+            display: block;
+        }
+        .question__result .title {
+            font-size: 24px;
+        }
+        .question__result .score span {
+            color: #91ff00;
+        }
+        .question__result .buttons {
+            margin-top: 10px;
+        }
+        .question__result .buttons button {
+            padding: 8px;
+            border: 4px ridge #A3A3A3;
+        }
         @media (max-width:1200px) {
             nav {
                 position: absolute;
@@ -359,9 +389,7 @@
     </header>
 
     <div class="quizWrap">
-        <h2>웹디자인 기능사</h2>
-        
-        
+        <h2>웹디자인 기능사</h2>      
         <div class="question__quiz">
             <h3 class="question__title">
                 <div class="question__title__q">
@@ -401,6 +429,15 @@
         </div>
         <div class="question__start active">
             <span>start</span>
+        </div>
+        <div class="question__result">
+            <div class="title">퀴즈를 완성하였습니다. 축하합니다.!!!</div>
+            <div class="score">
+                <!-- 축하합니다. 당신은<span>몇</span> 문제 중에 <span>개</span> 를 맞추었습니다.(●'◡'●)❤ -->
+            </div>
+            <div class="buttons">
+                <button class="question__restart">다시 도전하기</button>
+            </div>
         </div>
     </div>
     <script>
@@ -451,17 +488,32 @@
         const questionSelect = quizWrap.querySelector(".question__answer__selects");
         const questionCount = quizWrap.querySelector(".question__answer__count");
         const questionNext = quizWrap.querySelector(".question__answer__next");
-        const questionTimer = document.querySelector(".question__timer__sec")
-        const questionTimerLine = document.querySelector(".question__timer__line")
- 
+        const questionTimer = quizWrap.querySelector(".question__timer__sec")
+        const questionTimerLine = quizWrap.querySelector(".question__timer__line")
+        const questionResult = quizWrap.querySelector(".question__result")
+        const questionResultScore = quizWrap.querySelector(".question__result .score")
+        const questionRestart = quizWrap.querySelector(".question__restart")
 
         let quizCount = 0;
         let quizNum = 1;
         let counter;
         let counterLine = 0;
+        let userScore = 0;
+        let iconYes = "<i class='fa fa-check-circle' aria-hidden=true'></i>";
+        let iconNo = "<i class='fa fa-times-circle' aria-hidden=true'></i>";
         //시작버튼 클릭
         questionStartBtn.onclick = () => {
             questionStart.classList.remove("active");
+            showQuestion(0);
+            startTimer(15);
+            startTimerLine(0);
+        }
+        questionRestart.onclick = () => {
+            questionResult.classList.remove("show");
+            quizCount = 0;
+            quizNum = 1;
+            userScore = 0;
+
             showQuestion(0);
             startTimer(15);
             startTimerLine(0);
@@ -488,15 +540,15 @@
                         <input class="select" type="radio" name="select" id="select4" value="4">
                         <span class="choice">${quizInfo[index].quizChoice[3]}</span>
                     </label>`;
-                questionTitle.innerHTML = questionTag;
-                questionSelect.innerHTML = choiceTag;
-                questionCount.innerHTML = `${quizNum} / ${quizInfo.length}`
+            questionTitle.innerHTML = questionTag;
+            questionSelect.innerHTML = choiceTag;
+            questionCount.innerHTML = `${quizNum} / ${quizInfo.length}`
 
-                let choice = questionSelect.querySelectorAll(".choice");
+            let choice = questionSelect.querySelectorAll(".choice");
 
-                for( let i=0; i<choice.length; i++ ){
-                    choice[i].setAttribute("onclick", "choiceSelected(this)" );
-                }
+            for( let i=0; i<choice.length; i++ ){
+                choice[i].setAttribute("onclick", "choiceSelected(this)" );
+            }
         }
 
         //정답 확인하기
@@ -504,20 +556,27 @@
             let userAnswer = answer.textContent;
             let currentAnswer = quizInfo[quizCount].quizAnswer;
 
-
+            console.log(answer.nodeType);
             if( userAnswer == currentAnswer ){
-                console.log("정답입니다.");
+                userScore++;
+                
                 answer.parentNode.classList.add("correct");
                 
+                answer.insertAdjacentHTML("beforeend", iconYes);
             } else {
-                console.log("오답입니다.")
+                
                 answer.parentNode.classList.add("incorrect");
+                const p = document.createElement("p");
+                answer.insertAdjacentHTML("beforeend", iconNo);
+
+                document.querySelector('.question__answer').appendChild(p).innerHTML = quizInfo[quizCount].quizEx;
             }
 
             [].forEach.call(questionSelect.children, (el)=>{
                 el.classList.add("disabled")
                 if(el.querySelector(".choice").textContent == currentAnswer){
-                    el.classList.add("correct");   
+                    el.classList.add("correct"); 
+                    el.children[1].insertAdjacentHTML("beforeend", iconYes);
                 }
             })
             allStop();
@@ -525,11 +584,17 @@
 
         //다음 문제 클릭시
         questionNext.onclick = () => {
-            quizCount ++;
-            quizNum ++;
-            showQuestion(quizCount)
-            startTimer(15);
-            startTimerLine(0);
+            if(quizCount < quizInfo.length - 1){
+                quizCount ++;
+                quizNum ++;
+                showQuestion(quizCount)
+                startTimer(15);
+                startTimerLine(0);
+            } else {
+                allStop();
+                showResult();
+            }
+
         }
         //타이머
         function startTimer(time){
@@ -566,13 +631,20 @@
             },10);
         }
 
+        //모두 멈추기
         function allStop(){
             clearInterval(counterLine)
             clearInterval(counter);
             questionNext.style.display = "block";
         }
         
+        //결과 보여주기
+        function showResult(){
+            questionResult.classList.add("show");
 
+            const scoreTag = `축하합니다. 당신은<span>${quizInfo.length}</span> 문제 중에 <span>${userScore}</span> 개를 맞추었습니다.(●'◡'●)❤`;
+            questionResultScore.innerHTML = scoreTag;
+        }
 
     </script>
 </body>
