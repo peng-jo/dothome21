@@ -504,6 +504,7 @@
         //시작버튼 클릭
         questionStartBtn.onclick = () => {
             questionStart.classList.remove("active");
+            
             showQuestion(0);
             startTimer(15);
             startTimerLine(0);
@@ -583,7 +584,12 @@
         }
 
         //다음 문제 클릭시
-        questionNext.onclick = () => {
+        questionNext.onclick = function() {
+            this.classList.remove("show");
+            if(document.querySelector('.question__answer p')){
+                document.querySelector('.question__answer p').remove();
+            }
+            
             if(quizCount < quizInfo.length - 1){
                 quizCount ++;
                 quizNum ++;
@@ -635,7 +641,7 @@
         function allStop(){
             clearInterval(counterLine)
             clearInterval(counter);
-            questionNext.style.display = "block";
+            questionNext.classList.add("show");
         }
         
         //결과 보여주기
