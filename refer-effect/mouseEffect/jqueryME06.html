@@ -116,15 +116,74 @@
                 </div>
                 <div class="view-cont">
                 <div class="html">
-<pre><code class="language-html">
+<pre><code class="language-html">&ltmain&gt
+	&ltdiv class="cursor"&gt&lt/div&gt
+		&ltdiv class="contents"&gt
+			&ltp&gtTrue success is when the person I want to love loves me.&lt/p&gt
+			&ltp&gt진정한 &ltem&gt성공이란&lt/em&gt 내가 사랑해줬으면 하는 사람이 나를 사랑해주는 것이다.  &lt/p&gt
+		&lt/div&gt
+	&lt/div&gt
+&lt/main&gt
 </code></pre>
                 </div>
                 <div class="css">
-<pre><code class="language-css">
+<pre><code class="language-css">&ltstyle&gt
+	body {
+		overflow: hidden;
+		cursor: none;
+	}
+	.cursor {
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		background: url(../assets/img/bg10@2.jpg) center center;
+		background-attachment: fixed;
+		background-size: cover;
+		border: 5px solid #fff;
+		overflow: hidden;
+		z-index: -1;
+	}
+	.contents {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100vh;
+		flex-direction: column;
+		overflow: hidden;
+	}
+	.contents p {
+		max-width: 70vw;
+		font-size: 3vw;
+		text-align: justify;
+		color: #fff;
+	}
+	.contents p:first-child {
+		font-size: 2vw;
+		line-height: 2;
+	}
+	.contents p em {
+		color: orange;
+		border-bottom: 2px dashed orange;
+		font-style: normal;
+	}
+&lt/style&gt
 </code></pre>
                 </div>
                 <div class="jquery">
-<pre><code class="language-js">
+<pre><code class="language-js">&ltscript&gt
+	const w = $(".cursor").width()/2;
+	const h = $(".cursor").height()/2;
+	$(window).mousemove(function(e){
+		gsap.to(".cursor",{duration:0.3, left:e.pageX-w, top:e.pageY-h});
+
+		$(".pageX").text(e.pageX);
+		$(".pageY").text(e.pageY);
+	})
+	
+	modal('info');
+&lt/script&gt
 
 </code></pre>
                 </div>
@@ -154,8 +213,6 @@
             $(".pageX").text(e.pageX);
             $(".pageY").text(e.pageY);
         })
-
-
 
         modal('info');
     </script>

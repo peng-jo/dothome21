@@ -178,16 +178,138 @@
                 </div>
                 <div class="view-cont">
                 <div class="html">
-<pre><code class="language-html">
+<pre><code class="language-html">&ltmain&gt
+	&ltdiv class="cursor"&gt&lt/div&gt
+		&ltdiv class="contents"&gt
+			&ltdiv class="moveImage"&gt
+				&ltdiv class="textWrap"&gt
+					&ltdiv class="line"&gt
+						&ltdiv class="left"&gt
+							&ltdiv class="spanWrap"&gt
+								&ltspan class="spanSlow"&gtPrice is the money&lt/span&gt
+							&lt/div&gt
+						&lt/div&gt
+						&ltdiv class="right"&gt
+							&ltdiv class="spanWrap"&gt
+								&ltspan class="spanSlow"&gtPrice is the money&lt/span&gt
+							&lt/div&gt
+						&lt/div&gt
+					&lt/div&gt
+					&ltdiv class="line"&gt
+						&ltdiv class="left"&gt
+							&ltdiv class="spanWrap"&gt
+								&ltspan class="spanFast"&gt가격은 돈이며&lt/span&gt
+							&lt/div&gt
+						&lt/div&gt
+						&ltdiv class="right"&gt
+							&ltdiv class="spanWrap"&gt
+								&ltspan class="spanFast"&gt가격은 돈이며&lt/span&gt
+							&lt/div&gt
+						&lt/div&gt
+					&lt/div&gt
+					&ltdiv class="line"&gt
+						&ltdiv class="left"&gt
+							&ltdiv class="spanWrap"&gt
+								&ltspan class="spanSlow"&gtvalue is through it.&lt/span&gt
+							&lt/div&gt
+						&lt/div&gt
+						&ltdiv class="right"&gt
+							&ltdiv class="spanWrap"&gt
+								&ltspan class="spanSlow"&gtvalue is through it.&lt/span&gt
+							&lt/div&gt
+						&lt/div&gt
+					&lt/div&gt
+					&ltdiv class="line"&gt
+						&ltdiv class="left"&gt
+							&ltdiv class="spanWrap"&gt
+								&ltspan class="spanFast"&gt가치는 그것을 통한 것이다.&lt/span&gt
+							&lt/div&gt
+						&lt/div&gt
+						&ltdiv class="right"&gt
+							&ltdiv class="spanWrap"&gt
+								&ltspan class="spanFast"&gt가치는 그것을 통한 것이다.&lt/span&gt
+							&lt/div&gt
+						&lt/div&gt
+					&lt/div&gt
+				&lt/div&gt
+				&ltdiv class="imgWrap"&gt
+					&ltimg src="../assets/img/bg9.jpg" alt=""&gt
+				&lt/div&gt
+			&lt/div&gt
+		&lt/div&gt
+	&lt/div&gt
+&lt/main&gt
 </code></pre>
                 </div>
                 <div class="css">
-<pre><code class="language-css">
+<pre><code class="language-css">    &ltstyle&gt
+    .textWrap {
+        font-family: 'NEXONLv1Gothic';
+        font-weight: normal;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -10%);
+        color: #fff;
+        font-size: 2vw;
+        line-height: 1.5;
+    }
+    .textWrap .line {
+        width: 100%;
+        display: flex;
+    }
+    .textWrap .line .left {
+        width: 50vw;
+        color: #00ff0d;
+        overflow: hidden;
+        transform: skew(0deg, -15deg);
+    }
+    .textWrap span {
+        display: inline-block;
+    }
+    .textWrap .line .left .spanWrap {
+        width: 100vw;
+        text-align: center;
+    }
+    .textWrap .line .right {
+        width: 50vw;
+        overflow: hidden;
+        transform: skew(0deg, 15deg);
+    }
+    .textWrap .line .right .spanWrap {
+        width: 100vw;
+        text-align: center;
+        transform: translateX(-50vw);
+    }
+    .imgWrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        width: 50%;
+    }
+    .imgWrap img {
+        width: 100%;
+    }
+&lt/style&gt
 </code></pre>
                 </div>
                 <div class="jquery">
-<pre><code class="language-js">
+<pre><code class="language-js">&ltscript&gt
+    function mouseMove(e){
+        let positionSlow = (e.pageX - ( $(window).width()/2 )) * 0.1;
+        let positionFast = (e.pageX - ( $(window).width()/2 )) * 0.2;
 
+        gsap.to(".spanSlow",{ duration : 0.4 , x :positionSlow});
+        gsap.to(".spanFast",{ duration : 0.4 , x :positionFast});
+
+        $(".pageX").text(e.pageX);
+        $(".pageY").text(e.pageY);
+    }
+    
+    $(window).on("mousemove", mouseMove);
+&lt/script&gt
 </code></pre>
                 </div>
                 </div>             

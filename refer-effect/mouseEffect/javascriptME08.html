@@ -23,7 +23,7 @@
         cursor: none;
         /* font-family: 'Nexon'; */    
         position: relative;
-        z-index: 10;
+        z-index: -1;
     }
     .mouseCont p {
         font-size: 2vw;
@@ -49,7 +49,7 @@
         z-index: 9999;
         background-color: #fff;
         user-select: none;
-        pointer-events: none;
+        /* pointer-events: none; */
         transition: transform .3s;
         mix-blend-mode: difference;
     }
@@ -223,16 +223,192 @@
                 </div>
                 <div class="view-cont">
                 <div class="html">
-<pre><code class="language-html">
+<pre><code class="language-html">&ltmain&gt
+	&ltdiv class="cursor"&gt&lt/div&gt
+	&ltarticle class="mouseCont"&gt
+		&ltp&gt
+		  Have an &ltem&gtactive&lt/em&gtmindset.
+		&lt/p&gt
+		&lth2&gt
+		  &ltem&gt적극적인 &lt/em&gt 마음자세를 소유하라
+		&lt/h2&gt   
+	&lt/article&gt
+	&ltdiv class="box-wrap"&gt
+		&ltdiv class="box-item two"&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+  
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+  
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+  
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+			&ltdiv class="item"&gt&lt/div&gt
+		&lt/div&gt
+	&lt/div&gt
+&lt/main&gt
 </code></pre>
                 </div>
                 <div class="css">
-<pre><code class="language-css">
+<pre><code class="language-css">&ltstyle&gt
+    body {
+      overflow: hidden;
+    }
+    .mouseCont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color:#fff;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        cursor: none;
+        /* font-family: 'Nexon'; */    
+        position: relative;
+        z-index: -1;
+    }
+    .mouseCont p {
+        font-size: 2vw;
+        line-height: 2;
+        font-weight: 600;
+    }
+    .mouseCont h2 {
+        font-size: 2.2vw;
+        font-weight: 600;
+    }
+
+    .mouseCont em {
+        font-size: normal;
+        color:orange;
+        border-bottom: 0.2vw dashed orange;
+        
+    }
+    .cursor {
+        position: absolute;
+        left: 0; top: 0;
+        width: 10px; height: 10px;
+        border-radius: 50%;
+        z-index: 9999;
+        background-color: #fff;
+        user-select: none;
+        /* pointer-events: none; */
+        transition: transform .3s;
+        mix-blend-mode: difference;
+    }
+    .cursor.active {
+        transform: scale(20);
+    }
+    .info.left.list li.active {
+        text-decoration: underline;
+
+    }
+    .box-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%;
+        height: 100vh;
+    }
+    .box-item {
+        display: grid;
+        grid-template-columns: repeat(10, 50px);
+        grid-template-rows: repeat(6, 50px);
+        grid-gap: 30px;
+    }
+    .box-item .item {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .box-item.two .item {
+        border-radius: 50%;
+        transform: scale(0.2);
+    }
+&lt/style&gt
 </code></pre>
                 </div>
                 <div class="jquery">
-<pre><code class="language-js">
+<pre><code class="language-js">&ltscript&gt
+	document.addEventListener("mousemove",function(e){
+		const mouseX = e.clientX;
+		const mouseY = e.clientY;
+	
+			document.querySelectorAll(".item").forEach( (item,index) =&gt{
+				
+				const itemX = item.offsetLeft - mouseX;
+				const itemY = item.offsetTop - mouseY;
 
+				const dist = Math.sqrt(itemX * itemX + itemY * itemY);
+				
+				const score = Math.exp(dist * -0.003);
+				
+				item.style.transform = `scale(${score})`;
+				
+
+			});
+			document.querySelector(".pageX").textContent = e.pageX;
+			document.querySelector(".pageY").textContent = e.pageY;
+			gsap.to(".cursor",{duration:.3, left:e.pageX, top:e.pageY});
+	});
+&lt/script&gt
 </code></pre>
                 </div>
                 </div>             
