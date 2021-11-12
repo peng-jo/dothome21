@@ -1,0 +1,154 @@
+* {
+    margin: 0; padding: 0;
+}
+//reset
+/* 여백 초기화 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+textarea,
+p,
+blockquote,
+th,
+td,
+input,
+select,
+button,
+figure,
+figcaption {
+    margin: 0;
+    padding: 0
+}
+
+/* 폰트 초기화 */
+body,
+button,
+input,
+select,
+table,
+textarea {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #222;
+    font-family: Poppins, AppleSDGothicNeo-Regular, 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
+}
+
+/* 링크 초기화 */
+
+a {
+    color : #222;
+    text-decoration: none;
+}
+
+
+/* 목록 초기화 */
+ol,
+ul {
+    list-style: none
+}
+
+/* 스타일 초기화 */
+strong {
+    font-weight: normal;
+}
+em {
+    font-style: normal;
+}
+
+img {
+    width: 100%;
+}
+$section: 9;
+
+@for $i from 1 to $section {
+    #section#{$i} {
+        background: rgb($i*100, $i*100, $i*100);
+    }
+}
+#section1 { background: #111; z-index: 9000;}
+#section2 { background: #222; z-index: 8000;}
+#section3 { background: #333; z-index: 7000; height: 6000px;}
+#section4 { background: #444; z-index: 7100;}
+#section5 { background: #555; z-index: 7200;}
+#section6 { background: #666; z-index: 7300;}
+#section7 { background: #777; z-index: 7400;}
+#section8 { background: #888; z-index: 7500;}
+#section9 { background: #999; z-index: 7600;}
+
+.sce3 {
+    color:#fff;
+    position: fixed;
+    left: 0;top: 0;
+    z-index: 1000;
+    width: 6000px;
+    height: 100vh;
+    background: rgb(229, 93, 93);
+    overflow:hidden;
+}
+.sce3 > div {
+    float: left;
+    width: 1000px;
+    height: 100vh;
+}
+.sce3 > div:nth-child(1) {
+    background: rgba(71, 61, 61, 0.9);
+}
+.sce3 > div:nth-child(2) {
+    background: rgba(71, 61, 61, 0.8);
+}
+.sce3 > div:nth-child(3) {
+    background: rgba(71, 61, 61, 0.7);
+}
+.sce3 > div:nth-child(4) {
+    background: rgba(71, 61, 61, 0.6);
+}
+.sce3 > div:nth-child(5) {
+    background: rgba(71, 61, 61, 0.5);
+}
+.sce3 > div:nth-child(6) {
+    background: rgba(71, 61, 61, 0.4);
+}
+
+.content__item {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+#section1 {
+    span {
+        text-align: center;
+        display: block;
+        line-height: 94%;
+        font-size: 20vw;
+        font-weight: 800;
+        color: #F9DB53;
+    }
+
+}
+#section3 {
+    height: 6000px;
+}
+
+.blink { 
+    animation: blink-effect 0.1s step-end infinite;
+}
+
+@keyframes blink-effect {
+    50% { opacity: 0; } 
+} 

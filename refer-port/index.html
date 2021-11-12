@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main id="main">
+        <div class="contentWrap">
+            <section id="section1" class="content__item">
+                <span class="c1 blink">
+                    CODING LIFE
+                </span>
+                <span class="c2 blink">
+                    LIFE IS CODING
+                </span>
+            </section>
+            <section id="section2" class="content__item"></section>
+            <section id="section3" class="content__item">
+                <div class="sce3">
+                    <div>03-1</div>
+                    <div>03-2</div>
+                    <div>03-3</div>
+                    <div>03-4</div>
+                    <div>03-5</div>
+                    <div>03-6</div>
+                </div>
+            </section>
+            <section id="section4" class="content__item"></section>
+            <section id="section5" class="content__item"></section>
+            <section id="section6" class="content__item"></section>
+        </div>
+    </main>
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script>
+        $(window).scroll(function(){
+            let scrollTop = $(window).scrollTop();
+            let goLeft = scrollTop - $("#section3").offset().top;
+
+            if( scrollTop > $("#section3").offset().top ){
+                $(".sce3").css("left",-goLeft)
+            }
+        });
+    </script>
+</body>
+</html>
