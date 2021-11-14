@@ -1,6 +1,8 @@
 * {
     margin: 0; padding: 0;
+    line-height: 94%;
 }
+
 //reset
 /* 여백 초기화 */
 body,
@@ -74,24 +76,78 @@ em {
 img {
     width: 100%;
 }
-$section: 9;
 
-@for $i from 1 to $section {
-    #section#{$i} {
-        background: rgb($i*100, $i*100, $i*100);
-    }
+/*body*/
+body {
+    background-color: #000;
+    
 }
-
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
 #header {
     display: flex;
-    
+    box-sizing: border-box;
+    justify-content:space-between;
     color: #fff;
+    font-family: 'NanumSquare';
+    font-size: 20px;
+    font-weight: 300;
     position: fixed;
     z-index: 9001;
     top: 40px;
     height: 43px;
-    width: 1720px;
-    
+    width: 100%;
+    padding:0 50px;
+
+    .header__left {
+        li {
+            vertical-align: middle;
+            span > div {
+                margin-bottom: 6px;
+            }
+            .header__num {
+                color: #F9DB53;
+            }
+        }
+        .header__circle {          
+            width: 46px;
+            height: 46px;
+            margin-right: 10px;
+        }
+        .header__percent {
+            position: relative;
+            display: inline-block;
+            width: 16vw; height: 3px;
+            background: #fff;
+            border-radius: 5px;
+            .header__percent__show {
+                display: inline-block;
+                position: absolute;
+                background: #F9DB53;
+                width: 10%;
+                height: 100%;
+            }
+        }
+    }
+
+    .header__right {
+        li {
+            margin-left: 34px;
+            vertical-align: middle;
+        }
+        .yellow {
+            
+            text-align: center;
+            background-color: #F9DB53;
+            color: #fff;
+            width: 208px; height: 27px;
+            span {
+                vertical-align: sub;
+            }
+        }
+    }
+
     ul {
         li {
             display: inline-block;
@@ -99,15 +155,15 @@ $section: 9;
     }
 }
 
-#section1 { background: #111; z-index: 9000;}
-#section2 { background: #222; z-index: 8000;}
-#section3 { background: #333; z-index: 7000; height: 6000px;}
-#section4 { background: #444; z-index: 7100;}
-#section5 { background: #555; z-index: 7200;}
-#section6 { background: #666; z-index: 7300;}
-#section7 { background: #777; z-index: 7400;}
-#section8 { background: #888; z-index: 7500;}
-#section9 { background: #999; z-index: 7600;}
+#section1 { z-index: 9000;}
+#section2 { z-index: 8000;}
+#section3 { z-index: 7000; height: 6000px;}
+#section4 { z-index: 7100;}
+#section5 { z-index: 7200;}
+#section6 { z-index: 7300;}
+#section7 { z-index: 7400;}
+#section8 { z-index: 7500;}
+#section9 { z-index: 7600;}
 
 .sce3 {
     color:#fff;
@@ -144,35 +200,80 @@ $section: 9;
 }
 
 .content__item {
+    display: none;
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
     position: relative;
+    &.show {
+        display: block;
+    }
 }
+
 #section1 {
     .span__cont {
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
-
         height: 100vh;
         width: 100%;
 
+        &.show {
+            display: flex;
+        }
         span {
             text-align: center;
             display: block;
-            line-height: 94%;
             font-size: 20vw;
             font-weight: 800;
             color: #F9DB53;
         }
     }
 }
+
+#section2 {
+    .span__cont {
+        position: relative;
+        width: 90vw;
+        font-size:10vw;
+        font-weight: 900;
+        margin-top: 224px;
+        color: #fff;
+        span {
+            text-align: right;
+            display: block;
+        }
+        .span__cont2 {
+            z-index: -1;
+            color: #F9DB53;
+            position: absolute;
+            right: 0; top: 0;
+        }
+    }
+}
+
 #section3 {
     height: 6000px;
 }
 
+.port {
+    font-size: 1.3vw;
+    position: fixed;
+    color: #F9DB53;
+    font-weight: 900;
+    left: 50px;
+    bottom: 50px;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 28px;
+        height: 2px;
+        width: 100%;
+        background-color: #F9DB53;
+    }
+}
+
 .blink { 
-    animation: blink-effect 0.1s step-end infinite;
+    animation: blink-effect 0.1s linear infinite;
 }
 
 @keyframes blink-effect {
