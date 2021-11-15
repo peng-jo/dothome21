@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+</head>
+<body>
+    <header id="header">
+        <ul class="header__left">
+            <li><img class="header__circle" src="./assets/svg/plus_circle.svg" alt="plus_circle"></li>
+            <li>
+                <span>
+                    <div>PORT PROCESS</div>
+                    <span class="header__num">10%</span>
+                    <span class="header__percent">
+                        <span class="header__percent__show">
+                            
+                        </span>
+                    </span>
+                </span>
+            </li>
+        </ul>
+        <ul class="header__right">
+            <li>WORK</li>
+            <li>CONTACT</li>
+            <li class="yellow">
+                <span>PORT MENU</span>
+            </li>
+        </ul>
+    </header>
+    <main id="main">
+        <div class="contentWrap">
+            <video class="sce__video" src="./assets/video/video.mp4"></video>
+            <section id="section1" class="content__item show">
+                <div class="span__cont show blink">
+                    <span class="c1 ">
+                        CODING LIFE
+                    </span>
+                </div>
+                <div class="span__cont blink">
+                    <span class="c2 ">
+                        LIFE IS CODING
+                    </span>
+                </div>
+
+            </section>
+            <section id="section2" class="content__item">
+                <div class="span__cont">
+                    <span>CODING</span>
+                    <span>LIFE</span>
+                    <span>SOMEONE</span>
+                    <span>WHO</span>
+                    <span>WANTS</span>
+                    <span>BETTER</span>
+                    <span>FRONTEND</span>
+                    <div class="span__cont2 yellow">
+                        <span>CODING</span>
+                        <span>LIFE</span>
+                        <span>SOMEONE</span>
+                        <span>WHO</span>
+                        <span>WANTS</span>
+                        <span>BETTER</span>
+                        <span>FRONTEND</span>
+                    </div>
+                </div>
+                
+            </section>
+            <section id="section3" class="content__item show">
+                <div class="sce3 slowColor">
+                   
+                </div>
+            </section>
+            <section id="section4" class="content__item"></section>
+            <section id="section5" class="content__item"></section>
+            <section id="section6" class="content__item"></section>
+        </div>
+    </main>
+    <footer>
+        <span class="port">
+            PORT
+        </span>
+    </footer>
+    <!-- script -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+
+    <script src="./assets/js/effect.js"></script>
+    <script src="./assets/js/scroll.js"></script>
+   
+    <script>
+
+    </script>
+</body>
+</html>

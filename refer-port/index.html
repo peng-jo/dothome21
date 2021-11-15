@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
 </head>
 <body>
-    <header id="header">
+	<header id="header">
         <ul class="header__left">
             <li><img class="header__circle" src="./assets/svg/plus_circle.svg" alt="plus_circle"></li>
             <li>
@@ -35,68 +36,49 @@
             </li>
         </ul>
     </header>
-    <main id="main">
-        <div class="contentWrap">
-            <video class="sce__video" src="./assets/video/video.mp4"></video>
-            <section id="section1" class="content__item show">
-                <div class="span__cont show blink">
-                    <span class="c1 ">
-                        CODING LIFE
-                    </span>
-                </div>
-                <div class="span__cont blink">
-                    <span class="c2 ">
-                        LIFE IS CODING
-                    </span>
-                </div>
+	<section id="section1">
+		<p>section1</p>
+	</section>
+	<section id="section2">
+		<p>section2</p>
+	<div class="text_wrapper">
+		<span class="text">
+			안녕하세요 저는 프론트엔드 개발자를 꿈꾸고 있는 신입 개발자 조범수 입니다
+		</span>
+	</div>
+	</section>
+	<section id="section3">
+		<p>section3</p>
+	</section>
+	<section id="section4">
+		<p>section4</p>
+	</section>
 
-            </section>
-            <section id="section2" class="content__item">
-                <div class="span__cont">
-                    <span>CODING</span>
-                    <span>LIFE</span>
-                    <span>SOMEONE</span>
-                    <span>WHO</span>
-                    <span>WANTS</span>
-                    <span>BETTER</span>
-                    <span>FRONTEND</span>
-                    <div class="span__cont2 yellow">
-                        <span>CODING</span>
-                        <span>LIFE</span>
-                        <span>SOMEONE</span>
-                        <span>WHO</span>
-                        <span>WANTS</span>
-                        <span>BETTER</span>
-                        <span>FRONTEND</span>
-                    </div>
-                </div>
-                
-            </section>
-            <section id="section3" class="content__item show">
-                <div class="sce3 slowColor">
-                   
-                </div>
-            </section>
-            <section id="section4" class="content__item"></section>
-            <section id="section5" class="content__item"></section>
-            <section id="section6" class="content__item"></section>
-        </div>
-    </main>
-    <footer>
-        <span class="port">
-            PORT
-        </span>
-    </footer>
-    <!-- script -->
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
-
-    <script src="./assets/js/effect.js"></script>
-    <script src="./assets/js/scroll.js"></script>
-   
-    <script>
-
-    </script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+	<script>
+		var text = document.querySelector(".text_wrapper");
+		var container = document.querySelector("#section2");
+		gsap.to(container, {
+			//컨테이너 크기 - 화면크기 만큼이동
+			x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
+			//선형/노이즈 효과 ease:none
+			ease: "none",
+			//스크롤 이벤트 트리거
+			scrollTrigger: {
+				//트리거 대상
+				trigger: container,
+				invalidateOnRefresh: true,
+				//고정하기
+				pin: true,
+				//되감기
+				scrub: 1,
+				end: () => "+=" + container.offsetWidth
+			}
+		})
+	</script>
 </body>
+
 </html>
