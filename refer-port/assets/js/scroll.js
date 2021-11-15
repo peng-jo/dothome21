@@ -1,8 +1,11 @@
 (function(){
     let scrollTop = 0;
     let goLeft = 0;
-    let allowed = true;
-    let pos = 0.01;
+    let opacity = 0;
+    let flag = true;
+    // let allowed = true;
+    // let allowed2 = true;
+    // let pos = 20;
 
     const $window = $(window),
         $content = $(".content__item"),
@@ -17,12 +20,18 @@
                 $spanCont.eq(1).removeClass('show');
                 $content.eq(0).removeClass('show')
                 $content.eq(1).addClass('show')
-            },0)
-        },0)
+            },1500)
+        },1500)
 
     //오프셋값 구하기
     function getOffset(eq){
         return eq.offset().top + eq.height();
+    }
+    function getOffsetTop(eq){
+        return eq.offset().top;
+    }
+    function getPreOffset(eq){
+        return eq.offset().top - 100;
     }
 
     //스크롤시
@@ -31,50 +40,58 @@
         scrollTop = $window.scrollTop();
 
         //가로모드할 컨텐츠의 Left 값
-        goLeft = $content.eq(2).offset().top - scrollTop;
+        goLeft = $content.eq(2).offset().top - $content.eq(2).height()  - scrollTop;
 
-        //섹션2 이상일때
-        if (scrollTop <= getOffset($content.eq(1))){
-            
-        }
-
-
-        if( scrollTop > $content.eq(2).offset().top ){
-            $sce3.css("left",goLeft)
-        }
-    }
-    //휠스크롤시 
-    function doWheel(e){
-        let speed = 300;
-        pos *= 8.8;
-        if(pos > 5.5){
-            pos = 5.5;
-        }
-        e.preventDefault();
         
-        if(e.deltaY > 0){
-            console.log("up")
+        if (scrollTop <= getOffset($content.eq(1)) && scrollTop > getOffsetTop($content.eq(1))){
+            opacity = (getOffset($content.eq(1)) - scrollTop) / 3;
 
-        } else {
-            speed = -(speed);
-            console.log("down")
-            $('.span__cont2').css({
-                transform: `translate3d(0px, ${-pos}px, 0px)`,
-            })
-            
+            console.log(opacity);
+            $sce3.css("left",goLeft )
+            $content.eq(1).css({opacity:`${opacity}%`});
+
+            if( flag &&  scrollTop > getPreOffset($content.eq(2)) ){
+                $sce3.delay(1000).css({backgroundColor:'#F9DB53'})
+                flag = false;
+            }
         }
+
         
-        if (allowed){
-            allowed = false;
-            $('html, body').stop().animate({
-                scrollTop: scrollTop + speed
-            },1000,'easeOutQuart');
-            allowed = true;
-        }
     }
+    // //휠스크롤시 
+    // function doWheel(e){
+    //     let speed = 300;
+    //     e.preventDefault();
+        
+    //     if(e.deltaY > 0){
+    //         console.log("up")
+
+    //     } else {
+    //         speed = -(speed);
+    //         if (allowed2 ){
+                
+    //             $('.span__cont2').stop().animate({transform: `translate3d(0px, 0px, 0px)`},{
+    //                 step: function(){
+    //                     $(this).css({ transform: `translate3d(0px, ${-pos}px, 0px)`})
+    //                 }
+    //             }).delay(1000).css({ transform: `translate3d(0px, 0px, 0px)`},function(){
+    //                 allowed2 = true;
+    //             });
+    //         }       
+            
+    //     }
+        
+    //     if (allowed){
+    //         allowed = false;
+    //         $('html, body').stop().animate({
+    //             scrollTop: scrollTop + speed
+    //         },1000,'easeOutQuart');
+    //         allowed = true;
+    //     }
+    // }
     
     $(window).scroll(function(){
         requestAnimationFrame(doScroll)
     });
-    window.addEventListener("wheel",doWheel,{passive:false});
+    // window.addEventListener("wheel",doWheel,{passive:false});
 })();

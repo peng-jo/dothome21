@@ -82,6 +82,14 @@ body {
   background-color: #000;
 }
 
+body .sce__video {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 7001;
+  opacity: 0;
+}
+
 body::-webkit-scrollbar {
   display: none;
   /* Chrome, Safari, Opera*/
@@ -174,7 +182,7 @@ body::-webkit-scrollbar {
 
 #section3 {
   z-index: 7000;
-  height: 6000px;
+  height: 12834px;
 }
 
 #section4 {
@@ -207,43 +215,14 @@ body::-webkit-scrollbar {
   left: 0;
   top: 0;
   z-index: 1000;
-  width: 6000px;
+  width: 12834px;
   height: 100vh;
-  background: #e55d5d;
+  background: #000;
   overflow: hidden;
 }
 
-.sce3 > div {
-  float: left;
-  width: 1000px;
-  height: 100vh;
-}
-
-.sce3 > div:nth-child(1) {
-  background: rgba(71, 61, 61, 0.9);
-}
-
-.sce3 > div:nth-child(2) {
-  background: rgba(71, 61, 61, 0.8);
-}
-
-.sce3 > div:nth-child(3) {
-  background: rgba(71, 61, 61, 0.7);
-}
-
-.sce3 > div:nth-child(4) {
-  background: rgba(71, 61, 61, 0.6);
-}
-
-.sce3 > div:nth-child(5) {
-  background: rgba(71, 61, 61, 0.5);
-}
-
-.sce3 > div:nth-child(6) {
-  background: rgba(71, 61, 61, 0.4);
-}
-
 .content__item {
+  background: #000;
   display: none;
   width: 100%;
   position: relative;
@@ -284,7 +263,7 @@ body::-webkit-scrollbar {
   width: 90vw;
   font-size: 10vw;
   font-weight: 900;
-  margin-top: 224px;
+  padding: 224px 0 224px 0;
   color: #fff;
 }
 
@@ -294,11 +273,33 @@ body::-webkit-scrollbar {
 }
 
 #section2 .span__cont .span__cont2 {
+  margin-top: 224px;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   z-index: -1;
   color: #F9DB53;
   position: absolute;
   right: 0;
   top: 0;
+}
+
+#section2 .span__cont .span__cont2.scroll {
+  -webkit-animation: scrollback 1s;
+          animation: scrollback 1s;
+}
+
+@-webkit-keyframes scrollback {
+  50% {
+    -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0);
+  }
+}
+
+@keyframes scrollback {
+  50% {
+    -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0);
+  }
 }
 
 #section3 {
@@ -321,6 +322,11 @@ body::-webkit-scrollbar {
   height: 2px;
   width: 100%;
   background-color: #F9DB53;
+}
+
+.slowColor {
+  -webkit-transition: background-color ease 0.3s;
+  transition: background-color ease 0.3s;
 }
 
 .blink {
