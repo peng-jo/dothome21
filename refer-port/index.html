@@ -36,12 +36,16 @@
             </li>
         </ul>
     </header>
+
 	<section id="section1">
 		<p>section1</p>
 	</section>
+	
 	<section id="section2">
+		<video class="video" src="./assets/video/video.mp4" autoplay loop></video>
 		<p>section2</p>
 	<div class="text_wrapper">
+		
 		<span class="text">
 			안녕하세요 저는 프론트엔드 개발자를 꿈꾸고 있는 신입 개발자 조범수 입니다
 		</span>
@@ -61,23 +65,21 @@
 	<script>
 		var text = document.querySelector(".text_wrapper");
 		var container = document.querySelector("#section2");
-		gsap.to(container, {
-			//컨테이너 크기 - 화면크기 만큼이동
-			x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
-			//선형/노이즈 효과 ease:none
-			ease: "none",
-			//스크롤 이벤트 트리거
+		var video = document.querySelector('.video');
+		gsap.registerPlugin(ScrollTrigger)
+		var tl = gsap.timeline({
 			scrollTrigger: {
-				//트리거 대상
-				trigger: container,
-				invalidateOnRefresh: true,
-				//고정하기
-				pin: true,
-				//되감기
-				scrub: 1,
-				end: () => "+=" + container.offsetWidth
+				trigger: container, //스크롤 트리거 걸을요소
+				pin: true, //배경은 고정한다.
+				scrub: 0.3, //되돌아 오는지 설정
+				start: "top top", //위부터 설정
+				end: "+=3000"
 			}
-		})
+		});
+		tl.to(text, {xPercent: -200, duration:2, ease: "none", stagger:3})
+  		.to({},{duration:1});
+
+	
 	</script>
 </body>
 
