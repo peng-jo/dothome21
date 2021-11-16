@@ -38,11 +38,44 @@
     </header>
 
 	<section id="section1">
-		<p>section1</p>
+		<div class="span__wrapper">
+			<div class="span__cont show blink">
+				<span class="c1 ">
+					CODING LIFE
+				</span>
+			</div>
+			<div class="span__cont blink">
+				<span class="c2 ">
+					LIFE IS CODING
+				</span>
+			</div>
+		</div>
 	</section>
-	
 	<section id="section2">
-		<video class="video" src="./assets/video/video.mp4" autoplay loop></video>
+		<div class="span__cont">
+			<span>CODING</span>
+			<span>LIFE</span>
+			<span>SOMEONE</span>
+			<span>WHO</span>
+			<span>WANTS</span>
+			<span>BETTER</span>
+			<span>FRONTEND</span>
+		</div>
+		<div class="span__cont2">
+			<span>CODING</span>
+			<span>LIFE</span>
+			<span>SOMEONE</span>
+			<span>WHO</span>
+			<span>WANTS</span>
+			<span>BETTER</span>
+			<span>FRONTEND</span>
+		</div>
+	</section>
+	<section id="section3">
+		<div class="video">
+			<video src="./assets/video/video.mp4" autoplay="true" loop="true"></video>
+		</div>
+		
 		<p>section2</p>
 	<div class="text_wrapper">
 		
@@ -51,10 +84,10 @@
 		</span>
 	</div>
 	</section>
-	<section id="section3">
+	<section id="section4">
 		<p>section3</p>
 	</section>
-	<section id="section4">
+	<section id="section5">
 		<p>section4</p>
 	</section>
 
@@ -63,21 +96,65 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
 	<script>
-		var text = document.querySelector(".text_wrapper");
-		var container = document.querySelector("#section2");
-		var video = document.querySelector('.video');
+
+		const text = document.querySelector(".text_wrapper");
+		const container = document.querySelector("#section3");
+		const video = document.querySelector('.video');
+		const section = document.querySelectorAll('section');
+		const shadowText = document.querySelector('.span__cont2');
+		console.log(container.scrollHeight)
+		
+        const spanCont = document.querySelectorAll('.span__cont');
 		gsap.registerPlugin(ScrollTrigger)
-		var tl = gsap.timeline({
+        setTimeout(()=>{
+            console.log('2')
+            spanCont[0].classList.remove('show');
+            spanCont[1].classList.add('show');
+            setTimeout(()=>{
+                spanCont[1].classList.remove('show');
+				section[0].remove();
+                // content[0].removeClass('show')
+                // content[1].addClass('show')
+
+				const height = section[1].clientHeight;
+				console.log(height - document.documentElement.clientHeight)
+				const t1 = gsap.timeline({
+					scrollTrigger: {
+						pin :true,
+						trigger: section[1], //스크롤 트리거 걸을요소
+						start:"top", //스크롤이 시작할 구역
+						end: "+=4000", //스크롤이 끝날구역
+						scrub: 1,
+						markers: true,
+					}
+				});
+				t1.to([section[1]],{y : -(height - document.documentElement.clientHeight)})
+		
+		
+				
+            },1500)
+        },1500)
+
+		
+		const t2 = gsap.timeline({
 			scrollTrigger: {
 				trigger: container, //스크롤 트리거 걸을요소
 				pin: true, //배경은 고정한다.
 				scrub: 0.3, //되돌아 오는지 설정
-				start: "top top", //위부터 설정
-				end: "+=3000"
+				
+				start:"top",
+				end: "+=10000", //스크롤 할구역 정하기
 			}
 		});
-		tl.to(text, {xPercent: -200, duration:2, ease: "none", stagger:3})
-  		.to({},{duration:1});
+		console.log(container.scrollHeight)
+		t2.to(text, {xPercent: -200, duration:2, ease: "none" })
+		.to({},{duration:1});
+		
+
+		
+
+		
+		
 
 	
 	</script>

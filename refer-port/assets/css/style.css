@@ -84,6 +84,11 @@ img {
   width: 100%;
 }
 
+video {
+  width: 100%;
+  height: 100%;
+}
+
 /* 스타일 시작 */
 body {
   overflow-x: hidden;
@@ -91,13 +96,38 @@ body {
 
 section {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 
 #section1 {
-  background: yellowgreen;
-  position: relative;
+  background: #000;
+}
+
+#section1 .span__cont {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+#section1 .span__cont.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#section1 .span__cont span {
+  text-align: center;
+  display: block;
+  font-size: 20vw;
+  font-weight: 800;
+  color: #F9DB53;
 }
 
 .video {
@@ -118,6 +148,40 @@ section {
 }
 
 #section2 {
+  height: 100%;
+  background: #000;
+  width: 90vw;
+  font-size: 10vw;
+  font-weight: 900;
+  width: 100%;
+}
+
+#section2 .span__cont {
+  margin-right: 2vw;
+  z-index: 2;
+  padding: 224px 0 224px 0;
+  position: relative;
+  color: #fff;
+}
+
+#section2 .span__cont2 {
+  z-index: 1;
+  margin-right: 2vw;
+  margin-top: 224px;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  color: #F9DB53;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#section2 span {
+  text-align: right;
+  display: block;
+}
+
+#section3 {
   overflow: hidden;
   width: 12834px;
   color: #fff;
@@ -126,24 +190,23 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-#section2 .text_wrapper .text {
+#section3 .text_wrapper .text {
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
   display: inline-block;
   font-size: 20vw;
 }
 
-#section3 {
+#section4 {
   background: indianred;
 }
 
-#section4 {
+#section5 {
   background: paleturquoise;
 }
 
@@ -255,4 +318,21 @@ section {
 
 #header ul li {
   display: inline-block;
+}
+
+.blink {
+  -webkit-animation: blink-effect 0.1s linear infinite;
+          animation: blink-effect 0.1s linear infinite;
+}
+
+@-webkit-keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
 }
