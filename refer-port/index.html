@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>포트폴리오</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-	<header id="header">
+    <div class="scroll">0</div>
+    <div id="contents">
+        <section id="section1">
+        </section>
+    </div>
+    <header id="header">
         <ul class="header__left">
             <li><img class="header__circle" src="./assets/svg/plus_circle.svg" alt="plus_circle"></li>
             <li>
@@ -36,8 +38,7 @@
             </li>
         </ul>
     </header>
-
-	<section id="section1">
+    <section id="section1">
 		<div class="span__wrapper">
 			<div class="span__cont show blink">
 				<span class="c1 ">
@@ -52,7 +53,12 @@
 		</div>
 	</section>
 	<section id="section2">
-		<div class="span__cont">
+        <div class="span__cont2 fixed text-motion"
+            data-0 = "transform: translate(-5vw, -20%);visibility: visible;"
+            data-4000="visibility: hidden;transform: translate(-5vw, -100%);"
+            data-6000 = "transform: translate(-5vw, -120%);"
+            data-emit-events
+        >
 			<span>CODING</span>
 			<span>LIFE</span>
 			<span>SOMEONE</span>
@@ -61,7 +67,11 @@
 			<span>BETTER</span>
 			<span>FRONTEND</span>
 		</div>
-		<div class="span__cont2">
+		<div class="span__cont fixed"
+            data-0 = "transform: translate(-5vw, -20%);"
+            data-4000="opacity:1;transform: translate(-5vw, -100%)"
+            data-6000 = "transform: translate(-5vw, -120%);opacity:0;"
+        >
 			<span>CODING</span>
 			<span>LIFE</span>
 			<span>SOMEONE</span>
@@ -70,42 +80,77 @@
 			<span>BETTER</span>
 			<span>FRONTEND</span>
 		</div>
+        <div class="video__wrapper fixed"
+            data-5300="opacity:0"
+            data-6000="opacity:1"
+        >
+            <video src="./assets/video/video.mp4" autoplay loop></video>
+        </div>
+        <div class="text_wrapper fixed"
+            data-6000="display:none;"
+            data-6001="display:block;"
+        >
+            <span class="text"
+                data-6001="transform:translateX(0%)"
+                data-7000="transform:translateX(-50%)"
+                data-8000="transform:translateX(-110%)"
+            >
+                안녕하세요 저는 프론트엔드 개발자를 꿈꾸고 있는 신입 개발자 조범수 입니다
+            </span>
+        </div>
 	</section>
-	<section id="section3">
-		<div class="video">
-			<video src="./assets/video/video.mp4" autoplay="true" loop="true"></video>
-		</div>
-		
-		<p>section2</p>
-	<div class="text_wrapper">
-		
-		<span class="text">
-			안녕하세요 저는 프론트엔드 개발자를 꿈꾸고 있는 신입 개발자 조범수 입니다
-		</span>
-	</div>
-	</section>
-	<section id="section4">
-		<p>section3</p>
-	</section>
-	<section id="section5">
-		<p>section4</p>
-	</section>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
-	<script>
-
-		const text = document.querySelector(".text_wrapper");
-		const container = document.querySelector("#section3");
-		const video = document.querySelector('.video');
+    <footer>
+        <span class="port">
+            PORT
+        </span>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script>
+        const video = document.querySelector('.video');
 		const section = document.querySelectorAll('section');
-		const shadowText = document.querySelector('.span__cont2');
-		console.log(container.scrollHeight)
-		
         const spanCont = document.querySelectorAll('.span__cont');
-		gsap.registerPlugin(ScrollTrigger)
+        let allowed = false;
+        let allowed2 = false;
+        let flag = false;
+        skrollr.init({
+            smoothScrolling:true,
+            keyframe: function(element, name, direction) { //element, name, direction
+                //name will be one of data500, dataTopBottom, data_offsetCenter
+                // see the first criteria, we check if element match the element we selected above
+                console.log(element)
+                if(element){
+                    flag = (flag == true) ? false : true;
+                }
+            }
+        });
+
+        window.addEventListener("scroll", ()=>{
+            let scrollTop = document.documentElement.scrollTop || window.scrollY || window.pageYOffset
+            document.querySelector(".scroll").innerHTML = parseInt(scrollTop);
+        });
+   
+        //휠스크롤시 
+        function doWheel(e){
+        
+            if (!allowed){
+                e.preventDefault();
+            }
+
+            if(allowed2 && flag){
+                allowed2 = false;
+                document.querySelector(".span__cont2").classList.add("text-opacity");
+                setTimeout(()=>{
+                    console.log('run');
+                    document.querySelector(".span__cont2").classList.remove("text-opacity");
+                    allowed2 = true;
+                },100)
+                
+            }
+
+
+        }
+	
+
         setTimeout(()=>{
             console.log('2')
             spanCont[0].classList.remove('show');
@@ -113,51 +158,11 @@
             setTimeout(()=>{
                 spanCont[1].classList.remove('show');
 				section[0].remove();
-                // content[0].removeClass('show')
-                // content[1].addClass('show')
-
-				const height = section[1].clientHeight;
-				console.log(height - document.documentElement.clientHeight)
-				const t1 = gsap.timeline({
-					scrollTrigger: {
-						pin :true,
-						trigger: section[1], //스크롤 트리거 걸을요소
-						start:"top", //스크롤이 시작할 구역
-						end: "+=4000", //스크롤이 끝날구역
-						scrub: 1,
-						markers: true,
-					}
-				});
-				t1.to([section[1]],{y : -(height - document.documentElement.clientHeight)})
-		
-		
-				
+                section[2].classList.add('show');
+                allowed = true;
             },1500)
         },1500)
-
-		
-		const t2 = gsap.timeline({
-			scrollTrigger: {
-				trigger: container, //스크롤 트리거 걸을요소
-				pin: true, //배경은 고정한다.
-				scrub: 0.3, //되돌아 오는지 설정
-				
-				start:"top",
-				end: "+=10000", //스크롤 할구역 정하기
-			}
-		});
-		console.log(container.scrollHeight)
-		t2.to(text, {xPercent: -200, duration:2, ease: "none" })
-		.to({},{duration:1});
-		
-
-		
-
-		
-		
-
-	
-	</script>
+        window.addEventListener("wheel",doWheel,{passive:false});
+    </script>
 </body>
-
 </html>
