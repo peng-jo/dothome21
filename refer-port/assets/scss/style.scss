@@ -3,7 +3,9 @@
 //리셋
 @import './reset.scss';
 
-
+body {
+    background-color: #000;
+}
 .scroll {
     position: fixed;
     right: 10px;
@@ -158,7 +160,6 @@
     height: 10000px;
     display: none;
     background: #000;
-    width: 90vw;
     font-size: 10vw;
     font-weight: 900;
     width: 100%;
@@ -174,9 +175,7 @@
     }
 
     .span__cont2 {
-        opacity: 0;
         color: #F9DB53;
-        opacity: 1;
     }
 
     span {
@@ -214,6 +213,15 @@
     }
 }
 
+#section3 {
+    height: 10000px;
+    & > div {
+        left: auto;
+        right: 0;
+        padding: 13vw 0 13vw 0;
+    }
+}
+
 footer {
     .port {
         font-size: 1.3vw;
@@ -237,21 +245,7 @@ footer {
     animation: blink-effect 0.1s linear infinite;
 }
 .text-motion {
-    transition: transform 0.02s;
-}
-.text-effect {
-    animation: text-effect 1.5s linear;
-}
-@keyframes text-effect {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0.32;
-    }
-    100% {
-        opacity: 0;
-    }
+    transition: transform 0.04s;
 }
 @keyframes blink-effect {
     50% {

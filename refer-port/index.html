@@ -52,12 +52,14 @@
 			</div>
 		</div>
 	</section>
-	<section id="section2">
-        <div class="span__cont2 fixed text-motion"
+	<section id="section2"
+        data-10000="opacity:1;"
+        data-13000="opacity:0;"
+    >
+        <div class="span__cont2 fixed text-motion text-effect"
             data-0 = "transform: translate(-5vw, -20%);visibility: visible;"
             data-4000="visibility: hidden;transform: translate(-5vw, -100%);"
             data-6000 = "transform: translate(-5vw, -120%);"
-            data-emit-events
         >
 			<span>CODING</span>
 			<span>LIFE</span>
@@ -84,7 +86,12 @@
             data-5300="opacity:0"
             data-6000="opacity:1"
         >
-            <video src="./assets/video/video.mp4" autoplay loop></video>
+            <no-show style="display: none;" data-emit-events data-5300 ></no-show>
+            <no-show style="display: none;" data-emit-events data-13000 ></no-show>
+            
+            <video class="video" preload="auto" playsinline autoplay loop>
+                <source src="./assets/video/video.mp4" type="video/mp4" >
+            </video>
         </div>
         <div class="text_wrapper fixed"
             data-6000="display:none;"
@@ -92,13 +99,17 @@
         >
             <span class="text"
                 data-6001="transform:translateX(0%)"
-                data-7000="transform:translateX(-50%)"
-                data-8000="transform:translateX(-110%)"
+                data-11000="transform:translateX(-110%)"
             >
                 안녕하세요 저는 프론트엔드 개발자를 꿈꾸고 있는 신입 개발자 조범수 입니다
             </span>
         </div>
 	</section>
+    <section id="section3"
+
+    >
+
+    </section>
     <footer>
         <span class="port">
             PORT
@@ -109,17 +120,14 @@
         const video = document.querySelector('.video');
 		const section = document.querySelectorAll('section');
         const spanCont = document.querySelectorAll('.span__cont');
-        let allowed = false;
-        let allowed2 = false;
-        let flag = false;
+        let allowed = true;
+        
         skrollr.init({
             smoothScrolling:true,
             keyframe: function(element, name, direction) { //element, name, direction
-                //name will be one of data500, dataTopBottom, data_offsetCenter
-                // see the first criteria, we check if element match the element we selected above
-                console.log(element)
-                if(element){
-                    flag = (flag == true) ? false : true;
+                if(name === "data5300" || name === "data13000" ){
+                    video.currentTime = 0;
+                    console.log( video.currentTime );
                 }
             }
         });
@@ -131,25 +139,10 @@
    
         //휠스크롤시 
         function doWheel(e){
-        
-            if (!allowed){
+            if (allowed){
                 e.preventDefault();
             }
-
-            if(allowed2 && flag){
-                allowed2 = false;
-                document.querySelector(".span__cont2").classList.add("text-opacity");
-                setTimeout(()=>{
-                    console.log('run');
-                    document.querySelector(".span__cont2").classList.remove("text-opacity");
-                    allowed2 = true;
-                },100)
-                
-            }
-
-
         }
-	
 
         setTimeout(()=>{
             console.log('2')
@@ -159,7 +152,7 @@
                 spanCont[1].classList.remove('show');
 				section[0].remove();
                 section[2].classList.add('show');
-                allowed = true;
+                allowed = false;
             },1500)
         },1500)
         window.addEventListener("wheel",doWheel,{passive:false});

@@ -101,6 +101,10 @@ body::-webkit-scrollbar {
   /* Chrome, Safari, Opera*/
 }
 
+body {
+  background-color: #000;
+}
+
 .scroll {
   position: fixed;
   right: 10px;
@@ -238,7 +242,6 @@ body::-webkit-scrollbar {
   height: 10000px;
   display: none;
   background: #000;
-  width: 90vw;
   font-size: 10vw;
   font-weight: 900;
   width: 100%;
@@ -256,9 +259,7 @@ body::-webkit-scrollbar {
 }
 
 #section2 .span__cont2 {
-  opacity: 0;
   color: #F9DB53;
-  opacity: 1;
 }
 
 #section2 span {
@@ -294,6 +295,16 @@ body::-webkit-scrollbar {
   display: inline-block;
 }
 
+#section3 {
+  height: 10000px;
+}
+
+#section3 > div {
+  left: auto;
+  right: 0;
+  padding: 13vw 0 13vw 0;
+}
+
 footer .port {
   font-size: 1.3vw;
   position: fixed;
@@ -318,39 +329,10 @@ footer .port:before {
 }
 
 .text-motion {
-  -webkit-transition: -webkit-transform 0.02s;
-  transition: -webkit-transform 0.02s;
-  transition: transform 0.02s;
-  transition: transform 0.02s, -webkit-transform 0.02s;
-}
-
-.text-effect {
-  -webkit-animation: text-effect 1.5s linear;
-          animation: text-effect 1.5s linear;
-}
-
-@-webkit-keyframes text-effect {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.32;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes text-effect {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.32;
-  }
-  100% {
-    opacity: 0;
-  }
+  -webkit-transition: -webkit-transform 0.04s;
+  transition: -webkit-transform 0.04s;
+  transition: transform 0.04s;
+  transition: transform 0.04s, -webkit-transform 0.04s;
 }
 
 @-webkit-keyframes blink-effect {
