@@ -215,10 +215,33 @@ body {
 
 #section3 {
     height: 10000px;
-    & > div {
-        left: auto;
-        right: 0;
-        padding: 13vw 0 13vw 0;
+    
+    .img1 {
+       
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),        
+        url("../img/img1.jpg") no-repeat;
+        background-size: cover;
+    }
+    .text1 {
+        position: absolute;
+
+        z-index: 333;
+        top: 30%;
+        color: #fff;
+        font-size: 6vw;
+        width: 94%;
+        height: 100%;
+        font-weight: 900;
+        span {
+            line-height: 94%;
+            text-align: right;
+            display: block;
+            &.orange {
+                color: #CF5015;
+            }
+        }
     }
 }
 
@@ -245,7 +268,7 @@ footer {
     animation: blink-effect 0.1s linear infinite;
 }
 .text-motion {
-    transition: transform 0.04s;
+    transition: transform 0.03s;
 }
 @keyframes blink-effect {
     50% {

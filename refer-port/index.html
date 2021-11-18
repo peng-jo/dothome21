@@ -54,7 +54,7 @@
 	</section>
 	<section id="section2"
         data-10000="opacity:1;"
-        data-13000="opacity:0;"
+        data-12000="opacity:0;"
     >
         <div class="span__cont2 fixed text-motion text-effect"
             data-0 = "transform: translate(-5vw, -20%);visibility: visible;"
@@ -106,13 +106,24 @@
         </div>
 	</section>
     <section id="section3"
-
     >
 
+    
+    <div class="img1 fixed"
+        data-12000="opacity:0;"
+        data-13000="opacity:1;"
+    >
+        <div class="text1">
+            <span class="orange">CODING LIFE</span>
+            <span>REACT</span>
+            <span class="orange">PORTFOLIO</span>
+            <span>SITE</span>
+        </div>
+    </div>
     </section>
     <footer>
         <span class="port">
-            PORT
+            
         </span>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
@@ -128,6 +139,7 @@
                 if(name === "data5300" || name === "data13000" ){
                     video.currentTime = 0;
                     console.log( video.currentTime );
+                    video.play();
                 }
             }
         });
