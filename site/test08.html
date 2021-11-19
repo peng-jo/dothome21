@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인 기능사</title>
+    <style>
+        @font-face {
+            font-family: 'NanumBarunGothic';
+            font-weight: 400;
+            src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+            src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'NanumBarunGothic';
+            font-weight: 700;
+            src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+            src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+        }
+
+            @font-face {
+            font-family: 'NanumBarunGothic';
+            font-weight: 300;
+            src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+            src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+        }
+
+        .nanumbarungothic * {
+            font-family: 'NanumBarunGothic', sans-serif;
+        }
+        * {
+            font-family: 'NanumBarunGothic';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 1100px;
+            margin:0 auto;
+        }
+        #section1 {
+            
+        }
+        
+        header .container {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        header ul {
+            position: relative;
+        }
+        header ul li {
+            font-family: 'NanumBarunGothic';
+            padding:40px;
+            font-weight: 700;
+            display: inline-block;
+            
+        }
+        .arcodian {
+            width: 160px;
+            background: #fff;
+            z-index: 99;
+            position: absolute;
+            display: none;
+        }
+        .arcodian li:nth-child(1){
+            border-top: none;
+        }
+        .arcodian li {
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            border-top: 1px solid #eee;
+        }
+        .arcodian:nth-child(2){
+            left: 0px;
+        }
+        .arcodian:nth-child(4){
+            left: 160px;
+        }
+        .arcodian:nth-child(6){
+            left: 320px;
+        }
+        .arcodian:nth-child(8){
+            left: 480px;
+        }
+        .arcodian.active{
+            display: block;
+        }
+        .arcodian li {
+            display: block;
+        }
+        header .logo {
+            vertical-align: middle;
+            width: 158px;
+            height: 30px;
+        }
+        /* slider */
+        .slider-wrap {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 700px;
+        }
+
+        .slider-img {
+            position: absolute;
+            width: 100%;
+            height: 700px;
+            overflow: hidden;
+        }
+        .slider-inner {
+            position: relative;
+            float: left;
+            /* width: 4000px; */
+        }
+        .slider-inner .slider {
+            position: relative;
+            float: left;
+            /* width: 100%; */
+            height: 700px;
+            
+        }
+        .slider-inner .slider img {
+            object-fit: cover;
+            width: 1920px;
+            height: 700px;
+        }
+        .slider-inner .slider::before{
+            position: absolute;
+            left: 5px; top: 5px;
+            background: rgba(0,0,0,.4);
+            color: #fff;
+            padding: 5px 10px 3px;
+            line-height: 1;
+            content : attr(data-name);
+        }
+        .slider-inner .slider:nth-child(1){z-index: 5;}
+        .slider-inner .slider:nth-child(2){z-index: 4;}
+        .slider-inner .slider:nth-child(3){z-index: 3;}
+        .slider-inner .slider:nth-child(4){z-index: 2;}
+        .slider-inner .slider:nth-child(5){z-index: 1;}
+        .slider-btn {
+            margin-top: 25%;
+            width: 100%;
+        }
+        .slider-btn a {
+            /* background: #000; */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            width: 10vw;
+            height: 200px;
+            line-height: 50px;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.2s;
+        }
+
+        .slider-btn .prev {
+            left: 0;
+        }
+
+        .slider-btn .next {
+            right: 0;
+        }
+        .plus {
+            font-weight: 700;
+            position: relative;
+            width: 28px;
+            height: 28px;
+            border: 2px solid #000;
+        }
+        .plus::before {
+            font-size: 18px;
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            content:'+';
+            font-weight: 700;
+        }
+        #section2 {
+            overflow: hidden;
+            padding: 42px 0;
+            background: #F3F7FA;
+        }
+        #section2 h3 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 42px;
+        }
+        #section2 .container {
+            position: relative;
+        }
+        #section2 .plus {
+            top:0; right: 0;
+            position: absolute;
+            display: inline-block
+        }
+        #section2 .bs {
+            float: left;
+            margin-right: 17px;
+            background: #fff;
+            border: 1px solid #D2D6D5;
+            padding: 28px;
+            width: 262px;
+            height: 200px;
+        }
+        #section2 .bs:nth-last-child(1){
+            margin-right: 0px;
+        }
+        #section2 .bs .bs__alert {
+            text-align: center;
+            font-weight: 700;
+            font-size: 12px;
+            display: inline-block;
+            padding: 8px;
+            width: 110px; height: 30px;
+            color: #90A1B3;
+            border-radius: 5px;
+            border: solid 2px #90A1B3;
+            margin-bottom: 10px;
+        }
+        #section2 .bs .bs__title {
+            display: block;
+            margin-bottom: 16px;
+        }
+        #section2 .bs .bs__duration {
+            margin-bottom: 8px;
+        }
+        #section2 .bs .bs__duration .bs__duration__title {
+            font-size: 8px;
+            display: inline-block;
+            height: 16px; width: 44px;
+            padding: 3px;
+            border-radius: 5px;
+            color: #fff;
+            background: #6291D2;
+            margin-right: 12px;
+        }
+        #section2 .bs .bs__duration .bs__duration__num {
+            font-size: 10px;
+        }
+        #section3 {
+            overflow: hidden;
+            padding: 50px 0;
+        }
+        #section3 > div > div {
+            float: left;
+            border: solid 1px #EAEAEA;
+        }
+        #section3 > div > div:nth-child(1){
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        #section3 > div > div:nth-child(2){
+            margin-bottom: 20px;
+        }
+        #section3 > div > div:nth-child(3){
+            margin-right: 20px;
+        }
+        #section3 .section3__cont1 {
+            position: relative;
+            padding: 20px 24px 0 24px;
+            width: 360px;
+            height: 210px;
+        }
+        .section3__cont1 .service {
+            display: inline-block;
+            font-size: 20px;
+            color:#AEAEAE;
+            font-weight: bold;
+            margin-bottom: 84px;
+        }
+        .section3__cont1 .service {
+            display: inline-block;
+            margin-bottom: 42px;
+        }
+        .section3__cont1 .service span.active {
+            color: #000;
+        }
+        .section3__cont1 .service span:nth-child(2) {
+            margin-left: 10px;
+            position: relative;
+        }
+        .section3__cont1 .service span:nth-child(2):before {
+            color: #000;
+            position: absolute;
+            left: -12px;
+            top: 0;
+            content: "|";
+            font-weight: bold;
+        }
+        .section3__cont1 .plus {
+            position: absolute;
+            right: 27px; top: 17px;
+        }
+        .section3__cont1 .tab {
+            display: none;
+        }
+        .section3__cont1 .tab.active {
+            display: block;
+        }
+        .section3__cont1 .tab .tab__desc {
+            display: block;
+            font-weight: 700;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        .section3__cont1 .tab .tab__date {
+            color: #B2B2B2;
+            font-size: 12px;
+            margin-bottom: 30px;
+        }
+        .section3__cont1 .tab .tab__date:nth-last-child(1) {
+            margin-bottom: 0;
+        }
+        .section3__cont2 {
+            float: right;
+            padding: 24px 27px;
+            width: 720px;
+            height: 210px;
+        }
+        .section3__cont2 h3 {
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .section3__cont2 .sub {
+            display: block;
+        }
+        .section3__cont2 .sub .sub__topic {
+            font-size: 10px;
+            padding: 4px;
+            text-align: center;
+            display: inline-block;
+            height: 20px; width: 94px;
+            color: #fff;
+            background-color: #3273CF;
+            margin-bottom: 12px;
+            margin-right: 18px;
+        }
+
+        
+        .section3__cont2 .sub .sub__title {
+            font-size: 12px;
+            vertical-align: sub;
+        }
+        .section3__cont2 .sub .sub__date {
+            float: right;
+        }
+        .section3__cont3 {
+            width: 360px;
+            height: 198px;
+        }
+        .section3__cont3 img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        .section3__cont4 {
+            position: relative;
+            padding: 24px 28px;
+            width: 720px;
+            height: 196px;
+            
+        }
+        .section3__cont4 h3 {
+            
+            display: block;
+            margin-bottom: 38px;
+        }
+        .section3__cont4 .plus {
+            position: absolute;
+            top: 18px; right: 28px;
+        }
+        .section3__cont4 .cont4__cont {
+            float: left;
+            width: 49%;
+            padding-right: 50px;
+        }
+        .section3__cont4 .cont4__cont:nth-child(3){
+            border-right: 1px solid #EAEAEA;
+        }
+        .section3__cont4 .cont4__cont:nth-child(4){
+            float: right;
+        }
+        .section3__cont4 .desc {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .section3__cont4 .date {
+            color: #989898;
+            font-size: 12px;
+            display: block;
+            margin-bottom: 18px;
+        }
+        footer {
+            height: 224px;
+            background-color: #27405E;
+            color: #8CA5C3;
+        }
+        footer .cont1 {
+            border-bottom: 1px solid #405977;
+        }
+        footer .cont1  li {
+            position: relative;
+            display: inline-block;
+            padding: 26px;
+            font-size: 12px;
+        }
+        footer .cont1 .container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        footer .cont1::before {
+            content: "";
+            width: 100%;
+            position: absolute;
+            
+        }
+        footer .cont1 li::before {
+            position: absolute;
+            right: -4px;
+            color: #405977;
+            content: '|';            
+        }
+        footer .cont1 li:last-child::before{
+            content: '';
+        }
+        footer .cont1 select, 
+        footer .cont1 option {
+            border: 1px solid #405977;
+            padding: 4px 4px;
+            font-size: 8px;
+            width: 128px; height: 34px;
+            color: #fff;
+            background-color: #27405E;
+        }
+        footer .cont2 .container {
+            display: flex;
+            justify-content: space-between;
+            height: 160px;
+            padding: 18px 0 36px 0;
+        }
+        footer .cont2 .container img {
+            margin-right: 14px;
+        }
+        
+        footer .cont2 .container img:nth-child(1){
+            width: 168px;
+            height: 58px;
+        }
+        footer .cont2 .container span {
+            font-size: 10px;
+            display: inline-block;
+            width: 200px;
+            vertical-align: top;
+            line-height: 150%;
+            margin-top: 14px;
+        }
+        footer .cont2 .container img:nth-child(3) {
+            vertical-align: top;
+            margin-top: 14px;
+            width: 98px;
+            height: 26px;
+        }
+        footer .cont2 .cont2__cont:nth-child(2) {
+            height: 50px;
+            padding: 4px;
+            padding-left: 20px;
+            border-left: solid 2px #405977;
+            
+        }
+        footer .cont2 .cont2__cont:nth-child(2) span {
+            display: block;
+            width: 100px;
+            margin-top: 0;
+            font-size: 12px;
+        }
+        footer .cont2 .cont2__cont:nth-child(2) .c1 {
+            
+            
+        }
+        footer .cont2 .cont2__cont:nth-child(2) .c2 {
+                     
+            color: #fff;
+            
+            font-size: 18px;
+        }
+     
+     
+    
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img class="logo" src="./img/test08/img1.jpg" alt="이미지1">
+            <ul>
+                <li>무역통산정보</li>
+                <ul class="arcodian active">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+                <li>회원/업무지원</li>
+                <ul class="arcodian">
+                    <li>4</li>
+                    <li>3</li>
+                    <li>2</li>
+                    <li>1</li>
+                </ul>
+                <li>무역통계</li>
+                <ul class="arcodian">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+                <li>협회안내</li>
+                <ul class="arcodian">
+                    <li>4</li>
+                    <li>3</li>
+                    <li>2</li>
+                    <li>1</li>
+                </ul>
+            </ul>
+        </div>
+    </header>
+    <setion id="section1">
+        <div class="slider-wrap">
+            <div class="slider-img">
+                <div class="slider-inner">
+                    <div class="slider" data-name="이미지1"><img src="./img/test08/img2.jpg" alt="슬라이더"></div>
+                    <div class="slider" data-name="이미지2"><img src="./img/test08/img2.jpg" alt="슬라이더"></div>
+                    <div class="slider" data-name="이미지3"><img src="./img/test08/img2.jpg" alt="슬라이더"></div>
+                    <div class="slider" data-name="이미지4"><img src="./img/test08/img2.jpg" alt="슬라이더"></div>
+                    <div class="slider" data-name="이미지5"><img src="./img/test08/img2.jpg" alt="슬라이더"></div>    
+                </div>
+            </div>
+            <div class="slider-btn">
+                <a href="#" class="prev"></a>
+                <a href="#" class="next"></a>
+            </div>
+        </div>
+    </setion>
+    <section id="section2">
+        <div class="container">
+            <h3>KITA 사업 일정</h3>
+            <div class="plus"></div>
+            <div class="bs">
+                <span class="bs__alert">모집마감 -4일</span>
+                <span class="bs__title">2019 태국 국제식품전시회 업체 모집</span>
+                <span class="bs__duration">
+                    <div class="bs__duration__cont">
+                        <span class="bs__duration__title">
+                            사업기간
+                        </span>
+                        <span class="bs__duration__num">
+                            2019-05-28 ~ 2019-06-01
+                        </span>
+                    </div>
+                    <div class="bs__duration__cont">
+                        <span class="bs__duration__title">
+                            모집기간
+                        </span>
+                        <span class="bs__duration__num">
+                            2019-01-17 ~ 2019-02-12
+                        </span>
+                    </div>
+                </span>
+                <span class="bs__duration"></span>
+            </div>
+            <div class="bs">
+                <span class="bs__alert">모집마감 -4일</span>
+                <span class="bs__title">2019 태국 국제식품전시회 업체 모집</span>
+                <span class="bs__duration">
+                    <div class="bs__duration__cont">
+                        <span class="bs__duration__title">
+                            사업기간
+                        </span>
+                        <span class="bs__duration__num">
+                            2019-05-28 ~ 2019-06-01
+                        </span>
+                    </div>
+                    <div class="bs__duration__cont">
+                        <span class="bs__duration__title">
+                            모집기간
+                        </span>
+                        <span class="bs__duration__num">
+                            2019-01-17 ~ 2019-02-12
+                        </span>
+                    </div>
+                </span>
+                <span class="bs__duration"></span>
+            </div>
+            <div class="bs">
+                <span class="bs__alert">모집마감 -4일</span>
+                <span class="bs__title">2019 태국 국제식품전시회 업체 모집</span>
+                <span class="bs__duration">
+                    <div class="bs__duration__cont">
+                        <span class="bs__duration__title">
+                            사업기간
+                        </span>
+                        <span class="bs__duration__num">
+                            2019-05-28 ~ 2019-06-01
+                        </span>
+                    </div>
+                    <div class="bs__duration__cont">
+                        <span class="bs__duration__title">
+                            모집기간
+                        </span>
+                        <span class="bs__duration__num">
+                            2019-01-17 ~ 2019-02-12
+                        </span>
+                    </div>
+                </span>
+                <span class="bs__duration"></span>
+            </div>
+            <div class="bs">
+                <span class="bs__alert">모집마감 -4일</span>
+                <span class="bs__title">2019 태국 국제식품전시회 업체 모집</span>
+                <span class="bs__duration">
+                    <div class="bs__duration__cont">
+                        <span class="bs__duration__title">
+                            사업기간
+                        </span>
+                        <span class="bs__duration__num">
+                            2019-05-28 ~ 2019-06-01
+                        </span>
+                    </div>
+                    <div class="bs__duration__cont">
+                        <span class="bs__duration__title">
+                            모집기간
+                        </span>
+                        <span class="bs__duration__num">
+                            2019-01-17 ~ 2019-02-12
+                        </span>
+                    </div>
+                </span>
+                <span class="bs__duration"></span>
+            </div>
+        </div>
+    </section>
+    <section id="section3">
+        <div class="container">
+            <div class="section3__cont1">
+                <span class="service">
+                    <span class="active">보도자료</span>
+                    <span>언론기고</span>
+                </span>
+                <div class="plus"></div>
+                <span class="tabList">
+                    <div class="tab active">
+                        <div class="tab__desc">민관합동 현장중심 수출활력촉진단 가동</div>
+                        <div class="tab__date">2019-01-31</div>
+                        <div class="tab__desc">민간기업이 주도하는 유럽 스타트업 캠퍼스</div>
+                        <div class="tab__date">2019-01-31</div>
+                    </div>
+                    <div class="tab">
+                        <div class="tab__desc">민간기업이 주도하는 유럽 스타트업 캠퍼스</div>
+                        <div class="tab__date">2019-01-31</div>
+                        <div class="tab__desc">민관합동 현장중심 수출활력촉진단 가동</div>
+                        <div class="tab__date">2019-01-31</div>
+                    </div>
+                </span>
+            </div>
+            <div class="section3__cont2">
+                <h3>KITA 연구보고서</h3>
+                <span class="sub">
+                    <span class="sub__topic">[Trade Brief]</span>
+                    <span class="sub__title">2019년 수출기업의 경영환경 전망 조사</span>
+                    <span class="sub__date">2019-01-17</span>
+                </span>
+                <span class="sub">
+                    <span class="sub__topic">[KITA]</span>
+                    <span class="sub__title">[토론회 자료] WTO 전자상거래 혐상을 위한 공청회 겸 디지털통상정책 토론회 발...</span>
+                    <span class="sub__date">2019-01-16</span>
+                </span>
+                <span class="sub">
+                    <span class="sub__topic">[KITA]</span>
+                    <span class="sub__title">[설명회 자료] 브렉시트(Brexit) 설명회 발표자료</span>
+                    <span class="sub__date">2019-01-17</span>
+                </span>
+                <span class="sub">
+                    <span class="sub__topic">[Trade Brief]</span>
+                    <span class="sub__title">스타트업 사례를 통해 본 2018 중국 AI 시장 트렌드</span>
+                    <span class="sub__date">2019-01-10</span>
+                </span>
+            </div>
+            <div class="section3__cont3">
+                <img src="./img/test08/img6.jpg" alt="온라인세미나">
+            </div>
+            <div class="section3__cont4">
+                <h3>KITA 통상정보</h3>
+                <div class="plus"></div>
+                <div class="cont4__cont">
+                    <span class="desc">한미 통산현안 사례분석집</span>
+                    <span class="date">2019-01-15</span>
+                    <span class="desc">[통상 리포트] 킥오프된 브렉시트 후반전 : 향우 통...</span>
+                    <span class="date">2019-01-15</span>
+                </div>
+                <div class="cont4__cont">
+                    <span class="desc">한미 통산현안 사례분석집</span>
+                    <span class="date">2019-01-15</span>
+                    <span class="desc">[통상 리포트] 킥오프된 브렉시트 후반전 : 향우 통...</span>
+                    <span class="date">2019-01-15</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        
+            <div class="cont1">
+                <div class="container">
+                    <ul>
+                        <li>이용약관</li>
+                        <li>개인정보처리방침</li>
+                        <li>저작권 정책</li>
+                        <li>이메일주소무단수집거부</li>
+                        <li>온라인 고객상담</li>
+                        <li>신문고</li>
+                    </ul>
+                    <div class="option">
+                        <select name="sel1" id="sel1">
+                            <option value="국내외지부1">국내외지부1</option>
+                            <option value="국내외지부2">국내외지부2</option>
+                            <option value="국내외지부3">국내외지부3</option>
+                            <option value="국내외지부4">국내외지부4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="cont2">
+                <div class="container">
+                    <div class="cont2__cont">
+                        <img src="./img/test08/backlogo.jpg" alt="로고2">
+                        <span>(06164) 서울시 강남구 영동대로 511 (삼성동) <br>
+                            Copyright @ KITA All rights reserved
+                        </span>
+                        <img src="./img/test08/img4.jpg" alt="sns">
+                    </div>
+                    <div class="cont2__cont">
+                        <span class="c1">트레이드 콜센터</span>
+                        <span class="c2">1566-5114</span>
+                    </div>
+                </div>
+            </div>
+            
+        
+    </footer>
+    <script>
+        const sliderWrap = document.querySelector(".slider-wrap");
+        const sliderImg = document.querySelector(".slider-img");
+        const sliderInner = document.querySelector(".slider-inner");
+        const sliderBtn = document.querySelector(".slider");
+        const slider = document.querySelectorAll(".slider");
+        const sliderBtnPrev = document.querySelector(".prev");
+        const sliderBtnNext = document.querySelector(".next");
+    
+        const tabBtn = document.querySelectorAll('.service > span')
+        const tabCont = document.querySelectorAll(".tabList > .tab");
+
+        let sliderCount = slider.length;
+        let sliderWidth = sliderBtn.clientWidth;
+        let sliderTotalwidth = sliderWidth * sliderCount;
+        let currentIndex = 0;
+
+        //즉시실행 함수
+        (()=>{
+            //이미지 가로값 세팅
+            sliderInner.style.width = sliderTotalwidth + "px";
+            sliderInner.style.transition = "all 500ms ease-in";
+            sliderInner.style.left = 0;
+    
+        })()
+        
+
+
+        //이미지 움직이기
+        const gotoSlider = num =>{
+            sliderInner.style.left = - sliderWidth * num + "px";
+            currentIndex = num;
+        }
+        //왼쪽 버튼 
+        const btnPrev = (e) => {
+            e.preventDefault();
+            let prevIndex = ( currentIndex - 1 ) % sliderCount;
+            if( currentIndex == 0 ) prevIndex = sliderCount - 1;
+
+            gotoSlider(prevIndex);
+        }
+
+        //오른쪽 버튼
+        const btnNext = (e) => {
+            e.preventDefault();
+            let prevIndex = (currentIndex + 1) % sliderCount;
+            
+            gotoSlider(prevIndex);
+        }
+
+        sliderBtnPrev.addEventListener("click", btnPrev);
+        sliderBtnNext.addEventListener("click", btnNext);
+        
+        tabBtn.forEach( ( element, index ) =>{
+            element.addEventListener("click",function(){
+                tabBtn.forEach((el)=>{
+                    el.classList.remove("active");
+                });
+                element.classList.add("active");
+
+                tabCont.forEach(el => {
+                    el.style.display = "none";
+                });
+                tabCont[index].style.display = "block";
+            });
+        })
+
+        const arcodian = document.querySelectorAll("header div > ul > li");
+        const list = document.querySelectorAll(".arcodian");
+
+        arcodian.forEach((element, index)=>{
+            console.log(element)
+            element.addEventListener("click",function(){
+                let isBlock = true;
+
+                arcodian.forEach((el)=>{
+                    el.classList.remove("active");
+                });
+                element.classList.add("active");
+
+                if(list[index].style.display == "block"){
+                    isBlock = true;
+                } else {
+                    isBlock = false;
+                }
+
+                list.forEach(el => {
+                    el.style.display = "none";
+                });
+
+                if(isBlock){
+                    list[index].style.display = "none";
+                } else {
+                    list[index].style.display = "block";
+                }
+                
+            });
+        });
+    </script>
+</body>
+</html>

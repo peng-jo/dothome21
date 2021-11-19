@@ -164,8 +164,7 @@ body {
     font-weight: 900;
     width: 100%;
 
-    & > div:nth-child(1),
-    & > div:nth-child(2) {
+    & > div:nth-child(1){
         left:auto;
         right:0;
         padding: 13vw 0 13vw 0;
@@ -176,6 +175,11 @@ body {
 
     .span__cont2 {
         color: #F9DB53;
+        &.showing {
+            transform: 'translateY(100%)';
+            display: block;
+            animation: show-effect 3s;
+        }
     }
 
     span {
@@ -187,9 +191,10 @@ body {
     &.show {
         display: block;
     }
+    
     .video__wrapper {
         video {
-            filter: brightness(0.5);
+            filter: brightness(0.35);
             /* % of surrounding element */
 
             /* % of current element */
@@ -269,6 +274,20 @@ footer {
 }
 .text-motion {
     transition: transform 0.03s;
+}
+
+@keyframes show-effect {
+    0% {
+        transform:'translateY(100%)';
+        opacity: 0;
+    }
+    50% {
+        transform:'translateY(-10%)';
+    }
+    50% {
+        transform: 'translateY(-30%)';
+        opacity: 1;
+    }
 }
 @keyframes blink-effect {
     50% {

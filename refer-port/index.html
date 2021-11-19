@@ -56,7 +56,7 @@
         data-10000="opacity:1;"
         data-12000="opacity:0;"
     >
-        <div class="span__cont2 fixed text-motion text-effect"
+        <!-- <div class="span__cont2 fixed text-motion text-effect"
             data-0 = "transform: translate(-5vw, -20%);visibility: visible;"
             data-4000="visibility: hidden;transform: translate(-5vw, -100%);"
             data-6000 = "transform: translate(-5vw, -120%);"
@@ -68,9 +68,9 @@
 			<span>WANTS</span>
 			<span>BETTER</span>
 			<span>FRONTEND</span>
-		</div>
+		</div> -->
 		<div class="span__cont fixed"
-            data-0 = "transform: translate(-5vw, -20%);"
+            data-0= "transform: translate(-5vw, -30%);"
             data-4000="opacity:1;transform: translate(-5vw, -100%)"
             data-6000 = "transform: translate(-5vw, -120%);opacity:0;"
         >
@@ -131,15 +131,26 @@
         const video = document.querySelector('.video');
 		const section = document.querySelectorAll('section');
         const spanCont = document.querySelectorAll('.span__cont');
+      
+
+        
         let allowed = true;
         
+
         skrollr.init({
             smoothScrolling:true,
             keyframe: function(element, name, direction) { //element, name, direction
                 if(name === "data5300" || name === "data13000" ){
+                    const promise = video.play();
                     video.currentTime = 0;
                     console.log( video.currentTime );
-                    video.play();
+                    if (promise !== undefined) { 
+                        promise.then(_ => { 
+                            
+                        }).catch(error => { 
+                            console.log(error)
+                        }) }
+                    
                 }
             }
         });
@@ -160,13 +171,15 @@
             console.log('2')
             spanCont[0].classList.remove('show');
             spanCont[1].classList.add('show');
+            
             setTimeout(()=>{
                 spanCont[1].classList.remove('show');
 				section[0].remove();
                 section[2].classList.add('show');
+                spanCont[2].classList.add('showing')
                 allowed = false;
-            },1500)
-        },1500)
+            },10)
+        },10)
         window.addEventListener("wheel",doWheel,{passive:false});
     </script>
 </body>
