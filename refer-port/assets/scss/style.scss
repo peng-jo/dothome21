@@ -176,8 +176,7 @@ body {
     .span__cont2 {
         color: #F9DB53;
         &.showing {
-            transform: 'translateY(100%)';
-            display: block;
+            transform: translate(-5vw, 150%);
             animation: show-effect 3s;
         }
     }

@@ -262,9 +262,8 @@ body {
 }
 
 #section2 .span__cont2.showing {
-  -webkit-transform: 'translateY(100%)';
-          transform: 'translateY(100%)';
-  display: block;
+  -webkit-transform: translate(-5vw, 150%);
+          transform: translate(-5vw, 150%);
   -webkit-animation: show-effect 3s;
           animation: show-effect 3s;
 }
