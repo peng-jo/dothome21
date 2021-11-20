@@ -70,15 +70,16 @@
 			<span>FRONTEND</span>
 		</div> -->
 		<div class="span__cont fixed"
-            data-4000="opacity:1;transform: translate(-5vw, -30%)"
-            data-6000 = "transform: translate(-5vw, -120%);opacity:0;"
+            data-0="opacity:1;transform: translate(-5vw, -31%); display:block;"
+            data-4000="opacity:1;transform: translate(-5vw, -90%);"
+            data-6000 = "transform: translate(-5vw, -120%);opacity:0; display:none;"
         >
 			<span>CODING</span>
-			<span>LIFE</span>
+			<span class="yellow">LIFE</span>
 			<span>SOMEONE</span>
-			<span>WHO</span>
+			<span class="yellow">WHO</span>
 			<span>WANTS</span>
-			<span>BETTER</span>
+			<span class="yellow">BETTER</span>
 			<span>FRONTEND</span>
 		</div>
         <div class="video__wrapper fixed"
@@ -95,6 +96,7 @@
         <div class="text_wrapper fixed"
             data-6000="display:none;"
             data-6001="display:block;"
+            data-12000="display:none;"
         >
             <span class="text"
                 data-6001="transform:translateX(0%)"
@@ -107,18 +109,29 @@
     <section id="section3"
     >
 
-    
+  
     <div class="img1 fixed"
-        data-12000="opacity:0;"
-        data-13000="opacity:1;"
+        data-12000="transform:translate(-50%, -50%); opacity:0;"
+        data-13000="top:50%;transform:translate(-50%, -50%); opacity:1;display:block;"
+        data-15000="top:0%;transform:translate(-50%, -100%); opacity:1;display:none;"
     >
         <div class="text1">
             <span class="orange">CODING LIFE</span>
-            <span>REACT</span>
+            <span>HTML CSS</span>
             <span class="orange">PORTFOLIO</span>
             <span>SITE</span>
         </div>
     </div>
+    <div class="fixed orangeB"
+        data-12999="top:100%;transform:translate(-50%, 0%); display:none;"
+        data-13000="top:100%;transform:translate(-50%, 0%); display:block;"
+        data-15000="top:50%;transform:translate(-50%, -50%); display:block;"
+    >
+        <div class="cont1 orangeB">
+
+        </div>
+    </div>
+
     </section>
     <footer>
         <span class="port">
@@ -177,8 +190,8 @@
                 section[2].classList.add('show');
                 spanCont[2].classList.add('showing')
                 allowed = false;
-            },10)
-        },10)
+            },1000)
+        },1000)
         window.addEventListener("wheel",doWheel,{passive:false});
     </script>
 </body>
