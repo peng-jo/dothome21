@@ -93,3 +93,38 @@ body::-webkit-scrollbar {
   display: none;
   /* Chrome, Safari, Opera*/
 }
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.black {
+  font-weight: 900;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.orangeB {
+  background-color: #CF5015;
+}
+
+.yellowB {
+  background-color: #F9DB53;
+}
+
+.yellow {
+  color: #F9DB53;
+}
+
+.num {
+  font-size: 36.4vw;
+  color: rgba(255, 153, 0, 0.2);
+  font-weight: 900;
+}
+
+.wh {
+  width: 100vw;
+  height: 100vh;
+}

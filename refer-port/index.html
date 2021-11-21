@@ -11,13 +11,9 @@
 </head>
 <body>
     <div class="scroll">0</div>
-    <div id="contents">
-        <section id="section1">
-        </section>
-    </div>
     <header id="header">
         <ul class="header__left">
-            <li><img class="header__circle" src="./assets/svg/plus_circle.svg" alt="plus_circle"></li>
+            <li><img class="header__circle" src="./assets/img/circlepng.png" alt="plus_circle"></li>
             <li>
                 <span>
                     <div>PORT PROCESS</div>
@@ -53,7 +49,8 @@
 		</div>
 	</section>
 	<section id="section2"
-        data-10000="opacity:1;"
+        data-0="opacity:1;"
+        data-11000="opacity:1;"
         data-12000="opacity:0;"
     >
         <!-- <div class="span__cont2 fixed text-motion text-effect"
@@ -84,12 +81,11 @@
 		</div>
         <div class="video__wrapper fixed"
             data-5300="opacity:0"
-            data-6000="opacity:1"
+            data-6000="opacity:1;display:block;"
+            data-12000="display:none;"
         >
-            <no-show style="display: none;" data-emit-events data-5300 ></no-show>
-            <no-show style="display: none;" data-emit-events data-13000 ></no-show>
             
-            <video class="video" preload="auto" playsinline autoplay loop>
+            <video class="video" loop muted >
                 <source src="./assets/video/video.mp4" type="video/mp4" >
             </video>
         </div>
@@ -107,92 +103,414 @@
         </div>
 	</section>
     <section id="section3"
+        data-11999="display:none;"
+        data-12000="display:block;"
     >
-
-  
-    <div class="img1 fixed"
-        data-12000="transform:translate(-50%, -50%); opacity:0;"
-        data-13000="top:50%;transform:translate(-50%, -50%); opacity:1;display:block;"
-        data-15000="top:0%;transform:translate(-50%, -100%); opacity:1;display:none;"
-    >
-        <div class="text1">
-            <span class="orange">CODING LIFE</span>
-            <span>HTML CSS</span>
-            <span class="orange">PORTFOLIO</span>
-            <span>SITE</span>
+        <div class="img1 fixed"
+            data-12000="transform:translate(-50%, -50%); opacity:0;"
+            data-13000="top:50%;transform:translate(-50%, -50%); opacity:1;display:block;"
+            data-15000="top:0%;transform:translate(-50%, -100%); opacity:1;display:none;"
+        >
+            <div class="text1">
+                <span class="orange">CODING LIFE</span>
+                <span>HTML CSS</span>
+                <span class="orange">PORTFOLIO</span>
+                <span>SITE</span>
+            </div>
         </div>
-    </div>
-    <div class="fixed orangeB"
-        data-12999="top:100%;transform:translate(-50%, 0%); display:none;"
-        data-13000="top:100%;transform:translate(-50%, 0%); display:block;"
-        data-15000="top:50%;transform:translate(-50%, -50%); display:block;"
-    >
-        <div class="cont1 orangeB">
+        <div class="fixed orangeB"
+            data-12999="top:100%;transform:translate(-50%, 0%); display:none;"
+            data-13000="top:100%;transform:translate(-50%, 0%); display:block;opacity:1;"
+            data-15000="top:50%;transform:translate(-50%, -50%); display:block;"
+            data-34000="opacity:1;"
+            data-36999="opacity:0;display:none;"
+        >
+            <!-- 디스크 -->
+            <img class="disk disk1 fixed" src="./assets/svg/disk.svg" alt="disk"
+                data-15000="left:-100%;top:6%;"
+                data-16000="left:-34%;top:-16%;"
+                data-34000="left:-34%;top:-16%;"
+                data-37000="left:-100%;top:-16%;"
+            />
 
+            <!-- 디스크 위 설명 -->
+            <div class="ondisk fixed"
+                data-15999="display:none;"
+                data-16000="transform:translate(-200%,-30%);display:flex;"
+                data-34000="transform:translate(-200%,-30%);display:flex;"
+                data-37000="transform:translate(-600%,-30%);display:flex;"
+            >
+                <span class="black">STANDARD</span>
+                <span class="thin">SITE VIEW</span>
+                <img src="./assets/svg/Arrow 1.svg" alt="화살표"/>
+            </div>
+
+            <!-- 컨테이너1 -->
+            <div class="cont"
+                data-15000="transform:translateY(0%);display:block;"
+                data-21000="transform:translateY(0%);"
+                data-22000="transform:translateY(-100%);display:none;"
+            >    
+                <!-- 숫자 -->
+                <div class="num fixed"
+                    data-15999="top:-50%;left:100%;transform:translate(-95%,0%);display:none;"
+                    data-16000="top:-50%;left:100%;transform:translate(-95%,0%);display:block;"
+                    data-17000="top:12%;transform:translate(-95%,0%);"
+                    data-18500="top:12%;"
+                    data-19000="top:0%;"
+                    data-20000="top:-12%;"
+                    
+                >01</div>
+                <!-- 모니터 -->
+                <img class="fixed monitor" src="./assets/img/standard.png"
+                    data-17000="top:124px;left:100%;transform:translate(0%,30%);display:block;"
+                    data-18000="left:100%;transform:translate(-110%,30%)"
+                    data-18500="left:100%;transform:translate(-110%,30%)"
+                    data-19000="left:100%;transform:translate(-110%,-4%)"
+                    data-20000="left:100%;transform:translate(-110%,-30%)"
+    
+                />
+                <!-- 설명 -->
+                <div class="fixed topic"
+                    data-19000="left:100%;transform:translate(-116%,500%);"
+                    data-20000="left:100%;transform:translate(-116%,120%);"
+                >
+                    <div class="title">
+                        CODING <span>LIFE</span> <br>
+                        STANDARD SITE
+                    </div>
+                    <div class="desc">
+                        웹표준 사이트를 만들어 보았습니다. 해당 사이트를 코딩하면서 웹 페이지의 레이아웃 기본을 공부 할 수 있었습니다.
+                    </div>
+                </div>
+            </div>
+            <!-- div -->
+            <!-- 컨테이너2 -->
+            <div class="cont"
+                data-21999="display:none;"
+                data-22000="transform:translateY(0%);display:block;"
+                data-27000="transform:translateY(0%);"
+                data-28000="transform:translateY(-100%);display:none;"
+            >    
+                <!-- 숫자 -->
+                <div class="num fixed"
+                    data-22000="top:-50%;left:100%;transform:translate(-95%,0%);display:block;"
+                    data-23000="top:12%;transform:translate(-95%,0%);"
+                    data-24500="top:12%;transform:translate(-95%,0%);"
+                    data-25000="top:-12%;"
+                >02</div>
+                <!-- 모니터 -->
+                <img class="fixed monitor" src="./assets/img/respon.png"
+                    data-23000="top:124px;left:100%;transform:translate(0%,30%);display:block;"
+                    data-24000="left:100%;transform:translate(-110%,30%)"
+                    data-24500="left:100%;transform:translate(-110%,30%)"
+                    data-25000="left:100%;transform:translate(-110%,-4%)"
+                    data-26000="left:100%;transform:translate(-110%,-30%)"
+    
+                />
+                <!-- 설명 -->
+                <div class="fixed topic"
+                    data-25000="left:100%;transform:translate(-116%,500%);"
+                    data-26000="left:100%;transform:translate(-116%,120%);"
+                >
+                    <div class="title">
+                        CODING <span>LIFE</span> <br>
+                        RESPONSIVE SITE
+                    </div>
+                    <div class="desc">
+                        반응형 사이트를 만들어 보았습니다. 해당 사이트를 코딩하면서 웹 페이지의 레이아웃 기본을 공부 할 수 있었습니다.
+                    </div>
+                </div>
+            </div>
+            <!-- div -->
+            <!-- 컨테이너3 -->
+            <div class="cont"
+                data-27999="display:none;transform:translateY(0%);"
+                data-28000="display:block;"
+                data-33000="display:block;"
+                data-34000="transform:translateY(-100%);"
+            >    
+                <!-- 숫자 -->
+                <div class="num fixed"
+                    data-28000="top:-50%;left:100%;transform:translate(-95%,0%);display:block;"
+                    data-29000="top:12%;transform:translate(-95%,0%);"
+                    data-30500="top:12%;transform:translate(-95%,0%);"
+                    data-31000="top:-12%;"
+                >03</div>
+                <!-- 모니터 -->
+                <img class="fixed monitor" src="./assets/img/mega.png"
+                    data-29000="top:124px;left:100%;transform:translate(0%,30%);display:block;"
+                    data-30000="left:100%;transform:translate(-110%,30%)"
+                    data-30500="left:100%;transform:translate(-110%,30%)"
+                    data-31000="left:100%;transform:translate(-110%,-4%)"
+                    data-32000="left:100%;transform:translate(-110%,-30%)"
+    
+                />
+                <!-- 설명 -->
+                <div class="fixed topic"
+                    data-31000="left:100%;transform:translate(-116%,500%);"
+                    data-32000="left:100%;transform:translate(-116%,110%);"
+                >
+                    <div class="title">
+                        CODING <span>LIFE</span> <br>
+                        MEGABOX SITE
+                    </div>
+                    <div class="desc">
+                        메가박스 사이트를 만들어 보았습니다. 해당 사이트를 코딩하면서 웹 페이지의 레이아웃 기본을 공부 할 수 있었고, 반응형과, 이미지 슬라이드, 유투브API를 사용하였습니다.
+                    </div>
+                </div>
+            </div>
+            <!-- div -->
         </div>
-    </div>
+        <!-- div -->
+
+        <div class="fixed"
+            data-36999="opacity:0; display:none;"
+            data-37000="opacity:0;display:block;"
+            data-38000="opacity:1;"
+            data-48000="display:none;"
+        >
+            <div class="img3 fixed"
+                data-40000="opacity:1;display:block;"
+                data-41000="opacity:0;display:none;"
+            >
+                <div class="text1 center">
+                    <span>CODING <span class="yellow inline">LIFE</span> </span>
+                    <span>CREATIVE WEB</span>
+                    <span class="yellow">PORTFOLIO SITE VIEW</span>
+                </div>
+            </div>
+            
+            <div class="text1 fixed center text2 orangeB"
+                data-39999="display:none;"
+                data-41000="display:flex;transform:translate(-50%,-50%);opacity:0;"
+                data-41500="display:flex;opacity:1;"
+                data-42500="display:flex;transform:translate(-150%,-50%);display:none;"
+            >
+                <span>CODING LIFE</span>
+                <span>CREATIVE WEB</span>
+                <span>PORTFOLIO SITE VIEW</span>
+            </div>
+            <div class="text3 fixed orangeB"
+                data-41399="display:none;transform:translate(50%,-50%)"
+                data-41499="display:block;transform:translate(50%,-50%);"
+                data-42500="display:block;transform:translate(-50%,-50%);"
+                data-43500="display:block;transform:translate(-150%,-50%);"
+            >
+                <span class="num fixed"
+                    data-42500="transform:translate(-125%,-60%);"
+                    data-43000="transform:translate(-125%,-60%);"
+                >01</span>
+                <div class="topic fixed"
+                    data-42500="transform:translate(-40%, -30%);"
+                >
+                    <div class="title">REACT SITE <br> CODIING WORK</div>
+                    <div class="desc">자바스크립트를 처음 공부했을 때 많이 답답했다. <br>
+                    하지만 익숙해지고 정리하고, 않고 검색엔진을 활용해 검색, 관련 <br>
+                    책을 구매해 공부했습니다. 혼자 해결하기 힘들 경우에 강사님께 수업이 끝난 후 물어봤습니다. 자세히 보기</div>
+                    <span class="btn">
+                        <span> 
+                            <a href="#">코드보기</a>
+                        </span>
+                        <span> 
+                            <a href="#">사이트 보기</a> 
+                        </span>
+                    </span>
+                    <img class="fixed" src="./assets/img/site.jpg" alt="사진"
+                        data-42500="transform:translate(-8%,-40%);"
+                    >
+                </div>
+            </div>
+            
+    
+        </div>
+
+        <div class="fixed yellowB"
+            data-48000="opacity:0;display:block;"
+            data-49000="opacity:1;"
+            data-50000="opacity:0;display:none;"
+        >
+            <div class="img2">
+                <div class="text1">
+                    <span class="yellow">CODING LIFE</span>
+                    <span>PARALLAX</span>
+                    <span class="yellow">MOUSE</span>
+                    <span>SLIDE</span>
+                    <span class="yellow">GAME</span>
+                </div>
+            </div>
+        </div>
+         <!-- 컨테이너1 -->
+        <div class="list fixed yellowB"
+            data-49999="display:none;"
+            data-50000="opacity:0;display:block;"
+            data-51000="opacity:1;"
+        >    
+            <div class="topic fixed"
+                data-50000="display:block;"
+                data-51000="transform:translate(-50%, -50%);"
+                data-52000="transform:translate(-50%, -250%);"
+            >
+                <div class="container">
+                    <div class="num">01</div>
+                    <div class="s1">
+                        <div class="title">
+                            <span> <span class="white">CODING</span> LIFE </span>
+                            <span>MOSUE <span class="white">SITE</span> </span>
+                        </div>
+                        <div class="desc">자바스크립트와 제이쿼리를 통해 다양한 마우스 움직임 이펙트를 표현 하였습니다. 마우스를 커서를 따라다니는 이펙트, 브랜딩 이펙트, 마우스 방향에 따라 움직이는 이펙트 등 다양한 이펙트를 볼 수 있습니다.</div>
+                    </div>
+                    <img src="./assets/img/js1.jpg" alt="이미지1">
+                </div>
+            </div>
+            <!-- topic -->
+            <div class="topic fixed"
+                data-50999="display:none;"
+                data-51000="transform:translate(-50%, 50%);display:block;"
+                data-52000="transform:translate(-50%, -250%);"
+                data-53000="transform:translate(-50%, -350%);"
+                
+            >
+                <div class="container">
+                    
+                    <div class="num right">02</div>
+                    <div class="s1">
+                        <div class="desc">자바스크립트와 제이쿼리를 통해 다양한 마우스 움직임 이펙트를 표현 하였습니다. 마우스를 커서를 따라다니는 이펙트, 브랜딩 이펙트, 마우스 방향에 따라 움직이는 이펙트 등 다양한 이펙트를 볼 수 있습니다.</div>
+                         <div class="title">
+                            <span> <span class="white">CODING</span> LIFE </span>
+                            <span>MOSUE <span class="white">SITE</span> </span>
+                        </div>
+                    </div>
+                    
+                    <img src="./assets/img/js2.jpg" alt="이미지1">
+                </div>
+            </div>
+            <!-- topic -->
+            <div class="topic fixed"
+                data-51999="display:none;"
+                data-52000="transform:translate(-50%, 50%);display:block;"
+                data-53000="transform:translate(-50%, -300%);display:block;"
+                data-54000="transform:translate(-50%, -500%);display:block;"
+            >
+                <div class="container">
+                    
+                    <div class="num">03</div>
+                    <div class="s1">
+                        <div class="title">
+                            <span> <span class="white">CODING</span> LIFE </span>
+                            <span>MOSUE <span class="white">SITE</span> </span>
+                        </div>
+                        <div class="desc">자바스크립트와 제이쿼리를 통해 다양한 마우스 움직임 이펙트를 표현 하였습니다. 마우스를 커서를 따라다니는 이펙트, 브랜딩 이펙트, 마우스 방향에 따라 움직이는 이펙트 등 다양한 이펙트를 볼 수 있습니다.</div>
+                    </div>
+                    
+                    <img src="./assets/img/js3.jpg" alt="이미지1">
+                </div>
+            </div>
+            <!-- topic -->
+            <div class="topic fixed"
+                data-52999="display:none;"
+                data-53000="transform:translate(-50%, 50%);display:block;"
+                data-54000="transform:translate(-50%, -500%);display:block;"
+                data-56000="transform:translate(-50%, -600%);display:block;"
+            >
+                <div class="container">
+                    
+                    <div class="num right">04</div>
+                    <div class="s1">
+                        <div class="desc">자바스크립트와 제이쿼리를 통해 다양한 마우스 움직임 이펙트를 표현 하였습니다. 마우스를 커서를 따라다니는 이펙트, 브랜딩 이펙트, 마우스 방향에 따라 움직이는 이펙트 등 다양한 이펙트를 볼 수 있습니다.</div>
+                        <div class="title">
+                            <span> <span class="white">CODING</span> LIFE </span>
+                            <span>MOSUE <span class="white">SITE</span> </span>
+                        </div>
+                    </div>
+                    
+                    <img src="./assets/img/js4.jpg" alt="이미지1">
+                </div>
+            </div>
+        </div>
 
     </section>
     <footer>
-        <span class="port">
-            
-        </span>
+        <span class="port"></span>
     </footer>
+    <no-show style="display: none;" data-emit-events data-5300 ></no-show>
+    <no-show style="display: none;" data-emit-events data-22000 ></no-show>
+    <no-show style="display: none;" data-emit-events data-28000 ></no-show>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
     <script>
+        
         const video = document.querySelector('.video');
-		const section = document.querySelectorAll('section');
+        const section = document.querySelectorAll('section');
         const spanCont = document.querySelectorAll('.span__cont');
+        const promise = video.play();
+
+        window.onload = () => {
+            
+
+
+            skrollr.init({
+                smoothScrolling:true,
+                keyframe: function(element, name, direction) { //element, name, direction
+                    if(name === "data5300" || name === "data13000" ){
+                        video.currentTime = 0;
+                    }
+                    if( name === "data22000" ){
+                        
+                        if( direction === "up"){
+                            document.querySelector(".black").textContent = "STANDARD";
+                        } else {
+                            document.querySelector(".black").textContent = "RESPONSIVE";
+                        }
+                        
+                    } else if(  name === "data28000" ){
+                        if( direction === "up"){
+                            document.querySelector(".black").textContent = "STANDARD";
+                        } else {
+                            document.querySelector(".black").textContent = "MEGABOX";
+                        }
+                    }
+                }
+            });
+
       
-
-        
-        let allowed = true;
-        
-
-        skrollr.init({
-            smoothScrolling:true,
-            keyframe: function(element, name, direction) { //element, name, direction
-                if(name === "data5300" || name === "data13000" ){
-                    const promise = video.play();
-                    video.currentTime = 0;
-                    console.log( video.currentTime );
-                    if (promise !== undefined) { 
-                        promise.then(_ => { 
-                            
-                        }).catch(error => { 
-                            console.log(error)
-                        }) }
+            if (promise !== undefined) { 
+                promise.then(_ => { 
                     
+                }).catch(error => { 
+                    console.log(error)
+                }) }
+
+            
+            let allowed = true;
+
+            window.addEventListener("scroll", ()=>{
+                let scrollTop = document.documentElement.scrollTop || window.scrollY || window.pageYOffset
+                document.querySelector(".scroll").innerHTML = parseInt(scrollTop);
+            });
+    
+            //휠스크롤시 
+            function doWheel(e){
+                if (allowed){
+                    e.preventDefault();
                 }
             }
-        });
 
-        window.addEventListener("scroll", ()=>{
-            let scrollTop = document.documentElement.scrollTop || window.scrollY || window.pageYOffset
-            document.querySelector(".scroll").innerHTML = parseInt(scrollTop);
-        });
-   
-        //휠스크롤시 
-        function doWheel(e){
-            if (allowed){
-                e.preventDefault();
-            }
-        }
-
-        setTimeout(()=>{
-            console.log('2')
-            spanCont[0].classList.remove('show');
-            spanCont[1].classList.add('show');
-            
             setTimeout(()=>{
-                spanCont[1].classList.remove('show');
-				section[0].remove();
-                section[2].classList.add('show');
-                spanCont[2].classList.add('showing')
-                allowed = false;
+                console.log('2')
+                spanCont[0].classList.remove('show');
+                spanCont[1].classList.add('show');
+                
+                setTimeout(()=>{
+                    spanCont[1].classList.remove('show');
+                    section[0].remove();
+                    section[1].classList.add('show');
+                    spanCont[2].classList.add('showing')
+                    allowed = false;
+                },1000)
             },1000)
-        },1000)
-        window.addEventListener("wheel",doWheel,{passive:false});
+            window.addEventListener("wheel",doWheel,{passive:false});
+        }
+       
     </script>
 </body>
 </html>

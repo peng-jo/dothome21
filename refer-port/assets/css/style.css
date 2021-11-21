@@ -6,6 +6,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Chosunilbo_myungjo';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -99,6 +106,41 @@ body {
 body::-webkit-scrollbar {
   display: none;
   /* Chrome, Safari, Opera*/
+}
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.black {
+  font-weight: 900;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.orangeB {
+  background-color: #CF5015;
+}
+
+.yellowB {
+  background-color: #F9DB53;
+}
+
+.yellow {
+  color: #F9DB53;
+}
+
+.num {
+  font-size: 36.4vw;
+  color: rgba(255, 153, 0, 0.2);
+  font-weight: 900;
+}
+
+.wh {
+  width: 100vw;
+  height: 100vh;
 }
 
 body {
@@ -257,10 +299,6 @@ body {
   color: #fff;
 }
 
-#section2 .span__cont .yellow {
-  color: #F9DB53;
-}
-
 #section2 .span__cont2 {
   color: #F9DB53;
 }
@@ -301,16 +339,81 @@ body {
 }
 
 #section3 {
-  height: 10000px;
+  height: 30000px;
 }
 
-#section3 .cont1 {
+#section3 .disk {
+  z-index: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 67.8vw;
+  height: 67.8vw;
+}
+
+#section3 .disk.disk1 {
+  -webkit-animation: disk1 2s linear infinite;
+          animation: disk1 2s linear infinite;
+}
+
+#section3 .ondisk {
+  z-index: 2;
+  color: #fff;
+  width: 17.2vw;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#section3 .ondisk .black {
+  font-size: 3vw;
+  margin-bottom: 20px;
+}
+
+#section3 .ondisk .thin {
+  font-size: 2vw;
+  margin-left: auto;
+  margin-bottom: 20px;
+}
+
+#section3 .ondisk img {
+  margin: 0 auto;
+  width: 11vw;
+}
+
+#section3 .cont {
   width: 100vw;
   height: 100vh;
 }
 
-#section3 .cont1.orangeB {
-  background-color: #CF5015;
+#section3 .cont .monitor {
+  width: 56vw;
+  height: 43.8vw;
+}
+
+#section3 .cont .topic {
+  text-align: right;
+}
+
+#section3 .cont .topic .title {
+  font-size: 3vw;
+  font-weight: 900;
+  color: #fff;
+}
+
+#section3 .cont .topic .title span {
+  color: #000;
+}
+
+#section3 .cont .topic .desc {
+  line-height: 143%;
+  margin-top: 24px;
+  font-family: 'Chosunilbo_myungjo';
+  color: #fff;
+  font-size: 1.14vw;
+  width: 35vw;
 }
 
 #section3 .img1 {
@@ -321,9 +424,24 @@ body {
   background-size: cover;
 }
 
+#section3 .img2 {
+  width: 100vw;
+  height: 100vh;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../img/img2.jpg") no-repeat;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/img2.jpg") no-repeat;
+  background-size: cover;
+}
+
+#section3 .img3 {
+  width: 100vw;
+  height: 100vh;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../img/img3.jpg") no-repeat;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/img3.jpg") no-repeat;
+  background-size: cover;
+}
+
 #section3 .text1 {
   position: absolute;
-  z-index: 333;
   top: 30%;
   color: #fff;
   font-size: 6vw;
@@ -342,7 +460,156 @@ body {
   color: #CF5015;
 }
 
+#section3 .text1 span.inline {
+  display: inline-block;
+}
+
+#section3 .text1.center {
+  width: 100vw;
+}
+
+#section3 .text1.center span {
+  text-align: center;
+}
+
+#section3 .text1.text2 {
+  z-index: 11;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#section3 .text3 {
+  width: 100vw;
+  height: 100vh;
+  top: 30%;
+  color: #fff;
+}
+
+#section3 .text3 .num {
+  z-index: -1;
+}
+
+#section3 .text3 .topic {
+  width: 70.2vw;
+  height: 31.2vw;
+}
+
+#section3 .text3 .topic .title {
+  z-index: 1;
+  font-weight: 900;
+  font-size: 5.2vw;
+  margin-bottom: 68px;
+}
+
+#section3 .text3 .topic .desc {
+  font-size: 1.14vw;
+  font-family: 'Chosunilbo_myungjo';
+  margin-bottom: 60px;
+  width: 49.4%;
+  line-height: 143.7%;
+}
+
+#section3 .text3 .topic .btn span {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  width: 11.9vw;
+  height: 3.4vw;
+  position: relative;
+  background-color: #000;
+}
+
+#section3 .text3 .topic .btn span a {
+  font-family: 'Chosunilbo_myungjo';
+  font-size: 1.14vw;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  color: #fff;
+}
+
+#section3 .text3 .topic img {
+  z-index: -1;
+  height: 84.7%;
+  width: 53%;
+}
+
+#section3 .list {
+  height: 100vh;
+  width: 100vw;
+  z-index: 11;
+}
+
+#section3 .list .container {
+  margin: 0 auto;
+  width: 79vw;
+}
+
+#section3 .list .topic {
+  position: relative;
+  margin-top: 300px;
+  width: 100%;
+}
+
+#section3 .list .topic .num {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: -40%;
+}
+
+#section3 .list .topic .num.right {
+  left: auto;
+  right: 0;
+}
+
+#section3 .list .topic .s1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 63px;
+}
+
+#section3 .list .topic .s1 .white {
+  color: #fff;
+}
+
+#section3 .list .topic .title {
+  font-weight: 900;
+  font-size: 3.1vw;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 28%;
+          flex: 0 0 28%;
+}
+
+#section3 .list .topic .desc {
+  line-height: 150%;
+  font-size: 1.14vw;
+  font-family: 'Chosunilbo_myungjo';
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 59%;
+          flex: 0 0 59%;
+}
+
+#section3 .list .topic img {
+  width: 100%;
+  height: 60%;
+}
+
 footer .port {
+  z-index: 3;
   font-size: 1.3vw;
   position: fixed;
   color: #F9DB53;
@@ -399,5 +666,27 @@ footer .port:before {
 @keyframes blink-effect {
   50% {
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes disk1 {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes disk1 {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }

@@ -510,7 +510,7 @@
             <img class="logo" src="./img/test08/img1.jpg" alt="이미지1">
             <ul>
                 <li>무역통산정보</li>
-                <ul class="arcodian active">
+                <ul class="arcodian">
                     <li>1</li>
                     <li>2</li>
                     <li>3</li>
@@ -833,14 +833,9 @@
         const list = document.querySelectorAll(".arcodian");
 
         arcodian.forEach((element, index)=>{
-            console.log(element)
-            element.addEventListener("click",function(){
-                let isBlock = true;
 
-                arcodian.forEach((el)=>{
-                    el.classList.remove("active");
-                });
-                element.classList.add("active");
+            element.addEventListener("mouseover",function(){
+                let isBlock = true;
 
                 if(list[index].style.display == "block"){
                     isBlock = true;
@@ -858,6 +853,9 @@
                     list[index].style.display = "block";
                 }
                 
+            });
+            element.addEventListener("mouseout",function(){
+                list[index].style.display = "none";
             });
         });
     </script>
