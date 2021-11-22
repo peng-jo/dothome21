@@ -109,8 +109,13 @@
     <script>
         const section  = document.querySelectorAll('section');
         const spanCont = document.querySelectorAll('.span__cont');
-        const children = document.querySelector('.span__cont').children;
-        
+        const children = document.querySelectorAll('.span__cont')[2].children;
+
+        [].forEach.call(children,(el, index)=>{
+            el.classList.add("hide");
+        })
+        let flag = true;
+
         skrollr.init({
             smoothScrolling:true,
             keyframe: function(element, name, direction) { //element, name, direction
@@ -122,6 +127,7 @@
             let scrollTop = document.documentElement.scrollTop || window.scrollY || window.pageYOffset
             document.querySelector(".scroll").innerHTML = parseInt(scrollTop);
         });
+        
         setTimeout(()=>{
             console.log('2')
             spanCont[0].classList.remove('show');
@@ -129,13 +135,27 @@
             
             setTimeout(()=>{
                 spanCont[1].classList.remove('show');
-
                 section[0].remove();
                 section[1].classList.add('show');
-                for(let i in children){
-                    console.log(children[i])
+
+
+                let count = 0;
+                function timeout() {
+                    setTimeout(function () {
+                    
+                        if( count < children.length ){
+                            children[count].classList.add("show");
+                            
+                            count++;
+                            timeout();
+                        } else {
+                            
+                        }
+                        
+                    }, 100);
                 }
-                
+                timeout();
+
             },0)
         },0)
             
