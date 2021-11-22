@@ -134,6 +134,10 @@ body {
 // }
 
 #section2 {
+
+    &.show {
+        display: block;
+    }
     height: 10000px;
     display: none;
     background: #000;
@@ -170,17 +174,8 @@ body {
     }
 
     .video__wrapper {
-        video {
-            filter: brightness(0.35);
-            /* % of surrounding element */
-
-            /* % of current element */
-            height: 100%;
-            width: 100vw;
-            /* 100 * 16 / 9 */
-            min-height: 56.25vw;
-            /* 100 * 9 / 16 */
-        }
+        filter: brightness(0.35);
+        
     }
 
     .text_wrapper {
@@ -195,6 +190,275 @@ body {
             display: inline-block;
         }
     }
+}
+
+#section3 {
+    height: 30000px;
+
+    .disk {
+
+        &.disk1 {
+            animation: disk1 2s linear infinite;
+        }
+
+        z-index: 1;
+        object-fit: cover;
+        width: 130vh;
+        height: 130vh;
+    }
+
+    .ondisk {
+        z-index: 2;
+        color: #fff;
+        width: 17.2vw;
+        justify-content: space-around;
+        flex-direction: column;
+
+        .black {
+            font-size: 3vw;
+            margin-bottom: 20px;
+
+        }
+
+        .thin {
+            font-size: 2vw;
+            margin-left: auto;
+            margin-bottom: 20px;
+        }
+
+        img {
+            margin: 0 auto;
+            width: 11vw;
+        }
+    }
+
+    .cont {
+
+        width: 100vw;
+        height: 100vh;
+
+        .monitor {
+            width: 56vw;
+            height: 43.8vw;
+        }
+
+        .topic {
+            text-align: right;
+
+            .title {
+                font-size: 3vw;
+                font-weight: 900;
+                color: #fff;
+
+                & span {
+                    color: #000;
+                }
+            }
+
+            .desc {
+                line-height: 143%;
+                margin-top: 24px;
+                font-family: 'Chosunilbo_myungjo';
+                color: #fff;
+                font-size: 1.14vw;
+                width: 35vw;
+            }
+        }
+    }
+
+    .img1 {
+
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("../img/img1.jpg") no-repeat;
+        background-size: cover;
+    }
+
+    .img2 {
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("../img/img2.jpg") no-repeat;
+        background-size: cover;
+    }
+
+    .img3 {
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("../img/img3.jpg") no-repeat;
+        background-size: cover;
+    }
+
+    .text1 {
+        position: absolute;
+
+        top: 30%;
+        color: #fff;
+        font-size: 6vw;
+        width: 94%;
+        height: 100%;
+        font-weight: 900;
+
+        span {
+
+            line-height: 94%;
+            text-align: right;
+            display: block;
+
+            &.orange {
+                color: #CF5015;
+            }
+
+            &.inline {
+                display: inline-block;
+            }
+        }
+
+        &.center {
+            width: 100vw;
+
+            span {
+                text-align: center;
+            }
+        }
+
+        &.text2 {
+            z-index: 11;
+            width: 100vw;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .text3 {
+        width: 100vw;
+        height: 100vh;
+        top: 30%;
+        color: #fff;
+
+        .num {
+            z-index: -1;
+        }
+
+        .topic {
+            width: 70.2vw;
+            height: 31.2vw;
+
+            .title {
+                z-index: 1;
+                font-weight: 900;
+                font-size: 5.2vw;
+                margin-bottom: 68px;
+
+            }
+
+            .desc {
+                font-size: 1.14vw;
+                font-family: 'Chosunilbo_myungjo';
+                margin-bottom: 60px;
+                width: 49.4%;
+                line-height: 143.7%;
+            }
+
+            .btn {
+                span {
+                    box-sizing: border-box;
+                    display: inline-block;
+                    width: 11.9vw;
+                    height: 3.4vw;
+                    // padding-top: 16px;
+                    position: relative;
+                    background-color: #000;
+
+                    a {
+                        font-family: 'Chosunilbo_myungjo';
+                        font-size: 1.14vw;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        position: absolute;
+                        color: #fff;
+                    }
+
+                }
+
+            }
+
+            img {
+                z-index: -1;
+                height: 84.7%;
+                width: 53%;
+            }
+        }
+
+    }
+
+    .list {
+        .container {
+            margin: 0 auto;
+            width: 79vw;
+        }
+
+        height: 100vh;
+        width: 100vw;
+        z-index: 11;
+
+        .topic {
+            position: relative;
+            margin-top: 300px;
+            width: 100%;
+
+            .num {
+                z-index: -1;
+                position: absolute;
+                left: 0;
+                top: -40%;
+
+                &.right {
+                    left: auto;
+                    right: 0;
+                }
+            }
+
+            .s1 {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 63px;
+
+                .white {
+                    color: #fff;
+                }
+
+                &.right {
+                    .title {
+                        text-align: right;
+                    }
+                }
+            }
+
+            .title {
+                font-weight: 900;
+                font-size: 3.1vw;
+                flex: 0 0 28%;
+            }
+
+            .desc {
+                line-height: 150%;
+                font-size: 1.14vw;
+                font-family: 'Chosunilbo_myungjo';
+                flex: 0 0 59%;
+            }
+
+            img {
+                width: 100%;
+                height: 60%;
+            }
+        }
+    }
+
 }
 
 
@@ -218,8 +482,17 @@ body {
 
 .show {
     animation: show-effect 1s;
-    display: block;
+
 }
+
+.blink {
+    animation: blink-effect 0.1s linear 5;
+}
+
+.text-motion {
+    transition: transform 0.03s;
+}
+
 
 @keyframes show-effect {
     0% {
@@ -227,5 +500,33 @@ body {
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes show-effect {
+    0% {
+
+        opacity: 0;
+    }
+
+    100% {
+
+        opacity: 1;
+    }
+}
+
+@keyframes blink-effect {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes disk1 {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }

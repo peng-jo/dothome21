@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>포트폴리오</title>
 
@@ -50,7 +52,7 @@
 	<section id="section2"
         data-0="opacity:1;"
         data-11000="opacity:1;"
-        data-12000="opacity:0;"
+        data-11500="opacity:0;"
     >
         <!-- <div class="span__cont2 fixed text-motion text-effect"
             data-0 = "transform: translate(-5vw, -20%);visibility: visible;"
@@ -66,32 +68,33 @@
 			<span>FRONTEND</span>
 		</div> -->
 		<div class="span__cont fixed"
-            data-0="opacity:1;transform: translate(-14%, -31%); display:block;"
-            data-4000="opacity:1;transform: translate(-14%, -90%);"
-            data-6000 = "transform: translate(-14%, -120%);opacity:0; display:none;"
+            data-0="opacity:1;transform: translate(-5vw, -31%); display:block;"
+            data-4000="opacity:1;transform: translate(-5vw, -90%);"
+            data-6000 = "transform: translate(-5vw, -120%);opacity:0; display:none;"
         >
-			<span>CODING</span>
-			<span class="yellow">LIFE</span>
-			<span>SOMEONE</span>
-			<span class="yellow">WHO</span>
-			<span>WANTS</span>
-			<span class="yellow">BETTER</span>
-			<span>FRONTEND</span>   
+			<span class="hide">CODING</span>
+			<span class="hide yellow">LIFE</span>
+			<span class="hide">SOMEONE</span>
+			<span class="hide yellow">WHO</span>
+			<span class="hide">WANTS</span>
+			<span class="hide yellow">BETTER</span>
+			<span class="hide">FRONTEND</span>   
            
 		</div>
-        <img src="./assets/img/bg@2.jpg" alt="배경" class="fixed">
-        
-        <div class="video__wrapper fixed"
-            data-5299="display:none;"
-            data-5300="opacity:0;"
-            data-6000="opacity:1;display:block;"
-            data-12000="display:none;"
+        <img src="./assets/img/bg@2.jpg" alt="배경" class="fixed"
+            data-0="opacity:1"
+            data-6000="opacity:0"
         >
-            
-            <div class="video">
+        
 
-            </div>
-        </div>
+        <img src="./assets/img/bg2.jpg" class="video__wrapper fixed" alt="" 
+            data-5299="display:block;"
+            data-5300="opacity:0;"
+            data-6000="opacity:1;"
+            data-12000="display:none;"
+        />
+
+
         <div class="text_wrapper fixed"
             data-6000="display:none;"
             data-6001="display:block;"
@@ -105,21 +108,227 @@
             </span>
         </div>
 	</section>
+    <section id="section3"
+        data-11499="display:none;"
+        data-11500="display:block;"
+    >
+        <div class="img1 fixed"
+            data-11500="transform:translate(-50%, -50%); opacity:0;"
+            data-12500="opacity:1;"
+            data-13000="top:50%;transform:translate(-50%, -50%); opacity:1;display:block;"
+            data-15000="top:0%;transform:translate(-50%, -100%); opacity:1;display:none;"
+        >
+            <div class="text1">
+                <span class="orange">CODING LIFE</span>
+                <span>HTML CSS</span>
+                <span class="orange">PORTFOLIO</span>
+                <span>SITE</span>
+            </div>
+        </div>
+        <div class="fixed orangeB"
+            data-12999="top:100%;transform:translate(-50%, 0%); display:none;"
+            data-13000="top:100%;transform:translate(-50%, 0%); display:block;opacity:1;"
+            data-15000="top:50%;transform:translate(-50%, -50%); display:block;"
+            data-34000="opacity:1;"
+            data-36999="opacity:0;display:none;"
+        >
+            <!-- 디스크 -->
+            <img class="disk disk1 fixed" src="./assets/svg/disk.svg" alt="disk"
+                data-15000="left:-100%;top:-16%;"
+                data-16000="left:-34%;"
+                data-34000="left:-34%;"
+                data-37000="left:-100%;top:-16%;"
+            />
+
+            <!-- 디스크 위 설명 -->
+            <div class="ondisk fixed"
+                data-15999="display:none;"
+                data-16000="transform:translate(-214%,-30%);display:flex;"
+                data-34000="transform:translate(-214%,-30%);display:flex;"
+                data-37000="transform:translate(-600%,-30%);display:flex;"
+            >
+                <span class="black">STANDARD</span>
+                <span class="thin">SITE VIEW</span>
+                <img src="./assets/svg/Arrow 1.svg" alt="화살표"/>
+            </div>
+
+            <!-- 컨테이너1 -->
+            <div class="cont"
+                data-15000="transform:translateY(0%);display:block;"
+                data-21000="transform:translateY(0%);"
+                data-22000="transform:translateY(-100%);display:none;"
+            >    
+                <!-- 숫자 -->
+                <div class="num fixed"
+                    data-15999="top:-50%;left:100%;transform:translate(-95%,0%);display:none;"
+                    data-16000="top:-50%;left:100%;transform:translate(-95%,0%);display:block;"
+                    data-17000="top:12%;transform:translate(-95%,0%);"
+                    data-18500="top:12%;"
+                    data-19000="top:0%;"
+                    data-20000="top:-12%;"
+                    
+                >01</div>
+                <!-- 모니터 -->
+                <img class="fixed monitor" src="./assets/img/standard.png"
+                    data-17000="top:124px;left:100%;transform:translate(0%,30%);display:block;"
+                    data-18000="left:100%;transform:translate(-110%,30%)"
+                    data-18500="left:100%;transform:translate(-110%,30%)"
+                    data-19000="left:100%;transform:translate(-110%,-4%)"
+                    data-20000="left:100%;transform:translate(-110%,-30%)"
+    
+                />
+                <!-- 설명 -->
+                <div class="fixed topic"
+                    data-19000="left:100%;transform:translate(-116%,500%);"
+                    data-20000="left:100%;transform:translate(-116%,120%);"
+                >
+                    <div class="title">
+                        CODING <span>LIFE</span> <br>
+                        STANDARD SITE
+                    </div>
+                    <div class="desc">
+                        웹표준 사이트를 만들어 보았습니다. 해당 사이트를 코딩하면서 웹 페이지의 레이아웃 기본을 공부 할 수 있었습니다.
+                    </div>
+                </div>
+            </div>
+            <!-- div -->
+            <!-- 컨테이너2 -->
+            <div class="cont"
+                data-21999="display:none;"
+                data-22000="transform:translateY(0%);display:block;"
+                data-27000="transform:translateY(0%);"
+                data-28000="transform:translateY(-100%);display:none;"
+            >    
+                <!-- 숫자 -->
+                <div class="num fixed"
+                    data-22000="top:-50%;left:100%;transform:translate(-95%,0%);display:block;"
+                    data-23000="top:12%;transform:translate(-95%,0%);"
+                    data-24500="top:12%;transform:translate(-95%,0%);"
+                    data-25000="top:-12%;"
+                >02</div>
+                <!-- 모니터 -->
+                <img class="fixed monitor" src="./assets/img/respon.png"
+                    data-23000="top:124px;left:100%;transform:translate(0%,30%);display:block;"
+                    data-24000="left:100%;transform:translate(-110%,30%)"
+                    data-24500="left:100%;transform:translate(-110%,30%)"
+                    data-25000="left:100%;transform:translate(-110%,-4%)"
+                    data-26000="left:100%;transform:translate(-110%,-30%)"
+    
+                />
+                <!-- 설명 -->
+                <div class="fixed topic"
+                    data-25000="left:100%;transform:translate(-116%,500%);"
+                    data-26000="left:100%;transform:translate(-116%,120%);"
+                >
+                    <div class="title">
+                        CODING <span>LIFE</span> <br>
+                        RESPONSIVE SITE
+                    </div>
+                    <div class="desc">
+                        반응형 사이트를 만들어 보았습니다. 해당 사이트를 코딩하면서 웹 페이지의 레이아웃 기본을 공부 할 수 있었습니다.
+                    </div>
+                </div>
+            </div>
+            <!-- div -->
+            <!-- 컨테이너3 -->
+            <div class="cont"
+                data-27999="display:none;transform:translateY(0%);"
+                data-28000="display:block;"
+                data-33000="display:block;"
+                data-34000="transform:translateY(-100%);"
+            >    
+                <!-- 숫자 -->
+                <div class="num fixed"
+                    data-28000="top:-50%;left:100%;transform:translate(-95%,0%);display:block;"
+                    data-29000="top:12%;transform:translate(-95%,0%);"
+                    data-30500="top:12%;transform:translate(-95%,0%);"
+                    data-31000="top:-12%;"
+                >03</div>
+                <!-- 모니터 -->
+                <img class="fixed monitor" src="./assets/img/mega.png"
+                    data-29000="top:124px;left:100%;transform:translate(0%,30%);display:block;"
+                    data-30000="left:100%;transform:translate(-110%,30%)"
+                    data-30500="left:100%;transform:translate(-110%,30%)"
+                    data-31000="left:100%;transform:translate(-110%,-4%)"
+                    data-32000="left:100%;transform:translate(-110%,-30%)"
+    
+                />
+                <!-- 설명 -->
+                <div class="fixed topic"
+                    data-31000="left:100%;transform:translate(-116%,500%);"
+                    data-32000="left:100%;transform:translate(-116%,110%);"
+                >
+                    <div class="title">
+                        CODING <span>LIFE</span> <br>
+                        MEGABOX SITE
+                    </div>
+                    <div class="desc">
+                        메가박스 사이트를 만들어 보았습니다. 해당 사이트를 코딩하면서 웹 페이지의 레이아웃 기본을 공부 할 수 있었고, 반응형과, 이미지 슬라이드, 유투브API를 사용하였습니다.
+                    </div>
+                </div>
+            </div>
+            <!-- div -->
+        </div>
+        <!-- div -->
+        <no-show style="display: none;" data-12000 data-emit-events></no-show>
+        <no-show style="display: none;" data-12200 data-emit-events></no-show>
+        <no-show style="display: none;" data-12400 data-emit-events></no-show>
+        <no-show style="display: none;" data-12600 data-emit-events></no-show>
+        <no-show style="display: none;" data-emit-events data-5300 ></no-show>
+        <no-show style="display: none;" data-emit-events data-22000 ></no-show>
+        <no-show style="display: none;" data-emit-events data-28000 ></no-show>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
     <script>
         const section  = document.querySelectorAll('section');
         const spanCont = document.querySelectorAll('.span__cont');
         const children = document.querySelectorAll('.span__cont')[2].children;
 
-        [].forEach.call(children,(el, index)=>{
-            el.classList.add("hide");
-        })
+        const text = document.querySelectorAll('.text1 > span');
+
+        // [].forEach.call(children,(el, index)=>{
+        //     el.classList.add("hide");
+        // })
         let flag = true;
+
+        const obj1 = [
+            {name:"data12000",val:0},
+            {name:"data12200",val:1},
+            {name:"data12400",val:2},
+            {name:"data12600",val:3},
+        ]
 
         skrollr.init({
             smoothScrolling:true,
             keyframe: function(element, name, direction) { //element, name, direction
-              
+                obj1.forEach((el,index)=>{
+                    
+                    if(el.name === name){
+                        
+                        console.log(el.val)
+
+                        text[el.val].classList.add("blink")
+                        setTimeout(()=>{
+                            text[el.val].classList.remove("blink")
+                        },500)
+                    }
+
+                    if( name === "data22000" ){
+                            
+                        if( direction === "up"){
+                            document.querySelector(".black").textContent = "STANDARD";
+                        } else {
+                            document.querySelector(".black").textContent = "RESPONSIVE";
+                        }
+                        
+                    } else if(  name === "data28000" ){
+                        if( direction === "up"){
+                            document.querySelector(".black").textContent = "STANDARD";
+                        } else {
+                            document.querySelector(".black").textContent = "MEGABOX";
+                        }
+                    }
+                    
+                });
             }
         });
 
@@ -138,20 +347,17 @@
                 section[0].remove();
                 section[1].classList.add('show');
 
-
                 let count = 0;
                 function timeout() {
                     setTimeout(function () {
                     
                         if( count < children.length ){
+                            children[count].classList.remove("hide");
                             children[count].classList.add("show");
                             
                             count++;
                             timeout();
-                        } else {
-                            
                         }
-                        
                     }, 100);
                 }
                 timeout();
