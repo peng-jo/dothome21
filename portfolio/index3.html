@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>포트폴리오</title>
+
+</head>
+<body>
+    <div class="scroll">0</div>
+    <header id="header">
+        <ul class="header__left">
+            <li><img class="header__circle" src="./assets/img/circlepng.png" alt="plus_circle"></li>
+            <li>
+                <span>
+                    <div>PORT PROCESS</div>
+                    <span class="header__num">10%</span>
+                    <span class="header__percent">
+                        <span class="header__percent__show">
+                            
+                        </span>
+                    </span>
+                </span>
+            </li>
+        </ul>
+        <ul class="header__right">
+            <li>WORK</li>
+            <li>CONTACT</li>
+            <li class="yellow">
+                <span>PORT MENU</span>
+            </li>
+        </ul>
+    </header>
+    <section id="section1">
+		<div class="span__wrapper">
+			<div class="span__cont show blink">
+				<span class="c1 ">
+					CODING LIFE
+				</span>
+			</div>
+			<div class="span__cont blink">
+				<span class="c2 ">
+					LIFE IS CODING
+				</span>
+			</div>
+		</div>
+	</section>
+	<section id="section2"
+        data-0="opacity:1;"
+        data-11000="opacity:1;"
+        data-12000="opacity:0;"
+    >
+        <!-- <div class="span__cont2 fixed text-motion text-effect"
+            data-0 = "transform: translate(-5vw, -20%);visibility: visible;"
+            data-4000="visibility: hidden;transform: translate(-5vw, -100%);"
+            data-6000 = "transform: translate(-5vw, -120%);"
+        >
+			<span>CODING</span>
+			<span>LIFE</span>
+			<span>SOMEONE</span>
+			<span>WHO</span>
+			<span>WANTS</span>
+			<span>BETTER</span>
+			<span>FRONTEND</span>
+		</div> -->
+		<div class="span__cont fixed"
+            data-0="opacity:1;transform: translate(-14%, -31%); display:block;"
+            data-4000="opacity:1;transform: translate(-14%, -90%);"
+            data-6000 = "transform: translate(-14%, -120%);opacity:0; display:none;"
+        >
+			<span>CODING</span>
+			<span class="yellow">LIFE</span>
+			<span>SOMEONE</span>
+			<span class="yellow">WHO</span>
+			<span>WANTS</span>
+			<span class="yellow">BETTER</span>
+			<span>FRONTEND</span>   
+           
+		</div>
+        <img src="./assets/img/bg@2.jpg" alt="배경" class="fixed">
+        
+        <div class="video__wrapper fixed"
+            data-5299="display:none;"
+            data-5300="opacity:0;"
+            data-6000="opacity:1;display:block;"
+            data-12000="display:none;"
+        >
+            
+            <div class="video">
+
+            </div>
+        </div>
+        <div class="text_wrapper fixed"
+            data-6000="display:none;"
+            data-6001="display:block;"
+            data-12000="display:none;"
+        >
+            <span class="text"
+                data-6001="transform:translateX(0%)"
+                data-11000="transform:translateX(-110%)"
+            >
+                안녕하세요 저는 프론트엔드 개발자를 꿈꾸고 있는 신입 개발자 조범수 입니다
+            </span>
+        </div>
+	</section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script>
+        const section  = document.querySelectorAll('section');
+        const spanCont = document.querySelectorAll('.span__cont');
+        const children = document.querySelector('.span__cont').children;
+        
+        skrollr.init({
+            smoothScrolling:true,
+            keyframe: function(element, name, direction) { //element, name, direction
+              
+            }
+        });
+
+        window.addEventListener("scroll", ()=>{
+            let scrollTop = document.documentElement.scrollTop || window.scrollY || window.pageYOffset
+            document.querySelector(".scroll").innerHTML = parseInt(scrollTop);
+        });
+        setTimeout(()=>{
+            console.log('2')
+            spanCont[0].classList.remove('show');
+            spanCont[1].classList.add('show');
+            
+            setTimeout(()=>{
+                spanCont[1].classList.remove('show');
+
+                section[0].remove();
+                section[1].classList.add('show');
+                for(let i in children){
+                    console.log(children[i])
+                }
+                
+            },0)
+        },0)
+            
+    </script>
+</body>
+</html>

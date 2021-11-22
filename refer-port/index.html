@@ -349,7 +349,7 @@
             <div class="topic fixed"
                 data-50000="display:block;"
                 data-51000="transform:translate(-50%, -50%);"
-                data-52000="transform:translate(-50%, -250%);"
+                data-52000="transform:translate(-50%, -220%);display:none;"
             >
                 <div class="container">
                     <div class="num">01</div>
@@ -364,17 +364,15 @@
                 </div>
             </div>
             <!-- topic -->
-            <div class="topic fixed"
-                data-50999="display:none;"
+            <div class="topic fixed t2"
+                data- ="display:none;"
                 data-51000="transform:translate(-50%, 50%);display:block;"
-                data-52000="transform:translate(-50%, -250%);"
-                data-53000="transform:translate(-50%, -350%);"
-                
+                data-52000="transform:translate(-50%, -50%);"
+                data-53000="transform:translate(-50%, -220%);"
             >
                 <div class="container">
-                    
                     <div class="num right">02</div>
-                    <div class="s1">
+                    <div class="s1 right">
                         <div class="desc">자바스크립트와 제이쿼리를 통해 다양한 마우스 움직임 이펙트를 표현 하였습니다. 마우스를 커서를 따라다니는 이펙트, 브랜딩 이펙트, 마우스 방향에 따라 움직이는 이펙트 등 다양한 이펙트를 볼 수 있습니다.</div>
                          <div class="title">
                             <span> <span class="white">CODING</span> LIFE </span>
@@ -416,7 +414,7 @@
                 <div class="container">
                     
                     <div class="num right">04</div>
-                    <div class="s1">
+                    <div class="s1 right">
                         <div class="desc">자바스크립트와 제이쿼리를 통해 다양한 마우스 움직임 이펙트를 표현 하였습니다. 마우스를 커서를 따라다니는 이펙트, 브랜딩 이펙트, 마우스 방향에 따라 움직이는 이펙트 등 다양한 이펙트를 볼 수 있습니다.</div>
                         <div class="title">
                             <span> <span class="white">CODING</span> LIFE </span>
@@ -445,8 +443,6 @@
         const promise = video.play();
 
         window.onload = () => {
-            
-
 
             skrollr.init({
                 smoothScrolling:true,
@@ -481,7 +477,7 @@
                 }) }
 
             
-            let allowed = true;
+           
 
             window.addEventListener("scroll", ()=>{
                 let scrollTop = document.documentElement.scrollTop || window.scrollY || window.pageYOffset

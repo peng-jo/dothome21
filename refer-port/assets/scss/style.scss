@@ -424,6 +424,11 @@ body {
                 .white {
                     color: #fff;
                 }
+                &.right {
+                    .title {
+                        text-align: right;
+                    }
+                }
             }
             .title {
                 font-weight: 900;

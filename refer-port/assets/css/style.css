@@ -108,10 +108,6 @@ body::-webkit-scrollbar {
   /* Chrome, Safari, Opera*/
 }
 
-img {
-  image-rendering: -webkit-optimize-contrast;
-}
-
 .black {
   font-weight: 900;
 }
@@ -584,6 +580,10 @@ body {
 
 #section3 .list .topic .s1 .white {
   color: #fff;
+}
+
+#section3 .list .topic .s1.right .title {
+  text-align: right;
 }
 
 #section3 .list .topic .title {

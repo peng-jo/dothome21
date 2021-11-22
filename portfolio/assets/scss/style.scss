@@ -1,0 +1,224 @@
+//폰트
+@import './font.scss';
+//리셋
+@import './reset.scss';
+
+body {
+    background-color: #000;
+}
+
+#header {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    color: #fff;
+    font-family: 'NanumSquare';
+    font-size: 20px;
+    font-weight: 300;
+    position: fixed;
+    z-index: 9001;
+    top: 40px;
+    height: 43px;
+    width: 100%;
+    padding: 0 50px;
+
+    .header__left {
+        li {
+            vertical-align: middle;
+
+            span>div {
+                margin-bottom: 6px;
+            }
+
+            .header__num {
+                color: #F9DB53;
+            }
+        }
+
+        .header__circle {
+            width: 46px;
+            height: 46px;
+            margin-right: 10px;
+        }
+
+        .header__percent {
+            position: relative;
+            display: inline-block;
+            width: 16vw;
+            height: 3px;
+            background: #fff;
+            border-radius: 5px;
+
+            .header__percent__show {
+                display: inline-block;
+                position: absolute;
+                background: #F9DB53;
+                width: 10%;
+                height: 100%;
+            }
+        }
+    }
+
+    .header__right {
+        li {
+            margin-left: 34px;
+            vertical-align: middle;
+        }
+
+        .yellow {
+
+            text-align: center;
+            background-color: #F9DB53;
+            color: #fff;
+            width: 208px;
+            height: 27px;
+
+            span {
+                vertical-align: sub;
+            }
+        }
+    }
+
+    ul {
+        li {
+            display: inline-block;
+        }
+    }
+}
+
+.fixed {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#section1 {
+    background: #000;
+
+    .span__cont {
+
+        display: none;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+
+        &.show {
+            display: flex;
+        }
+
+        span {
+            text-align: center;
+            display: block;
+            font-size: 20vw;
+            font-weight: 800;
+            color: #F9DB53;
+        }
+    }
+}
+
+// .video {
+//     filter: brightness(0.5);
+//     position: fixed;
+//     left: 0%;
+//     /* % of surrounding element */
+//     top: 50%;
+//     transform: translate(0, -50%);
+//     /* % of current element */
+//     height: 100%;
+//     width: 100vw;
+//     /* 100 * 16 / 9 */
+//     min-height: 56.25vw;
+//     /* 100 * 9 / 16 */
+// }
+
+#section2 {
+    height: 10000px;
+    display: none;
+    background: #000;
+    font-size: 10vw;
+    font-weight: 900;
+    width: 100%;
+
+    img {
+        filter: brightness(0.5);
+        object-fit: cover;
+        height: 100vh;
+        width: 100vw;
+    }
+    span {
+        display: inline-block;
+        z-index: 999;
+        text-align: right;
+        display: block;
+    }
+
+    &>div:nth-child(1) {
+        left: auto;
+        right: 0;
+        padding: 13vw 0 13vw 0;
+    }
+
+    .span__cont {
+        z-index: 1;
+        color: #fff;
+    }
+
+    .span__cont2 {
+        color: #F9DB53;
+    }
+
+    
+
+    &.show {
+        animation: show-effect 1s;
+        display: block;
+    }
+
+    .video__wrapper {
+        video {
+            filter: brightness(0.35);
+            /* % of surrounding element */
+
+            /* % of current element */
+            height: 100%;
+            width: 100vw;
+            /* 100 * 16 / 9 */
+            min-height: 56.25vw;
+            /* 100 * 9 / 16 */
+        }
+    }
+
+    .text_wrapper {
+        left: 360%;
+
+        .text {
+
+            color: #fff;
+            font-size: 20vw;
+            font-family: 'Cafe24Ohsquare';
+            width: 12252px;
+            display: inline-block;
+        }
+    }
+}
+
+
+.scroll {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 50%;
+    z-index: 10000;
+}
+
+.hide {
+    display:none;
+}
