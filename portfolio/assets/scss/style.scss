@@ -138,7 +138,7 @@ body {
     &.show {
         display: block;
     }
-    height: 10000px;
+    height: 10px;
     display: none;
     background: #000;
     font-size: 10vw;
@@ -195,20 +195,24 @@ body {
 #section3 {
     height: 30000px;
 
+    .disk_cont {
+        z-index: 2;
+    }
     .disk {
-
         &.disk1 {
             animation: disk1 2s linear infinite;
         }
 
-        z-index: 1;
-        object-fit: cover;
+        background-size: cover;
         width: 130vh;
         height: 130vh;
     }
 
     .ondisk {
-        z-index: 2;
+        position: absolute;
+        display: flex;
+        top: 60vh;
+        left: 94vh;
         color: #fff;
         width: 17.2vw;
         justify-content: space-around;
@@ -238,8 +242,8 @@ body {
         height: 100vh;
 
         .monitor {
-            width: 56vw;
-            height: 43.8vw;
+            width: 41.6vw;
+            height: 32.5vw;
         }
 
         .topic {

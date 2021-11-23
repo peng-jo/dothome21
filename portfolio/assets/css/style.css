@@ -263,7 +263,7 @@ body {
 }
 
 #section2 {
-  height: 10000px;
+  height: 10px;
   display: none;
   background: #000;
   font-size: 10vw;
@@ -327,10 +327,12 @@ body {
   height: 30000px;
 }
 
+#section3 .disk_cont {
+  z-index: 2;
+}
+
 #section3 .disk {
-  z-index: 1;
-  -o-object-fit: cover;
-     object-fit: cover;
+  background-size: cover;
   width: 130vh;
   height: 130vh;
 }
@@ -341,7 +343,12 @@ body {
 }
 
 #section3 .ondisk {
-  z-index: 2;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 60vh;
+  left: 94vh;
   color: #fff;
   width: 17.2vw;
   -ms-flex-pack: distribute;
@@ -374,8 +381,8 @@ body {
 }
 
 #section3 .cont .monitor {
-  width: 56vw;
-  height: 43.8vw;
+  width: 41.6vw;
+  height: 32.5vw;
 }
 
 #section3 .cont .topic {
