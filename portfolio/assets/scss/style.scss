@@ -200,7 +200,7 @@ body {
     }
     .disk {
         &.disk1 {
-            animation: disk1 2s linear infinite;
+            animation: disk1 16s linear infinite;
         }
 
         background-size: cover;
@@ -215,17 +215,18 @@ body {
         left: 94vh;
         color: #fff;
         width: 17.2vw;
+        transform-origin: -100% 50%;
         justify-content: space-around;
         flex-direction: column;
 
         .black {
-            font-size: 3vw;
+            font-size: 2.6vw;
             margin-bottom: 20px;
 
         }
 
         .thin {
-            font-size: 2vw;
+            font-size: 1.6vw;
             margin-left: auto;
             margin-bottom: 20px;
         }
@@ -242,8 +243,9 @@ body {
         height: 100vh;
 
         .monitor {
-            width: 41.6vw;
-            height: 32.5vw;
+ 
+            width: 110vh;
+            height: 88vh;
         }
 
         .topic {
@@ -496,25 +498,21 @@ body {
 .text-motion {
     transition: transform 0.03s;
 }
-
-
-@keyframes show-effect {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.rotate-start {
+    animation: rotate-effect-start 0.3s cubic-bezier(0.24, 0.43, 0.46, 0.62);
+}
+.rotate-start2 {
+    animation: rotate-effect-start2 0.6s cubic-bezier(0.24, 0.43, 0.46, 0.62);
+}
+.rotate-end {
+    animation: rotate-effect-end 0.3s cubic-bezier(0.24, 0.43, 0.46, 0.62);
 }
 
 @keyframes show-effect {
     0% {
-
         opacity: 0;
     }
-
     100% {
-
         opacity: 1;
     }
 }
@@ -525,6 +523,34 @@ body {
     }
 }
 
+@keyframes rotate-effect-start {
+    0% {
+        transform: rotate(240deg);
+    }
+    100% {
+        transform: rotate(320deg);
+    }
+}
+@keyframes rotate-effect-start2 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotate-effect-end {
+    0% {
+        transform: rotate(320deg);
+    }
+
+    100% {
+        transform: rotate(440deg);
+    }
+}
+
+
 @keyframes disk1 {
     from {
         transform: rotate(0deg);
@@ -534,3 +560,4 @@ body {
         transform: rotate(360deg);
     }
 }
+
