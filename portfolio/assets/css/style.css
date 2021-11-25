@@ -342,6 +342,11 @@ body {
           animation: disk1 16s linear infinite;
 }
 
+#section3 .disk.disk2 {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
 #section3 .ondisk {
   position: absolute;
   display: -webkit-box;
@@ -508,6 +513,10 @@ body {
   margin-bottom: 60px;
   width: 49.4%;
   line-height: 143.7%;
+}
+
+#section3 .text3 .topic .desc em {
+  color: #fff;
 }
 
 #section3 .text3 .topic .btn span {

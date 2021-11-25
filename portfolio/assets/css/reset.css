@@ -58,6 +58,11 @@ a {
   text-decoration: none;
 }
 
+.desc a {
+  color: #fff;
+  text-decoration: none;
+}
+
 /* 목록 초기화 */
 ol,
 ul {

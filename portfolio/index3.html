@@ -132,7 +132,7 @@
             data-34000="left:-33%;"
             data-37000="left:-100%;"
         >
-            <img src="./assets/svg/disk.svg" class="disk disk1 fixed"
+            <img src="./assets/svg/disk.svg" class="disk disk2 fixed"
             />
                 <!-- 디스크 위 설명 -->
             <div class="ondisk"
@@ -182,6 +182,7 @@
                     </div>
                     <div class="desc">
                         웹표준 사이트를 만들어 보았습니다. 해당 사이트를 코딩하면서 웹 페이지의 레이아웃 기본을 공부 할 수 있었습니다.
+                        <u><a href="https://peng-jo.github.io/dothome21/site/responsive/index.html">자세히보기</a></u>
                     </div>
                 </div>
             </div>
@@ -219,6 +220,7 @@
                     </div>
                     <div class="desc">
                         반응형 사이트를 만들어 보았습니다. 해당 사이트를 코딩하면서 웹 페이지의 레이아웃 기본을 공부 할 수 있었습니다.
+                        <em><a href="https://peng-jo.github.io/dothome21/site/webstandard/index.html">자세히보기</a></em> 
                     </div>
                 </div>
             </div>
@@ -255,6 +257,8 @@
                     </div>
                     <div class="desc">
                         메가박스 사이트를 만들어 보았습니다. 해당 사이트를 코딩하면서 웹 페이지의 레이아웃 기본을 공부 할 수 있었고, 반응형과, 이미지 슬라이드, 유투브API를 사용하였습니다.
+                        <u><a href="https://peng-jo.github.io/dothome21/site/megabox/megabox21.html"></a> 자세히보기</u>
+                        
                     </div>
                 </div>
             </div>
@@ -265,6 +269,7 @@
         <no-show style="display: none;" data-12700 data-emit-events></no-show>
         <no-show style="display: none;" data-12900 data-emit-events></no-show>
         <no-show style="display: none;" data-13100 data-emit-events></no-show>
+        <no-show style="display: none;" data-15000 data-emit-events></no-show>
         <no-show style="display: none;" data-emit-events data-5300 ></no-show>
         <no-show style="display: none;" data-emit-events data-15999 ></no-show>
         <no-show style="display: none;" data-emit-events data-22000 ></no-show>
@@ -274,6 +279,7 @@
         const section  = document.querySelectorAll('section');
         const spanCont = document.querySelectorAll('.span__cont');
         const children = document.querySelectorAll('.span__cont')[2].children;
+        const disk   = document.querySelector('.disk2');
         const ondisk   = document.querySelector('.ondisk');
 
         const text = document.querySelectorAll('.text1 > span');
@@ -323,8 +329,19 @@
                         },500)
 
                     }
+                    if( name === "data15000" ){
+                        console.log('ddd')
+                        
+                        if( direction === "up"){
 
-                    if( name === "data15999" ){
+                            disk.classList.remove("disk1")
+                        } else {
+
+                            disk.classList.add("disk1")
+                            
+
+                        }
+                    }else if( name === "data15999" ){
                         if( direction === "up"){
 
                             

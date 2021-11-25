@@ -202,6 +202,10 @@ body {
         &.disk1 {
             animation: disk1 16s linear infinite;
         }
+         &.disk2 {
+            transform: translate(0,0);
+         }
+
 
         background-size: cover;
         width: 130vh;
@@ -367,6 +371,9 @@ body {
                 margin-bottom: 60px;
                 width: 49.4%;
                 line-height: 143.7%;
+                em {
+                    color:#fff;
+                }
             }
 
             .btn {
