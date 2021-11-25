@@ -87,13 +87,16 @@
         >
         
 
-        <img src="./assets/img/bg2.jpg" class="video__wrapper fixed" alt="" 
+        <div class="video__wrapper fixed"
             data-5199="display:block;"
             data-5300="opacity:0;"
             data-6000="opacity:1;"
             data-12000="display:none;"
-        />
-
+        >
+            <video class="video" loop muted >
+                <source src="./assets/video/video.mp4" type="video/mp4" >
+            </video>
+        </div>
 
         <div class="text_wrapper fixed"
             data-6000="display:none;"
@@ -127,10 +130,10 @@
         </div>
         <!-- 디스크 -->
         <div class="fixed disk_cont" alt="disk"
-            data-11300="left:-100%;top:-15%;"
-            data-12000="left:-33%;"
+            data-13000="left:-100%;top:-15%;"
+            data-14700="left:-33%;"
             data-34000="left:-33%;"
-            data-37000="left:-100%;"
+            data-37000="left:-100%;"    
         >
             <img src="./assets/svg/disk.svg" class="disk disk2 fixed"
             />
@@ -159,10 +162,10 @@
             >    
                 <!-- 숫자 -->
                 <div class="num fixed"
-                    data-15999="top:-50%;left:100%;transform:translate(-95%,0%);display:none;"
-                    data-16000="top:-50%;left:100%;transform:translate(-95%,0%);display:block;"
-                    data-17000="top:12%;transform:translate(-95%,0%);"
-                    data-18500="top:12%;"
+                    data-15999="top:100%;left:100%;transform:translate(-95%,0%);display:none;"
+                    data-16000="top:100%;left:100%;transform:translate(-95%,0%);display:block;"
+                    data-17000="top:24%;transform:translate(-95%,0%);"
+                    data-18500="top:24%;"
                     data-19500="top:-24%;"
                     
                 >01</div>
@@ -196,10 +199,10 @@
             >    
                 <!-- 숫자 -->
                 <div class="num fixed"
-                    data-22999="top:-50%;left:100%;transform:translate(-95%,0%);display:none;"
-                    data-23000="top:-50%;left:100%;transform:translate(-95%,0%);display:block;"
-                    data-24000="top:12%;transform:translate(-95%,0%);"
-                    data-25500="top:12%;"
+                    data-22999="top:100%;left:100%;transform:translate(-95%,0%);display:none;"
+                    data-23000="top:100%;left:100%;transform:translate(-95%,0%);display:block;"
+                    data-24000="top:24%;transform:translate(-95%,0%);"
+                    data-25500="top:24%;"
                     data-26500="top:-24%;"
 
                 >02</div>
@@ -234,10 +237,10 @@
             >    
                 <!-- 숫자 -->
                 <div class="num fixed"
-                    data-28999="top:-50%;left:100%;transform:translate(-95%,0%);display:none;"
-                    data-29000="top:-50%;left:100%;transform:translate(-95%,0%);display:block;"
-                    data-30000="top:12%;transform:translate(-95%,0%);"
-                    data-31500="top:12%;"
+                    data-28999="top:100%;left:100%;transform:translate(-95%,0%);display:none;"
+                    data-29000="top:100%;left:100%;transform:translate(-95%,0%);display:block;"
+                    data-30000="top:24%;transform:translate(-95%,0%);"
+                    data-31500="top:24%;"
                     data-32500="top:-24%;"
                 >03</div>
                 <!-- 모니터 -->
@@ -281,9 +284,16 @@
         const children = document.querySelectorAll('.span__cont')[2].children;
         const disk   = document.querySelector('.disk2');
         const ondisk   = document.querySelector('.ondisk');
-
+        const video = document.querySelector('.video');
+        const promise = video.play();
         const text = document.querySelectorAll('.text1 > span');
 
+          if (promise !== undefined) { 
+                promise.then(_ => { 
+                    
+                }).catch(error => { 
+                    console.log(error)
+                }) }
         // [].forEach.call(children,(el, index)=>{
         //     el.classList.add("hide");
         // })
@@ -328,6 +338,9 @@
                             text[el.val].classList.remove("blink");
                         },500)
 
+                    }
+                    if(name === "data5300" || name === "data13000" ){
+                        video.currentTime = 0;
                     }
                     if( name === "data15000" ){
                         console.log('ddd')
