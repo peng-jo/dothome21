@@ -303,8 +303,9 @@ body {
 
     .text1 {
         position: absolute;
-
-        top: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         color: #fff;
         font-size: 6vw;
         width: 94%;

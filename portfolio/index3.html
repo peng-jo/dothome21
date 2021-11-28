@@ -133,7 +133,7 @@
             data-13000="left:-100%;top:-15%;"
             data-14700="left:-33%;"
             data-34000="left:-33%;"
-            data-37000="left:-100%;"    
+            data-37000="left:-200%;"    
         >
             <img src="./assets/svg/disk.svg" class="disk disk2 fixed"
             />
@@ -268,11 +268,108 @@
             <!-- div -->
         </div>
         <!-- div -->
+        <div class="fixed"
+            data-36999="opacity:0; display:none;"
+            data-37000="opacity:0;display:block;"
+            data-38000="opacity:1;"
+            data-48000="display:none;"
+        >
+            <div class="img3 fixed"
+                data-40000="opacity:1;display:block;"
+                data-41000="opacity:0;display:none;"
+            >
+                <div class="text1 center">
+                    <span>CODING <span class="orange inline">LIFE</span> </span>
+                    <span>CREATIVE WEB</span>
+                    <span class="orange">PORTFOLIO SITE VIEW</span>
+                </div>
+            </div>
+            
+            <div class="text1 fixed center text2 orangeB"
+                data-39999="display:none;"
+                data-41000="display:flex;transform:translate(-50%,-50%);opacity:0;"
+                data-41500="display:flex;opacity:1;"
+                data-42500="display:flex;transform:translate(-150%,-50%);display:none;"
+            >
+                <span>CODING LIFE</span>
+                <span>CREATIVE WEB</span>
+                <span>PORTFOLIO SITE VIEW</span>
+            </div>
+            <div class="text3 fixed orangeB"
+                data-41399="display:none;transform:translate(49%,-50%)"
+                data-41499="display:block;transform:translate(49%,-50%);"
+                data-42500="display:block;transform:translate(-50%,-50%);"
+                data-43500="display:block;transform:translate(-150%,-50%);"
+            >
+                <span class="num fixed"
+                    data-42500="transform:translate(-125%,-60%);"
+                    data-43000="transform:translate(-125%,-60%);"
+                >01</span>
+                <div class="topic fixed"
+                    data-42500="transform:translate(-40%, -30%);"
+                >
+                    <div class="title">REACT SITE <br> CODIING WORK</div>
+                    <div class="desc">리액트 사이트입니다. 리액트의 기본을 다지기 위해서<br>
+                    만든 사이트 입니다. 리액트 라우터를 통해 라우팅을 알 수 있게 되었고 컴포넌트의
+                    기본을 다질수 있는 기회가 되었습니다.</div>
+                    <span class="btn">
+                        <span> 
+                            <a href="https://github.com/peng-jo/react999">코드보기</a>
+                        </span>
+                        <span> 
+                            <a href="https://peng-jo.web.app/">사이트 보기</a> 
+                        </span>
+                    </span>
+                    <img class="fixed" src="./assets/img/site2.jpg" alt="사진"
+                        data-42500="transform:translate(-8%,-40%);"
+                    >
+                </div>
+            </div>
+            <div class="text3 fixed orangeB"
+                data-41499="display:none;transform:translate(49%,-50%)"
+                data-42500="display:block;transform:translate(49%,-50%);"
+                data-43500="display:block;transform:translate(-50%,-50%);"
+            >
+                <span class="num fixed"
+                    data-42500="transform:translate(-100%,-60%);"
+                    data-43000="transform:translate(-100%,-60%);"
+                >02</span>
+                <div class="topic fixed"
+                    data-42500="transform:translate(-40%, -30%);"
+                >
+                    <div class="title">VUE SITE <br> CODIING WORK</div>
+                    <div class="desc">뷰.JS 를 이용한 사이트입니다. 뷰.JS의 기본을 다지기 위해서<br>
+                    만든 사이트 입니다. 뷰 사이트를 라우팅 할 수 있었고, 
+                    </div>
+                    <span class="btn">
+                        <span> 
+                            <a href="https://github.com/peng-jo/vue999">코드보기</a>
+                        </span>
+                        <span> 
+                            <a href="https://peng-jo2.web.app/">사이트 보기</a> 
+                        </span>
+                    </span>
+                    <img class="fixed" src="./assets/img/site3.jpg" alt="사진"
+                        data-42500="transform:translate(-8%,-40%);"
+                    >
+                </div>
+            </div>
+            
+    
+        </div>
+    </section>   
         <no-show style="display: none;" data-12500 data-emit-events></no-show>
         <no-show style="display: none;" data-12700 data-emit-events></no-show>
         <no-show style="display: none;" data-12900 data-emit-events></no-show>
         <no-show style="display: none;" data-13100 data-emit-events></no-show>
         <no-show style="display: none;" data-15000 data-emit-events></no-show>
+
+        <no-show style="display: none;" data-37500 data-emit-events></no-show>
+        <no-show style="display: none;" data-37900 data-emit-events></no-show>
+        <no-show style="display: none;" data-38300 data-emit-events></no-show>
+
+
+
         <no-show style="display: none;" data-emit-events data-5300 ></no-show>
         <no-show style="display: none;" data-emit-events data-15999 ></no-show>
         <no-show style="display: none;" data-emit-events data-22000 ></no-show>
@@ -287,6 +384,7 @@
         const video = document.querySelector('.video');
         const promise = video.play();
         const text = document.querySelectorAll('.text1 > span');
+        const text2 = document.querySelectorAll('.img3 .text1 > span');
 
           if (promise !== undefined) { 
                 promise.then(_ => { 
@@ -305,9 +403,14 @@
             {name:"data12900",val:2},
             {name:"data13100",val:3},
         ]
+        const obj2 = [
+            {name:"data37500",val:0},
+            {name:"data37900",val:1},
+            {name:"data38300",val:2},
+        ]
+
         function rotateText(){
             if(flag){
-                
                 flag = false;
                 ondisk.classList.add('rotate-start');
                 setTimeout(()=>{
@@ -332,18 +435,28 @@
                 obj1.forEach((el,index)=>{
                     
                     if(el.name === name){
-
                         text[el.val].classList.add("blink")
                         setTimeout(()=>{
                             text[el.val].classList.remove("blink");
                         },500)
-
                     }
+                });
+
+                obj2.forEach((el,index)=>{
+                    
+                    if(el.name === name){
+                        console.log(text2[el.val])
+                        text2[el.val].classList.add("blink")
+                        setTimeout(()=>{
+                            text2[el.val].classList.remove("blink");
+                        },500)
+                    }
+                });
+
                     if(name === "data5300" || name === "data13000" ){
                         video.currentTime = 0;
                     }
                     if( name === "data15000" ){
-                        console.log('ddd')
                         
                         if( direction === "up"){
 
@@ -388,7 +501,7 @@
                         }
                     }
                     
-                });
+                
             }
         });
 
