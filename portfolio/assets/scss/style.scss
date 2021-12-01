@@ -404,9 +404,11 @@ body {
             img {
                 z-index: -1;
                 background-size: cover;
-                width: 70%;
+                width: 50%;
                 opacity: 0.7;
+                transition: spaasdf;
                 filter: grayscale(100%);
+                transition: filter 2s;
                 &:hover {
                     opacity: 1;
                     filter: grayscale(0);
@@ -435,8 +437,8 @@ body {
             .num {
                 z-index: -1;
                 position: absolute;
-                left: 0;
-                top: 0;
+                left: -12vw;
+                top: -280%;
 
                 &.right {
                     left: auto;

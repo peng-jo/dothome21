@@ -99,10 +99,6 @@ body::-webkit-scrollbar {
   /* Chrome, Safari, Opera*/
 }
 
-img {
-  image-rendering: -webkit-optimize-contrast;
-}
-
 .black {
   font-weight: 900;
 }
