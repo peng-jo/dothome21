@@ -403,9 +403,16 @@ body {
 
             img {
                 z-index: -1;
-                height: 84.7%;
-                width: 53%;
+                background-size: cover;
+                width: 70%;
+                opacity: 0.7;
+                filter: grayscale(100%);
+                &:hover {
+                    opacity: 1;
+                    filter: grayscale(0);
+                }
             }
+            
         }
 
     }
@@ -429,7 +436,7 @@ body {
                 z-index: -1;
                 position: absolute;
                 left: 0;
-                top: -40%;
+                top: 0;
 
                 &.right {
                     left: auto;
@@ -438,6 +445,8 @@ body {
             }
 
             .s1 {
+                margin-top: 567px;
+                position: relative;
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 63px;
@@ -472,9 +481,15 @@ body {
             }
         }
     }
+    .s3 > .text1 {
+        transform: translate(-50%);
+    }
 
 }
 
+.opacity {
+    opacity: 0.8;
+}
 
 .scroll {
     position: fixed;
