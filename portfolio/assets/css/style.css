@@ -609,7 +609,7 @@ body {
   z-index: -1;
   position: absolute;
   left: -12vw;
-  top: -280%;
+  top: -180%;
 }
 
 #section3 .list .topic .num.right {
@@ -654,9 +654,9 @@ body {
           flex: 0 0 59%;
 }
 
-#section3 .list .topic img {
+#section3 .list .topic iframe {
   width: 100%;
-  height: 60%;
+  height: 79vh;
 }
 
 #section3 .s3 > .text1 {

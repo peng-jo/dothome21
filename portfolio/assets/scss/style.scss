@@ -438,7 +438,7 @@ body {
                 z-index: -1;
                 position: absolute;
                 left: -12vw;
-                top: -280%;
+                top: -180%;
 
                 &.right {
                     left: auto;
@@ -477,9 +477,9 @@ body {
                 flex: 0 0 59%;
             }
 
-            img {
+            iframe {
                 width: 100%;
-                height: 60%;
+                height: 79vh;
             }
         }
     }
