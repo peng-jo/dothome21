@@ -481,11 +481,77 @@ body {
                 width: 100%;
                 height: 79vh;
             }
+
         }
     }
     .s3 > .text1 {
         transform: translate(-50%);
     }
+
+    .about {
+        // background-image: url(../img/bg3.jpg);
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        
+        .container {
+            
+            max-width: 1720px;
+            margin: 0 auto;
+            
+            .about_cont {
+                
+                display: flex;
+                justify-content: space-between;
+                .cont1 {
+                    flex: 0 0 30%;
+                    img {
+                        object-fit: cover;
+                        width: 27vw;
+                        height: 58vh;
+                    }
+                }
+                .cont2 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    flex: 0 0 63%;
+                    .title {
+                        font-weight: 600;
+                        display: block;
+                        font-size: 5vw;
+                        line-height: 100%;
+                        margin-bottom: 1.2%;
+                    }
+                    .line {
+                        display: inline-block;
+                        background-color: #F8D342;
+                        opacity: 0.8;
+                        width: 50%;
+                        height: 14px;
+                        border-radius: 26.75px;
+                        margin-bottom: 6.2vw;
+                    }
+                    p {
+                        font-size: 1.45vw;
+                        font-family: 'Chosunilbo_myungjo';
+                        line-height: 174%;
+                    }
+                }
+            }
+        }
+        color: #fff;
+        h2 {
+            display: block;
+            width: 130vw;
+            font-size: 8.4vw;
+            transform: translate(16vw, 0px);
+            margin-bottom: 90px;
+        }
+        .yellow {
+            color: #F8D342;
+        }
+    }
+
 
 }
 
