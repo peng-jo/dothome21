@@ -133,3 +133,8 @@ body::-webkit-scrollbar {
 .blackB {
   background-color: #000000;
 }
+
+.container {
+  margin: 0 auto;
+  width: 79vw;
+}

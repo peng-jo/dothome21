@@ -394,9 +394,10 @@
         <!--  yellowB  -->
         <div class="fixed yellowB"
             data-44999="display:none;"
-            data-45000="opacity:0;display:block;"
-            data-46000="opacity:1;"
-            data-47000="opacity:0;display:none;"
+            data-46500="opacity:0;display:block;"
+            data-47000="opacity:1;"
+            data-48000="opacity:1;"
+            data-48500="opacity:0;display:none;"
         >
             <div class="img2">
                 <div class="text1">
@@ -410,16 +411,16 @@
         </div>
         <!-- 컨테이너1 -->
         <div class="list fixed yellowB"
-            data-46999="display:none;"
-            data-47000="opacity:0;display:block;"
-            data-48000="opacity:1;"
-            data-52873="opacity:1;"
-            data-53500="opacity:0;display:none;"
+            data-48499="display:none;"
+            data-48500="opacity:0;display:block;"
+            data-49500="opacity:1;"
+            data-54500="opacity:1;"
+            data-55000="opacity:0;display:none;"
         >    
             <div class="topic fixed"
                 data-47000="display:block;"
                 data-48000="transform:translate(-50%, -50vh);"
-                data-53500="transform:translate(-50%, -650%);display:none;"
+                data-53500="transform:translate(-50%, -670vh);"
             >
                 <div class="container">
                     <div class="s1">
@@ -478,14 +479,12 @@
         <div class="fixed blackB"
             data-53000="display:none;"
             data-54000="opacity:0;display:block;"
-            data-55000="opacity:1;"
-            data-56000="opacity:0;display:none;"
+            data-55000="opacity:1;transfrom:translateY(0%);"
+            data-56000="transfrom:translateY(-100%);"
         >
             <div class="about fixed">
                 <h2>I AM  <span class="yellow" >FRONT END</span> DEVELOPER</h2>
                 <div class="container">
-                    
-
                     <article class="about_cont">
                         <div class="cont1">
                             <img src="./assets/img/jobeomsu.jpg" alt="증명사진">
@@ -501,8 +500,10 @@
 
 </p>
                         </div>
+
                     </article>
                 </div>
+                <div class="line2"></div>
             </div>
             
         </div>
@@ -517,12 +518,19 @@
         <no-show style="display: none;" data-38900 data-emit-events></no-show>
         <no-show style="display: none;" data-39300 data-emit-events></no-show>
 
-
+        <no-show style="display: none;" data-47000 data-emit-events></no-show>
+        <no-show style="display: none;" data-47200 data-emit-events></no-show>
+        <no-show style="display: none;" data-47400 data-emit-events></no-show>
+        <no-show style="display: none;" data-47600 data-emit-events></no-show>
+        <no-show style="display: none;" data-47800 data-emit-events></no-show>
 
         <no-show style="display: none;" data-emit-events data-5300 ></no-show>
         <no-show style="display: none;" data-emit-events data-15999 ></no-show>
         <no-show style="display: none;" data-emit-events data-22000 ></no-show>
         <no-show style="display: none;" data-emit-events data-28000 ></no-show>
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
     <script>
         const section  = document.querySelectorAll('section');
@@ -534,6 +542,7 @@
         const promise = video.play();
         const text = document.querySelectorAll('.text1 > span');
         const text2 = document.querySelectorAll('.s3 .text1 > span');
+        const text3 = document.querySelectorAll('.img2 span');
 
           if (promise !== undefined) { 
                 promise.then(_ => { 
@@ -556,6 +565,14 @@
             {name:"data38500",val:0},
             {name:"data38900",val:1},
             {name:"data39300",val:2},
+        ]
+        
+        const obj3 = [
+            {name:"data47000",val:0},
+            {name:"data47200",val:1},
+            {name:"data47400",val:2},
+            {name:"data47600",val:3},
+            {name:"data47800",val:4},
         ]
 
         function rotateText(){
@@ -594,10 +611,21 @@
                 obj2.forEach((el,index)=>{
                     
                     if(el.name === name){
-                        console.log(text2[el.val])
+
                         text2[el.val].classList.add("blink")
                         setTimeout(()=>{
                             text2[el.val].classList.remove("blink");
+                        },500)
+                    }
+                });
+
+                obj3.forEach((el,index)=>{
+                   
+                    if(el.name === name){
+                        console.log("print")
+                        text3[el.val].classList.add("blink")
+                        setTimeout(()=>{
+                            text3[el.val].classList.remove("blink");
                         },500)
                     }
                 });

@@ -286,9 +286,10 @@ body {
     }
 
     .img2 {
+        z-index: 999;
         width: 100vw;
         height: 100vh;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
             url("../img/img2.jpg") no-repeat;
         background-size: cover;
     }
@@ -404,11 +405,11 @@ body {
             img {
                 z-index: -1;
                 background-size: cover;
-                width: 50%;
+                width: 60%;
                 opacity: 0.7;
                 transition: spaasdf;
                 filter: grayscale(100%);
-                transition: filter 2s;
+                transition: all 0.5s;
                 &:hover {
                     opacity: 1;
                     filter: grayscale(0);
@@ -487,7 +488,13 @@ body {
     .s3 > .text1 {
         transform: translate(-50%);
     }
-
+    .line2 {
+        margin-top: 10vh;
+        position: absolute;
+        height: 48px;
+        width: 120vw;
+        background-color: #FFCC00;
+    }
     .about {
         // background-image: url(../img/bg3.jpg);
         // background-repeat: no-repeat;
@@ -495,7 +502,7 @@ body {
         
         .container {
             
-            max-width: 1720px;
+            width: 70%;
             margin: 0 auto;
             
             .about_cont {
@@ -506,15 +513,14 @@ body {
                     flex: 0 0 30%;
                     img {
                         object-fit: cover;
-                        width: 27vw;
-                        height: 58vh;
+
                     }
                 }
                 .cont2 {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-                    flex: 0 0 63%;
+                    flex: 0 1 63%;
                     .title {
                         font-weight: 600;
                         display: block;
@@ -527,9 +533,9 @@ body {
                         background-color: #F8D342;
                         opacity: 0.8;
                         width: 50%;
-                        height: 14px;
+                        height: 0.7vw;
                         border-radius: 26.75px;
-                        margin-bottom: 6.2vw;
+                        
                     }
                     p {
                         font-size: 1.45vw;
