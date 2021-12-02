@@ -13,6 +13,27 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansBold';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansLight';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -675,7 +696,7 @@ body {
 #section3 .line2 {
   margin-top: 10vh;
   position: absolute;
-  height: 48px;
+  height: 2.5vw;
   width: 120vw;
   background-color: #FFCC00;
 }
@@ -689,7 +710,7 @@ body {
   margin: 0 auto;
 }
 
-#section3 .about .container .about_cont {
+#section3 .about .about_cont {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -698,18 +719,18 @@ body {
           justify-content: space-between;
 }
 
-#section3 .about .container .about_cont .cont1 {
+#section3 .about .about_cont .cont1 {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 30%;
           flex: 0 0 30%;
 }
 
-#section3 .about .container .about_cont .cont1 img {
+#section3 .about .about_cont .cont1 img {
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-#section3 .about .container .about_cont .cont2 {
+#section3 .about .about_cont .cont2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -725,7 +746,7 @@ body {
           flex: 0 1 63%;
 }
 
-#section3 .about .container .about_cont .cont2 .title {
+#section3 .about .about_cont .cont2 .title {
   font-weight: 600;
   display: block;
   font-size: 5vw;
@@ -733,7 +754,7 @@ body {
   margin-bottom: 1.2%;
 }
 
-#section3 .about .container .about_cont .cont2 .line {
+#section3 .about .about_cont .cont2 .line {
   display: inline-block;
   background-color: #F8D342;
   opacity: 0.8;
@@ -742,10 +763,125 @@ body {
   border-radius: 26.75px;
 }
 
-#section3 .about .container .about_cont .cont2 p {
+#section3 .about .about_cont .cont2 p {
   font-size: 1.45vw;
   font-family: 'Chosunilbo_myungjo';
   line-height: 174%;
+}
+
+#section3 .about .about_cont2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 10vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#section3 .about .about_cont2 h2 {
+  display: inline-block;
+  -webkit-transform: translateX(28%);
+          transform: translateX(28%);
+}
+
+#section3 .about .about_cont2 img {
+  width: 67vw;
+}
+
+#section3 .about .about_cont2 .contact {
+  -webkit-transform: translateY(-60%);
+          transform: translateY(-60%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 74px;
+  border-bottom: 2px solid #F9DB53;
+}
+
+#section3 .about .about_cont2 .contact .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#section3 .about .about_cont2 .contact .input button {
+  margin-top: 62px;
+  font-family: 'GmarketSansMedium';
+  width: 344px;
+  height: 60px;
+  background-color: #F9DB53;
+  font-size: 32px;
+}
+
+#section3 .about .about_cont2 .contact input {
+  height: 65px;
+  background-color: #F9DB53;
+  width: 1148px;
+  font-size: 30px;
+  margin-bottom: 26px;
+}
+
+#section3 .about .about_cont2 .contact input:nth-last-child(2) {
+  height: 401px;
+}
+
+#section3 .about .about_cont2 .contact input::-webkit-input-placeholder {
+  font-family: 'GmarketSansMedium';
+  color: #000;
+  text-align: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+#section3 .about .about_cont2 .contact input:-ms-input-placeholder {
+  font-family: 'GmarketSansMedium';
+  color: #000;
+  text-align: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+#section3 .about .about_cont2 .contact input::-ms-input-placeholder {
+  font-family: 'GmarketSansMedium';
+  color: #000;
+  text-align: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+#section3 .about .about_cont2 .contact input::placeholder {
+  font-family: 'GmarketSansMedium';
+  color: #000;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#section3 .about .about_cont2 .contact button {
+  width: 100%;
 }
 
 #section3 .about h2 {
