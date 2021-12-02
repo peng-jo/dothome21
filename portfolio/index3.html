@@ -628,10 +628,10 @@
         setTimeout(() => {
             console.log('2')
             spanCont[0].classList.remove('show');
-            // spanCont[1].classList.add('show');
+            spanCont[1].classList.add('show');
 
             setTimeout(() => {
-                // spanCont[1].classList.remove('show');
+                spanCont[1].classList.remove('show');
                 section[0].remove();
                 section[1].classList.add('show');
 
@@ -651,8 +651,8 @@
                 }
                 timeout();
 
-            }, 0)
-        }, 0)
+            }, 1500)
+        }, 1500)
     </script>
 </body>
 
